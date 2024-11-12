@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript" src="assets/js/CommonValidations.js"></script>
+  <!-- META SECTION -->
+  <title>ahan | Card List</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+  <!-- EOF CSS INCLUDE -->
+</head>
+
+<body>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+
+      <!-- PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrap">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <div class="pull-right">
+                  <a href="javascript:void(0)" class="btn btn-xs btn-primary ripple" onclick="toggleSmartSearch();"><i
+                      class="fa fa-search" aria-hidden="true"></i> Search
+                  </a>
+                </div>
+                <h4 class="page-title">Card List</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="" style="min-height: 73vh">
+                <div class="panel-body p-0" style="position: relative">
+                  <form id="smartSearchFieldsDiv" class="cardList" style="display: none">
+                    <input type="hidden" id="fetchAllClientUrl" value="" />
+                    <input type="hidden" id="clientCodeValueHold" name="clientCode" value="" />
+                    <div class="row">
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Select Date</label>
+                          <input type="text" name="dateRange" class="form-control clear" id="daterange"
+                            placeholder="Select a date" readonly />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Client</label>
+                          <select id="clientCode" name="clientCode" class="form-control">
+                            <option value="">Select a Client</option>
+                            <option value="Client_Cards_TEST_4">
+                              Client_Cards_TEST_4
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Card ID</label>
+                          <input type="text" id="cardId" name="cardHashId" class="form-control clear"
+                            placeholder="Enter card Id" />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Card Proxy Number</label>
+                          <input type="text" id="proxyNumber" name="proxyNumber" class="form-control clear"
+                            placeholder="Enter Card Proxy Number" />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Last 4 digits of Card Number</label>
+                          <input type="text" id="maskCardNumber" name="maskCardNumber" class="form-control clear"
+                            placeholder="XXXX" />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Issuance Type</label>
+                          <select id="issuanceType" class="form-control selectpicker clear">
+                            <option value="">All</option>
+                            <option value="primaryCard">New Card</option>
+                            <option value="additionalCard">
+                              Add_On Card
+                            </option>
+                            <option value="replaceCard">
+                              Replacement Card
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Card Status</label>
+                          <select id="cardStatus" class="form-control selectpicker clear">
+                            <option value="All">All</option>
+                            <option value="ACTIVE">Active</option>
+                            <option value="INACTIVE">Inactive</option>
+                            <option value="TEMP_BLOCK">
+                              Temporary Block
+                            </option>
+                            <option value="P_BLOCK">Permanent Block</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Card Type</label>
+                          <select id="cardTypeCode" class="form-control selectpicker clear">
+                            <option value="All">All</option>
+                            <option value="GPR_PHY">Physical Card</option>
+                            <option value="GPR_VIR">Virtual Card</option>
+                            <option value="GPR_VIR_UP2PHY">
+                              Virtual to Physical Card
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-xs-12">
+                        <div class="form-group text-center">
+                          <button id="submitButton" name="submitButton" class="btn btn-primary btn-sm px-5 ripple"
+                            type="button" onclick="searchFilter(0,false);">
+                            Filter
+                          </button>
+                          <button class="btn btn-default btn-sm px-5 ripple" type="reset" onclick="resetFields();">
+                            Clear
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="text-right mt-2 mb-2" style="display: flow-root">
+                        <c:if test="${fn:containsIgnoreCase(roles,'ROLE_DOWNLOAD_CARD_LIST')}">
+                          <button onclick="cardListDownload();" style="display: none" id="cardListDownload"
+                            class="btn btn-sm btn-primary ripple px-5">
+                            <i class="fas fa-download"></i>
+                            Download
+                          </button>
+                        </c:if>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-wrapper table-responsive" style="max-height: 62vh; overflow: auto">
+                    <table id="Transaction_Report" class="table table-striped table-bordered">
+                      <thead>
+                        <tr id="xyz">
+                          <th>Sl.No.</th>
+                          <th>Created At</th>
+                          <th>CardActivation Status</th>
+                          <th>Customer Hash ID</th>
+                          <th>Client Hash ID</th>
+                          <th>Card ID</th>
+                          <th>Card Proxy Number</th>
+                          <th>Masked CardNumber</th>
+                          <th>Card Type</th>
+                          <th>Issuance Type</th>
+                          <th>First Name</th>
+                          <th>Middle Name</th>
+                          <th>Last Name</th>
+                          <th>Mobile Number</th>
+                          <th>Email ID</th>
+                        </tr>
+                      </thead>
+                      <tbody id="cardListTable">
+                        <tr>
+                          <td>1</td>
+                          <td>2021-05-11 07:14:00</td>
+                          <td>Active</td>
+                          <td>123Eeee_eeee5454_eee332</td>
+                          <td>123Eeee_eeee5454_eee332</td>
+                          <td>12345</td>
+                          <td>12345</td>
+                          <td>123455</td>
+                          <td>Physical Card</td>
+                          <td>New Card</td>
+                          <td>Subhasmita</td>
+                          <td></td>
+                          <td>Biswal</td>
+                          <td>9865634522</td>
+                          <td>info@gmail.com</td>
+                        </tr>
+                        <!-- <tr>
+                            <td colspan="34" class="text-center">
+                              Search for available cards!!!
+                            </td>
+                          </tr> -->
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="paginationWrapper">
+                    <p id="paging_info" class="pull-left"></p>
+                    <input type="hidden" id="totalPagesId" value="1" />
+                    <div class="pull-right">
+                      <ul class="pagination-sm" id="paginationn"></ul>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input type="hidden" id="customerDetailUrl" name="customerDetailsUrl" value="${customerDetailUrl}" />
+                  <input type="hidden" id="demographicUpdateUrl" name="demographicUpdateUrl"
+                    value="${demographicUpdateUrl}" />
+                  <input type="hidden" id="embosserUpdateUrl" name="embosserUpdateUrl" value="${embosserUpdateUrl}" />
+                  <input type="hidden" id="customerId" name="customerId" value="" />
+                  <input type="hidden" id="clientId" name="clientId" value="" />
+                  <input type="hidden" id="countryId" name="countryId" value="" />
+                  <input type="hidden" id="billingAddressId" name="billingAddressId" value="" />
+                  <input type="hidden" id="correspondenceAddressId" name="correspondenceAddressId" value="" />
+                  <input type="hidden" id="deliveryAddressId" name="deliveryAddressId" value="" />
+                  <input type="hidden" id="plasticId" name="plasticId" value="" />
+                  <input type="hidden" id="customerHashId" name="customerHashId" value="" />
+                  <input type="hidden" id="cardListDownloadUrl" value="${cardListDownloadUrl}" />
+                  <input type="hidden" id="fetchCardListUrl" value="${fetchCardListUrl}" />
+                  <input type="hidden" id="customerPhoneCode" name="customerPhoneCode" value="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+  </div>
+  <!-- END PAGE CONTAINER -->
+
+  <div class="modal fade" id="demographicUpdateModel" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title" id="demographic_title">
+            Update Demographic Details
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div id="demographicUpdateHiddenFields">
+            <input type="hidden" id="hiddenCardHashId" name="hiddenCardHashId" value="" />
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="mobileNumber">Mobile Number<sup>*</sup></label>
+                <input type="text" id="mobileNumber" name="mobileNumber" value="" maxlength="16"
+                  class="form-control demographicUpdateRequired" />
+                <span class="error field_err" id="errorMobileNumber"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="" class="form-control demographicUpdateRequired" />
+                <span class="error field_err" id="errorEmail"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="billingAddress1">Billing Address1</label>
+                <textarea rows="3" id="billingAddress1" name="billingAddress1" value=""
+                  class="form-control demographicUpdateRequired"></textarea>
+                <span class="error field_err" id="errorBillingAddress1"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="billingAddress2">Billing Address2</label>
+                <textarea rows="3" id="billingAddress2" name="billingAddress2" value=""
+                  class="form-control demographicUpdateRequired"></textarea>
+                <span class="error field_err" id="errorBillingAddress2"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="billingCity">City</label>
+                <input type="text" id="billingCity" name="billingCity" value=""
+                  class="form-control demographicUpdateRequired" />
+                <span class="error field_err" id="errorCity"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="billingState">State</label>
+                <input type="text" id="billingState" name="billingState" value=""
+                  class="form-control demographicUpdateRequired" />
+                <span class="error field_err" id="errorState"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="billingCity">Country Code</label>
+                <input type="text" id="countryCode" name="countryCode" value=""
+                  class="form-control demographicUpdateRequired" />
+                <span id="errorCountryCode" class="error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="billingZipCode">ZIP Code</label>
+                <input type="text" id="billingZipCode" name="billingZipCode" value=""
+                  class="form-control demographicUpdateRequired" />
+                <span class="error field_err" id="errorZipCode"></span>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group text-center">
+                <button type="button" id="demographicUpdateSubmitBtn" name="demographicUpdateSubmitBtn"
+                  class="btn btn-primary px-5 ripple" onclick="validateDemographicUpdateFields();">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="embosserUpdateModel" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title" id="embosser_title">
+            Update Embosser Details
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div id="embosserUpdateHiddenFields">
+            <input type="hidden" id="embosserUpdateCardNumber" name="embosserUpdateCardNumber" value="" />
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <label for="deliveryAddress1">Delivery Address1<sup>*</sup></label>
+                <textarea rows="3" cols="50" id="deliveryAddress1" name="deliveryAddress1" value=""
+                  class="form-control embosserUpdateRequired"></textarea>
+                <span class="error field_err" id="errorDeliveryAddress1"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <label for="deliveryAddress2">Delivery Address2</label>
+                <textarea rows="3" cols="50" id="deliveryAddress2" name="deliveryAddress2" value=""
+                  class="form-control embosserUpdateRequired"></textarea>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <label for="deliveryCity">City<sup>*</sup></label>
+                <input type="text" id="deliveryCity" name="deliveryCity" value=""
+                  class="form-control embosserUpdateRequired" />
+                <span class="error field_err" id="errorDeliveryCity"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <label for="deliveryState">State<sup>*</sup></label>
+                <input type="text" id="deliveryState" name="deliveryState" value=""
+                  class="form-control embosserUpdateRequired" />
+                <span class="error field_err" id="errorDeliveryState"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <label for="deliveryCountryCode">Country Code<sup>*</sup></label>
+                <input type="text" id="deliveryCountryCode" name="deliveryCountryCode" value=""
+                  class="form-control embosserUpdateRequired" />
+                <span class="error field_err" id="errorDeliveryCountryCode"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <label for="embossingLine1">Embossing Line1</label>
+                <input type="text" id="embossingLine1" name="embossingLine1" value=""
+                  class="form-control embosserUpdateRequired" />
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+              <div class="form-group text-center">
+                <button type="button" id="embosserUpdateSubmitBtn" name="embosserUpdateSubmitBtn"
+                  class="btn btn-primary px-5 ripple" onclick="validateEmbosserUpdateFields();">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" id="successModal" class="btn btn-success px-5 ripple" data-dismiss="modal"
+                  onclick="closeModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="hiddenFields"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/moment.min.js?version=2.29.0"></script>
+  <script type="text/javascript" src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- END PLUGINS -->
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.min.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <script type="text/javascript" src="assets/js/generateTableWithNonClickableRows.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <script type="text/javascript" src="assets/js/floatingscroll.js"></script>
+  <script type="text/javascript" src="assets/js/dateRange.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- END SCRIPTS -->
+
+  <script>
+    function toggleSmartSearch() {
+      $("#smartSearchFieldsDiv").slideToggle();
+    }
+
+    function resetFields() {
+      $(".clear").each(function (index, element) {
+        $(element).val("");
+      });
+    }
+  </script>
+
+  <!-- <script>
+      /* Universal Spinner with text for Button */
+      var spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+      $(function () {
+      	$('.table-wrapper').floatingScrollbar();
+      });
+
+      function openDemographicUpdateModel(cardId) {
+      	$("#hiddenCardHashId").val(cardId);
+
+      	$.ajax({
+      		url: $("#customerDetailUrl").val(),
+      		type: "GET",
+      		data: {cardHashId: unSanitize(cardId)},
+      		async: false,
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			result = sanitize(unSanitize(result));
+
+      			$("#customerId").val(result.customerId);
+      			$("#clientId").val(result.clientId);
+      			$("#countryId").val(result.countryId);
+      			$("#billingAddressId").val(result.customerAddressTypeId_billingAddress);
+      			$("#correspondenceAddressId").val(result.customerAddressId_correspondenceAddress);
+      			$("#deliveryAddressId").val(result.customerAddressId_deliveryAddress);
+      			$("#mobileNumber").val(result.mobile);
+      			$("#email").val(result.email);
+      			$("#billingAddress1").val(result.customerAddress1_billingAddress);
+      			$("#billingAddress2").val(result.customerAddress2_billingAddress);
+      			$("#billingState").val(result.customerAddressState_billingAddress);
+      			$("#billingCity").val(result.customerAddressCity_billingAddress);
+      			$("#billingZipCode").val(result.customerAddressZipCode_billingAddress);
+      			$("#countryCode").val(result.countryIso3);
+      			$("#customerHashId").val(result.customerHashId);
+      			$("#customerPhoneCode").val(result.countryPhoneCode);
+
+      			$('.modal-dialog').draggable();
+      			$('.modal-dialog').resizable();
+      			$("#demographicUpdateModel").modal("show");
+      		},
+      		complete: function (xhr, status) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      		}
+      	});
+      }
+
+
+      function openEmbosserUpdateModel(cardId) {
+      	$("#embosserUpdateCardNumber").val(cardId);
+
+      	$.ajax({
+      		url: $("#customerDetailUrl").val(),
+      		type: "GET",
+      		data: {cardHashId: unSanitize(cardId)},
+      		async: false,
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			result = sanitize(unSanitize(result));
+
+      			$("#customerId").val(result.customerId);
+      			$("#clientId").val(result.clientId);
+      			$("#countryId").val(result.countryId);
+      			$("#billingAddressId").val(result.customerAddressId_billingAddress);
+      			$("#correspondenceAddressId").val(result.customerAddressId_correspondenceAddress);
+      			$("#deliveryAddressId").val(result.customerAddressTypeId_deliveryAddress);
+
+      			$("#deliveryAddress1").val(result.customerAddress1_deliveryAddress);
+      			$("#deliveryAddress2").val(result.customerAddress2_deliveryAddress);
+      			$("#deliveryCountryCode").val(result.countryIso3);
+      			$("#deliveryCity").val(result.customerAddressCity_deliveryAddress);
+      			$("#deliveryState").val(result.customerAddressState_deliveryAddress);
+      			$("#embossingLine1").val(result.embossedName1);
+      			$("#embossingLine2").val(result.embossedName2);
+      			$("#plasticId").val(result.plasticId);
+      			$("#customerHashId").val(result.customerHashId);
+
+      			$(".embosserUpdateRequired").each(function (index, element) {
+      				$("#" + (element.id)).css({"border": "1px solid #D5D5D5"});
+      			});
+
+      			$('.modal-dialog').draggable();
+      			$('.modal-dialog').resizable();
+      			$("#embosserUpdateModel").modal("show");
+      		},
+      		complete: function (xhr, status) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      		}
+      	});
+      }
+
+      function validateDemographicUpdateFields() {
+      	$("#demographicUpdateSubmitBtn").attr("disabled", true);
+      	$("#demographicUpdateSubmitBtn").html(spinnerUrl);
+      	var mobileNumber = document.getElementById('mobileNumber');
+      	var email = document.getElementById('email');
+      	var billingAddress1 = document.getElementById('billingAddress1');
+      	var billingAddress2 = document.getElementById('billingAddress2');
+      	var city = document.getElementById('billingCity');
+      	var state = document.getElementById('billingState');
+      	var countryCode = document.getElementById('countryCode');
+      	var zipCode = document.getElementById('billingZipCode');
+      	var emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+      	var mobilePattern = "^[\\+\\d]+(?:[\\d-.]*)$";
+      	var zipcodePattern = "^[a-zA-Z0-9 ]*$";
+      	var valid = true;
+      	if (mobileNumber == null || mobileNumber == "") {
+      		valid = false;
+      		$("#errorMobileNumber").html("please enter mobile number");
+      	} else if (!mobileNumber.value.match(mobilePattern)) {
+      		valid = false;
+      		$("#errorMobileNumber").html("please enter valid mobile number");
+      	}
+      	if (email == null || email == "") {
+      		valid = false;
+      		$("#errorEmail").html("please enter email id");
+      	} else if (!email.value.match(emailPattern)) {
+      		valid = false;
+      		$("#errorEmail").html("please enter valid email id");
+      	}
+      	if (email == null || email == "") {
+      		valid = false;
+      		$("#errorEmail").html("please enter email id");
+      	} else if (!email.value.match(emailPattern)) {
+      		valid = false;
+      		$("#errorEmail").html("please enter valid email id");
+      	}
+      	if (zipCode == null || zipCode == "") {
+      		valid = false;
+      		$("#errorZipCode").html("please enter zip code");
+      	} else if (!zipCode.value.match(zipcodePattern)) {
+      		valid = false;
+      		$("#errorZipCode").html("please enter valid zip code");
+      	}
+      	if (valid) {
+      		var dataInObjectFormat = new Object();
+      		dataInObjectFormat.customerId = $("#customerId").val();
+      		dataInObjectFormat.clientId = $("#clientId").val();
+      		dataInObjectFormat.countryId = $("#countryId").val();
+      		dataInObjectFormat.billingAddressId = $("#billingAddressId").val();
+      		dataInObjectFormat.cardHashId = $("#hiddenCardHashId").val();
+      		dataInObjectFormat.address1 = $("#billingAddress1").val();
+      		dataInObjectFormat.address2 = $("#billingAddress2").val();
+      		dataInObjectFormat.city = $("#billingCity").val();
+      		dataInObjectFormat.state = $("#billingState").val();
+      		dataInObjectFormat.postalCode = $("#billingZipCode").val();
+      		dataInObjectFormat.mobile = $("#mobileNumber").val();
+      		dataInObjectFormat.email = $("#email").val();
+      		dataInObjectFormat.plasticId = $("#plasticId").val();
+      		dataInObjectFormat.customerHashId = $("#customerHashId").val();
+      		dataInObjectFormat.deliveryState = $("#deliveryState").val();
+      		dataInObjectFormat.countryCode = $("#countryCode").val();
+      		dataInObjectFormat.customerPhoneCode = $("#customerPhoneCode").val();
+
+      		var dataInJsonFormat = JSON.stringify(unSanitize(dataInObjectFormat));
+      		$.ajax({
+      			url: $("#demographicUpdateUrl").val(),
+      			type: "POST",
+      			data: dataInJsonFormat,
+      			cache: false,
+      			contentType: "application/json",
+      			async: false,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				result = sanitize(unSanitize(result));
+
+      				$("#demographicUpdateSubmitBtn").attr("disabled", false);
+      				$("#demographicUpdateSubmitBtn").html("Submit");
+      				$(".refunded_body").html("Demographic details updated successfully!");
+      				$("#demographicUpdateModel").modal("hide");
+      				$("#success_refundNotification").modal('show');
+      			},
+      			error: function (xhr) {
+      				if (xhr.readyState == 0) {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html("service is temporarily down,please try again later!");
+      				} else {
+      					$("#demographicUpdateSubmitBtn").attr("disabled", false);
+      					$("#demographicUpdateSubmitBtn").html("Submit");
+      					var message = (xhr.responseJSON).message;
+      					if (message.includes("java.net.SocketException")) {
+      						message = "Server is unreachable (connection failed)";
+      					}
+      					$(".refunded_body").html(message);
+      					$("#demographicUpdateModel").modal("hide");
+      					$("#error_refundNotification").modal('show');
+      				}
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	} else {
+      		$("#demographicUpdateSubmitBtn").attr("disabled", false);
+      		$("#demographicUpdateSubmitBtn").val("Submit");
+      		setTimeout(function () {
+      			$("#errorMobileNumber").html("");
+      			$("#errorEmail").html("");
+      			$("#errorZipCode").html("");
+      		}, 3000);
+      	}
+      }
+
+      function validateEmbosserUpdateFields() {
+      	$("#embosserUpdateSubmitBtn").attr("disabled", true);
+      	$("#embosserUpdateSubmitBtn").html(spinnerUrl);
+      	var valid = true;
+      	var deliveryAddress1 = $("#deliveryAddress1").val();
+      	var city = $("#deliveryCity").val();
+      	var state = $("#deliveryState").val();
+      	var countryCode = $("#deliveryCountryCode").val();
+      	var cityPattern = "[a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+";
+      	var statePattern = "[a-zA-Z]+|[a-zA-Z]+\\s[a-zA-Z]+";
+
+      	if (deliveryAddress1 == null || deliveryAddress1 == "") {
+      		valid = false;
+      		$("#errorDeliveryAddress1").html("please enter delivery address1");
+      	}
+      	if (city == null || city == "") {
+      		valid = false;
+      		$("#errorDeliveryCity").html("please enter city");
+      	} else if (!city.match(cityPattern)) {
+      		valid = false;
+      		$("#errorDeliveryCity").html("please enter valid city");
+      	}
+      	if (state == null || state == "") {
+      		valid = false;
+      		$("#errorDeliveryState").html("please enter state");
+      	} else if (!state.match(statePattern)) {
+      		valid = false;
+      		$("#errorDeliveryState").html("please enter valid state");
+      	}
+      	if (countryCode == null || countryCode == "") {
+      		valid = false;
+      		$("#errorDeliveryCountryCode").html("please enter country code");
+      	}
+
+      	if (valid) {
+      		var dataInObjectFormat = new Object();
+      		dataInObjectFormat.customerId = $("#customerId").val();
+      		dataInObjectFormat.clientId = $("#clientId").val();
+      		dataInObjectFormat.countryId = $("#countryId").val();
+      		dataInObjectFormat.billingAddressId = $("#billingAddressId").val();
+      		dataInObjectFormat.correspondenceAddressId = $("#correspondenceAddressId").val();
+      		dataInObjectFormat.deliveryAddressId = $("#deliveryAddressId").val();
+      		dataInObjectFormat.cardId = $("#embosserUpdateCardNumber").val();
+      		dataInObjectFormat.addressLine1 = $("#deliveryAddress1").val();
+      		dataInObjectFormat.addressLine2 = $("#deliveryAddress2").val();
+      		dataInObjectFormat.stateProvince = $("#deliveryCountryCode").val();
+      		dataInObjectFormat.city = $("#deliveryCity").val();
+      		dataInObjectFormat.embosserName1 = $("#embossingLine1").val();
+      		dataInObjectFormat.embosserName2 = $("#embossingLine2").val();
+      		dataInObjectFormat.plasticId = $("#plasticId").val();
+      		dataInObjectFormat.customerHashId = $("#customerHashId").val();
+      		dataInObjectFormat.deliveryState = $("#deliveryState").val();
+
+      		var dataInJsonFormat = JSON.stringify(unSanitize(dataInObjectFormat));
+      		$.ajax({
+      			url: $("#embosserUpdateUrl").val(),
+      			type: "POST",
+      			data: dataInJsonFormat,
+      			cache: false,
+      			contentType: "application/json",
+      			async: false,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				result = sanitize(unSanitize(result));
+
+      				$("#embosserUpdateSubmitBtn").attr("disabled", false);
+      				$("#embosserUpdateSubmitBtn").html("Submit");
+      				$(".refunded_body").html("Embosser details updated successfully!");
+      				$("#embosserUpdateModel").modal("hide");
+      				$("#success_refundNotification").modal('show');
+      			},
+      			error: function (xhr) {
+      				if (xhr.readyState == 0) {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html("service is temporarily down,please try again later!");
+      				} else {
+      					$("#embosserUpdateSubmitBtn").attr("disabled", false);
+      					$("#embosserUpdateSubmitBtn").html("Submit");
+      					var message = (xhr.responseJSON).message;
+      					if (message.includes("java.net.SocketException")) {
+      						message = "Server is unreachable (connection failed)";
+      					}
+      					$(".refunded_body").html(message);
+      					$("#embosserUpdateModel").modal("hide");
+      					$("#error_refundNotification").modal('show');
+      				}
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	} else {
+      		$("#embosserUpdateSubmitBtn").attr("disabled", false);
+      		$("#embosserUpdateSubmitBtn").html("Submit");
+      		setTimeout(function () {
+      			$("#errorDeliveryAddress1").html("");
+      			$("#errorDeliveryCity").html("");
+      			$("#errorDeliveryState").html("");
+      		}, 3000);
+      	}
+      }
+
+      function toggleSmartSearch() {
+      	$("#smartSearchFieldsDiv").slideToggle();
+      }
+
+      function closeModal() {
+      	searchFilter('0', false);
+      }
+
+      function searchFilter(value, isPaging) {
+      	var paging = value;
+      	var cardID = $("#cardId").val();
+      	var cardStatus = $("#cardStatus").val();
+      	var cardTypeCode = $("#cardTypeCode").val();
+      	var clientCode = $("#clientCode").val();
+      	var issuanceType = $("#issuanceType").val();
+      	var proxyNumber = $("#proxyNumber").val();
+      	var maskCardNumber = $("#maskCardNumber").val();
+      	var dateRange = $('#daterange').val();
+      	var dateArray = dateRange.split('-');
+      	var d = new Date(dateArray[0]);
+      	var d1 = new Date(dateArray[1]);
+      	var startDate = $.datepicker.formatDate('yy-mm-dd', d);
+      	var endDate = $.datepicker.formatDate('yy-mm-dd', d1);
+      	if (startDate === 'NaN-NaN-NaN' && endDate === 'NaN-NaN-NaN') {
+      		startDate = '';
+      		endDate = '';
+      	}
+      	if (clientCode == "") {
+      		clientCode = null;
+      	} else {
+      		clientCode = clientCode;
+      	}
+      	if (cardTypeCode == "All") {
+      		cardTypeCode = null;
+      	}
+      	if (cardStatus == "All") {
+      		cardStatus = null;
+      	}
+      	$('#submitButton').html(spinnerUrl);
+      	$("#errorMessage").html("");
+      	let data = JSON.stringify(unSanitize({
+      		page: paging,
+      		order: "",
+      		property: "",
+      		size: 20,
+      		startDate: startDate,
+      		endDate: endDate,
+      		cardID: cardID,
+      		cardStatus: cardStatus,
+      		cardTypeCode: cardTypeCode,
+      		clientCode: clientCode,
+      		proxyNumber: proxyNumber,
+      		maskCardNumber: maskCardNumber,
+      		issuanceType: issuanceType
+      	}));
+      	$.ajax({
+      		type: "POST",
+      		dataType: "json",
+      		contentType: "application/json",
+      		url: $("#fetchCardListUrl").val(),
+      		data: data,
+      		async: false,
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (data, status, xhr) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			data = sanitize(unSanitize(data));
+
+      			var trHTML = '';
+      			if (trHTML === '') {
+      				var slno = (paging * 10);
+      				var startno = (paging * 10) + 1;
+      				$('#submitButton').html('Filter');
+      				$("#cardListTable").empty();
+      				$("#smartSearchFieldsDiv").slideUp();
+      				var itemVal = data.cardList;
+      				if (itemVal != null && itemVal !== '' && itemVal !== "[]" && itemVal.length > 0) {
+      					$(itemVal).each(function (i, item) {
+      						slno = slno + 1;
+      						var createdAtDate = new Date(itemVal[i].createdAt);
+      						var date = createdAtDate.getDate();
+      						var month = createdAtDate.getMonth() + 1;
+      						var year = createdAtDate.getFullYear();
+      						var hour = createdAtDate.getHours();
+      						var minute = createdAtDate.getMinutes();
+      						var seconds = createdAtDate.getSeconds();
+      						var createdAt = year + "/" + month + "/" + date + " " + hour + ":" + minute + ":" + seconds;
+      						var demoCardId = itemVal[i].cardHashId;
+      						$("#cardListDownload").show();
+      						trHTML += '<tr class="testingg"><td style=\"white-space: nowrap\">' + slno + '</td>';
+      						trHTML += '<td style=\"white-space: nowrap\">' + ((createdAt == null || createdAt == '') ? "" : createdAt) + '</td>';
+
+      						switch (itemVal[i].cardStatus) {
+      							case 'Active':
+      								trHTML += '<td><span class="badge badge-success tstatus">' + itemVal[i].cardStatus + '</span></td>';
+      								break;
+      							case 'Inactive':
+      								trHTML += '<td><span class="badge badge-warning tstatus">' + itemVal[i].cardStatus + '</span></td>';
+      								break;
+      							case 'P_Block':
+      								trHTML += '<td><span class="badge badge-danger tstatus">' + itemVal[i].cardStatus + '</span></td>';
+      								break;
+      							case 'T_block':
+      								trHTML += '<td><span class="badge badge-danger tstatus">' + itemVal[i].cardStatus + '</span></td>';
+      								break;
+      							default:
+      								trHTML += '<td><span class="badge badge-info tstatus">' + ((itemVal[i].cardStatus == null || itemVal[i].cardStatus == '') ? "" :
+      									itemVal[i].cardStatus) + '</span></td>';
+      								break;
+      						}
+      						if (itemVal[i].customerHashId == null || itemVal[i].customerHashId == '') {
+      							trHTML += '<td style=\"white-space: nowrap\">' + NA + '</td>';
+      						} else {
+      							const url = '${pageContext.request.contextPath}/customer/customerDetails?customerHashId=' + itemVal[i].customerHashId;
+      							trHTML += "<td style=\"white-space: nowrap\"><a href='#' onclick='window.open(\"" + url + "\");'>" + itemVal[i].customerHashId + "</a></td>";
+      							<%--trHTML += '<td style=\"white-space: nowrap\"><a target="_blank" href="${pageContext.request.contextPath}/customer/customerDetails?customerHashId=' + itemVal[i].customerHashId + '">' + itemVal[i].customerHashId + '</a></td>';--%>
+      						}
+      						trHTML += '<td style=\"white-space: nowrap\">' + ((itemVal[i].clientHashId == null || itemVal[i].clientHashId == '') ? "" : itemVal[i].clientHashId) + '</td>';
+      						trHTML += '<td style=\"white-space: nowrap\">' + ((itemVal[i].cardHashId == null || itemVal[i].cardHashId == '') ? "" : itemVal[i].cardHashId) + '</td>';
+      						trHTML += '<td style=\"white-space: nowrap\">' + ((itemVal[i].proxyNumber == null || itemVal[i].proxyNumber == '') ? "" : itemVal[i].proxyNumber) + '</td>';
+      						trHTML += '<td style=\"white-space: nowrap\">' + ((itemVal[i].maskCardNumber == null || itemVal[i].maskCardNumber == '') ? "" : itemVal[i].maskCardNumber) + '</td>';
+      						trHTML += '<td style=\"white-space: nowrap\">' + ((itemVal[i].cardType.name == null || itemVal[i].cardType.name == '') ? "" :
+      							(itemVal[i].cardType.name + " (" + itemVal[i].cardType.code + ")")) + '</td>';
+      						trHTML += '<td style=\"white-space: nowrap\">' + ((itemVal[i].issuanceType == null || itemVal[i].issuanceType == '') ? "" : itemVal[i].issuanceType) + '</td>';
+      						trHTML += '<td style=\"white-space: nowrap\">' + ((itemVal[i].firstName == null || itemVal[i].firstName == '') ? "" :
+      							itemVal[i].firstName) + '</td>' + '<td style=\"white-space: nowrap\">' + ((itemVal[i].middleName == null || itemVal[i].middleName == '') ? "" :
+      							itemVal[i].middleName) + '</td>' + '<td style=\"white-space: nowrap\">' + ((itemVal[i].lastName == null || itemVal[i].lastName == '') ? "" :
+      							itemVal[i].lastName) + '</td>' + '<td style=\"white-space: nowrap\">' + ((itemVal[i].mobileNumber == null || itemVal[i].mobileNumber == '') ? "" :
+      							itemVal[i].mobileNumber) + '</td>' + '<td style=\"white-space: nowrap\">' + ((itemVal[i].emailId == null || itemVal[i].emailId == '') ? "" :
+      							itemVal[i].emailId) + '</td>';
+      						trHTML += '</tr>';
+      					});
+      				} else {
+      					$("#cardListTable").empty();
+      					trHTML += '<tr class="odd testingg"><td class="dataTables_empty" colspan="55" valign="top">No Cards available in table</td></tr>';
+      					$('#paginationn').twbsPagination('destroy');
+      					$("#paging_info").html("");
+      					$("#cardListDownload").hide();
+      				}
+      				$('#cardListTable').html(trHTML);
+      			}
+      			if (value == 0 && isPaging == true) {
+      				value = 1;
+      			}
+      			paginationForCards(data.pagination.totalPages, value);
+      			$("#paging_info").html("Showing " + startno + " to " + slno + " of " + data.pagination.totalElements + " entries");
+
+      		},
+      		error: function (xhr) {
+      			$("#smartSearchFieldsDiv").slideUp();
+      			if (xhr.readyState == 0) {
+      				$("#error_refundNotification").modal('show');
+      				$(".refunded_body").html("service is temporarily down,please try again later!");
+      			} else {
+      				var trHTML = '';
+      				var responseMessage = JSON.parse(xhr.responseText);
+      				var message = responseMessage.message;
+      				$('#paginationn').twbsPagination('destroy');
+      				$(".testingg").empty();
+      				trHTML += '<tr class="odd testingg"><td class="dataTables_empty" colspan="45">No Records Found !</td></tr>';
+      				$('#cardListTable').append(trHTML);
+      				$("#paging_info").html("");
+      				$("#cardListDownload").hide();
+      			}
+      		},
+      		complete: function (xhr, status) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      		}
+      	});
+      }
+
+      function paginationForCards(totalPages, val) {
+      	if (val == '0') {
+      		$('#paginationn').twbsPagination('destroy');
+      	}
+      	if (totalPages === 0) {
+      		totalPages = 1;
+      	}
+
+      	$('#paginationn').twbsPagination({
+      		totalPages: totalPages,
+      		visiblePages: 10,
+      		startPage: 1,
+      		hideOnlyOnePage: false,
+      		initiateStartPageClick: false,
+      		first: 'First',
+      		prev: 'Previous',
+      		next: 'Next',
+      		last: 'Last',
+      		onPageClick: function (event, page) {
+      			if ($('#totalPagesId').val() != 1) {
+      				searchFilter(page - 1, true);
+      			} else {
+      				$('#totalPagesId').val(2);
+      			}
+      		}
+      	});
+      }
+
+      function cardListDownload() {
+      	$("#cardListDownload").attr("disabled", true);
+      	$("#cardListDownload").html("Please Wait... <i class='fas fa-spinner fa-spin'></i>");
+      	const dateRange = $('#daterange').val();
+      	const dateArray = dateRange.split('-');
+      	const d = new Date(dateArray[0]);
+      	const d1 = new Date(dateArray[1]);
+      	let startDate = $.datepicker.formatDate('yy-mm-dd', d);
+      	let endDate = $.datepicker.formatDate('yy-mm-dd', d1);
+      	if (startDate === 'NaN-NaN-NaN' && endDate === 'NaN-NaN-NaN') {
+      		startDate = '';
+      		endDate = '';
+      	}
+      	const customerHashId = $("#customerHashId").val();
+      	const clientCode = $("#clientCode").val();
+      	const cardId = $('#cardId').val();
+      	const proxyNumber = $('#proxyNumber').val();
+      	const maskCardNumber = $('#maskCardNumber').val();
+      	const cardStatus = $('#cardStatus').val();
+      	const cardTypeCode = $('#cardTypeCode').val();
+      	const issuanceType = $('#issuanceType').val();
+      	const cardListDownloadUrl = $("#cardListDownloadUrl").val() + "?" + "startDate=" + startDate + "&endDate=" + endDate + "&cardId=" + cardId + "&proxyNumber=" + proxyNumber + "&maskCardNumber=" + maskCardNumber + "&maskCardNumber=" + maskCardNumber + "&cardStatus=" + cardStatus + "&cardTypeCode=" + cardTypeCode + "&customerHashId=" + customerHashId + "&clientCode=" + clientCode + "&issuanceType=" + issuanceType;
+      	$.ajax({
+      		url: cardListDownloadUrl,
+      		type: 'GET',
+      		async: true,
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		xhrFields: {
+      			responseType: 'blob'
+      		},
+      		success: function (data, status, xhr) {
+      			const a = document.createElement('a');
+      			const url = window.URL.createObjectURL(data);
+      			a.href = url;
+      			a.download = "Card_Report_" + new Date().getTime() + ".csv";
+      			document.body.append(a);
+      			a.click();
+      			a.remove();
+      			window.URL.revokeObjectURL(url);
+      		},
+      		error: function (data) {
+      			if (data.readyState == 0) {
+      				$("#error_refundNotification").modal('show');
+      				$(".refunded_body").html("service is temporarily down,please try again later.");
+      			} else {
+      				$("#error_refundNotification").modal('show');
+      				$(".refunded_body").html("File not found");
+      			}
+      		},
+      		complete: function (xhr, status) {
+      			const contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			$("#cardListDownload").attr("disabled", false);
+      			$("#cardListDownload").html('<i class="fa fa-download" aria-hidden="true"></i> Download');
+      		}
+      	});
+      }
+
+      function getClientList() {
+      	generateClientDropdown($("#fetchAllClientUrl").val(), false, "clientCode", null);
+      }
+
+      function resetFields() {
+      	$(".clear").each(function (index, element) {
+      		$(element).val("");
+      	});
+
+      	var clientDetails = $("#clientDetails").val();
+
+      	var decodedClientDetails = window.atob(clientDetails);
+      	if (decodedClientDetails == undefined || decodedClientDetails == null || decodedClientDetails == "" || decodedClientDetails == "[]" || decodedClientDetails.length == 0) {
+
+      		$("#clientCode").val("");
+      		$("#clientCode").trigger('change');
+      	}
+      }
+    </script> -->
+</body>
+
+</html>

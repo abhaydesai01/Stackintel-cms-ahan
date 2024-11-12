@@ -1,0 +1,3676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+  <!-- META SECTION -->
+  <title>ahan | Matching Engine</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+  <!-- EOF CSS INCLUDE -->
+
+  <style type="text/css">
+    tr.collapse_header {
+      display: none;
+    }
+
+    tr.transRow,
+    tr.testingg {
+      display: table-row;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+
+      <!-- PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrap">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <div class="pull-right">
+                  <a href="javascript:void(0)" class="btn btn-xs btn-primary ripple" onclick="toggleSmartSearch();"><i
+                      class="fa fa-search" aria-hidden="true"></i> Search
+                  </a>
+                  <button onclick="download();" style="display: none" id="iccTransactionDownload"
+                    class="btn btn-xs btn-primary ripple">
+                    <i class="fa fa-download" aria-hidden="true"></i> Download
+                  </button>
+                </div>
+                <h4 class="page-title">ICC Transactions</h4>
+              </div>
+            </div>
+          </div>
+          <div class="" style="min-height: 73vh">
+            <form class="row kycReqRep" id="smartSearchFieldsDiv" style="display: none">
+              <input type="hidden" id="getIccTransactionUrl" value="${getIccTransactionUrl}" />
+              <input type="hidden" id="getWalletFundTransactionUrl" value="${getWalletFundTransactionUrl}" />
+              <input type="hidden" id="getUpdateInwardReuqestUrl" value="${getUpdateInwardReuqestUrl}" />
+              <input type="hidden" id="getNotApplicableInwardReuqestUrl" value="${getNotApplicableInwardReuqestUrl}" />
+              <input type="hidden" id="getprefundsmatchUrl" value="${getprefundsmatchUrl}" />
+              <input type="hidden" id="getUpdatePreFundUrl" value="${getUpdatePreFundUrl}" />
+              <input type="hidden" id="getReturnFundsUrl" value="${getReturnFundsUrl}" />
+              <input type="hidden" id="icc_currency" />
+              <input type="hidden" id="icc_amount" />
+              <input type="hidden" id="icc_transaction_id" />
+              <input type="hidden" id="icc_name" />
+              <input type="hidden" id="icc_createdAt" />
+              <input type="hidden" id="icc_status" />
+              <input type="hidden" id="walletFund_currency" />
+              <input type="hidden" id="walletFund_amount" />
+              <input type="hidden" id="walletFund_transaction_id" />
+              <input type="hidden" id="walletFund_name" />
+              <input type="hidden" id="walletFund_createdAt" />
+              <input type="hidden" id="walletFund_status" />
+              <input type="hidden" id="walletFund_id" />
+              <input type="hidden" id="icc_id" />
+              <input type="hidden" id="preFund_amount" />
+              <input type="hidden" id="preFund_client_name" />
+              <input type="hidden" id="preFund_transaction_id" />
+              <input type="hidden" id="preFund_status" />
+              <input type="hidden" id="preFund_id" />
+              <input type="hidden" id="preFund_client_currency" />
+              <input type="hidden" id="preFund_createdAt" />
+              <input type="hidden" id="getCountryListUrl" value="${getCountryListUrl}" />
+
+              <div id="demo-custom-toolbar">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Select Date</label>
+                      <input type="text" name="dateRange" class="form-control" id="daterange"
+                        placeholder="Select a date" readonly />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="currencyCode" class="control-label">Currency</label>
+                      <input type="hidden" id="currencyCodeValueHold" name="currencyCodeValueHold" value="" />
+                      <select id="currencyCode" name="currencyCode" class="form-control enableSelect2" required>
+                        <option value="">Select Currency</option>
+                      </select>
+                      <p id="currencyCodeError" class="error field_err"></p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Remitter Name</label>
+                      <input type="text" name="remitterName" value="" placeholder="Enter Remitter Name"
+                        class="form-control" id="remitterName" required />
+                      <span id="remitterNameError" class="error field_err"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Amount</label>
+                      <input type="text" name="amount" value="" placeholder="Enter Amount" class="form-control"
+                        onkeyup="validateUpto2DecimalPlaces(this);" id="amount" required />
+                      <span id="amountError" class="error field_err"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Transaction Status</label>
+                      <select id="transactionstatus" class="form-control selectpicker">
+                        <option value="All">All</option>
+                        <option value="APPROVED">Approved</option>
+                        <option value="DECLINED">Declined</option>
+                        <option value="PENDING">Pending</option>
+                        <option value="REJECTED">Rejected</option>
+                        <option value="NA">NA</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group text-center mt-4">
+                      <button type="button" class="btn btn-primary btn-sm px-5 ripple" title="Search" id="submitButton"
+                        onclick="fetchMe(0,false);">
+                        Filter
+                      </button>
+                      <button class="btn btn-default btn-sm px-5 ripple" type="reset" onclick="resetFields()">
+                        Clear
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="panel-body p-0">
+              <div class="table-wrapper table-responsive" style="max-height: 50vh">
+                <table id="Transaction_Report" class="table table-striped table-bordered">
+                  <thead>
+                    <tr id="transRow">
+                      <th></th>
+                      <th>Sl.No</th>
+                      <th>Date</th>
+                      <th>Transaction Id</th>
+                      <th>Bank Reference Number</th>
+                      <th>Status</th>
+                      <th>Currency Code</th>
+                      <th>Amount</th>
+                      <th>Remitter Name</th>
+                      <th>Comment</th>
+                      <th>Narrative</th>
+                    </tr>
+                  </thead>
+                  <tbody id="iccTransactionListTable">
+                    <tr>
+                      <td colspan="34" class="text-center" id="noTransactionsList">
+                        Filter to view transactions!!!
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="fileDownloadDiv" style="display: none"></div>
+              <div class="paginationWrapper">
+                <p id="paging_info" class="pull-left"></p>
+                <input type="hidden" id="totalPagesId" value="1" />
+                <div class="pull-right">
+                  <ul class="pagination-sm" id="paginationn"></ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 pt-3 pb-3">
+                <a href="javascript:void(0)" class="btn btn-xs btn-primary px-5 ripple"
+                  onclick="notApplicableButton();"><i aria-hidden="true"></i>Not Applicable</a>
+                <a href="javascript:void(0)" class="btn btn-xs btn-primary px-5 ripple" id="returnFundsButtonID"
+                  onclick="returnFundsButton();"><i aria-hidden="true"></i>Return Funds</a>
+                <a href="javascript:void(0)" class="btn btn-xs btn-primary px-5 ripple" onclick="openWalletFund();"><i
+                    aria-hidden="true"></i>Wallet Fund Request</a>
+                <a href="javascript:void(0)" class="btn btn-xs btn-primary px-5 ripple" onclick="openPrefund();"><i
+                    aria-hidden="true"></i>Prefund Request</a>
+              </div>
+            </div>
+            <hr />
+            <div class="panel-body" style="position: relative; background: #fff; display: none" id="walletFund">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="page-title-box">
+                    <div class="pull-right">
+                      <a href="javascript:void(0)" class="btn btn-xs btn-primary ripple"
+                        onclick="toggleSmartSearch1();"><i class="fa fa-search" aria-hidden="true"></i>
+                        Search
+                      </a>
+                    </div>
+                    <h4 class="page-title">Wallet Fund Requests</h4>
+                  </div>
+                </div>
+              </div>
+              <form class="row" id="smartSearchFieldsDiv1" style="display: none">
+                <input type="hidden" id="clientCodeValueHold" value="${clientCode}" />
+                <div id="demo-custom-toolbar">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Select Date</label>
+                        <input type="text" name="dateRange" class="form-control" id="daterange_walletFund"
+                          placeholder="Select a date" readonly />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="wallet_currency" class="control-label">Currency</label>
+                        <input type="hidden" id="wallet_currency_CodeValueHold" name="currencyCodeValueHold"
+                          value="${client.currencyCode}" />
+                        <select id="wallet_currency" name="currencyCode" class="form-control enableSelect2"
+                          required></select>
+                        <p id="currencyCodeError" class="error field_err"></p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="remitterName" value="${client.remitterName}" placeholder="Enter Name"
+                          class="form-control" id="walletRemitterName" required />
+                        <span id="remitterNameError" class="error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Amount</label>
+                        <input type="text" name="amount" value="${client.amount}" placeholder="Enter Amount"
+                          class="form-control" onkeyup="validateUpto2DecimalPlaces(this);" id="wallet_amount"
+                          required />
+                        <span id="amountError" class="error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Transaction Status</label>
+                        <input type="hidden" id="wallet_status_valueHold" name="currencyCodeValueHold"
+                          value="${client.currencyCode}" />
+                        <select id="walletTransactionStatus" class="form-control selectpicker">
+                          <option value="All">All</option>
+                          <option value="APPROVED">Approved</option>
+                          <option value="DECLINED">Declined</option>
+                          <option value="PENDING">Pending</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label>Unique Payment Id</label>
+                        <input type="text" name="uniquePaymentIdW" value="${client.uniquePaymentIdW}"
+                          placeholder="Enter Unique Payment Id" class="form-control" id="uniquePaymentIdW" required />
+                        <span id="uniquePaymentIdWError" class="error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label>Unique Payer Id</label>
+                        <input type="text" name="uniquePayerIdW" value="${client.uniquePayerIdW}"
+                          placeholder="Enter Unique Payer Id" class="form-control" id="uniquePayerIdW" required />
+                        <span id="uniquePayerIdWError" class="error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group text-center mt-4">
+                        <button id="submit_button" name="submitButton" class="btn btn-primary btn-sm px-5 ripple"
+                          type="button" onclick="fetchWalletFund(0,false);">
+                          Filter
+                        </button>
+                        <button class="btn btn-default btn-sm px-5 ripple" type="reset" onclick="resetFields()">
+                          Clear
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="panel-body p-0">
+                <div class="table-wrapper table-responsive" style="max-height: 50vh">
+                  <table id="walletFund_Report" class="table table-striped table-bordered">
+                    <thead>
+                      <tr id="transRow">
+                        <th></th>
+                        <th>Sl.No</th>
+                        <th>Date</th>
+                        <th>System Reference Number</th>
+                        <th>Currency</th>
+                        <th>Amount</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Unique Payment Id</th>
+                        <th>Unique Payer Id</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="iccWalletFundListTable">
+                      <tr>
+                        <td colspan="34" class="text-center" id="noWalletFundList">
+                          No Data Found
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="fileDownloadDiv" style="display: none"></div>
+                <div class="paginationWrapper">
+                  <p id="paging_info_walletFund" class="pull-left"></p>
+                  <input type="hidden" id="totalPagesId_walletFund" value="1" />
+                  <div class="pull-right">
+                    <ul class="pagination-sm" id="pagination1"></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 pt-3 pb-3">
+                  <a href="javascript:void(0)" class="btn btn-xs btn-primary px-5 ripple"
+                    onclick="reconcileButton();"><i aria-hidden="true"></i>Reconcile</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body" style="position: relative; background: #fff; display: none" id="walletPreFund">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="page-title-box">
+                    <div class="pull-right">
+                      <a href="javascript:void(0)" class="btn btn-xs btn-primary ripple"
+                        onclick="toggleSmartSearch2();"><i class="fa fa-search" aria-hidden="true"></i>
+                        Search
+                      </a>
+                    </div>
+                    <h4 class="page-title">Client PreFund Requests</h4>
+                  </div>
+                </div>
+              </div>
+              <form class="row" id="smartSearchFieldsDiv2" style="display: none">
+                <input type="hidden" id="clientCodeValueHold" value="${clientCode}" />
+                <div id="demo-custom-toolbar">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="preFund_currency" class="control-label">
+                          <span style="color: red">*</span>
+                          Currency</label>
+                        <input type="hidden" id="preFund_currency_CodeValueHold" name="currencyCodeValueHold"
+                          value="${client.currencyCode}" />
+                        <select id="preFund_currency" name="currencyCode" class="form-control enableSelect2" required>
+                          <option value="">Select a Client</option>
+                          <option value="Card_Client_TEST_4">
+                            Card_Client_TEST_4
+                          </option>
+                        </select>
+                        <p id="preFundCurrencyCodeError" class="error field_err"></p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>PreFund Name</label>
+                        <input type="text" name="preFundName" value="" placeholder="Enter preFund Name"
+                          class="form-control" id="preFund_Name" required />
+                        <span id="preFundNameError" class="error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>System Reference Number</label>
+                        <input type="text" name="systemReferenceNumber" value=""
+                          placeholder="Enter systemReferenceNumber" class="form-control"
+                          onkeyup="validateUpto2DecimalPlaces(this);" id="preFund_SystemReferenceNumber" required />
+                        <span id="amountError" class="error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Amount</label>
+                        <input type="text" name="amount" value="" placeholder="Enter amount" class="form-control"
+                          id="wallet_prefund_amount" required />
+                        <span id="prefund_amount_error" class="error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label>Unique Payment Id</label>
+                        <input type="text" name="uniquePaymentId" value="" placeholder="Enter Unique Payment Id"
+                          class="form-control" id="uniquePaymentId" required />
+                        <span id="uniquePaymentIdError" class="error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label>Unique Payer Id</label>
+                        <input type="text" name="uniquePayerId" value="" placeholder="Enter Unique Payer Id"
+                          class="form-control" id="uniquePayerId" required />
+                        <span id="uniquePayerIdError" class="error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group text-center mt-4">
+                        <button id="submit_button" name="submitButton" class="btn btn-primary btn-sm px-5 ripple"
+                          type="button" onclick="fetchPreFund(0,false);">
+                          Filter
+                        </button>
+                        <button class="btn btn-default btn-sm px-5 ripple" type="reset"
+                          onclick="resetPreFundRequestFields()">
+                          Clear
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="panel-body p-0">
+                <div class="table-wrapper">
+                  <table id="preFund_Report" class="
+                        table table-striped table-bordered table-responsive
+                      ">
+                    <thead>
+                      <tr id="transRow">
+                        <th></th>
+                        <th>Sl.No</th>
+                        <th>Date</th>
+                        <th>Destination Currency</th>
+                        <th>System Reference Number</th>
+                        <th>DESTINATION AMOUNT</th>
+                        <th>Client Name</th>
+                        <th>PRE-FUND NAME</th>
+                        <th>Unique Payment Id</th>
+                        <th>Unique Payer Id</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="iccWalletpreFundListTable">
+                      <tr>
+                        <td colspan="34" class="text-center" id="nopreFundList">
+                          No Data Found
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="fileDownloadDiv" style="display: none"></div>
+                <div class="paginationWrapper">
+                  <p id="paging_info_preFund" class="pull-left"></p>
+                  <input type="hidden" id="totalPagesId_preFund" value="1" />
+                  <div class="pull-right">
+                    <ul class="pagination-sm" id="pagination2"></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 pt-3 pb-3">
+                  <a href="javascript:void(0)" class="btn btn-xs btn-primary px-5 ripple"
+                    onclick="reconcileButtonForpreFund();"><i aria-hidden="true"></i>Reconcile</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+  </div>
+  <!-- END PAGE CONTAINER -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="trxnsDetailModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-custom modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" onclick="reconcileCancel();">
+            &times;
+          </button>
+          <h4 class="modal-title" id="title_card">Reconcile</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <table class="table table-striped table-bordered table-responsive">
+                  <thead>
+                    <tr>
+                      <th>Key</th>
+                      <th>ICC Transaction</th>
+                      <th>Wallet Fund Request</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reconcileDataList"></tbody>
+                </table>
+                <div class="form-group">
+                  <label>Comment<sup>*</sup></label>
+                  <textarea rows="2" class="form-control" id="comments" name="comments"></textarea>
+                  <span id="commentError" class="error field_err"></span>
+                </div>
+                <div class="form-group text-center">
+                  <button id="submit_reconcile_button" name="submitButton" class="btn btn-primary btn-sm ripple"
+                    type="button" onclick="reconcileSubmit();">
+                    Submit
+                  </button>
+                  <button class="btn btn-primary btn-sm ripple" onclick="reconcileCancel();">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="trxnsPrefundDetailModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-custom modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" onclick="reconcileCancelForpreFund();">
+            &times;
+          </button>
+          <h4 class="modal-title" id="title_card">Reconcile</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <table class="table table-striped table-bordered table-responsive">
+                  <thead>
+                    <tr>
+                      <th>Key</th>
+                      <th>ICC Transaction</th>
+                      <th>Client Pre-Fund Request</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reconcilepreFundDataList"></tbody>
+                </table>
+                <div class="form-group">
+                  <label>Comment<sup>*</sup></label>
+                  <textarea rows="2" class="form-control" id="preFundcomments" name="preFundcomments"></textarea>
+                  <span id="preFundcommentError" class="error field_err"></span>
+                </div>
+                <div class="form-group text-center">
+                  <button id="submit_reconcile_button" name="submitButton" class="btn btn-primary btn-sm ripple"
+                    type="button" onclick="reconcileSubmitPreFund();">
+                    Submit
+                  </button>
+                  <button class="btn btn-primary btn-sm ripple" onclick="reconcileCancelForpreFund();">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="notApplicableModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-custom modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" onclick="notApplicableCancel();">
+            &times;
+          </button>
+          <h4 class="modal-title" id="title_card">Not Applicable</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <table class="table table-striped table-bordered table-responsive" id="notApplicableTable">
+                  <thead>
+                    <tr>
+                      <th>Key</th>
+                      <th>ICC Transaction</th>
+                    </tr>
+                  </thead>
+                  <tbody id="notApplicableDataList"></tbody>
+                </table>
+                <div class="form-group">
+                  <label>Comment<sup>*</sup></label>
+                  <textarea rows="2" class="form-control" id="notApplicableComments" name="comments"></textarea>
+                  <span id="notApplicableCommentError" class="error field_err"></span>
+                </div>
+                <div class="form-group text-center">
+                  <button id="submit_notApplicable_button" name="submitButton" class="btn btn-primary btn-sm ripple"
+                    type="button" onclick="notApplicableSubmit();">
+                    Submit
+                  </button>
+                  <button class="btn btn-primary btn-sm ripple" onclick="notApplicableCancel();">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="returnFundsModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-custom modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" onclick="returnFundsCancel();">
+            &times;
+          </button>
+          <h4 class="modal-title" id="title_card">Return Funds</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <table class="table table-striped table-bordered table-responsive" id="returnFundsTable">
+                  <thead>
+                    <tr>
+                      <th>Key</th>
+                      <th>ICC Transaction</th>
+                    </tr>
+                  </thead>
+                  <tbody id="returnFundsDataList"></tbody>
+                </table>
+                <div class="form-group">
+                  <label>Comment<sup>*</sup></label>
+                  <textarea rows="2" class="form-control" id="returnFundsComments" name="comments"></textarea>
+                  <span id="returnFundsCommentError" class="error field_err"></span>
+                </div>
+                <div class="form-group text-center">
+                  <button id="submit_returnFunds_button" name="submitButton" class="btn btn-primary btn-sm ripple"
+                    type="button" onclick="returnFundsSubmit();">
+                    Submit
+                  </button>
+                  <button class="btn btn-primary btn-sm ripple" onclick="returnFundsCancel();">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " alt="" />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" id="successModal" class="btn btn-success px-5 ripple" data-dismiss="modal"
+                  onclick="closeSuccessModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " alt="" />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal"
+                  onclick="closeErrorModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="success_notApplicable_modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " alt="" />
+            <div>
+              <h4 class="notApplicable_modal_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" id="successModal" class="btn btn-success px-5 ripple" data-dismiss="modal"
+                  onclick="closeNotApplicableModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_notApplicable_modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " alt="" />
+            <div>
+              <h4 class="notApplicable_modal_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal"
+                  onclick="closeNotApplicableModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="success_returnFunds_modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " alt="" />
+            <div>
+              <h4 class="returnFunds_modal_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" id="successModal" class="btn btn-success px-5 ripple" data-dismiss="modal"
+                  onclick="closeReturnFundsModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_returnFunds_modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " alt="" />
+            <div>
+              <h4 class="returnFunds_modal_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal"
+                  onclick="closeReturnFundsModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_iccTransaction_modal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " alt="" />
+            <div>
+              <h4 class="modal_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/moment.min.js?version=2.29.0"></script>
+  <script type="text/javascript" src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- END PLUGINS -->
+
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.min.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <script type="text/javascript" src="assets/js/generateTableWithNonClickableRows.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <script type="text/javascript" src="assets/js/floatingscroll.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/dateRange.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- END SCRIPTS -->
+
+  <script type="text/javascript">
+    $(function () {
+      $(".table-wrapper").floatingScrollbar();
+    });
+
+    let spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+    let currencyObject;
+    $("document").ready(function () {
+      //to get the currency drop down
+      $.ajax({
+        url: $("#getCountryListUrl").val(),
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(result));
+
+          currencyObject = result;
+          let optionTag = "<option value = ''></option>";
+          for (let i = 0; i < result.length; i++) {
+            let eachOption = result[i];
+
+            if (
+              eachOption.currencyName != null &&
+              eachOption.currencyName !== "null" &&
+              eachOption.currencyName !== "" &&
+              eachOption.currencyCode != null &&
+              eachOption.currencyCode !== "null" &&
+              eachOption.currencyCode !== "" &&
+              eachOption.name != null &&
+              eachOption.name !== "null" &&
+              eachOption.name !== ""
+            ) {
+              optionTag +=
+                "<option value = " +
+                eachOption.currencyCode +
+                ">" +
+                eachOption.currencyName +
+                " (" +
+                eachOption.currencyCode +
+                ")</option>";
+            }
+          }
+          $("#currencyCode").html(optionTag);
+          $("#currencyCode").select2({
+            placeholder: "Select a currency",
+            allowClear: false,
+            width: "100%",
+            dropdownAutoWidth: false,
+            dropdownCss: { width: "inherit" },
+          });
+        },
+        complete: function (xhr, status) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    });
+
+    function openWalletFund() {
+      let currency = $("#icc_currency").val();
+      let amount = $("#icc_amount").val();
+      let valid = true;
+      let inwardRequestId = "";
+      if ($('input[name="icc_options"]').is(":checked")) {
+        inwardRequestId = $("#icc_id").val();
+      }
+      if (
+        inwardRequestId == null ||
+        inwardRequestId === "" ||
+        inwardRequestId === "null"
+      ) {
+        valid = false;
+        $("#error_iccTransaction_modal").modal("show");
+        $(".modal_body").html("Please select an ICC request");
+      }
+      $("#walletPreFund").fadeOut();
+      if (valid) {
+        $("#walletFund").fadeIn();
+        walletFundRequest(currency, amount, 0, "false");
+      }
+    }
+
+    function walletFundRequest(currency, amount, value, isPaging) {
+      $("#submit_button").html(spinnerUrl);
+      let paging = value;
+
+      $.ajax({
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        url: $("#getWalletFundTransactionUrl").val(),
+        data: JSON.stringify(
+          unSanitize({
+            page: paging,
+            order: "",
+            property: "",
+            size: "10",
+            currencyCode: currency,
+            amount: amount,
+          })
+        ),
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (data, status, xhr) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(data));
+
+          let trHTML = "";
+          if (trHTML === "") {
+            let slno = paging * 10;
+            let startno = paging * 10 + 1;
+            $("#iccWalletFundListTable").empty();
+            $("#smartSearchFieldsDiv1").slideUp();
+            let itemVal = data.transactions;
+            if (
+              itemVal != null &&
+              itemVal !== "" &&
+              itemVal !== "[]" &&
+              itemVal.length > 0
+            ) {
+              console.log("inside if condition");
+              $(itemVal).each(function (i, item) {
+                slno = slno + 1;
+                let createdAtDate = new Date(itemVal[i].createdAt);
+                let date = createdAtDate.getDate();
+                let month = createdAtDate.getMonth() + 1;
+                let year = createdAtDate.getFullYear();
+                let hour = createdAtDate.getHours();
+                let minute = createdAtDate.getMinutes();
+                let seconds = createdAtDate.getSeconds();
+                let createdAt =
+                  year +
+                  "/" +
+                  month +
+                  "/" +
+                  date +
+                  " " +
+                  hour +
+                  ":" +
+                  minute +
+                  ":" +
+                  seconds;
+                trHTML += '<tr class="testingg header">';
+
+                if (itemVal[i].status === "Pending") {
+                  trHTML +=
+                    '<td><input class="custom_radio" type="radio" name="walletFund_options" id="handleWalletFundClick_' +
+                    slno +
+                    '" onclick="handleWalletFundClick(\'handleWalletFundClick_' +
+                    slno +
+                    "','" +
+                    itemVal[i].currency +
+                    "','" +
+                    itemVal[i].amount +
+                    "','" +
+                    remitterName +
+                    "','" +
+                    itemVal[i].systemReferenceNumber +
+                    "','" +
+                    itemVal[i].status +
+                    "','" +
+                    createdAt +
+                    "','" +
+                    itemVal[i].id +
+                    '\')"><label for="handleWalletFundClick_' +
+                    slno +
+                    '"><span></span></label></td>';
+                } else {
+                  trHTML += "<td></td>";
+                }
+                trHTML += '<td style="white-space: nowrap">' + slno + "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (createdAt == null ? "" : createdAt) +
+                  "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].systemReferenceNumber == null
+                    ? ""
+                    : itemVal[i].systemReferenceNumber) +
+                  "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].currency == null ? "" : itemVal[i].currency) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].amount == null ? "" : itemVal[i].amount) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].firstName == null ? "" : itemVal[i].firstName) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].middleName == null
+                    ? ""
+                    : itemVal[i].middleName) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].lastName == null ? "" : itemVal[i].lastName) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].uniquePaymentId == null
+                    ? ""
+                    : itemVal[i].uniquePaymentId) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].uniquePayerId == null
+                    ? ""
+                    : itemVal[i].uniquePayerId) +
+                  "</td>";
+                switch (itemVal[i].status) {
+                  case "Approved":
+                    trHTML +=
+                      '<td><span class="badge badge-success tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Pending":
+                    trHTML +=
+                      '<td><span class="badge badge-info tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Declined":
+                    trHTML +=
+                      '<td><span class="badge badge-danger tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Settled":
+                    trHTML +=
+                      '<td><span class="badge badge-primary tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Unsettled":
+                    trHTML +=
+                      '<td><span class="badge badge-warning tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  default:
+                    trHTML +=
+                      '<td><span class="badge badge-default tstatus">' +
+                      (itemVal[i].status == null ? "" : itemVal[i].status) +
+                      "</span></td>";
+                    break;
+                }
+                trHTML += "</tr>";
+              });
+              paginationForWalletFundRequest(
+                data.pagination.totalPages,
+                paging
+              );
+              $("#paging_info_walletFund").html(
+                "Showing " +
+                startno +
+                " to " +
+                slno +
+                " of " +
+                data.pagination.totalElements +
+                " entries"
+              );
+            } else {
+              $("#iccWalletFundListTable").empty();
+              trHTML +=
+                '<tr class="odd testingg"><td class="dataTables_empty" colspan="55" valign="top">No Transaction available in table</td></tr>';
+              /* Reset Code */
+              $("#pagination1").twbsPagination("destroy");
+              $("#paging_info_walletFund").html("");
+              $("#iccTransactionDownload").hide();
+            }
+            $("#noWalletFundList").hide();
+            $("#iccWalletFundListTable").html(trHTML);
+          }
+          if (paging === 0 && isPaging === true) {
+            paging = 1;
+          }
+
+          $("#submit_button").html("Filter");
+        },
+        error: function (xhr) {
+          $("#smartSearchFieldsDiv1").slideUp();
+          let trHTML = "";
+          let responseMessage = JSON.parse(xhr.responseText);
+          let message = responseMessage.message;
+          $("#pagination1").twbsPagination("destroy");
+          $(".testingg").empty();
+          trHTML +=
+            '<tr class="odd testingg"><td class="dataTables_empty" colspan="45" valign="top">No Records Found</td></tr>';
+          $("#iccWalletFundListTable").append(trHTML);
+          $("#paging_info_walletFund").html("");
+          $("#iccTransactionDownload").hide();
+          $("#noWalletFundList").hide();
+          $("#submit_button").html("Filter");
+        },
+        complete: function (xhr, status) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function openPrefund() {
+      $("#walletFund").fadeOut();
+      let currency = $("#icc_currency").val();
+      let amount = $("#icc_amount").val();
+      let valid = true;
+      let inwardRequestId = "";
+      if ($('input[name="icc_options"]').is(":checked")) {
+        inwardRequestId = $("#icc_id").val();
+      }
+      if (
+        inwardRequestId == null ||
+        inwardRequestId === "" ||
+        inwardRequestId === "null"
+      ) {
+        valid = false;
+        $("#error_iccTransaction_modal").modal("show");
+        $(".modal_body").html("Please select an ICC request");
+      }
+      if (valid) {
+        $("#walletPreFund").fadeIn();
+        prefundRequest(currency, amount, 0, "false");
+      }
+    }
+
+    function prefundRequest(currency, amount, value, isPaging) {
+      $("#submit_button").html(spinnerUrl);
+      let paging = value;
+
+      $.ajax({
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        url: $("#getprefundsmatchUrl").val(),
+        data: JSON.stringify(
+          unSanitize({
+            page: paging,
+            order: "",
+            property: "",
+            size: "10",
+            currencyCode: currency,
+            amount: amount,
+          })
+        ),
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (data, status, xhr) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(data));
+
+          let trHTML = "";
+          if (trHTML === "") {
+            let slno = paging * 10;
+            let startno = paging * 10 + 1;
+            $("#iccWalletpreFundListTable").empty();
+            $("#smartSearchFieldsDiv2").slideUp();
+            var itemVal = data.transactions;
+            if (
+              itemVal != null &&
+              itemVal !== "" &&
+              itemVal !== "[]" &&
+              itemVal.length > 0
+            ) {
+              $(itemVal).each(function (i, item) {
+                slno = slno + 1;
+                let createdAtDate = new Date(itemVal[i].createdAt);
+                let date = createdAtDate.getDate();
+                var month = createdAtDate.getMonth() + 1;
+                let year = createdAtDate.getFullYear();
+                var hour = createdAtDate.getHours();
+                let minute = createdAtDate.getMinutes();
+                var seconds = createdAtDate.getSeconds();
+                let createdAt =
+                  year +
+                  "/" +
+                  month +
+                  "/" +
+                  date +
+                  " " +
+                  hour +
+                  ":" +
+                  minute +
+                  ":" +
+                  seconds;
+                let remitterName =
+                  itemVal[i].firstName +
+                  " " +
+                  itemVal[i].middleName +
+                  " " +
+                  itemVal[i].lastName;
+                trHTML += '<tr class="testingg header">';
+                trHTML +=
+                  '<td><input class="custom_radio" type="radio" name="preFund_options" id="handleClickpreFund_' +
+                  slno +
+                  '" onclick="handlepreFundClick(\'handleWalletFundClick_' +
+                  slno +
+                  "','" +
+                  currency +
+                  "','" +
+                  itemVal[i].amount +
+                  "','" +
+                  itemVal[i].prefundName +
+                  "','" +
+                  itemVal[i].systemReferenceNumber +
+                  "','" +
+                  itemVal[i].status +
+                  "','" +
+                  createdAt +
+                  "','" +
+                  itemVal[i].id +
+                  '\')"><label for="handleClickpreFund_' +
+                  slno +
+                  '"><span></span></label></td>';
+                trHTML += '<td style="white-space: nowrap">' + slno + "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (createdAt == null ? "" : createdAt) +
+                  "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' + currency + "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  itemVal[i].systemReferenceNumber +
+                  "</td>";
+                trHTML +=
+                  '<td  style="white-space: nowrap">' +
+                  itemVal[i].amount +
+                  "</td>";
+                trHTML +=
+                  '<td  style="white-space: nowrap">' +
+                  itemVal[i].companyName +
+                  "</td>";
+                trHTML +=
+                  '<td  style="white-space: nowrap">' +
+                  itemVal[i].prefundName +
+                  "</td>";
+                trHTML +=
+                  '<td  style="white-space: nowrap">' +
+                  itemVal[i].uniquePaymentId +
+                  "</td>";
+                trHTML +=
+                  '<td  style="white-space: nowrap">' +
+                  itemVal[i].uniquePayerId +
+                  "</td>";
+                trHTML +=
+                  '<td><span class="badge badge-danger tstatus">' +
+                  itemVal[i].status +
+                  "</span></td>";
+                trHTML += "</tr>";
+              });
+              paginationForpreFundRequest(data.pagination.totalPages, paging);
+              $("#paging_info_preFund").html(
+                "Showing " +
+                startno +
+                " to " +
+                slno +
+                " of " +
+                data.pagination.totalElements +
+                " entries"
+              );
+            } else {
+              $("#iccWalletpreFundListTable").empty();
+              trHTML +=
+                '<tr class="odd testingg"><td class="dataTables_empty" colspan="55" valign="top">No Transaction available in table</td></tr>';
+              /* Reset Code */
+              $("#pagination2").twbsPagination("destroy");
+              $("#paging_info_preFund").html("");
+              $("#iccTransactionDownload").hide();
+            }
+            $("#nopreFundList").hide();
+            $("#iccWalletpreFundListTable").html(trHTML);
+          }
+          if (paging === 0 && isPaging === true) {
+            paging = 1;
+          }
+
+          $("#submit_button").html("Filter");
+        },
+        error: function (xhr) {
+          $("#smartSearchFieldsDiv2").slideUp();
+          let trHTML = "";
+          let responseMessage = JSON.parse(xhr.responseText);
+          let message = responseMessage.message;
+          $("#pagination2").twbsPagination("destroy");
+          $(".testingg").empty();
+          trHTML +=
+            '<tr class="odd testingg"><td class="dataTables_empty" colspan="45" valign="top">No Records Found!</td></tr>';
+          $("#iccWalletpreFundListTable").append(trHTML);
+          $("#paging_info_preFund").html("");
+          $("#iccTransactionDownload").hide();
+          $("#nopreFundList").hide();
+          $("#submit_button").html("Filter");
+        },
+        complete: function (xhr, status) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function fetchMe(value, isPaging) {
+      $("#submitButton").html(spinnerUrl);
+      let paging = value;
+      let currencyCode = $("#currencyCode").val();
+      let remitterName = $("#remitterName").val();
+      let amount = $("#amount").val();
+      let dateRange = $("#daterange").val();
+      let status = $("#transactionstatus").val();
+      let dateArray = dateRange.split("-");
+      let d = new Date(dateArray[0]);
+      let d1 = new Date(dateArray[1]);
+      let startDate = $.datepicker.formatDate("yy-mm-dd", d);
+      let endDate = $.datepicker.formatDate("yy-mm-dd", d1);
+      if (startDate === "NaN-NaN-NaN" && endDate === "NaN-NaN-NaN") {
+        startDate = "";
+        endDate = "";
+      }
+      $.ajax({
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        url: $("#getIccTransactionUrl").val(),
+        data: JSON.stringify(
+          unSanitize({
+            page: paging,
+            order: "",
+            property: "",
+            size: "10",
+            startDate: startDate,
+            endDate: endDate,
+            currencyCode: currencyCode,
+            remitterName: remitterName,
+            amount: amount,
+            status: status,
+          })
+        ),
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (data, status, xhr) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(data));
+
+          let trHTML = "";
+          if (trHTML === "") {
+            let slno = paging * 10;
+            let startno = paging * 10 + 1;
+            $("#iccTransactionDownload").show();
+            $("#iccTransactionListTable").empty();
+            $("#smartSearchFieldsDiv").slideUp();
+            let itemVal = data.transactions;
+            if (
+              itemVal != null &&
+              itemVal !== "" &&
+              itemVal !== "[]" &&
+              itemVal.length > 0
+            ) {
+              $(itemVal).each(function (i, item) {
+                slno = slno + 1;
+                let createdAtDate = new Date(itemVal[i].createdAt);
+                let date = createdAtDate.getDate();
+                let month = createdAtDate.getMonth() + 1;
+                let year = createdAtDate.getFullYear();
+                let hour = createdAtDate.getHours();
+                let minute = createdAtDate.getMinutes();
+                let seconds = createdAtDate.getSeconds();
+                let createdAt =
+                  year +
+                  "/" +
+                  month +
+                  "/" +
+                  date +
+                  " " +
+                  hour +
+                  ":" +
+                  minute +
+                  ":" +
+                  seconds;
+                trHTML += '<tr class="testingg header">';
+                if (itemVal[i].status === "Pending") {
+                  trHTML +=
+                    '<td><input class="custom_radio" type="radio" name="icc_options" id="handleClick_' +
+                    slno +
+                    '" onclick="handleClick(\'handleClick_' +
+                    slno +
+                    "','" +
+                    itemVal[i].currency +
+                    "','" +
+                    itemVal[i].amount +
+                    "','" +
+                    window.btoa(itemVal[i].remitterName) +
+                    "','" +
+                    itemVal[i].transactionId +
+                    "','" +
+                    itemVal[i].status +
+                    "','" +
+                    createdAt +
+                    "','" +
+                    itemVal[i].id +
+                    '\')"><label for="handleClick_' +
+                    slno +
+                    '"><span></span></label></td>';
+                } else if (itemVal[i].status === "Rejected") {
+                  trHTML +=
+                    '<td><input class="custom_radio" type="radio" name="icc_options" id="handleClick_' +
+                    slno +
+                    '" onclick="handleClick(\'handleClick_' +
+                    slno +
+                    "','" +
+                    itemVal[i].currency +
+                    "','" +
+                    itemVal[i].amount +
+                    "','" +
+                    window.btoa(itemVal[i].remitterName) +
+                    "','" +
+                    itemVal[i].transactionId +
+                    "','" +
+                    itemVal[i].status +
+                    "','" +
+                    createdAt +
+                    "','" +
+                    itemVal[i].id +
+                    '\')"><label for="handleClick_' +
+                    slno +
+                    '"><span></span></label></td>';
+                } else {
+                  trHTML += "<td></td>";
+                }
+                trHTML +=
+                  '<td class="collapse_btn"><span onclick="toggleAccordian(this);" class="plus" title="Click here to expand the row">+</span> ' +
+                  slno +
+                  "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (createdAt == null ? " " : createdAt) +
+                  "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].transactionId == null
+                    ? ""
+                    : itemVal[i].transactionId) +
+                  "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].bankReferenceNumber == null
+                    ? ""
+                    : itemVal[i].bankReferenceNumber) +
+                  "</td>";
+                switch (itemVal[i].status) {
+                  case "Approved":
+                    trHTML +=
+                      '<td><span class="badge badge-success tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Pending":
+                    trHTML +=
+                      '<td><span class="badge badge-info tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Declined":
+                    trHTML +=
+                      '<td><span class="badge badge-danger tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Settled":
+                    trHTML +=
+                      '<td><span class="badge badge-primary tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Unsettled":
+                    trHTML +=
+                      '<td><span class="badge badge-warning tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  default:
+                    trHTML +=
+                      '<td><span class="badge badge-default tstatus">' +
+                      (itemVal[i].status == null ? "" : itemVal[i].status) +
+                      "</span></td>";
+                    break;
+                }
+                trHTML +=
+                  '<td id ="curr_' +
+                  slno +
+                  '" style="white-space: nowrap">' +
+                  (itemVal[i].currency == null ? "" : itemVal[i].currency) +
+                  "</td>" +
+                  '<td id="amt_' +
+                  slno +
+                  '" style="white-space: nowrap">' +
+                  (itemVal[i].amount == null ? "" : itemVal[i].amount) +
+                  "</td>" +
+                  '<td id="remit_name_' +
+                  slno +
+                  '" style="white-space: nowrap">' +
+                  (itemVal[i].remitterName == null
+                    ? ""
+                    : itemVal[i].remitterName) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].comment == null ? "" : itemVal[i].comment) +
+                  "</td>" +
+                  '<td><p style="width: 300px">' +
+                  (itemVal[i].narrative == null ? "" : itemVal[i].narrative) +
+                  "</p></td>";
+                trHTML += "</tr>";
+                trHTML += "<tr id='collapse_header' class='collapse_header'>";
+                trHTML += "<td colspan='933'>";
+                trHTML += '<div class="row">';
+                trHTML += '<div class="col-md-4">';
+                trHTML += '<div class="iccTxns_wrapper">';
+                trHTML +=
+                  '<h5 style="font-weight: 600">Country :</h5><h5>' +
+                  (itemVal[i].country == null ? "" : itemVal[i].country) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600">Source :</h5><h5>' +
+                  (itemVal[i].source == null ? "" : itemVal[i].source) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600">Remitter Account No :</h5><h5>' +
+                  (itemVal[i].remitterAccountNumber == null
+                    ? ""
+                    : itemVal[i].remitterAccountNumber) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600">Remitter Bank Name :</h5><h5>' +
+                  (itemVal[i].remitterBankName == null
+                    ? ""
+                    : itemVal[i].remitterBankName) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600">Virtual Account No :</h5><h5>' +
+                  (itemVal[i].virtualAccountNumber == null
+                    ? ""
+                    : itemVal[i].virtualAccountNumber) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600">Virtual Account Name :</h5><h5>' +
+                  (itemVal[i].virtualAccountName == null
+                    ? ""
+                    : itemVal[i].virtualAccountName) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600">Received At :</h5><h5>' +
+                  (itemVal[i].receivedAt == null
+                    ? ""
+                    : itemVal[i].receivedAt) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600">Pay Mode :</h5><h5>' +
+                  (itemVal[i].payMode == null ? "" : itemVal[i].payMode) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600">Purpose Code :</h5><h5>' +
+                  (itemVal[i].purposeCode == null
+                    ? ""
+                    : itemVal[i].purposeCode) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600">Additional Info:</h5><h5>' +
+                  (itemVal[i].additionalInfo == null
+                    ? ""
+                    : itemVal[i].additionalInfo) +
+                  "</h5>";
+                trHTML += "</div>";
+                trHTML += "</div>";
+                trHTML += "</div></td></tr>";
+              });
+              paginationForICCTransaction(data.pagination.totalPages, value);
+              $("#paging_info").html(
+                "Showing " +
+                startno +
+                " to " +
+                slno +
+                " of " +
+                data.pagination.totalElements +
+                " entries"
+              );
+            } else {
+              $("#iccTransactionListTable").empty();
+              trHTML +=
+                '<tr class="odd testingg"><td class="dataTables_empty" colspan="55" valign="top">No ICC Transaction available in table</td></tr>';
+              $("#paginationn").twbsPagination("destroy");
+              $("#paging_info").html("");
+              $("#iccTransactionDownload").hide();
+            }
+            $("#noTransactionsList").hide();
+            $("#iccTransactionListTable").html(trHTML);
+          }
+          if (value === 0 && isPaging === true) {
+            value = 1;
+          }
+
+          $("#submitButton").html("Filter");
+        },
+        error: function (xhr) {
+          $("#smartSearchFieldsDiv").slideUp();
+          let trHTML = "";
+          let responseMessage = JSON.parse(xhr.responseText);
+          let message = responseMessage.message;
+          $("#paginationn").twbsPagination("destroy");
+          $(".testingg").empty();
+          trHTML +=
+            '<tr class="odd testingg"><td class="dataTables_empty" colspan="45" valign="top">' +
+            "No ICC Transaction available in table" +
+            "</td></tr>";
+          $("#iccTransactionListTable").append(trHTML);
+          $("#paging_info").html("");
+          $("#iccTransactionDownload").hide();
+          $("#noTransactionsList").hide();
+          $("#submitButton").html("Filter");
+        },
+        complete: function (xhr, status) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    /* Toggle table collapse */
+    function toggleAccordian(element) {
+      $(element).text(function (_, value) {
+        return value === "-" ? "+" : "-";
+      });
+      $(element)
+        .closest("tr.header")
+        .next("#collapse_header")
+        .slideToggle(100)
+        .css("display", "table-row");
+    }
+
+    function paginationForICCTransaction(totalPages, val) {
+      var pagesId = $("#totalPagesId").val(val);
+      if (val === "0") {
+        $("#paginationn").twbsPagination("destroy");
+      }
+      if (totalPages === 0) {
+        totalPages = 1;
+      }
+
+      $("#paginationn").twbsPagination({
+        totalPages: totalPages,
+        visiblePages: 10,
+        startPage: 1,
+        hideOnlyOnePage: false,
+        initiateStartPageClick: false,
+        first: "First",
+        prev: "Previous",
+        next: "Next",
+        last: "Last",
+        onPageClick: function (event, page) {
+          if (pagesId !== 1) {
+            fetchMe(page - 1, true);
+          } else {
+            $("#totalPagesId").val(2);
+          }
+        },
+      });
+    }
+
+    function toggleSmartSearch() {
+      $("#smartSearchFieldsDiv").slideToggle();
+    }
+
+    /* Reset all the fields */
+    function resetFields() {
+      $(".enableSelect2").val(null).trigger("change");
+      $("#daterange").val("");
+      $("#currencyCode").val("");
+      $("#amount").val("");
+      $("#remitterName").val("");
+      $("#daterange_walletFund").val("");
+    }
+
+    function resetPreFundRequestFields() {
+      $(".enableSelect2").val(null).trigger("change");
+      $("#currencyCode").val("");
+      $("#preFundName").val("");
+      $("#systemReferenceNumber").val("");
+    }
+
+    /* Checkbox click handle */
+    function handleClick(
+      slNo,
+      currency,
+      amt,
+      remitterName,
+      transactionId,
+      status,
+      date,
+      id
+    ) {
+      remitterName = window.atob(remitterName);
+      $("#icc_currency").val(currency);
+      $("#icc_amount").val(amt);
+      $("#icc_name").val(remitterName);
+      $("#icc_transaction_id").val(transactionId);
+      $("#icc_status").val(status);
+      $("#icc_createdAt").val(date);
+      $("#icc_id").val(id);
+      $("#wallet_currency_CodeValueHold").val(currency);
+      $("#wallet_amount").val(amt);
+      $("#wallet_prefund_amount").val(amt);
+      $("#preFund_currency_CodeValueHold").val(currency);
+    }
+
+    function fetchWalletFund(value, isPaging) {
+      $("#submit_button").html(spinnerUrl);
+      var paging = value;
+      var currency = $("#wallet_currency").val();
+      var amount = $("#wallet_amount").val();
+      var dateRange = $("#daterange_walletFund").val();
+      var status = $("#walletTransactionStatus").val();
+      var remitterName = $("#walletRemitterName").val();
+      var dateArray = dateRange.split("-");
+      var d = new Date(dateArray[0]);
+      var d1 = new Date(dateArray[1]);
+      var startDate = $.datepicker.formatDate("yy-mm-dd", d);
+      var endDate = $.datepicker.formatDate("yy-mm-dd", d1);
+      if (startDate === "NaN-NaN-NaN" && endDate === "NaN-NaN-NaN") {
+        startDate = "";
+        endDate = "";
+      }
+      var uniquePaymentId = $("#uniquePaymentIdW").val();
+      var uniquePayerId = $("#uniquePayerIdW").val();
+      $.ajax({
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        url: $("#getWalletFundTransactionUrl").val(),
+        data: JSON.stringify(
+          unSanitize({
+            page: paging,
+            order: "",
+            property: "",
+            size: "10",
+            currencyCode: currency,
+            amount: amount,
+            remitterName: remitterName,
+            startDate: startDate,
+            endDate: endDate,
+            status: status,
+            uniquePaymentId: uniquePaymentId,
+            uniquePayerId: uniquePayerId,
+          })
+        ),
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (data, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(data));
+
+          var trHTML = "";
+          if (trHTML === "") {
+            var slno = paging * 10;
+            var startno = paging * 10 + 1;
+            $("#iccWalletFundListTable").empty();
+            $("#smartSearchFieldsDiv1").slideUp();
+            var itemVal = data.transactions;
+            if (
+              itemVal != null &&
+              itemVal !== "" &&
+              itemVal !== "[]" &&
+              itemVal.length > 0
+            ) {
+              $(itemVal).each(function (i, item) {
+                slno = slno + 1;
+                var createdAtDate = new Date(itemVal[i].createdAt);
+                var date = createdAtDate.getDate();
+                var month = createdAtDate.getMonth() + 1;
+                var year = createdAtDate.getFullYear();
+                var hour = createdAtDate.getHours();
+                var minute = createdAtDate.getMinutes();
+                var seconds = createdAtDate.getSeconds();
+                var createdAt =
+                  year +
+                  "/" +
+                  month +
+                  "/" +
+                  date +
+                  " " +
+                  hour +
+                  ":" +
+                  minute +
+                  ":" +
+                  seconds;
+                trHTML += '<tr class="testingg header">';
+
+                if (itemVal[i].status == "Pending") {
+                  trHTML +=
+                    '<td><input class="custom_radio" type="radio" name="walletFund_options" id="handleWalletFundClick_' +
+                    slno +
+                    '" onclick="handleWalletFundClick(\'handleWalletFundClick_' +
+                    slno +
+                    "','" +
+                    itemVal[i].currency +
+                    "','" +
+                    itemVal[i].amount +
+                    "','" +
+                    remitterName +
+                    "','" +
+                    itemVal[i].systemReferenceNumber +
+                    "','" +
+                    itemVal[i].status +
+                    "','" +
+                    createdAt +
+                    "','" +
+                    itemVal[i].id +
+                    '\')"><label for="handleWalletFundClick_' +
+                    slno +
+                    '"><span></span></label></td>';
+                } else {
+                  trHTML += "<td></td>";
+                }
+                trHTML += '<td style="white-space: nowrap">' + slno + "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (createdAt == null ? "" : createdAt) +
+                  "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].systemReferenceNumber == null
+                    ? ""
+                    : itemVal[i].systemReferenceNumber) +
+                  "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].currency == null ? "" : itemVal[i].currency) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].amount == null ? "" : itemVal[i].amount) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].firstName == null ? "" : itemVal[i].firstName) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].middleName == null
+                    ? ""
+                    : itemVal[i].middleName) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].lastName == null ? "" : itemVal[i].lastName) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].uniquePaymentId == null
+                    ? ""
+                    : itemVal[i].uniquePaymentId) +
+                  "</td>" +
+                  '<td  style="white-space: nowrap">' +
+                  (itemVal[i].uniquePayerId == null
+                    ? ""
+                    : itemVal[i].uniquePayerId) +
+                  "</td>";
+                switch (itemVal[i].status) {
+                  case "Approved":
+                    trHTML +=
+                      '<td><span class="badge badge-success tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Pending":
+                    trHTML +=
+                      '<td><span class="badge badge-info tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Declined":
+                    trHTML +=
+                      '<td><span class="badge badge-danger tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Settled":
+                    trHTML +=
+                      '<td><span class="badge badge-primary tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  case "Unsettled":
+                    trHTML +=
+                      '<td><span class="badge badge-warning tstatus">' +
+                      itemVal[i].status +
+                      "</span></td>";
+                    break;
+                  default:
+                    trHTML +=
+                      '<td><span class="badge badge-default tstatus">' +
+                      (itemVal[i].status == null ? "" : itemVal[i].status) +
+                      "</span></td>";
+                    break;
+                }
+                trHTML += "</tr>";
+              });
+              paginationForWalletFundRequest(
+                data.pagination.totalPages,
+                paging
+              );
+              $("#paging_info_walletFund").html(
+                "Showing " +
+                startno +
+                " to " +
+                slno +
+                " of " +
+                data.pagination.totalElements +
+                " entries"
+              );
+            } else {
+              $("#iccWalletFundListTable").empty();
+              trHTML +=
+                '<tr class="odd testingg"><td class="dataTables_empty" colspan="55" valign="top">No Transaction available in table</td></tr>';
+              /* Reset Code */
+              $("#pagination1").twbsPagination("destroy");
+              $("#paging_info_walletFund").html("");
+              $("#iccTransactionDownload").hide();
+            }
+            $("#noWalletFundList").hide();
+            $("#iccWalletFundListTable").html(trHTML);
+          }
+          if (paging == 0 && isPaging == true) {
+            paging = 1;
+          }
+
+          $("#submit_button").html("Filter");
+        },
+        error: function (xhr) {
+          $("#smartSearchFieldsDiv1").slideUp();
+          var trHTML = "";
+          var responseMessage = JSON.parse(xhr.responseText);
+          var message = responseMessage.message;
+          $("#pagination1").twbsPagination("destroy");
+          $(".testingg").empty();
+          trHTML +=
+            '<tr class="odd testingg"><td class="dataTables_empty" colspan="45" valign="top">No Records Found!</td></tr>';
+          $("#iccWalletFundListTable").append(trHTML);
+          $("#paging_info_walletFund").html("");
+          $("#iccTransactionDownload").hide();
+          $("#noWalletFundList").hide();
+          $("#submit_button").html("Filter");
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function paginationForWalletFundRequest(totalPages, val) {
+      var value = $("#totalPagesId_walletFund").val(val);
+      if (val == "0") {
+        $("#pagination1").twbsPagination("destroy");
+      }
+      if (totalPages === 0) {
+        totalPages = 1;
+      }
+
+      $("#pagination1").twbsPagination({
+        totalPages: totalPages,
+        visiblePages: 10,
+        startPage: 1,
+        hideOnlyOnePage: false,
+        initiateStartPageClick: false,
+        first: "First",
+        prev: "Previous",
+        next: "Next",
+        last: "Last",
+        onPageClick: function (event, page) {
+          if (value != 0) {
+            fetchWalletFund(page - 1, true);
+          } else {
+            $("#totalPagesId_walletFund").val(2);
+          }
+        },
+      });
+    }
+
+    function paginationForpreFundRequest(totalPages, val) {
+      var value = $("#totalPagesId_preFund").val(val);
+      if (val == "0") {
+        $("#pagination2").twbsPagination("destroy");
+      }
+      if (totalPages === 0) {
+        totalPages = 1;
+      }
+
+      $("#pagination2").twbsPagination({
+        totalPages: totalPages,
+        visiblePages: 10,
+        startPage: 1,
+        hideOnlyOnePage: false,
+        initiateStartPageClick: false,
+        first: "First",
+        prev: "Previous",
+        next: "Next",
+        last: "Last",
+        onPageClick: function (event, page) {
+          if (value != 0) {
+            fetchPreFund(page - 1, true);
+          } else {
+            $("#totalPagesId_preFund").val(2);
+          }
+        },
+      });
+    }
+
+    // Floating Scrollbar
+    $(".table-responsive").floatingScrollbar();
+
+    function toggleSmartSearch1() {
+      $("#smartSearchFieldsDiv1").slideToggle();
+      getCountryList();
+    }
+
+    function toggleSmartSearch2() {
+      $("#smartSearchFieldsDiv2").slideToggle();
+      getCountryListPreFund();
+    }
+
+    function getCountryList() {
+      $.ajax({
+        url: $("#getCountryListUrl").val(),
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(result));
+
+          currencyObject = result;
+          var optionTag = "<option value = ''></option>";
+          for (var i = 0; i < result.length; i++) {
+            var eachOption = result[i];
+
+            if (
+              eachOption.currencyName != null &&
+              eachOption.currencyName != "null" &&
+              eachOption.currencyName != "" &&
+              eachOption.currencyCode != null &&
+              eachOption.currencyCode != "null" &&
+              eachOption.currencyCode != "" &&
+              eachOption.name != null &&
+              eachOption.name != "null" &&
+              eachOption.name != ""
+            ) {
+              optionTag +=
+                "<option value = " +
+                eachOption.currencyCode +
+                ">" +
+                eachOption.currencyName +
+                " (" +
+                eachOption.currencyCode +
+                ")</option>";
+            }
+          }
+          $("#wallet_currency").html(optionTag);
+          $("#wallet_currency").select2({
+            placeholder: "Select a currency",
+            allowClear: false,
+            width: "100%",
+            dropdownAutoWidth: false,
+            dropdownCss: { width: "inherit" },
+          });
+          if (
+            $("#wallet_currency_CodeValueHold").val() != null &&
+            $("#wallet_currency_CodeValueHold").val() != ""
+          ) {
+            $("#wallet_currency").val(
+              $("#wallet_currency_CodeValueHold").val()
+            );
+            $("#wallet_currency").trigger("change");
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function getCountryListPreFund() {
+      $.ajax({
+        url: $("#getCountryListUrl").val(),
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(result));
+
+          currencyObject = result;
+          var optionTag = "<option value = ''></option>";
+          for (var i = 0; i < result.length; i++) {
+            var eachOption = result[i];
+
+            if (
+              eachOption.currencyName != null &&
+              eachOption.currencyName != "null" &&
+              eachOption.currencyName != "" &&
+              eachOption.currencyCode != null &&
+              eachOption.currencyCode != "null" &&
+              eachOption.currencyCode != "" &&
+              eachOption.name != null &&
+              eachOption.name != "null" &&
+              eachOption.name != ""
+            ) {
+              optionTag +=
+                "<option value = " +
+                eachOption.currencyCode +
+                ">" +
+                eachOption.currencyName +
+                " (" +
+                eachOption.currencyCode +
+                ")</option>";
+            }
+          }
+          $("#preFund_currency").html(optionTag);
+          $("#preFund_currency").select2({
+            placeholder: "Select a currency",
+            allowClear: false,
+            width: "100%",
+            dropdownAutoWidth: false,
+            dropdownCss: { width: "inherit" },
+          });
+          if (
+            $("#preFund_currency_CodeValueHold").val() != null &&
+            $("#preFund_currency_CodeValueHold").val() != ""
+          ) {
+            $("#preFund_currency").val(
+              $("#preFund_currency_CodeValueHold").val()
+            );
+            $("#preFund_currency").trigger("change");
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function handleWalletFundClick(
+      slNo,
+      currency,
+      amount,
+      remitterName,
+      transactionId,
+      status,
+      date,
+      id
+    ) {
+      $("#walletFund_currency").val(currency);
+      $("#walletFund_amount").val(amount);
+      $("#walletFund_name").val(remitterName);
+      $("#walletFund_transaction_id").val(transactionId);
+      $("#walletFund_status").val(status);
+      $("#walletFund_createdAt").val(date);
+      $("#walletFund_id").val(id);
+    }
+
+    function handlepreFundClick(
+      slNo,
+      currency,
+      amount,
+      prefundName,
+      transactionId,
+      status,
+      date,
+      id
+    ) {
+      $("#preFund_client_currency").val(currency);
+      $("#preFund_amount").val(amount);
+      $("#preFund_client_name").val(prefundName);
+      $("#preFund_transaction_id").val(transactionId);
+      $("#preFund_status").val(status);
+      $("#preFund_createdAt").val(date);
+      $("#preFund_id").val(id);
+    }
+
+    function notApplicableButton() {
+      var valid = true;
+      var inwardRequestId = "";
+      if ($('input[name="icc_options"]').is(":checked")) {
+        inwardRequestId = $("#icc_id").val();
+      }
+      if (
+        inwardRequestId == null ||
+        inwardRequestId === "" ||
+        inwardRequestId === "null"
+      ) {
+        valid = false;
+        $("#error_iccTransaction_modal").modal("show");
+        $(".modal_body").html("Please select an ICC request");
+      }
+      if (valid) {
+        $("#notApplicableModal").modal("show");
+        var iccCurrency = $("#icc_currency").val();
+        var iccAmount = $("#icc_amount").val();
+        var iccRemitterName = $("#icc_name").val();
+        var iccTransactionId = $("#icc_transaction_id").val();
+        var trHTML = "";
+        if (trHTML === "") {
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Transaction Id</strong></td>';
+          trHTML += "<td>" + iccTransactionId + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Remitter Name</strong></td>';
+          trHTML += "<td>" + iccRemitterName + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Currency</strong></td>';
+          trHTML += "<td>" + iccCurrency + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Amount</strong></td>';
+          trHTML += "<td>" + iccAmount + "</td>";
+          trHTML += "</tr>";
+          $("#notApplicableDataList").html(trHTML);
+        }
+      }
+    }
+
+    function returnFundsButton() {
+      var valid = true;
+      var inwardRequestId = "";
+      if ($('input[name="icc_options"]').is(":checked")) {
+        inwardRequestId = $("#icc_id").val();
+      }
+      if (
+        inwardRequestId == null ||
+        inwardRequestId === "" ||
+        inwardRequestId === "null"
+      ) {
+        valid = false;
+        $("#error_iccTransaction_modal").modal("show");
+        $(".modal_body").html("Please select an ICC request");
+      }
+      if (valid) {
+        $("#returnFundsModal").modal("show");
+        var iccCurrency = $("#icc_currency").val();
+        var iccAmount = $("#icc_amount").val();
+        var iccRemitterName = $("#icc_name").val();
+        var iccTransactionId = $("#icc_transaction_id").val();
+        var trHTML = "";
+        if (trHTML === "") {
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Transaction Id</strong></td>';
+          trHTML += "<td>" + iccTransactionId + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Remitter Name</strong></td>';
+          trHTML += "<td>" + iccRemitterName + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Currency</strong></td>';
+          trHTML += "<td>" + iccCurrency + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Amount</strong></td>';
+          trHTML += "<td>" + iccAmount + "</td>";
+          trHTML += "</tr>";
+          $("#returnFundsDataList").html(trHTML);
+        }
+      }
+    }
+
+    function notApplicableSubmit() {
+      var valid = true;
+      var inwardRequestId = $("#icc_id").val();
+      var comments = $("#notApplicableComments").val();
+
+      if (comments == null || comments == "" || comments == "null") {
+        valid = false;
+        $("#notApplicableCommentError").html("Please enter comment");
+      }
+      if (valid) {
+        $("#submit_notApplicable_button").html(spinnerUrl);
+        $.ajax({
+          type: "POST",
+          dataType: "json",
+          contentType: "application/json",
+          url: $("#getNotApplicableInwardReuqestUrl").val(),
+          data: JSON.stringify(
+            unSanitize({
+              inwardPaymentRequestId: inwardRequestId,
+              comments: comments,
+            })
+          ),
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(data));
+
+            $("#notApplicableModal").modal("hide");
+            $("#success_notApplicable_modal").modal("show");
+            $(".notApplicable_modal_body").html(data.message);
+            $("#submit_notApplicable_button").html("Submit");
+          },
+          error: function (data) {
+            if (data.status === 500) {
+              var responseMessage = JSON.parse(data.responseText);
+              var message = responseMessage.message;
+              $("#notApplicableModal").modal("hide");
+              $("#error_notApplicable_modal").modal("show");
+              $(".notApplicable_modal_body").html(message);
+              $("#submit_notApplicable_button").html("Submit");
+            } else if (data.status === 400) {
+              $("#notApplicableModal").modal("hide");
+              $("#error_notApplicable_modal").modal("show");
+              $(".notApplicable_modal_body").html(data.responseText);
+              $("#submit_notApplicable_button").html("Submit");
+            } else {
+              $("#notApplicableModal").modal("hide");
+              $("#error_notApplicable_modal").modal("show");
+              $(".notApplicable_modal_body").html(data.responseText);
+              $("#submit_notApplicable_button").html("Submit");
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+      setTimeout(function () {
+        $("#notApplicableCommentError").html("");
+      }, 3000);
+    }
+
+    function returnFundsSubmit() {
+      var valid = true;
+      var inwardRequestId = $("#icc_id").val();
+      var comments = $("#returnFundsComments").val();
+
+      if (comments == null || comments == "" || comments == "null") {
+        valid = false;
+        $("#returnFundsCommentError").html("Please enter comment");
+      }
+      if (valid) {
+        $("#submit_returnFunds_button").html(spinnerUrl);
+        $.ajax({
+          type: "POST",
+          dataType: "json",
+          contentType: "application/json",
+          url: $("#getReturnFundsUrl").val(),
+          data: JSON.stringify(
+            unSanitize({
+              inwardPaymentRequestId: inwardRequestId,
+              comments: comments,
+            })
+          ),
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(data));
+
+            $("#returnFundsModal").modal("hide");
+            $("#success_returnFunds_modal").modal("show");
+            $(".returnFunds_modal_body").html(data.message);
+            $("#submit_returnFunds_button").html("Submit");
+          },
+          error: function (data) {
+            if (data.status === 500) {
+              var responseMessage = JSON.parse(data.responseText);
+              var message = responseMessage.message;
+              $("#returnFundsModal").modal("hide");
+              $("#error_returnFunds_modal").modal("show");
+              $(".returnFunds_modal_body").html(message);
+              $("#submit_returnFunds_button").html("Submit");
+            } else if (data.status === 400) {
+              $("#returnFundsModal").modal("hide");
+              $("#error_returnFunds_modal").modal("show");
+              $(".returnFunds_modal_body").html(data.responseText);
+              $("#submit_returnFunds_button").html("Submit");
+            } else {
+              $("#returnFundsModal").modal("hide");
+              $("#error_returnFunds_modal").modal("show");
+              $(".returnFunds_modal_body").html(data.responseText);
+              $("#submit_returnFunds_button").html("Submit");
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+      setTimeout(function () {
+        $("#returnFundsCommentError").html("");
+      }, 3000);
+    }
+
+    function reconcileButton() {
+      var valid = true;
+      var inwardRequestId = "";
+      var walletFundRequestId = "";
+
+      if ($('input[name="icc_options"]').is(":checked")) {
+        var inwardRequestId = $("#icc_id").val();
+      }
+      if ($('input[name="walletFund_options"]').is(":checked")) {
+        var walletFundRequestId = $("#walletFund_id").val();
+      }
+      if (
+        walletFundRequestId == null ||
+        walletFundRequestId == "" ||
+        walletFundRequestId == "null"
+      ) {
+        valid = false;
+        $("#error_iccTransaction_modal").modal("show");
+        $(".modal_body").html(
+          "Please select a icc and a wallet fund request"
+        );
+      } else if (
+        inwardRequestId == null ||
+        inwardRequestId == "" ||
+        inwardRequestId == "null"
+      ) {
+        valid = false;
+        $("#error_iccTransaction_modal").modal("show");
+        $(".modal_body").html(
+          "Please select a icc and a wallet fund request"
+        );
+      }
+      if (valid) {
+        $("#trxnsDetailModal").modal("show");
+        var currency = $("#walletFund_currency").val();
+        var amount = $("#walletFund_amount").val();
+        var remitterName = $("#walletFund_name").val();
+        var transactionId = $("#walletFund_transaction_id").val();
+        var status = $("#walletFund_status").val();
+        var date = $("#walletFund_createdAt").val();
+        var iccCurrency = $("#icc_currency").val();
+        var iccAmount = $("#icc_amount").val();
+        var iccRemitterName = $("#icc_name").val();
+        var iccTransactionId = $("#icc_transaction_id").val();
+        var iccStatus = $("#icc_status").val();
+        var iccDate = $("#icc_createdAt").val();
+
+        var trHTML = "";
+        if (trHTML === "") {
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Transaction Id</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccTransactionId)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(transactionId)) + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Remitter Name</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccRemitterName)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(remitterName)) + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Currency</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccCurrency)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(currency)) + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Amount</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccAmount)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(amount)) + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Status</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccStatus)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(status)) + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Event Time</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccDate)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(date)) + "</td>";
+          trHTML += "</tr>";
+          $("#reconcileDataList").html(trHTML);
+        }
+      }
+    }
+
+    function reconcileButtonForpreFund() {
+      var valid = true;
+      var inwardRequestId = "";
+      var preFundRequestId = "";
+
+      if ($('input[name="icc_options"]').is(":checked")) {
+        var inwardRequestId = $("#icc_id").val();
+      }
+      if ($('input[name="preFund_options"]').is(":checked")) {
+        var preFundRequestId = $("#preFund_id").val();
+      }
+      if (
+        preFundRequestId == null ||
+        preFundRequestId == "" ||
+        preFundRequestId == "null"
+      ) {
+        valid = false;
+        $("#error_iccTransaction_modal").modal("show");
+        $(".modal_body").html(
+          "Please select a icc and a client prefund request"
+        );
+      } else if (
+        inwardRequestId == null ||
+        inwardRequestId == "" ||
+        inwardRequestId == "null"
+      ) {
+        valid = false;
+        $("#error_iccTransaction_modal").modal("show");
+        $(".modal_body").html(
+          "Please select a icc and a client prefund request"
+        );
+      }
+      if (valid) {
+        $("#trxnsPrefundDetailModal").modal("show");
+        var currency = $("#preFund_client_currency").val();
+        var amount = $("#preFund_amount").val();
+        var remitterName = $("#preFund_client_name").val();
+        var transactionId = $("#preFund_transaction_id").val();
+        var status = $("#preFund_status").val();
+        var date = $("#preFund_createdAt").val();
+        var iccCurrency = $("#icc_currency").val();
+        var iccAmount = $("#icc_amount").val();
+        var iccRemitterName = $("#icc_name").val();
+        var iccTransactionId = $("#icc_transaction_id").val();
+        var iccStatus = $("#icc_status").val();
+        var iccDate = $("#icc_createdAt").val();
+
+        var trHTML = "";
+        if (trHTML === "") {
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Transaction Id</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccTransactionId)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(transactionId)) + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Remitter Name</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccRemitterName)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(remitterName)) + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Currency</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccCurrency)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(currency)) + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Amount</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccAmount)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(amount)) + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Status</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccStatus)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(status)) + "</td>";
+          trHTML += "</tr>";
+          trHTML += '<tr class="testingg header">';
+          trHTML +=
+            '<td style="white-space: nowrap"><strong>Event Time</strong></td>';
+          trHTML += "<td>" + sanitize(unSanitize(iccDate)) + "</td>";
+          trHTML += "<td>" + sanitize(unSanitize(date)) + "</td>";
+          trHTML += "</tr>";
+          $("#reconcilepreFundDataList").html(trHTML);
+        }
+      }
+    }
+
+    function reconcileSubmit() {
+      var valid = true;
+      var walletFundRequestId = $("#walletFund_id").val();
+      var inwardRequestId = $("#icc_id").val();
+      var comments = $("#comments").val();
+
+      if (comments == null || comments == "" || comments == "null") {
+        valid = false;
+        $("#commentError").html("Please enter comment");
+      }
+      if (valid) {
+        $("#submit_reconcile_button").html(spinnerUrl);
+        $.ajax({
+          type: "POST",
+          dataType: "json",
+          contentType: "application/json",
+          url: $("#getUpdateInwardReuqestUrl").val(),
+          data: JSON.stringify(
+            unSanitize({
+              walletFundRequestId: walletFundRequestId,
+              inwardPaymentRequestId: inwardRequestId,
+              comments: comments,
+            })
+          ),
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(data));
+
+            $("#trxnsDetailModal").modal("hide");
+            $("#success_refundNotification").modal("show");
+            $(".refunded_body").html(data.message);
+            $("#submit_reconcile_button").html("Submit");
+          },
+          error: function (data) {
+            if (data.status === 500) {
+              var responseMessage = JSON.parse(data.responseText);
+              var message = responseMessage.message;
+              $("#trxnsDetailModal").modal("hide");
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(message);
+              $("#submit_reconcile_button").html(spinnerUrl);
+            } else if (data.status === 400) {
+              var responseMessage = JSON.parse(data.responseText);
+              var message = responseMessage.message;
+              $("#trxnsDetailModal").modal("hide");
+              $("#error_refundNotification").modal("show");
+              if (
+                message != null &&
+                message !== "null" &&
+                message !== "undefined" &&
+                message !== ""
+              ) {
+                $(".refunded_body").html(message);
+              } else {
+                $(".refunded_body").html(data.responseText);
+              }
+              $("#submit_reconcile_button").html("Submit");
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+      setTimeout(function () {
+        $("#commentError").html("");
+      }, 3000);
+    }
+
+    function reconcileSubmitPreFund() {
+      var valid = true;
+      var preFundRequestId = $("#preFund_id").val();
+      var inwardRequestId = $("#icc_id").val();
+      var comments = $("#preFundcomments").val();
+
+      if (comments == null || comments == "" || comments == "null") {
+        valid = false;
+        $("#preFundcommentError").html("Please enter comment");
+      }
+      if (valid) {
+        $("#submit_reconcile_button").html(spinnerUrl);
+        $.ajax({
+          type: "POST",
+          dataType: "json",
+          contentType: "application/json",
+          url: $("#getUpdatePreFundUrl").val(),
+          data: JSON.stringify(
+            unSanitize({
+              clientPrefundId: preFundRequestId,
+              inwardPaymentRequestId: inwardRequestId,
+              comments: comments,
+            })
+          ),
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(data));
+
+            $("#trxnsPrefundDetailModal").modal("hide");
+            $("#success_refundNotification").modal("show");
+            $(".refunded_body").html(data.message);
+            $("#submit_reconcile_button").html("Submit");
+          },
+          error: function (data) {
+            if (data.status === 500) {
+              var responseMessage = JSON.parse(data.responseText);
+              var message = responseMessage.message;
+              $("#trxnsPrefundDetailModal").modal("hide");
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(message);
+              $("#submit_reconcile_button").html(spinnerUrl);
+            } else if (data.status === 400) {
+              $("#trxnsPrefundDetailModal").modal("hide");
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(data.responseText);
+              $("#submit_reconcile_button").html("Submit");
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+      setTimeout(function () {
+        $("#preFundcommentError").html("");
+      }, 3000);
+    }
+
+    function closeSuccessModal() {
+      var tableRow =
+        "<tr><td colspan='34' class='text-center' id='noWalletFundList'>No Data Found !</td></td></tr>";
+      fetchMe("0", false);
+      $("#walletFund_Report").find("tr:gt(0)").remove();
+      $("#preFund_Report").find("tr:gt(0)").remove();
+      $("#iccWalletFundListTable").append(tableRow);
+      $("#pagination1").twbsPagination("destroy");
+      $("#pagination2").twbsPagination("destroy");
+      $("#paging_info_walletFund").html("");
+      $("#paging_info_preFund").html("");
+      $("#comments").val("");
+      $("#preFundcomments").val("");
+    }
+
+    // Added By Rahul Swarnkar
+
+    function isValidRequest() {
+      var valid = true;
+      var currency = $("#preFund_currency").val();
+      if (isBlankInput(currency)) {
+        valid = false;
+        $("#preFundCurrencyCodeError").html("Please Select Currency!");
+      }
+
+      var timeout = setTimeout(function () {
+        $(".error").each(function (index, element) {
+          $("#" + element.id).html("");
+        });
+      }, 3000);
+
+      return valid;
+    }
+
+    function fetchPreFund(value, isPaging) {
+      $("#submit_button").html(spinnerUrl);
+      let valid = true;
+      let paging = value;
+      let currency = $("#preFund_currency").val();
+      let preFundName = $("#preFund_Name").val();
+      let systemReferenceNumber = $("#preFund_SystemReferenceNumber").val();
+      let uniquePaymentId = $("#uniquePaymentId").val();
+      let uniquePayerId = $("#uniquePayerId").val();
+      let amount = $("#wallet_prefund_amount").val();
+
+      if (isValidRequest()) {
+        $.ajax({
+          type: "POST",
+          dataType: "json",
+          contentType: "application/json",
+          url: $("#getprefundsmatchUrl").val(),
+          data: JSON.stringify(
+            unSanitize({
+              page: paging,
+              order: "",
+              property: "",
+              size: "10",
+              currencyCode: currency,
+              systemReferenceNumber: systemReferenceNumber,
+              prefundName: preFundName,
+              amount: amount,
+              uniquePaymentId: uniquePaymentId,
+              uniquePayerId: uniquePayerId,
+            })
+          ),
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(data));
+
+            var trHTML = "";
+            if (trHTML === "") {
+              var slno = paging * 10;
+              var startno = paging * 10 + 1;
+              $("#iccWalletpreFundListTable").empty();
+              $("#smartSearchFieldsDiv2").slideUp();
+              var itemVal = data.transactions;
+              if (
+                itemVal != null &&
+                itemVal !== "" &&
+                itemVal !== "[]" &&
+                itemVal.length > 0
+              ) {
+                $(itemVal).each(function (i, item) {
+                  slno = slno + 1;
+                  var createdAtDate = new Date(itemVal[i].createdAt);
+                  var date = createdAtDate.getDate();
+                  var month = createdAtDate.getMonth() + 1;
+                  var year = createdAtDate.getFullYear();
+                  var hour = createdAtDate.getHours();
+                  var minute = createdAtDate.getMinutes();
+                  var seconds = createdAtDate.getSeconds();
+                  var createdAt =
+                    year +
+                    "/" +
+                    month +
+                    "/" +
+                    date +
+                    " " +
+                    hour +
+                    ":" +
+                    minute +
+                    ":" +
+                    seconds;
+                  var remitterName =
+                    itemVal[i].firstName +
+                    " " +
+                    itemVal[i].middleName +
+                    " " +
+                    itemVal[i].lastName;
+                  trHTML += '<tr class="testingg header">';
+                  trHTML +=
+                    '<td><input class="custom_radio" type="radio" name="preFund_options" id="handleClickpreFund_' +
+                    slno +
+                    '" onclick="handlepreFundClick(\'handleWalletFundClick_' +
+                    slno +
+                    "','" +
+                    currency +
+                    "','" +
+                    itemVal[i].amount +
+                    "','" +
+                    itemVal[i].prefundName +
+                    "','" +
+                    itemVal[i].systemReferenceNumber +
+                    "','" +
+                    itemVal[i].status +
+                    "','" +
+                    createdAt +
+                    "','" +
+                    itemVal[i].id +
+                    '\')"><label for="handleClickpreFund_' +
+                    slno +
+                    '"><span></span></label></td>';
+                  trHTML +=
+                    '<td style="white-space: nowrap">' + slno + "</td>";
+                  trHTML +=
+                    '<td style="white-space: nowrap">' +
+                    (createdAt == null ? "" : createdAt) +
+                    "</td>";
+                  trHTML +=
+                    '<td style="white-space: nowrap">' + currency + "</td>";
+                  trHTML +=
+                    '<td style="white-space: nowrap">' +
+                    itemVal[i].systemReferenceNumber +
+                    "</td>";
+                  trHTML +=
+                    '<td  style="white-space: nowrap">' +
+                    itemVal[i].amount +
+                    "</td>";
+                  trHTML +=
+                    '<td  style="white-space: nowrap">' +
+                    itemVal[i].companyName +
+                    "</td>";
+                  trHTML +=
+                    '<td  style="white-space: nowrap">' +
+                    itemVal[i].prefundName +
+                    "</td>";
+                  trHTML +=
+                    '<td  style="white-space: nowrap">' +
+                    itemVal[i].uniquePaymentId +
+                    "</td>";
+                  trHTML +=
+                    '<td  style="white-space: nowrap">' +
+                    itemVal[i].uniquePayerId +
+                    "</td>";
+                  trHTML +=
+                    '<td><span class="badge badge-danger tstatus">' +
+                    itemVal[i].status +
+                    "</span></td>";
+                  trHTML += "</tr>";
+                });
+                paginationForpreFundRequest(
+                  data.pagination.totalPages,
+                  paging
+                );
+                $("#paging_info_preFund").html(
+                  "Showing " +
+                  startno +
+                  " to " +
+                  slno +
+                  " of " +
+                  data.pagination.totalElements +
+                  " entries"
+                );
+              } else {
+                $("#iccWalletpreFundListTable").empty();
+                trHTML +=
+                  '<tr class="odd testingg"><td class="dataTables_empty" colspan="55" valign="top">No Transaction available in table</td></tr>';
+                /* Reset Code */
+                $("#pagination2").twbsPagination("destroy");
+                $("#paging_info_preFund").html("");
+                $("#iccTransactionDownload").hide();
+              }
+              $("#nopreFundList").hide();
+              $("#iccWalletpreFundListTable").html(trHTML);
+            }
+            if (paging === 0 && isPaging === true) {
+              paging = 1;
+            }
+
+            $("#submit_button").html("Filter");
+          },
+          error: function (xhr) {
+            $("#smartSearchFieldsDiv2").slideUp();
+            var trHTML = "";
+            var responseMessage = JSON.parse(xhr.responseText);
+            var message = responseMessage.message;
+            $("#pagination2").twbsPagination("destroy");
+            $(".testingg").empty();
+            trHTML +=
+              '<tr class="odd testingg"><td class="dataTables_empty" colspan="45" valign="top">No Records Found!</td></tr>';
+            $("#iccWalletpreFundListTable").append(trHTML);
+            $("#paging_info_preFund").html("");
+            $("#iccTransactionDownload").hide();
+            $("#nopreFundList").hide();
+            $("#submit_button").html("Filter");
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+    }
+
+    // Added By Rahul Swarnkar
+
+    function closeErrorModal() {
+      var tableRow =
+        "<tr><td colspan='34' class='text-center' id='noWalletFundList'>No Data Found !</td></td></tr>";
+      fetchMe("0", false);
+      $("#walletFund_Report").find("tr:gt(0)").remove();
+      $("#preFund_Report").find("tr:gt(0)").remove();
+      $("#iccWalletFundListTable").append(tableRow);
+      $("#pagination1").twbsPagination("destroy");
+      $("#paging_info_walletFund").html("");
+    }
+
+    function closeNotApplicableModal() {
+      fetchMe("0", false);
+      $("#notApplicableComments").val("");
+    }
+
+    function reconcileCancel() {
+      $("#trxnsDetailModal").modal("hide");
+      $("#comments").val("");
+    }
+
+    function reconcileCancelForpreFund() {
+      $("#trxnsPrefundDetailModal").modal("hide");
+      $("#comments").val("");
+    }
+
+    function notApplicableCancel() {
+      $("#notApplicableModal").modal("hide");
+      $("#notApplicableComments").val("");
+    }
+    function returnFundsCancel() {
+      $("#returnFundsModal").modal("hide");
+      $("#returnFundsComments").val("");
+    }
+
+    function closeReturnFundsModal() {
+      fetchMe("0", false);
+      $("#returnFundsComments").val("");
+    }
+  </script>
+</body>
+
+</html>

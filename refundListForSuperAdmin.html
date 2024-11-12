@@ -1,0 +1,269 @@
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+  <jsp:include page="sidebar.jsp"></jsp:include>
+  <!-- END PAGE SIDEBAR -->
+  <!-- PAGE CONTENT -->
+  <div class="page-content">
+    <!-- START X-NAVIGATION VERTICAL -->
+    <jsp:include page="navbar.jsp"></jsp:include>
+    <!-- END X-NAVIGATION VERTICAL -->
+    <!-- PAGE CONTENT WRAPPER -->
+    <div class="page-content-wrap">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="page-title-box">
+              <h4 class="page-title">Refund List(SuperAdmin)</h4>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="" style="min-height: 73vh">
+              <div class="panel-body p-0">
+                <h5 id="errorMessage"></h5>
+                <input type="hidden" id="client_code" value="${clientCode}" />
+                <div
+                  class="table-responsive"
+                  style="max-height: 70vh; overflow: auto"
+                >
+                  <table
+                    id="All-Transaction-List"
+                    class="table table-bordered table-striped"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Sl.No</th>
+                        <th>Date</th>
+                        <th>Currency Code</th>
+                        <th>Amount</th>
+                        <th>Client Hash Id</th>
+                        <th>Client Account Number</th>
+                        <th>Client Account Name</th>
+                        <th>Client Bank Name</th>
+                        <th>Status</th>
+                        <th colspan="2">Approve/Reject</th>
+                        <th>Requester Id</th>
+                        <th>Approver Id</th>
+                        <th>Comments</th>
+                      </tr>
+                    </thead>
+                    <tbody id="datatable-buttons"></tbody>
+                  </table>
+                </div>
+                <div class="paginationWrapper">
+                  <p id="paging_info" class="pull-left"></p>
+                  <div class="pull-right">
+                    <ul class="pagination-sm" id="paginationn"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+  </div>
+  <!-- END PAGE CONTAINER -->
+</div>
+<!-- MESSAGE BOX-->
+<jsp:include page="messageBox.jsp"></jsp:include>
+
+<div
+  class="modal fade"
+  id="success_refundNotification"
+  role="dialog"
+  data-backdrop="static"
+  data-keyboard="false"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <img
+            src="assets/img/source.gif"
+            style="
+              width: 140px;
+              margin-top: -91px;
+              margin-bottom: 10px;
+              position: relative;
+            "
+          />
+          <div>
+            <h4 class="refunded_body mb-4"></h4>
+            <div class="text-center">
+              <button
+                id="changeStatus"
+                type="button"
+                class="btn btn-success px-5 ripple"
+                data-dismiss="modal"
+                onclick="closeModal();"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="error_refundNotification"
+  role="dialog"
+  data-backdrop="static"
+  data-keyboard="false"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <div style="text-align: center">
+          <img
+            src="assets/img/x.gif"
+            style="
+              width: 140px;
+              margin-top: -91px;
+              margin-bottom: 10px;
+              position: relative;
+            "
+          />
+          <div>
+            <h4 class="refunded_body mb-4"></h4>
+            <div class="text-center">
+              <button
+                id="changeStatus1"
+                type="button"
+                class="btn btn-danger px-4 ripple"
+                data-dismiss="modal"
+                onclick="closeModal();"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="hiddenFields"></div>
+</div>
+
+<div id="refundCommentModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <h4 class="modal-title">Add Comment</h4>
+      </div>
+      <div class="modal-body">
+        <form enctype="multipart/form-data" id="testComment">
+          <div class="row">
+            <input type="hidden" id="slNo" />
+            <input type="hidden" id="clientHashId" />
+            <input type="hidden" id="systemReferenceNumber" />
+            <input type="hidden" id="status" />
+            <div class="col-md-12 mb-2">
+              <div class="form-group">
+                <label>User Comment<sup>*</sup></label>
+                <textarea
+                  rows="2"
+                  class="form-control"
+                  id="userComments"
+                  name="userComments"
+                  id="add_Comment"
+                  placeholder="Enter Comment"
+                  maxlength="255"
+                ></textarea>
+                <span
+                  id="remainingChar"
+                  style="display: block; text-align: right"
+                ></span>
+                <span id="userCommentError" class="error field_err"></span>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group text-center">
+                <button
+                  id="commentSubmitBtn"
+                  type="button"
+                  class="btn btn-success px-5 ripple"
+                  onclick="openCommnetModel()"
+                >
+                  Submit
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger px-5 ripple"
+                  onclick="closeWaiveCommentModal()"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END MESSAGE BOX-->
+
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+<audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+<!-- END PRELOADS -->
+
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script
+  type="text/javascript"
+  src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"
+></script>
+<script
+  type="text/javascript"
+  src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"
+></script>
+<script
+  type="text/javascript"
+  src="assets/js/plugins/bootstrap/bootstrap.min.js"
+></script>
+<!-- END PLUGINS -->
+
+<!-- START THIS PAGE PLUGINS-->
+<script
+  type="text/javascript"
+  src="assets/js/plugins/moment.min.js?version=2.29.0"
+></script>
+<!-- END THIS PAGE PLUGINS-->
+
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="assets/js/settings.min.js"></script>
+<script type="text/javascript" src="assets/js/actions.js"></script>
+
+<script
+  type="text/javascript"
+  src="assets/js/refundLists.js?version=1.0.1"
+></script>
+
+<script
+  type="text/javascript"
+  src="assets/js/list/jquery.twbsPagination.js"
+></script>
+<script
+  type="text/javascript"
+  src="assets/js/list/jquery.twbsPagination.min.js"
+></script>
+<script type="text/javascript" src="assets/js/loader.js"></script>
+<script type="text/javascript" src="assets/js/floatingscroll.js"></script>
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->
+<script>
+  $(".table-responsive").floatingScrollbar();
+</script>

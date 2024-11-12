@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript" src="assets/js/CommonValidations.js"></script>
+  <!-- META SECTION -->
+  <title>ahan | Notification Template</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+
+  <!-- EOF CSS INCLUDE -->
+</head>
+
+<body>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+
+      <div class="page-content-wrap">
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <h4 class="page-title">Notification Templates</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="">
+              <form id="updatePlasticIdDescriptionForm" method="post">
+                <input type="hidden" id="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+                <input type="hidden" id="clientCodeValueHold" value="${clientCode}" />
+                <input type="hidden" id="getNotificationListUrl" name="getNotificationListUrl"
+                  value="${getNotificationListUrl}" />
+                <input type="hidden" id="addNotificationUrl" name="addNotificationUrl" value="${addNotificationUrl}" />
+                <input type="hidden" id="updateNotificationUrl" name="updateNotificationUrl"
+                  value="${updateNotificationUrl}" />
+                <div class="row">
+                  <div class="col-lg-3 col-md-3">
+                    <label>Select Client</label>
+                    <select id="clientCode" name="clientCode" class="form-control enableSelect2 clearForm" required>
+                      <option value="">Select a Client</option>
+                      <option value="Cards_Client_TEST_4">
+                        Cards_Client_TEST_4
+                      </option>
+                    </select>
+                    <p class="error field_err"></p>
+                  </div>
+                  <div class="col-lg-3 col-md-3">
+                    <label>Enter Template Name</label>
+
+                    <input type="text" id="templateName" name="templateName" class="form-control clear"
+                      placeholder="Template Name" />
+
+                    <p class="error field_err"></p>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <button class="btn btn-primary btn-sm btn-block ripple mt-4" onclick="fetchMe();" type="button">
+                      Filter
+                    </button>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <button class="btn btn-default btn-sm btn-block ripple mt-4" type="reset" onclick="resetFields();">
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <hr class="my-3 mx-3" />
+          <div class="row">
+            <div class="col-lg-2 pull-right mb-2">
+              <button class="btn btn-success btn-sm btn-block ripple" type="button" data-toggle="modal"
+                data-target="#addNotificationModel" onclick="openAddNotificationModel()">
+                Add
+              </button>
+            </div>
+            <div class="col-sm-12">
+              <div class="" style="min-height: 52vh">
+                <!--Block Styled Form -->
+                <!--===================================================-->
+                <div id="tableDiv" class="table-responsive" style="max-height: 52vh">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>SN</th>
+                        <th>Id</th>
+                        <th>Client Hash Id</th>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Body</th>
+                        <th>Sender Name</th>
+                        <th>Sender Identifier</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="notificationTemplateTable">
+                      <tr>
+                        <td colspan="15" class="text-center" id="noNotificationList">
+                          No Notification Template Data Found
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--===================================================-->
+          <!--End Block Styled Form -->
+        </div>
+      </div>
+      <!-- END PAGE CONTENT -->
+    </div>
+  </div>
+  <!-- END PAGE CONTAINER -->
+
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+
+  <!--add notification modal start-->
+  <div class="modal fade" id="addNotificationModel" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-md">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" onclick="onClosePopupFormReset('addNotificationform')"
+            data-dismiss="modal">
+            &times;
+          </button>
+          <h5 class="modal-title">Add Notification Template</h5>
+        </div>
+        <div class="modal-body">
+          <form class="row" id="addNotificationform" method="post">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label>Select Client</label>
+                <select id="clientCode1" name="clientCode" class="form-control enableSelect2 clearForm" required>
+                  <option value="">Select a Client</option>
+                  <option value="Cards_Client_TEST_4">
+                    Cards_Client_TEST_4
+                  </option>
+                </select>
+                <span id="addNotifClientHashError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="addNotifTemplateType" class="control-label">Template Type<sup>*</sup></label>
+                <select id="addNotifTemplateType" name="addNotifTemplateType" class="form-control">
+                  <option value="">Select Template Type</option>
+                  <option value="EMAIL">EMAIL</option>
+                  <option value="SMS">SMS</option>
+                  <option value="WEBHOOK">WEBHOOK</option>
+                </select>
+                <span id="addNotifTemplateTypeError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="addNotifTemplateName" class="control-label">Template Name<sup>*</sup></label>
+                <input id="addNotifTemplateName" name="addNotifTemplateName" class="form-control" />
+                <span id="addNotifTemplateNameError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="addNotifTemplateBody" class="control-label">Template Body<sup>*</sup></label>
+                <textarea id="addNotifTemplateBody" name="addNotifTemplateBody" class="form-control"></textarea>
+                <span id="addNotifTemplateBodyError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="addNotifSenderName" class="control-label">Sender Name<sup>*</sup></label>
+                <input type="text" id="addNotifSenderName" name="addNotifSenderName" class="form-control" />
+                <span id="addNotifSenderNameError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="addNotifSenderIdent" class="control-label">Sender Identifier<sup>*</sup></label>
+                <input type="text" id="addNotifSenderIdent" name="addNotifSenderIdent" class="form-control" />
+                <span id="addNotifSenderIdentError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="addNotifTitle" class="control-label">Title<sup>*</sup></label>
+                <input type="text" id="addNotifTitle" name="addNotifTitle" class="form-control" />
+                <span id="addNotifTitleError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="addNotifStatus" class="control-label">Status<sup>*</sup></label>
+                <select id="addNotifStatus" name="addNotifStatus" class="form-control">
+                  <option value="">Select Status</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+                <span id="addNotifStatusError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2 col-xs-12">
+              <div class="form-group text-center mt-4">
+                <button type="button" class="btn btn-primary btn-block ripple" id="addNotificationBtn"
+                  onclick="onAddNotification();">
+                  Add Notification
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--add notification modal end-->
+
+  <!--edit notification modal start-->
+  <div class="modal fade" id="updateNotificationModel" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-md">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h5 class="modal-title">Update Notification Template</h5>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="notificationId" name="notificationId" />
+          <form class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label>Client</label>
+                <input id="clientCode2" name="clientCode" class="form-control" value="" readonly />
+                <span id="editNotifClientHashError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="editNotifTemplateType" class="control-label">Template Type<sup>*</sup></label>
+                <select id="editNotifTemplateType" name="editNotifTemplateType" class="form-control"></select>
+                <span id="editNotifTemplateTypeError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="editNotifTemplateName" class="control-label">Template Name<sup>*</sup></label>
+                <input id="editNotifTemplateName" name="editNotifTemplateName" class="form-control" value="" />
+                <span id="editNotifTemplateNameError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="editNotifTemplateBody" class="control-label">Template Body<sup>*</sup></label>
+                <textarea id="editNotifTemplateBody" name="editNotifTemplateBody" class="form-control"
+                  value=""></textarea>
+                <span id="editNotifTemplateBodyError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="editNotifSenderName" class="control-label">Sender Name<sup>*</sup></label>
+                <input type="text" id="editNotifSenderName" value="" name="editNotifSenderName" class="form-control" />
+                <span id="editNotifSenderNameError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="editNotifSenderIdent" class="control-label">Sender Identifier<sup>*</sup></label>
+                <input type="text" id="editNotifSenderIdent" value="" name="editNotifSenderIdent"
+                  class="form-control" />
+                <span id="editNotifSenderIdentError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="editNotifTitle" class="control-label">Title<sup>*</sup></label>
+                <input type="text" id="editNotifTitle" value="" name="editNotifTitle" class="form-control" />
+                <span id="editNotifTitleError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <label for="editNotifStatus" class="control-label">Status<sup>*</sup></label>
+                <select id="editNotifStatus" name="editNotifStatus" class="form-control"></select>
+                <span id="editNotifStatusError" class="errorClass error field_err"></span>
+              </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2 col-xs-12">
+              <div class="form-group text-center mt-4">
+                <button type="button" class="btn btn-primary btn-block ripple" id="editNotificationBtn"
+                  onclick="onUpdateNotification();">
+                  Update
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--edit notification modal end-->
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button id="confirmButton" type="button" class="btn btn-success ripple px-5" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger ripple px-5" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_addNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger ripple px-5" data-dismiss="modal"
+                  onclick="reOpenAddNotificationModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_updateNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger ripple px-5" data-dismiss="modal"
+                  onclick="reOpenUpdateNotificationModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
+
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.min.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- Validation SCRIPTS -->
+  <script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <!-- END SCRIPTS -->
+
+  <script>
+    $(".enableSelect2").select2({
+      placeholder: "Select an option",
+      allowClear: false,
+      width: "100%",
+      dropdownAutoWidth: false,
+      dropdownCss: { width: "inherit" },
+    });
+  </script>
+
+  <script>
+    /* Universal Spinner with text for Button */
+    var spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+    function getClientList() {
+      generateClientDropdown(
+        $("#fetchAllClientUrl").val(),
+        false,
+        "clientCode",
+        null
+      );
+      $("#clientCode2").html($("#clientCode").html());
+    }
+
+    function openAddNotificationModel() {
+      generateClientDropdown(
+        $("#fetchAllClientUrl").val(),
+        false,
+        "clientCode1",
+        null
+      );
+    }
+
+    function fetchMe() {
+      $("#filterBtn").html(spinnerUrl);
+      let clientCode = $("#clientCode").val();
+      let templateName = $("#templateName").val();
+      $("#notificationTemplateTable").empty();
+
+      $.ajax({
+        url: unSanitize(
+          $("#getNotificationListUrl").val() +
+          "?" +
+          "clientHashId=" +
+          clientCode +
+          "&templateName=" +
+          templateName
+        ),
+        type: "get",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+
+          var slno = 0;
+          var trHTML = "";
+          var itemVal = result;
+          if (itemVal != null && itemVal !== "" && itemVal.length > 0) {
+            for (var i = 0; i < result.length; i++) {
+              slno = slno + 1;
+              trHTML += '<tr id="1">';
+              trHTML += '<td style="white-space: nowrap">' + slno + "</td>";
+              trHTML +=
+                '<td style="white-space: nowrap">' +
+                (itemVal[i].id == null ? "" : itemVal[i].id) +
+                "</td>";
+              trHTML +=
+                '<td style="white-space: nowrap">' +
+                (itemVal[i].clientHashId == null
+                  ? ""
+                  : itemVal[i].clientHashId) +
+                "</td>";
+              trHTML +=
+                '<td style="white-space: nowrap">' +
+                (itemVal[i].templateType == null
+                  ? ""
+                  : itemVal[i].templateType) +
+                "</td>";
+              trHTML +=
+                '<td style="white-space: nowrap">' +
+                (itemVal[i].templateName == null
+                  ? ""
+                  : itemVal[i].templateName) +
+                "</td>";
+              trHTML +=
+                '<td style="white-space: nowrap">' +
+                (itemVal[i].templateBody == null
+                  ? ""
+                  : itemVal[i].templateBody) +
+                "</td>";
+              trHTML +=
+                '<td style="white-space: nowrap">' +
+                (itemVal[i].senderName == null ? "" : itemVal[i].senderName) +
+                "</td>";
+              trHTML +=
+                '<td style="white-space: nowrap">' +
+                (itemVal[i].senderIdentifier == null
+                  ? ""
+                  : itemVal[i].senderIdentifier) +
+                "</td>";
+              trHTML +=
+                '<td style="white-space: nowrap">' +
+                (itemVal[i].title == null ? "" : itemVal[i].title) +
+                "</td>";
+              switch (itemVal[i].status) {
+                case "Active":
+                  trHTML +=
+                    '<td style="white-space: nowrap"><span class="badge badge-success">' +
+                    itemVal[i].status +
+                    "</span></td>";
+                  break;
+                case "Inactive":
+                  trHTML +=
+                    '<td style="white-space: nowrap"><span class="badge badge-warning">' +
+                    itemVal[i].status +
+                    "</span></td>";
+                  break;
+                case "null":
+                  trHTML += '<td style="white-space: nowrap"></td>';
+                  break;
+                default:
+                  trHTML +=
+                    '<td style="white-space: nowrap"><span class="badge badge-default">' +
+                    itemVal[i].status +
+                    "</span></td>";
+              }
+              /* trHTML += '<td style="white-space: nowrap">' + ((itemVal[i].status === status) ? "" : itemVal[i].status) + '</td>'; */
+              var notificationUpateBtn =
+                "<button class='btn btn-primary btn-xs btn-block' onclick = \"onUpdateModal('" +
+                itemVal[i].id +
+                "' , '" +
+                itemVal[i].clientHashId +
+                "', '" +
+                itemVal[i].templateType +
+                "', '" +
+                itemVal[i].templateName +
+                "' , '" +
+                itemVal[i].templateBody +
+                "' , '" +
+                itemVal[i].senderName +
+                "' , '" +
+                itemVal[i].senderIdentifier +
+                "' , '" +
+                itemVal[i].title +
+                "' , '" +
+                itemVal[i].status +
+                "')\">Update</button>";
+              trHTML +=
+                '<td style="white-space: nowrap">' +
+                notificationUpateBtn +
+                "</td>";
+              trHTML += "</tr>";
+            }
+            $("#notificationTemplateTable").html(trHTML);
+          } else {
+            $(".testingg").empty();
+            trHTML =
+              '<tr class="odd testingg"><td class="dataTables_empty" colspan="15" valign="top"><h4>No data available in table</h4></td></tr>';
+            $("#notificationTemplateTable").append(trHTML);
+          }
+        },
+        error: function (data) {
+          var trHTML = "";
+          if (data.readyState === 0) {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(
+              "service is temporarily down,please try again later!"
+            );
+          } else if (data.status === 500) {
+            $(".testingg").empty();
+            trHTML +=
+              '<tr class="odd testingg"><td class="dataTables_empty" colspan="15" valign="top"><h4>No data available in table</h4></td></tr>';
+            $("#notificationTemplateTable").append(trHTML);
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    /* call when addition of a new notification */
+    function onAddNotification() {
+      $("#addNotificationBtn").html(spinnerUrl);
+      $("#addNotificationBtn").prop("disabled", true);
+
+      var valid = true;
+      let clientCode1 = $("#clientCode1").val();
+      console.log(clientCode1);
+      let templateType = $("#addNotifTemplateType").val();
+      let templateName = $("#addNotifTemplateName").val();
+      let templateBody = $("#addNotifTemplateBody").val();
+      let senderName = $("#addNotifSenderName").val();
+      let senderIdentifier = $("#addNotifSenderIdent").val();
+      let title = $("#addNotifTitle").val();
+      let status = $("#addNotifStatus").val();
+      if (templateType === "" || templateType === null) {
+        valid = false;
+        $("#addNotifTemplateTypeError").html("Template type is mandatory");
+      }
+
+      if (templateName === "" || templateName === null) {
+        valid = false;
+        $("#addNotifTemplateNameError").html("Template name is mandatory");
+      }
+
+      if (templateBody === "" || templateBody === null) {
+        valid = false;
+        $("#addNotifTemplateBodyError").html("Template Body is mandatory");
+      }
+
+      if (senderName === "" || senderName === null) {
+        valid = false;
+        $("#addNotifSenderNameError").html("Sender name is mandatory");
+      }
+
+      if (senderIdentifier === "" || senderIdentifier === null) {
+        valid = false;
+        $("#addNotifSenderIdentError").html("Sender Identifier is mandatory");
+      }
+
+      if (title === "" || title === null) {
+        valid = false;
+        $("#addNotifTitleError").html("Title is mandatory");
+      }
+
+      if (status === "" || status === null) {
+        valid = false;
+        $("#addNotifStatusError").html("Status is mandatory");
+      }
+
+      if (valid === true) {
+        /* AJAX call done here!!! */
+        $("#addNotificationBtn").attr("disabled", true);
+        $("#addNotificationBtn").html(spinnerUrl);
+        let data = JSON.stringify(
+          unSanitize({
+            clientHashId: clientCode1,
+            templateType: templateType,
+            templateName: templateName,
+            templateBody: templateBody,
+            senderName: senderName,
+            senderIdentifier: senderIdentifier,
+            title: title,
+            status: status,
+          })
+        );
+        let sanitizedData = unSanitize(data);
+        $.ajax({
+          type: "POST",
+          url: $("#addNotificationUrl").val(),
+          contentType: "application/json",
+          data: data,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(result));
+
+            $("#addNotificationModel").modal("hide");
+            $("#success_refundNotification").modal("show");
+            $(".refunded_body").html("Notification Added Successfully");
+            $("#addNotificationBtn").attr("disabled", false);
+            $("#addNotificationBtn").html("Submit");
+            $("#addNotificationform")[0].reset();
+          },
+          error: function (data) {
+            if (data.readyState == 0) {
+              $("#addNotificationModel").modal("hide");
+              $("#error_addNotification").modal("show");
+              $(".refunded_body").html(
+                "service is temporarily down,please try again later."
+              );
+            }
+            if ((data.status = 500)) {
+              var responseMessage = JSON.parse(data.responseText);
+              var message = responseMessage.message;
+              $("#addNotificationModel").modal("hide");
+              $("#error_addNotification").modal("show");
+              $(".refunded_body").html(message);
+              $("#addNotificationBtn").attr("disabled", false);
+              $("#addNotificationBtn").html("Submit");
+            } else if (jqXHR.status == 400) {
+              $("#addNotificationModel").modal("hide");
+              $("#error_addNotification").modal("show");
+              $(".refunded_body").html(data.responseText);
+            } else {
+              $("#addNotificationModel").modal("hide");
+              $("#error_addNotification").modal("show");
+              $(".refunded_body").html(data.responseText);
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      } else {
+        $("#addNotificationBtn").html("Add Notification");
+        $("#addNotificationBtn").prop("disabled", false);
+      }
+
+      /* Clear Error Messages after 3 seconds */
+      setTimeout(function () {
+        $(".errorClass").html("");
+      }, 3000);
+    }
+
+    function onUpdateModal(
+      id,
+      clientHashId,
+      templateType,
+      templateName,
+      templateBody,
+      senderName,
+      senderIdentifier,
+      title,
+      status
+    ) {
+      $("#clientCode2").val(clientHashId);
+      $("#editNotifTemplateType").html(generateTemplateType(templateType));
+      $("#editNotifTemplateName").val(templateName);
+      $("#editNotifTemplateBody").val(templateBody);
+      $("#editNotifSenderName").val(senderName);
+      $("#editNotifSenderIdent").val(senderIdentifier);
+      $("#editNotifTitle").val(title);
+      $("#editNotifStatus").html(generateStatusDD(status));
+
+      $("#notificationId").val(id);
+
+      $("#updateNotificationModel").modal("show");
+    }
+
+    function generateStatusDD(value) {
+      let result = "";
+      let selectActive = "";
+      let selectInactive = "";
+      result += '<option value="">Select Status</option>';
+      if (value.toLowerCase() === "active") {
+        selectActive = "selected";
+      } else if (value.toLowerCase() === "inactive") {
+        selectInactive = "selected";
+      }
+      result += '<option value="Active" ' + selectActive + ">Active</option>";
+      result +=
+        '<option value="Inactive" ' + selectInactive + ">Inactive</option>";
+
+      return result;
+    }
+
+    function generateTemplateType(value) {
+      let result = "";
+      let selectEmail = "";
+      let selectSms = "";
+      let selectWebhook = "";
+      result += '<option value="">Select Template Type</option>';
+      if (value.toLowerCase() === "email") {
+        selectEmail = "selected";
+      } else if (value.toLowerCase() === "sms") {
+        selectSms = "selected";
+      } else if (value.toLowerCase() === "webhook") {
+        selectWebhook = "selected";
+      }
+      result += '<option value="EMAIL" ' + selectEmail + ">Email</option>";
+      result += '<option value="SMS" ' + selectSms + ">SMS</option>";
+      result +=
+        '<option value="WEBHOOK" ' + selectWebhook + ">Webhook</option>";
+      return result;
+    }
+
+    function generateUpdateNotificationData() {
+      var data = new Object();
+      data.clientHashId = $("#clientCode2").val();
+      data.templateType = $("#editNotifTemplateType").val();
+      data.templateName = $("#editNotifTemplateName").val();
+      data.templateBody = $("#editNotifTemplateBody").val();
+      data.senderName = $("#editNotifSenderName").val();
+      data.senderIdentifier = $("#editNotifSenderIdent").val();
+      data.title = $("#editNotifTitle").val();
+      data.status = $("#editNotifStatus").val();
+      data = unSanitize(data);
+      return data;
+    }
+    /* call when updating a notification from notification list */
+    function onUpdateNotification() {
+      $("#editNotificationBtn").html(spinnerUrl);
+      $("#editNotificationBtn").prop("disabled", true);
+      var valid = true;
+      let clientHashId = $("#clientCode2").val();
+      let templateType = $("#editNotifTemplateType").val();
+      let templateName = $("#editNotifTemplateName").val();
+      let templateBody = $("#editNotifTemplateBody").val();
+      let senderName = $("#editNotifSenderName").val();
+      let senderIdentifier = $("#editNotifSenderIdent").val();
+      let title = $("#editNotifTitle").val();
+      let status = $("#editNotifStatus").val();
+      if (templateType === "" || templateType === null) {
+        valid = false;
+        $("#editNotifTemplateType").html("Template type is mandatory");
+      }
+      if (templateName === "" || templateName === null) {
+        valid = false;
+        $("#editNotifTemplateNameError").html("Template name is mandatory");
+      }
+      if (templateBody === "" || templateBody === null) {
+        valid = false;
+        $("#editNotifTemplateBodyError").html("Template Body is mandatory");
+      }
+      if (senderName === "" || senderName === null) {
+        valid = false;
+        $("#editNotifSenderNameError").html("Sender name is mandatory");
+      }
+      if (senderIdentifier === "" || senderIdentifier === null) {
+        valid = false;
+        $("#editNotifSenderIdentError").html(
+          "Sender Identifier is mandatory"
+        );
+      }
+      if (title === "" || title === null) {
+        valid = false;
+        $("#editNotifTitleError").html("Title is mandatory");
+      }
+      if (status === "" || status === null) {
+        valid = false;
+        $("#editNotifStatusError").html("Status is mandatory");
+      }
+      if (valid === true) {
+        var notificationId = $("#notificationId").val();
+
+        $.ajax({
+          type: "PUT",
+          contentType: "application/json",
+          dataType: "json",
+          url: $("#updateNotificationUrl").val() + notificationId,
+          data: JSON.stringify(generateUpdateNotificationData()),
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(data));
+
+            $("#editNotificationBtn").html(spinnerUrl);
+            $("#updateNotificationModel").modal("hide");
+            $("#editNotificationBtn").html("Update");
+            $("#success_refundNotification").modal("show");
+            $(".refunded_body").html("Notification Updated Successfully");
+            $("#editNotificationBtn").prop("disabled", false);
+            fetchMe();
+          },
+          error: function (xhr) {
+            $("#editNotificationBtn").html(spinnerUrl);
+            $("#updateNotificationModel").modal("hide");
+            $("#editNotificationBtn").html("Update");
+            if (xhr.readyState === 0) {
+              $("#error_updateNotification").modal("show");
+              $(".refunded_body").html(
+                "service is temporarily down,please try again later."
+              );
+            } else {
+              $("#error_updateNotification").modal("show");
+              $(".refunded_body").html(xhr.responseJSON.message);
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      } else {
+        $("#editNotificationBtn").html("Update Notification");
+        $("#editNotificationBtn").prop("disabled", false);
+      }
+      /* Clear Error Messages after 3 seconds */
+      setTimeout(function () {
+        $(".errorClass").html("");
+      }, 3000);
+    }
+
+    function resetFields() {
+      $("#reportrange span").html("");
+      $("#daterange").val("");
+      var clientDetails = $("#clientDetails").val();
+      var decodedClientDetails = window.atob(clientDetails);
+      if (
+        decodedClientDetails === undefined ||
+        decodedClientDetails == null ||
+        decodedClientDetails === "" ||
+        decodedClientDetails === [] ||
+        decodedClientDetails.length === 0
+      ) {
+        $("#clientCode").val("");
+        $("#clientCode").trigger("change");
+      }
+    }
+
+    function onClosePopupFormReset(formId) {
+      let ID = "#" + formId;
+      $(ID)[0].reset();
+    }
+    function reOpenAddNotificationModal() {
+      $("#addNotificationModel").modal("show");
+      $("#addNotificationBtn").attr("disabled", false);
+      $("#addNotificationBtn").html("Submit");
+    }
+
+    function reOpenUpdateNotificationModal() {
+      $("#updateNotificationModel").modal("show");
+      $("#editNotificationBtn").attr("disabled", false);
+      $("#editNotificationBtn").html("Submit");
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en" class="body-full-height">
+
+<head>
+  <!-- <script type="text/javascript">
+      window.sessionStorage.setItem("isBrowserOpen", "true");
+      window.sessionStorage.setItem("browserOpeningDateTime", new Date() + "");
+      console.log(window.sessionStorage.getItem("isBrowserOpen"));
+      console.log(window.sessionStorage.getItem("browserOpeningDateTime"));
+    </script> -->
+
+  <!-- META SECTION -->
+  <title>ahan</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+
+  <!-- <base href="/" /> -->
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive/login-responsive.css" />
+  <!-- EOF CSS INCLUDE -->
+
+  <style>
+    .authentication_wrapper .title {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .modal-content {
+      min-width: 345px;
+      border-radius: 0;
+      padding: 15px;
+    }
+
+    .authentication_wrapper .info>span {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .authentication_wrapper .info {
+      margin-bottom: 8px;
+    }
+
+    .authentication_wrapper form>span {
+      font-size: 11px;
+      font-weight: 600;
+      color: green;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .authentication_wrapper .resend_otp>a {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .authentication_wrapper .resend_otp>a:hover {
+      text-decoration: none;
+    }
+
+    button.close {
+      position: relative;
+      z-index: 99;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="hiddenFields">
+    <input type="hidden" id="sendOtpUrl" name="sendOtpUrl" value="${sendOtpUrl}" />
+    <input type="hidden" id="forgotPasswordUrl" name="forgotPasswordUrl" value="${forgotPasswordUrl}" />
+    <input type="hidden" id="authorizationHeader" name="authorizationHeader" value="${authorizationHeader}" />
+    <input type="hidden" id="updateStatusUrl" name="updateStatusUrl" value="${updateStatusUrl}" />
+  </div>
+
+  <div class="login-container">
+    <div class="intro_box">
+      <div class="heading">
+        <h3>
+          Democratise
+          <br />
+          payments globally
+        </h3>
+      </div>
+      <div class="content_sm">
+        <p>
+          Redefine payment with our
+          <br />
+          next-generation b2b solution
+        </p>
+      </div>
+    </div>
+    <div class="login-box">
+      <div class="logo_Artboard">
+        <!-- <img src="assets/img/nium-white.png" /> -->
+
+        <h1>ahan</h1>
+        <h4>new rules. new possibilities</h4>
+      </div>
+      <div class="login-body">
+        <div class="login-title">
+          <strong>Welcome</strong>
+          <br />
+          <span>Please login</span>
+        </div>
+        <!-- <div style="text-align: center">
+            <c:choose>
+              <c:when test="${param.error == true}">
+                <h4 style="color: red">
+                  <b>Invalid Credentials!</b>
+                </h4>
+              </c:when>
+              <c:when test="${param.success == true}">
+                <h4 style="color: red">
+                  <b>You have been successfully logged out!</b>
+                </h4>
+              </c:when>
+              <c:when test="${param.expired == true}">
+                <h4 style="color: red">
+                  <b>Your session has expired. Please login again!</b>
+                </h4>
+              </c:when>
+
+              <c:when test="${passwordUpdatedMessage != ''}">
+                <h4 style="color: red">
+                  <b>${passwordUpdatedMessage}</b>
+                </h4>
+              </c:when>
+            </c:choose>
+          </div> -->
+
+        <div id="err_block" style="color: #f19999" class="text-center error"></div>
+
+        <form class="form-horizontal" id="login-form_new">
+          <div id="origin-source">
+            <div class="form-group">
+              <input type="email" class="form-control username" placeholder="USERNAME" id="username_new"
+                name="username_new" autocomplete="off" />
+              <span id="err_username_new"></span>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control clear_password" placeholder="PASSWORD" id="password_new_show"
+                name="password_new_show" autocomplete="off" />
+              <input type="hidden" name="password_new" class="form-control clear_password" id="password_new" />
+              <span id="err_password_new"></span>
+            </div>
+            <div class="form-group">
+              <a id="newLoginBtn" type="button" href="index.html" class="btn btn-block">
+                Log In
+              </a>
+            </div>
+            <div class="form-group">
+              <a href="#" data-target="#forgotPasswordModal" data-toggle="modal">Forgot your password?</a>
+            </div>
+          </div>
+        </form>
+
+        <form class="form-horizontal" id="loginForm"
+          action="${pageContext.request.contextPath}/authenticate/processLoginForm" method="post" style="display: none">
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Username" id="loginUsername" name="loginUsername" />
+            <span id="err_username"></span>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" id="loginPassword"
+              name="loginPassword" />
+            <span id="err_password"></span>
+          </div>
+
+          <div class="form-group">
+            <input type="hidden" class="form-control" placeholder="aesKeyEncryptedUsingPublicKey"
+              id="aesKeyEncryptedUsingPublicKey" name="aesKeyEncryptedUsingPublicKey" />
+          </div>
+
+          <div class="form-group">
+            <input type="hidden" class="form-control" placeholder="loginOtp" id="loginOtp" name="loginOtp" />
+          </div>
+
+          <div class="form-group">
+            <input type="hidden" class="form-control" placeholder="csrf token" id="csrfTokenToSubmit"
+              name="csrf_token" />
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-block">Log In</button>
+          </div>
+          <div class="form-group">
+            <a href="#" data-target="#forgotPasswordModal" data-toggle="modal">Forgot your password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginOtpModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" style="width: 27%">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: #f9f9f9">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <div class="modal-body">
+          <div class="authentication_wrapper">
+            <div class="title">Authentication required</div>
+            <div class="info">
+              <span id="loginMessage_success"></span>
+            </div>
+            <form id="otpmodal">
+              <div class="form-group">
+                <label>Enter OTP</label>
+                <input type="text" name="otp" class="form-control verify_otp" autocomplete="off"
+                  id="verify_reg_otp_key" />
+                <span id="errorotp" class="error"></span>
+                <input type="hidden" name="otp_new" class="form-control verify_otp" id="verify_otp_key" />
+              </div>
+              <span>A new OTP has been sent to your email.</span>
+              <div class="form-group">
+                <button id="verifyOtpBtn" class="btn btn-primary btn-block ripple" type="button">
+                  Continue
+                </button>
+              </div>
+            </form>
+            <div class="text-right resend_otp">
+              <button id="resendOtpId" class="btn btn-primary btn-xs ripple" onclick="resendOTP(event);"
+                style="margin-top: 1%">
+                Resend OTP
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="forgotPasswordModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" style="width: 27%">
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: #f9f9f9">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <div class="modal-body">
+          <div class="authentication_wrapper">
+            <div class="title">Password assistance</div>
+            <div class="info">
+              <span>Enter the email address associated with your NIUM
+                account.</span>
+            </div>
+            <br />
+            <form id="forgotmodal">
+              <div class="form-group">
+                <label>Enter Email</label> <label for="email"></label>
+                <input type="email" class="form-control" id="email" name="email" />
+                <br />
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary btn-block ripple" id="forgotPasswordButton" type="button"
+                  onclick="forgotPassword();">
+                  Continue
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="width: 140px; margin-top: -91px; margin-bottom: 10px" alt="" />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" id="successModal" class="btn btn-success px-5" data-dismiss="modal"
+                  onclick="closeModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="width: 140px; margin-top: -91px; margin-bottom: 10px" alt="" />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5" data-dismiss="modal" onclick="closeModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="passwordExpiryConsentModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="width: 140px; margin-top: -91px; margin-bottom: 10px" alt="" />
+            <div>
+              <h4 id="passwordExpiryConsentMsg" class="mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-success px-5" data-dismiss="modal"
+                  onclick="triggerResetPassword();">
+                  OK
+                </button>
+                <button type="button" class="btn btn-danger px-5" data-dismiss="modal" onclick="closeModal();">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="common_error_div" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="width: 140px; margin-top: -91px; margin-bottom: 10px" alt="" />
+            <div>
+              <h4 id="common_error_message mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5" data-dismiss="modal" onclick="closeWrongOtpModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/disableautofill/disableAutoFill.js"></script>
+
+  <script type="text/javascript" src="assets/js/openPGP/jsencrypt.min.js"></script>
+
+  <script type="text/javascript" src="assets/js/AES/aesScript.js"></script>
+  <script type="text/javascript" src="assets/js/AES/cipher-core.min.js"></script>
+  <script type="text/javascript" src="assets/js/AES/core.min.js"></script>
+  <script type="text/javascript" src="assets/js/AES/crypto-js.min.js"></script>
+  <script type="text/javascript" src="assets/js/AES/enc-utf8.min.js"></script>
+  <script type="text/javascript" src="assets/js/AES/format-openssl.min.js"></script>
+
+  <script type="text/javascript" src="assets/js/UUID/uuidv4.min.js"></script>
+  <script type="text/javascript" src="assets/js/encoder/he.js"></script>
+  <script type="text/javascript" src="assets/js/CommonValidations.js?version=1.0.6"></script>
+
+  <!-- <script>
+      /* Universal Spinner with text for Button */
+      var spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+      function enablePlugin() {
+        $("#login-form_new").disableAutoFill({
+          debugMode: false,
+          randomizeInputName: true,
+          callback: function () {
+            return checkForm();
+          },
+        });
+      }
+
+      $("#password_new_show").on("keyup", function (event) {
+        if (event.which === 13) {
+          $("#newLoginBtn").trigger("click");
+          return;
+        }
+        var passwordShow = $("#password_new_show").val() + "";
+        var stringToDisplay = "";
+        var passwordShowLength = passwordShow.length;
+        var replacedPasswordShow = passwordShow.replace(/\●/g, "");
+        $("#password_new").val(
+          $("#password_new").val() + "" + replacedPasswordShow
+        );
+        for (var i = 0; i < passwordShowLength; i++) {
+          stringToDisplay += "●";
+        }
+        $("#password_new_show").val(stringToDisplay);
+      });
+
+      $("#verify_reg_otp_key").on("keyup", function () {
+        var passwordShow = $("#verify_reg_otp_key").val() + "";
+        var stringToDisplay = "";
+        var passwordShowLength = passwordShow.length;
+        var replacedPasswordShow = passwordShow.replace(/\●/g, "");
+        $("#verify_otp_key").val(
+          $("#verify_otp_key").val() + "" + replacedPasswordShow
+        );
+        for (var i = 0; i < passwordShowLength; i++) {
+          stringToDisplay += "●";
+        }
+        $("#verify_reg_otp_key").val(stringToDisplay);
+      });
+
+      function validateform() {
+        $("#newLoginBtn").attr("disabled", true);
+        $("#newLoginBtn").html(spinnerUrl);
+        var regx_email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var username = document.getElementById("username_new");
+        var password = document.getElementById("password_new_show");
+        var block_err = document.getElementById("err_block");
+        var user_err = document.getElementById("err_username_new");
+        var pwd_err = document.getElementById("err_password_new");
+        var valid = true;
+        var errorMessage = "";
+
+        if (username.value == null || username.value == "") {
+          errorMessage += "Username is required!<br />";
+          valid = false;
+        } else if (username.value.match(regx_email) == false) {
+          errorMessage += "Please enter a valid Username!<br />";
+          valid = false;
+        }
+        if (password.value == null || password.value == "") {
+          errorMessage += "Password is required!";
+          valid = false;
+        }
+
+        if (valid) {
+          $("#err_block").html("");
+          sendOTP();
+        } else {
+          $("#err_block").html(errorMessage);
+          $("#newLoginBtn").attr("disabled", false);
+          $("#newLoginBtn").html("Log In");
+          setTimeout(function () {
+            $("#err_block").html("");
+          }, 2000);
+        }
+      }
+
+      function resendOTP(event) {
+        event.preventDefault();
+        $("#loginMessage_success").html("Please enter the new otp!");
+        $("#resendOtpId").attr("disabled", true);
+        $("#verify_reg_otp_key").focus();
+        var duration = 60;
+        var customTimer = setInterval(function () {
+          $("#resendOtpId").html("Resend otp in (" + duration + ") seconds");
+          duration = duration - 1;
+          if (duration == 0) {
+            $("#resendOtpId").html("Resend otp");
+            $("#resendOtpId").attr("disabled", false);
+            duration = 60;
+            clearInterval(customTimer);
+          }
+        }, 1000);
+
+        sendOTP();
+      }
+
+      function closeModal() {
+        var message = $(".refunded_body").html();
+        if (message.toLowerCase() === "invalid otp!") {
+          $("#otpmodal")[0].reset();
+          $("#verify_otp_key").val("");
+          $("#error_refundNotification").modal("hide");
+          $("#loginOtpModal").modal("show");
+          $("#verifyOtpBtn").html("Continue");
+          $("#verifyOtpBtn").attr("disabled", false);
+        } else {
+          window.location.reload(true);
+        }
+      }
+
+      function uuid() {
+        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+          /[xy]/g,
+          function (c) {
+            var r = (Math.random() * 16) | 0,
+              v = c == "x" ? r : (r & 0x3) | 0x8;
+            return v.toString(16);
+          }
+        );
+      }
+
+      function triggerResetPassword() {
+        forgotPassword();
+      }
+
+      function sendOTP() {
+        var randomUuidKey = generateRandomUuid();
+        var username = getAesEncryptedData(
+          $("#username_new").val(),
+          randomUuidKey
+        );
+        var password = getAesEncryptedData(
+          $("#password_new").val(),
+          randomUuidKey
+        );
+        var aesKeyEncryptedUsingPublicKey = getRsaEncryptedData(randomUuidKey);
+
+        $.ajax({
+          type: "POST",
+          dataType: "json",
+          url: $("#sendOtpUrl").val(),
+          contentType: "application/json",
+          data: JSON.stringify({
+            userName: username,
+            password: password,
+            aesKeyEncryptedUsingPublicKey: aesKeyEncryptedUsingPublicKey,
+          }),
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader(
+              "Authorization",
+              $("#authorizationHeader").val()
+            );
+            xhr.setRequestHeader("X_REQUEST_ID", uuid());
+            xhr.setRequestHeader("X_CLIENT_ID", "Cards-UI");
+          },
+          success: function (result, status, xhr) {
+            window.localStorage.setItem(
+              "csrf_token",
+              xhr.getResponseHeader("csrf_token")
+            );
+            $("#loginOtpModal").modal("show");
+            $("#loginOtpModal").on("shown.bs.modal", function () {
+              $("#verify_reg_otp_key").focus();
+            });
+            $("#newLoginBtn").attr("disabled", false);
+            $("#newLoginBtn").html("Log In");
+          },
+          error: function (xhr) {
+            if (xhr.readyState == 0) {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(
+                "service is temporarily down,please try again later!"
+              );
+            } else {
+              let errorMsg = xhr.responseJSON.message;
+              if (
+                errorMsg.includes(
+                  "Your password has expired. Please click ok to reset"
+                )
+              ) {
+                $("#email").val($("#username_new").val());
+                $("#passwordExpiryConsentMsg").html(errorMsg);
+                $("#passwordExpiryConsentModal").modal("show");
+              } else {
+                $(".refunded_body").html(errorMsg);
+                $("#error_refundNotification").modal("show");
+              }
+            }
+          },
+          complete: function (xhr, status) {
+            $("#newLoginBtn").attr("disabled", false);
+            $("#newLoginBtn").html("Log In");
+          },
+        });
+      }
+
+      function verifyOtpModal() {
+        $("#verifyOtpBtn").attr("disabled", true);
+        $("#verifyOtpBtn").html(spinnerUrl);
+        $("#errorotp").html("");
+
+        var otpToDisplay = $("#verify_reg_otp_key").val();
+
+        if (
+          otpToDisplay != null &&
+          otpToDisplay !== "null" &&
+          otpToDisplay !== ""
+        ) {
+          var randomUuidKey = generateRandomUuid();
+          var username = getAesEncryptedData(
+            $("#username_new").val(),
+            randomUuidKey
+          );
+          var password = getAesEncryptedData(
+            $("#password_new").val(),
+            randomUuidKey
+          );
+          var otpToSend = getAesEncryptedData(
+            $("#verify_otp_key").val(),
+            randomUuidKey
+          );
+          var aesKeyEncryptedUsingPublicKey = getRsaEncryptedData(
+            randomUuidKey
+          );
+
+          $("#loginUsername").val(username);
+          $("#loginPassword").val(password);
+          $("#loginOtp").val(otpToSend);
+          $("#aesKeyEncryptedUsingPublicKey").val(
+            aesKeyEncryptedUsingPublicKey
+          );
+          $("#csrfTokenToSubmit").val(
+            window.localStorage.getItem("csrf_token")
+          );
+          $("#loginForm").submit();
+        } else {
+          $("#errorotp").html("Otp is mandatory!");
+          $("#verifyOtpBtn").html("Continue");
+          $("#verifyOtpBtn").attr("disabled", false);
+        }
+      }
+
+      $("#verifyOtpBtn").click(function () {
+        verifyOtpModal();
+      });
+
+      function closeWrongOtpModal() {
+        window.location.href =
+          "${pageContext.request.contextPath}/authenticate/login";
+      }
+
+      // On forgot Password Modal open focus on input field
+      $("#forgotPasswordModal").on("shown.bs.modal", function () {
+        $("#email").focus();
+      });
+
+      function forgotPassword() {
+        $("#forgotPasswordButton").attr("disabled", true);
+        $("#newLoginBtn").attr("disabled", true);
+        $("#newLoginBtn").html(spinnerUrl);
+        $("#forgotPasswordButton").html(spinnerUrl);
+
+        $.ajax({
+          type: "POST",
+          contentType: "application/json",
+          dataType: "json",
+          url: $("#forgotPasswordUrl").val(),
+          data: JSON.stringify({
+            userName: $("#email").val(),
+          }),
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader(
+              "Authorization",
+              $("#authorizationHeader").val()
+            );
+          },
+          success: function (xhr) {
+            $("#forgotPsswordButton").removeAttr("diabled", "disabled");
+            $("#forgotPasswordModal").modal("hide");
+            $(".se-pre-con").hide();
+            if (xhr.status === "OK") {
+              $("#success_refundNotification").modal("show");
+              $(".refunded_body").html(sanitize(xhr.message));
+              $("#forgotPasswordButton").attr("disabled", false);
+              $("#forgotPasswordButton").html("Continue");
+            } else {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(sanitize(xhr.message));
+              $("#forgotPasswordButton").attr("disabled", false);
+              $("#forgotPasswordButton").html("Continue");
+            }
+          },
+          error: function (xhr) {
+            $("#forgotPasswordModal").modal("hide");
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(xhr.responseJSON.message);
+          },
+          complete: function () {
+            $("#newLoginBtn").attr("disabled", false);
+            $("#newLoginBtn").html("Log In");
+          },
+        });
+      }
+
+      $(".verify_otp").on("keyup", function (e) {
+        var code = e.which || e.keyCode;
+        //allow Backspace and Delete key.
+        if (code >= 48 && code <= 57) {
+        } else if (code === 8 || code === 46) {
+          $(".verify_otp").val("");
+        } else {
+          return false;
+        }
+      });
+
+      $(".clear_password").on("keyup", function (e) {
+        var code = e.which || e.keyCode;
+        //allow Backspace and Delete key.
+        if (code >= 48 && code <= 57) {
+        } else if (code === 8 || code === 46) {
+          $(".clear_password").val("");
+        } else {
+          return false;
+        }
+      });
+    </script> -->
+</body>
+
+</html>

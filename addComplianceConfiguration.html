@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- META SECTION -->
+  <title>ahan | Add Compliance Configuration</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+  <!-- EOF CSS INCLUDE -->
+</head>
+
+<body>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+
+      <div class="page-content-wrap">
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="container-fluid">
+          <div id="hiddenFields">
+            <input type="hidden" id="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+            <input type="hidden" id="addComplianceConfigurationUrl" name="addComplianceConfigurationUrl"
+              value="${addComplianceConfigurationUrl}" />
+            <input type="hidden" id="complianceLevelUrl" name="complianceLevelUrl" value="${complianceLevelUrl}" />
+            <input type="hidden" id="getCountryListUrl" value="${getCountryListUrl}" />
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <h4 class="page-title">Add Compliance Configuration</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-sm-12">
+              <div class="comp_client_id">
+                <input type="hidden" id="successMsg" name="successMsg" value="${successMessage}" />
+                <input type="hidden" id="errorMsg" name="errorMsg" value="${errorMessage}" />
+                <div class="row">
+                  <div class="col-md-4 col-lg-4 col-md-offset-4">
+                    <label for="clientCode" class="control-label">Client<sup>*</sup>:</label>
+                    <select id="clientCode" name="clientCode" class="enableSelect2 form-control">
+                      <option value="">Select a Client</option>
+                      <option value="Cards_Client_TEST_4(9a2a5ee-145d-45dss-51dede-39dwdwdwdwd)">
+                        Cards_Client_TEST_4(9a2a5ee-145d-45dss-51dede-39dwdwdwdwd)
+                      </option>
+                      <option value="Cards_Client_TEST_1(65eeefda544-145d-45dss-51dede-2s3de3drd42)">
+                        Cards_Client_TEST_1(65eeefda544-145d-45dss-51dede-2s3de3drd42)
+                      </option>
+                      <option value="Cards_Client_TEST_1(67cfada66-6544fcddds-45dss-51dede-76f4fredx)">
+                        Cards_Client_TEST_1(67cfada66-6544fcddds-45dss-51dede-76f4fredx)
+                      </option>
+                      <option value="Hyperface(908jjdsd-67fffd-655675fdddsss-635fdffdfd)">
+                        Hyperface(908jjdsd-67fffd-655675fdddsss-635fdffdfd)
+                      </option>
+                    </select>
+                    <span id="clientHashIdError" class="error"></span>
+                  </div>
+                  <div class="col-md-4 col-lg-4">
+                    <label for="complianceLevel" class="control-label">Compliance Level<sup>*</sup>:</label>
+                    <select id="complianceLevel" name="complianceLevel" class="form-control">
+                      <option value="">SCREENING</option>
+                      <option value="">SCREENING_KYC</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel" style="min-height: 25vh">
+                <!--Block Styled Form -->
+                <!--===================================================-->
+                <div class="panel-body p-0">
+                  <div class="compliance_wrapper">
+                    <div class="comp_config_add">
+                      <div class="add_wrapper" id="add_compliance">
+                        <div class="add_row add_heading" id="addRowHeading">
+                          <div class="row_item head_title pt-4">Country</div>
+                          <div class="row_item head_title pt-4">
+                            Compliance Template
+                          </div>
+                          <div class="row_item head_title pt-4">
+                            Compliance Profile
+                          </div>
+                          <div class="row_item head_title pt-4">
+                            Document Count
+                          </div>
+                          <div class="row_item head_title pt-4">Default</div>
+                          <div class="row_item head_title">
+                            <button class="btn btn-primary btn-sm btn-block" type="button" onclick="addComp()">
+                              <i class="fas fa-plus-circle"></i> Add
+                            </button>
+                          </div>
+                        </div>
+                        <div class="add_row bg_color" id="row_1">
+                          <div class="row_item" id="col_1_1">
+                            <input type="hidden" id="countryCodeValueHold" name="countryCodeValueHold" value="" />
+                            <select id="countryCode" name="countryCode" class="form-control enableSelect2 compCountry"
+                              value="">
+                              <option value="">Select Base Currency</option>
+                              <option value="Afghanistan Afghani(AFN)(Afghanistan)">
+                                Afghanistan Afghani(AFN)(Afghanistan)
+                              </option>
+                              <option value="Eura Member Countries(EUR)">
+                                Eura Member Countries(EUR)
+                              </option>
+                              <option value="Albania Lek(ALL)(Albania)">
+                                Albania Lek(ALL)(Albania)
+                              </option>
+                              <option value="Algerian Dinar(DZD)(Algeria)">
+                                Algerian Dinar(DZD)(Algeria)
+                              </option>
+                              <option value="United States Dollar(USD)">
+                                United States Dollar(USD)
+                              </option>
+                              <option value="Australia Dollar(AUD)(Australia)">
+                                Australia Dollar(AUD)(Australia)
+                              </option>
+                              <option value="Australia Dollar(AUD)(Christmas Island)">
+                                Australia Dollar(AUD)(Christmas Island)
+                              </option>
+                              <option value="Australia Dollar(AUD)(Cocos (Keeling) Island)">
+                                Australia Dollar(AUD)(Cocos (Keeling) Island)
+                              </option>
+                            </select>
+                            <span id="customerCountryError" class="error">
+                              <c:out value="${error.countryCode}"></c:out>
+                            </span>
+                          </div>
+                          <div class="row_item" id="col_1_2">
+                            <input type="text" class="form-control compTemp" pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+"
+                              required placeholder="Enter Compliance Template Name" id="complianceTemplateId"
+                              value="" />
+                            <span id="complianceTemplateIdError" class="error">
+                              <c:out value="${error.complianceTemplateId}"></c:out>
+                            </span>
+                          </div>
+                          <div class="row_item" id="col_1_3">
+                            <select class="
+                                  form-control
+                                  complianceProfileClass
+                                  enableSelect2
+                                " required id="complianceProfile">
+                              <option value="">
+                                Select a compliance profile
+                              </option>
+                              <option value="SG_B2C_NORMAL">
+                                SG B2C NORMAL
+                              </option>
+                              <option value="SG_B2B_EMP_LETTER">
+                                SG B2B EMP LETTER
+                              </option>
+                              <option value="SG_B2B_KYC">SG B2B KYC</option>
+                              <option value="SG_SHIPPING">SG SHIPPING</option>
+                              <option value="SG_B2B_SCREENING">
+                                SG B2B SCREENING
+                              </option>
+                              <option value="AU_B2C_NORMAL">
+                                AU B2C NORMAL
+                              </option>
+                              <option value="AU_B2B_EMP_LETTER">
+                                AU B2B EMP LETTER
+                              </option>
+                              <option value="AU_B2B_KYC">AU B2B KYC</option>
+                              <option value="AU_B2B_SCREENING">
+                                AU B2B SCREENING
+                              </option>
+                              <option value="EU_B2C_NORMAL">
+                                EU B2C NORMAL
+                              </option>
+                              <option value="EU_B2B_EMP_LETTER">
+                                EU B2B EMP LETTER
+                              </option>
+                              <option value="EU_B2B_KYC">EU B2B KYC</option>
+                              <option value="EU_B2B_SCREENING">
+                                EU B2B SCREENING
+                              </option>
+                              <option value="HK_B2C_NORMAL">
+                                HK B2C NORMAL
+                              </option>
+                              <option value="HK_B2B_EMP_LETTER">
+                                HK B2B EMP LETTER
+                              </option>
+                              <option value="HK_B2B_KYC">HK B2B KYC</option>
+                            </select>
+                            <span id="complianceProfileIdError" class="error">
+                              <c:out value="${error.complianceProfile}"></c:out>
+                            </span>
+                          </div>
+
+                          <div class="row_item" id="col_1_4">
+                            <input type="text" class="form-control docCount" placeholder="Enter the no. of documents"
+                              id="documentCount" name="documentCount" value="1" />
+                            <span id="documentCountError" class="error">
+                              <c:out value="${error.documentCount}"></c:out>
+                            </span>
+                          </div>
+
+                          <div class="row_item" id="col_1_5">
+                            <label class="custom_checkbox">
+                              <input type="checkbox" name="is_default" id="isDefault_1" class="isDefaultBox"
+                                value="false" />
+                              <i class="far fa-square fa-2x"></i><i class="far fa-check-square fa-2x"></i>
+                            </label>
+                            <span id="" class="error"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group text-center">
+                        <button id="btnSubmit" class="btn btn-primary btn-sm ripple px-5"
+                          onclick="validateMultiselect(event);" type="button">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--===================================================-->
+                <!--End Block Styled Form -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="" style="min-height: 52vh">
+                <!--Block Styled Form -->
+                <!--===================================================-->
+                <div id="tableDiv" class="table-responsive" style="overflow: auto; max-height: 52vh; min-height: 50vh">
+                  <table id="availableComplianceList" class="table table-bordered myTable"></table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+      </div>
+    </div>
+    <!-- END PAGE CONTAINER -->
+  </div>
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+  <!-- Success Modal -->
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button id="confirmButton" type="button" class="btn btn-success ripple px-5" data-dismiss="modal"
+                  onClick="refreshPage()">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div style="text-align: center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger ripple px-5" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- Validation SCRIPTS -->
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <!-- END SCRIPTS -->
+  <script>
+    $("#clientCode").select2({
+      placeholder: "Select a Program",
+      allowClear: false,
+      dropdownAutoWidth: false,
+      width: "100%",
+      dropdownCss: {
+        width: "inherit",
+      },
+    });
+  </script>
+  <script>
+    $(".enableSelect2").select2({
+      placeholder: "Select an option",
+      allowClear: true,
+      dropdownAutoWidth: false,
+      width: "100%",
+      dropdownCss: { width: "inherit" },
+    });
+
+    var count = 1;
+
+    function addComp() {
+      count++;
+      let compElem = '<div class="add_row bg_color" id="row_' + count + '">';
+      compElem += '<div class="row_item" id="col_' + count + '_1">';
+      compElem +=
+        '<input type="hidden" id="countryCodeValueHold"' +
+        'name="countryCodeValueHold" value="">';
+      compElem +=
+        '<select id="country_' +
+        count +
+        '" name="countryCode" class="form-control enableSelect2 compCountry" required></select>';
+      compElem +=
+        '<span id="customerCountryErr' +
+        count +
+        '" class="errorCountry" style="color:#ff0000;font-size: 12px;">' +
+        "{errorCountry." +
+        "country_" +
+        count +
+        "}" +
+        "</span>";
+      compElem += "</div>";
+
+      compElem += '<div class="row_item"  id="col_' + count + '_2">';
+      compElem +=
+        '<input type="text" class="form-control compTemp"  placeholder="Enter Compliance Template Name" id="col_' +
+        count +
+        '_2" required>';
+      compElem +=
+        '<span id="templateIdErr' +
+        count +
+        '_2" class="errorTemp" style="color:red;font-size: 12px;">' +
+        "{errorTemp." +
+        "col_" +
+        count +
+        "_2}" +
+        "</span>";
+      compElem += "</div>";
+
+      compElem += '<div class="row_item"  id="col_' + count + '_3">';
+      compElem +=
+        '<select class="form-control complianceProfileClass" id="col_' +
+        count +
+        '_3" required>';
+      compElem += '<option value = "">Select a compliance profile</option>';
+      compElem += '<option value = "SG_B2C_NORMAL">SG B2C NORMAL</option>';
+      compElem +=
+        '<option value = "SG_B2B_EMP_LETTER">SG B2B EMP LETTER</option>';
+      compElem += '<option value = "SG_B2B_KYC">SG B2B KYC</option>';
+      compElem += '<option value = "SG_SHIPPING">SG SHIPPING</option>';
+      compElem += '<option value = "AU_B2C_NORMAL">AU B2C NORMAL</option>';
+      compElem +=
+        '<option value = "AU_B2B_EMP_LETTER">AU B2B EMP LETTER</option>';
+      compElem += '<option value = "AU_B2B_KYC">AU B2B KYC</option>';
+      compElem += '<option value = "EU_B2C_NORMAL">EU B2C NORMAL</option>';
+      compElem +=
+        '<option value = "EU_B2B_EMP_LETTER">EU B2B EMP LETTER</option>';
+      compElem += '<option value = "EU_B2B_KYC">EU B2B KYC</option>';
+      compElem += '<option value = "HK_B2C_NORMAL">HK B2C NORMAL</option>';
+      compElem +=
+        '<option value = "HK_B2B_EMP_LETTER">HK B2B EMP LETTER</option>';
+      compElem += '<option value = "HK_B2B_KYC"> HK B2B KYC </option>';
+      compElem += "</select>";
+      compElem +=
+        '<span id = "rfiTempErr' +
+        count +
+        '_3" class = "errorComplianceProfileTemp" style = "color:red;font-size: 12px;">' +
+        "{errorComplianceProfileTemp." +
+        "col_" +
+        count +
+        "_3}" +
+        "</span>";
+      compElem += "</div > ";
+
+      compElem += '<div class="row_item"  id="col_' + count + '_4">';
+      compElem +=
+        '<input type="text" value="1" class="form-control docCount"  placeholder="Enter the no. of documents" id="col_' +
+        count +
+        '_4">';
+      compElem +=
+        '<span id="doc_count_error' +
+        count +
+        '_4" class="errorDocCount" style="color:red;font-size: 12px;"></span>';
+      compElem += "</div>";
+
+      compElem += '<div class = "row_item" id = "col_' + count + '_5">';
+      compElem += '<label class = "custom_checkbox" >';
+      compElem +=
+        '<input	type = "checkbox" class = "isDefaultBox" name = "is_default" value = "false" id = "isDefault_' +
+        count +
+        '">';
+      compElem += '<i class = "far fa-square fa-2x"></i>';
+      compElem += '<i class = "far fa-check-square fa-2x"></i>';
+      compElem += "</label>";
+      compElem += "</div>";
+
+      compElem += '<div class = "row_item" id = "col_' + count + '_6" >';
+      compElem +=
+        '<button class = "btn btn-danger btn-sm btn-block" type = "button" id = "btn_2" onclick = "delCompl(event)">';
+      compElem += '<i class = "far fa-trash-alt"></i>';
+      compElem += "Remove</button>";
+      compElem += "</div>";
+      compElem += "</div>";
+
+      $("#add_compliance").append(compElem);
+      $(".errorCountry").html("");
+      $(".errorTemp").html("");
+      $(".errorComplianceProfileTemp").html("");
+      // getCountry(count);
+    }
+
+    function delCompl(event) {
+      $(event.target).closest(".add_row").remove();
+    }
+  </script>
+  <!-- <script type="text/javascript">
+      var count = 1;
+      var globalCountry = "";
+      var countryListData = "";
+
+      function addComp() {
+        count++;
+        let compElem = '<div class="add_row bg_color" id="row_' + count + '">';
+        compElem += '<div class="row_item" id="col_' + count + '_1">';
+        compElem +=
+          '<input type="hidden" id="countryCodeValueHold"' +
+          'name="countryCodeValueHold" value="">';
+        compElem +=
+          '<select id="country_' +
+          count +
+          '" name="countryCode" class="form-control enableSelect2 compCountry" required></select>';
+        compElem +=
+          '<span id="customerCountryErr' +
+          count +
+          '" class="errorCountry" style="color:#ff0000;font-size: 12px;">' +
+          "{errorCountry." +
+          "country_" +
+          count +
+          "}" +
+          "</span>";
+        compElem += "</div>";
+
+        compElem += '<div class="row_item"  id="col_' + count + '_2">';
+        compElem +=
+          '<input type="text" class="form-control compTemp"  placeholder="Enter Compliance Template Name" id="col_' +
+          count +
+          '_2" required>';
+        compElem +=
+          '<span id="templateIdErr' +
+          count +
+          '_2" class="errorTemp" style="color:red;font-size: 12px;">' +
+          "{errorTemp." +
+          "col_" +
+          count +
+          "_2}" +
+          "</span>";
+        compElem += "</div>";
+
+        compElem += '<div class="row_item"  id="col_' + count + '_3">';
+        compElem +=
+          '<select class="form-control complianceProfileClass" id="col_' +
+          count +
+          '_3" required>';
+        compElem += '<option value = "">Select a compliance profile</option>';
+        compElem += '<option value = "SG_B2C_NORMAL">SG B2C NORMAL</option>';
+        compElem +=
+          '<option value = "SG_B2B_EMP_LETTER">SG B2B EMP LETTER</option>';
+        compElem += '<option value = "SG_B2B_KYC">SG B2B KYC</option>';
+        compElem += '<option value = "SG_SHIPPING">SG SHIPPING</option>';
+        compElem += '<option value = "AU_B2C_NORMAL">AU B2C NORMAL</option>';
+        compElem +=
+          '<option value = "AU_B2B_EMP_LETTER">AU B2B EMP LETTER</option>';
+        compElem += '<option value = "AU_B2B_KYC">AU B2B KYC</option>';
+        compElem += '<option value = "EU_B2C_NORMAL">EU B2C NORMAL</option>';
+        compElem +=
+          '<option value = "EU_B2B_EMP_LETTER">EU B2B EMP LETTER</option>';
+        compElem += '<option value = "EU_B2B_KYC">EU B2B KYC</option>';
+        compElem += '<option value = "HK_B2C_NORMAL">HK B2C NORMAL</option>';
+        compElem +=
+          '<option value = "HK_B2B_EMP_LETTER">HK B2B EMP LETTER</option>';
+        compElem += '<option value = "HK_B2B_KYC"> HK B2B KYC </option>';
+        compElem += "</select>";
+        compElem +=
+          '<span id = "rfiTempErr' +
+          count +
+          '_3" class = "errorComplianceProfileTemp" style = "color:red;font-size: 12px;">' +
+          "{errorComplianceProfileTemp." +
+          "col_" +
+          count +
+          "_3}" +
+          "</span>";
+        compElem += "</div > ";
+
+        compElem += '<div class="row_item"  id="col_' + count + '_4">';
+        compElem +=
+          '<input type="text" value="1" class="form-control docCount"  placeholder="Enter the no. of documents" id="col_' +
+          count +
+          '_4">';
+        compElem +=
+          '<span id="doc_count_error' +
+          count +
+          '_4" class="errorDocCount" style="color:red;font-size: 12px;"></span>';
+        compElem += "</div>";
+
+        compElem += '<div class = "row_item" id = "col_' + count + '_5">';
+        compElem += '<label class = "custom_checkbox" >';
+        compElem +=
+          '<input	type = "checkbox" class = "isDefaultBox" name = "is_default" value = "false" id = "isDefault_' +
+          count +
+          '">';
+        compElem += '<i class = "far fa-square fa-2x"></i>';
+        compElem += '<i class = "far fa-check-square fa-2x"></i>';
+        compElem += "</label>";
+        compElem += "</div>";
+
+        compElem += '<div class = "row_item" id = "col_' + count + '_6" >';
+        compElem +=
+          '<button class = "btn btn-danger btn-sm btn-block" type = "button" id = "btn_2" onclick = "delCompl(event)">';
+        compElem += '<i class = "far fa-trash-alt"></i>';
+        compElem += "Remove</button>";
+        compElem += "</div>";
+        compElem += "</div>";
+
+        $("#add_compliance").append(compElem);
+        $(".errorCountry").html("");
+        $(".errorTemp").html("");
+        $(".errorComplianceProfileTemp").html("");
+        getCountry(count);
+      }
+    </script>
+    <script>
+      /* Universal Spinner with text for Button */
+      var spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+      var currencyObject;
+      $("document").ready(function () {
+        $(".se-pre-con").hide();
+        var errorMsg = $("#errorMsg").val();
+        var successMsg = $("#successMsg").val();
+        if (successMsg != "") {
+          $("#success_refundNotification").modal("show");
+          $(".refunded_body").html(sanitize(unSanitize(successMsg)));
+        } else if (errorMsg != "") {
+          $("#error_refundNotification").modal("show");
+          $(".refunded_body").html(sanitize(unSanitize(errorMsg)));
+        }
+        $("#failModal").on("hidden.bs.modal", function () {
+          window.location.href = "/addComplianceConfiguration";
+        });
+      });
+
+      function delCompl(event) {
+        $(event.target).closest(".add_row").remove();
+      }
+
+      function getClientList() {
+        generateClientDropdown(
+          $("#fetchAllClientUrl").val(),
+          false,
+          "clientCode",
+          null
+        );
+      }
+
+      function getCountryList() {
+        $.ajax({
+          url: $("#getCountryListUrl").val(),
+          type: "GET",
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            countryListData = result;
+            var optionTag = "<option value = ''>Select an option</option>";
+            for (var i = 0; i < result.length; i++) {
+              var eachOption = result[i];
+              optionTag +=
+                "<option value = " +
+                eachOption.iso2 +
+                ">" +
+                eachOption.name +
+                " (" +
+                eachOption.iso2 +
+                ")" +
+                "</option>";
+            }
+
+            globalCountry = optionTag;
+            $("#countryCode").html(optionTag);
+            $(".enableSelect2").select2({
+              placeholder: "Select an option",
+              allowClear: false,
+              dropdownAutoWidth: false,
+              width: "100%",
+              dropdownCss: { width: "inherit" },
+            });
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+
+      function getCountry(count) {
+        $("#country_" + count).html(globalCountry);
+        $(".enableSelect2").select2({
+          placeholder: "Select an option",
+          allowClear: false,
+          dropdownAutoWidth: false,
+          width: "100%",
+          dropdownCss: { width: "inherit" },
+        });
+      }
+
+      //ajax submit call
+      function validateMultiselect(event) {
+        event.preventDefault();
+        var countryArray = [];
+        var templateArray = [];
+        var complianceProfileArray = [];
+        var documentCountArray = [];
+        var isdefaultArray = [];
+
+        var clientHashId = $("#clientCode").val();
+        var customerCountry = $("#countryCode").val();
+        var complianceTemplateId = $("#complianceTemplateId").val();
+        var complianceProfile = $("#complianceProfile").val();
+        var documentCount = $("#documentCount").val();
+        var isDefault_1 = document.getElementById("isDefault_1").checked;
+
+        var valid = true;
+
+        var countryList = $(".compCountry")
+          .map(function () {
+            return {
+              id: this.id,
+              value: this.value,
+            };
+          })
+          .get();
+
+        var tempList = $(".compTemp")
+          .map(function () {
+            return {
+              id: this.id,
+              value: this.value,
+            };
+          })
+          .get();
+
+        var complianceProfileList = $(".complianceProfileClass")
+          .map(function () {
+            return {
+              id: this.id,
+              value: this.value,
+            };
+          })
+          .get();
+
+        var documentCountList = $(".docCount")
+          .map(function () {
+            return {
+              id: this.id,
+              value: this.value,
+            };
+          })
+          .get();
+
+        var isDefaultList = $(".isDefaultBox")
+          .map(function () {
+            return {
+              id: this.id,
+              value: this.checked,
+            };
+          })
+          .get();
+
+        for (var i = 0; i < countryList.length; i++) {
+          if (countryList[i].value == "") {
+            valid = false;
+            $(".errorCountry").html("Select Country !");
+          } else {
+            countryValues = countryList[i].value;
+            countryArray.push(countryValues);
+          }
+        }
+
+        // var tempIds = [];
+        // $(".errorTemp").each(function () {
+        // 	tempIds.push({id: this.id});
+        // });
+
+        for (var i = 0; i < tempList.length; i++) {
+          if (tempList[i].value == "") {
+            valid = false;
+            $(".errorTemp").html("Enter Compliance Template !");
+          } else {
+            tempValues = tempList[i].value;
+            templateArray.push(tempValues);
+          }
+        }
+
+        for (var i = 0; i < complianceProfileList.length; i++) {
+          if (complianceProfileList[i].value == "") {
+            valid = false;
+            $(".errorComplianceProfileTemp").html(
+              "Select compliance profile !"
+            );
+          } else {
+            tempComplianceProfileValues = complianceProfileList[i].value;
+            complianceProfileArray.push(tempComplianceProfileValues);
+          }
+        }
+
+        var docCountPattern = new RegExp("^[0-9]+$");
+        for (var i = 0; i < documentCountList.length; i++) {
+          let eachDocCountValue = documentCountList[i].value;
+          if (eachDocCountValue.trim() === "") {
+            documentCountArray.push("1");
+            continue;
+          }
+          if (docCountPattern.test(eachDocCountValue)) {
+            documentCountArray.push(eachDocCountValue);
+          } else {
+            valid = false;
+            $(".errorDocCount").html("Document count must be numeric!");
+          }
+        }
+
+        for (var i = 0; i < isDefaultList.length; i++) {
+          isDefaultValues = isDefaultList[i].value;
+          isdefaultArray.push(isDefaultValues);
+        }
+
+        if (clientHashId == null || clientHashId == "") {
+          valid = false;
+          $("#clientHashIdError").html("Select Client Code !");
+        }
+        if (customerCountry == null || customerCountry == "") {
+          valid = false;
+          $("#customerCountryError").html("Select Country !");
+        }
+        if (complianceTemplateId == null || complianceTemplateId == "") {
+          valid = false;
+          $("#complianceTemplateIdError").html("Enter Compliance Template !");
+        }
+        if (complianceProfile == null || complianceProfile == "") {
+          valid = false;
+          $("#complianceProfileIdError").html("Select compliance profile !");
+        }
+        if (documentCount != null && documentCount.trim() !== "") {
+          if (docCountPattern.test(documentCount) === false) {
+            valid = false;
+            $("#documentCountError").html("Document count must be numeric");
+          }
+        }
+
+        if (valid === false) {
+          setTimeout(function () {
+            $("#clientHashIdError").html("");
+
+            $("#customerCountryError").html("");
+            $("#complianceTemplateIdError").html("");
+            $("#complianceProfileIdError").html("");
+            $("#documentCountError").html("");
+
+            $(".errorCountry").html("");
+            $(".errorTemp").html("");
+            $(".errorComplianceProfileTemp").html("");
+            $(".errorDocCount").html("");
+          }, 3000);
+
+          return;
+        }
+
+        event.preventDefault();
+        $("#btnSubmit").attr("disabled", true);
+        $("#btnSubmit").html(spinnerUrl);
+
+        const url =
+          $("#addComplianceConfigurationUrl").val() +
+          "client" +
+          "/" +
+          clientHashId +
+          "/" +
+          "compliance";
+        var complianceConfigDetails = [];
+        for (
+          var i = 0;
+          i < countryArray.length, i < templateArray.length;
+          i++
+        ) {
+          complianceConfigDetails[i] = {};
+          complianceConfigDetails[i]["customerCountry"] = countryArray[i];
+          complianceConfigDetails[i]["complianceTemplateId"] = templateArray[i];
+          complianceConfigDetails[i]["complianceProfile"] =
+            complianceProfileArray[i];
+          complianceConfigDetails[i]["documentCount"] = documentCountArray[i];
+          complianceConfigDetails[i]["defaultConfiguration"] =
+            isdefaultArray[i];
+        }
+        let requestBody = {};
+        requestBody.complianceLevel = $("#complianceLevel").val();
+        requestBody.complianceConfigurationDetailDTOList = complianceConfigDetails;
+        $.ajax({
+          type: "POST",
+          url: url,
+          contentType: "application/json",
+          data: JSON.stringify(unSanitize(requestBody)),
+          processData: true,
+          cache: false,
+          async: true,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            $("#success_refundNotification").modal("show");
+            $(".refunded_body").html(result.message);
+            $("#btnSubmit").attr("disabled", false);
+            $("#btnSubmit").html("Submit");
+            $("#clientCode").html("");
+            $("#complianceTemplateId").val("");
+            $("#countryCode").html("");
+          },
+          error: function (data) {
+            if (data.readyState == 0) {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(
+                "service is temporarily down,please try again later."
+              );
+            }
+            if ((data.status = 500)) {
+              var responseMessage = JSON.parse(data.responseText);
+              var message = responseMessage.message;
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(message);
+              $("#btnSubmit").attr("disabled", false);
+              $("#btnSubmit").html("Submit");
+            } else if (jqXHR.status == 400) {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(data.responseText);
+            } else {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(data.responseText);
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+
+      function refreshPage() {
+        window.location.reload();
+      }
+
+      function generateComplianceLevelDD() {
+        $.ajax({
+          url: $("#complianceLevelUrl").val(),
+          type: "GET",
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(result));
+            let dd = "";
+            for (var i = 0; i < result.length; i++) {
+              let eachComplianceLevel = result[i];
+              dd +=
+                "<option value='" +
+                eachComplianceLevel.key +
+                "'>" +
+                eachComplianceLevel.key +
+                "</option>";
+            }
+            $("#complianceLevel").html(dd);
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,2483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+
+	<script type="text/javascript" src="assets/js/CommonValidations.js"></script>
+	<!-- META SECTION -->
+	<title>ahan | Client List</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+	<!-- END META SECTION -->
+
+	<!-- CSS INCLUDE -->
+	<link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+	<link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+
+	<!-- EOF CSS INCLUDE -->
+	<style type="text/css">
+		#clientDetailsModel .modal-header {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		#clientDetailsModel .modal-header h5 {
+			flex: 50%;
+			font-size: 13px;
+		}
+
+		#plasticIdsDiv,
+		#logoIdsDiv {
+			display: none;
+		}
+	</style>
+</head>
+
+<body onload="getClientList(); getProgramList();">
+	<!-- preloader Start -->
+	<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
+	<!-- preloader Ends -->
+	<!-- START PAGE CONTAINER -->
+	<div class="page-container">
+
+		<div class="page-sidebar">
+			<!-- START X-NAVIGATION -->
+			<ul class="x-navigation side_custom_scroll" id="sidebarnav">
+				<li class="xn-logo">
+					<a href="index.html">ahan</a>
+					<a href="#" class="x-navigation-control"></a>
+				</li>
+				<li class="dashboard">
+					<a href="index.html">
+						<span class="fas fa-tachometer-alt"></span>
+						<span class="xn-text">Dashboard</span>
+					</a>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-box-open"></span>
+						<span class="xn-text">FD Products</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addEmboserLogo.html">
+								<span class="xn-text">Define Logo</span>
+							</a>
+						</li>
+						<li>
+							<a href="emboserLogoList.html">
+								<span class="xn-text">Embosser Logo List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-tasks"></span>
+						<span class="xn-text">Program</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addprogram.html">
+								<span class="xn-text">Create Program</span>
+							</a>
+						</li>
+						<li>
+							<a href="programList.html">
+								<span class="xn-text">Program List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-user-tie"></span>
+						<span class="xn-text">Client</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addTermsAndConditions.html">
+								<span class="xn-text">Add Terms And Conditions</span>
+							</a>
+						</li>
+						<li>
+							<a href="addClient.html">
+								<span class="xn-text">Add Client</span>
+							</a>
+						</li>
+						<li>
+							<a href="clientList.html">
+								<span class="xn-text">Client List</span>
+							</a>
+						</li>
+
+						<li class="xn-openable">
+							<a href="#" class="has-arrow">
+								<span class="xn-text">Setup Limits</span>
+							</a>
+							<ul>
+								<li>
+									<a href="setupAuthLimits.html">
+										<span class="xn-text">Setup Auth Limits</span>
+									</a>
+								</li>
+								<li>
+									<a href="setupRegulatoryLimits.html">
+										<span class="xn-text">Setup Regulatory Limits</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="addCurrency.html">
+								<span class="xn-text">Add Currency</span>
+							</a>
+						</li>
+						<li>
+							<a href="setupPaymentId.html">
+								<span class="xn-text">Setup Payment Id</span>
+							</a>
+						</li>
+						<li>
+							<a href="addComplianceConfiguration.html">
+								<span class="xn-text">Add Customer Compliance Config</span>
+							</a>
+						</li>
+						<li>
+							<a href="complianceConfigurationList.html">
+								<span class="xn-text">Customer Compliance Config View</span>
+							</a>
+						</li>
+						<li>
+							<a href="addPlasticId.html">
+								<span class="xn-text">Add Plastic Id</span>
+							</a>
+						</li>
+						<li>
+							<a href="addPocket.html">
+								<span class="xn-text">Add Pocket</span>
+							</a>
+						</li>
+						<li>
+							<a href="pocketList.html">
+								<span class="xn-text">Pocket List</span>
+							</a>
+						</li>
+						<li>
+							<a href="plasticIdList.html">
+								<span class="xn-text">Plastic Id List</span>
+							</a>
+						</li>
+						<li>
+							<a href="notificationTemplate.html">
+								<span class="xn-text">Notification Templates</span>
+							</a>
+						</li>
+						<li>
+							<a href="setupRemitAccounts.html">
+								<span class="xn-text">Setup Remit Accounts</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-handshake"></span>
+						<span class="xn-text">Client Relationship</span>
+					</a>
+					<ul>
+						<li>
+							<a href="persistClientRelationship.html">
+								<span class="xn-text">Add Client Relationship</span>
+							</a>
+						</li>
+					</ul>
+
+					<ul>
+						<li>
+							<a href="persistClientRelationshipMapping.html">
+								<span class="xn-text">Add Client Relationship Mapping</span>
+							</a>
+						</li>
+					</ul>
+
+					<ul>
+						<li>
+							<a href="fetchClientRelationships.html">
+								<span class="xn-text">Client Relationship List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-users"></span>
+						<span class="xn-text">Customer</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addCustomer.html">
+								<span class="xn-text">Add Customer</span>
+							</a>
+						</li>
+						<li>
+							<a href="customerList.html">
+								<span class="xn-text">Customer List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-user-check"></span>
+						<span class="xn-text">Customer Compliance</span>
+					</a>
+					<ul>
+						<li>
+							<a href="complianceReport.html">
+								<span class="xn-text">Customer Compliance Report</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="far fa-credit-card"></span>
+						<span class="xn-text">Cards</span>
+					</a>
+					<ul>
+						<li>
+							<a href="cardList.html">Card List</a>
+						</li>
+						<li>
+							<a href="assignPhysicalCard.html">Assign Physical Card</a>
+						</li>
+						<li>
+							<a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+						</li>
+						<li>
+							<a href="bulkCardIssuanceIndent.html">
+								Bulk Card Issuance Indent</a>
+						</li>
+						<li>
+							<a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+						</li>
+						<li>
+							<a href="bulkCardIssuanceResponse.html">
+								Bulk Card Issuance Response</a>
+						</li>
+						<li>
+							<a href="embossingRecordStatus.html">
+								Embossing Record Status</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-search-dollar"></span>
+						<span class="xn-text">Transaction Compliance</span>
+					</a>
+					<ul>
+						<li>
+							<a href="transactionComplianceProfile.html">
+								<span class="xn-text">Transaction Compliance Profile</span>
+							</a>
+						</li>
+						<li>
+							<a href="transactionComplianceProfileMapping.html">
+								<span class="xn-text">Transaction Compliance Profile Mapping</span>
+							</a>
+						</li>
+						<li>
+							<a href="transactionsCompliance.html">
+								<span class="xn-text">Transaction Compliance Report</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-copy"></span>
+						<span class="xn-text">Reports</span>
+					</a>
+					<ul>
+						<li>
+							<a href="transactionReport.html">
+								<span class="xn-text">Transaction Reports</span>
+							</a>
+						</li>
+						<li>
+							<a href="settlementReport.html">
+								<span class="xn-text">Settlement Reports</span>
+							</a>
+						</li>
+						<li>
+							<a href="cannedReport.html">
+								<span class="xn-text">Canned Reports</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-hand-holding-usd"></span>
+						<span class="xn-text">Client Funds</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addPrefundRequest.html">
+								<span class="xn-text">Client Prefund Request</span>
+							</a>
+						</li>
+						<li>
+							<a href="prefundList.html">
+								<span class="xn-text">Client Prefund Approval</span>
+							</a>
+						</li>
+						<li>
+							<a href="addRefundRequest.html">
+								<span class="xn-text">Client Refund Request</span>
+							</a>
+						</li>
+						<li>
+							<a href="refundList.html">
+								<span class="xn-text">Client Refund Approval</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-wallet"></span>
+						<span class="xn-text">Wallet Fund Request</span>
+					</a>
+					<ul>
+						<li>
+							<a href="walletFundRequest.html">
+								<span class="xn-text">Wallet Fund Request</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-unlock-alt"></span>
+						<span class="xn-text">ICC Transactions</span>
+					</a>
+					<ul>
+						<li>
+							<a href="matchingEngine.html">
+								<span class="xn-text">ICC Transactions</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-users-cog"></span>
+						<span class="xn-text">Bulk Customer Registration</span>
+					</a>
+					<ul>
+						<li>
+							<a href="customerDocumentUpload.html">
+								<span class="xn-text">Bulk Customer Registration</span>
+							</a>
+						</li>
+						<li>
+							<a href="customerDocumentsList.html">
+								<span class="xn-text">Bulk Customer List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-money-check-alt"></span>
+						<span class="xn-text">Bulk Wallet Topup</span>
+					</a>
+					<ul>
+						<li>
+							<a href="bulkWalletTopup.html">
+								<span class="xn-text">Bulk Wallet TopUp</span>
+							</a>
+						</li>
+						<li>
+							<a href="bulkwallettopupdocument.html">
+								<span class="xn-text">Bulk Wallet TopUp List</span>
+							</a>
+						</li>
+						<li>
+							<a href="bulkFeeFileUpload.html">
+								<span class="xn-text">Fee File Upload</span>
+							</a>
+						</li>
+						<li>
+							<a href="bulkFeeFileUploadList.html">
+								<span class="xn-text">Fee File Upload List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-money-check-alt"></span>
+						<span class="xn-text">Cashback Credit</span>
+					</a>
+					<ul>
+						<li>
+							<a href="cashbackCreditFileUpload.html">
+								<span class="xn-text">Cashback Credit File Upload</span>
+							</a>
+						</li>
+						<li>
+							<a href="cashbackCreditList.html">
+								<span class="xn-text">Cashback Credit List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-bell"></span>
+						<span class="xn-text">Bulk Ad-Hoc Notification</span>
+					</a>
+					<ul>
+						<li>
+							<a href="bulkNotification.html">
+								<span class="xn-text">Bulk Ad-Hoc Notification</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-user-cog"></span>
+						<span class="xn-text">Admin Services</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addRole.html">
+								<span class="xn-text">Add Role</span>
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="roleList.html">
+								<span class="xn-text">Role List</span>
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="addUser.html">
+								<span class="xn-text">Add Users</span>
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="fetchGroupList.html">
+								<span class="xn-text">User Group List</span>
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="userList.html">
+								<span class="xn-text">User List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<!-- END X-NAVIGATION -->
+		</div>
+		<!-- END PAGE SIDEBAR -->
+
+		<!-- PAGE CONTENT -->
+		<div class="page-content">
+
+			<!-- START X-NAVIGATION VERTICAL -->
+			<ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+				<!-- TOGGLE NAVIGATION -->
+				<li class="xn-icon-button">
+					<button class="x-navigation-minimize btn-menu-mobile">
+						<span class="fas fa-indent"></span>
+					</button>
+				</li>
+				<!-- END TOGGLE NAVIGATION -->
+				<!-- SEARCH -->
+				<!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+				<!-- END SEARCH -->
+				<!-- POWER OFF -->
+				<li class="xn-icon-button pull-right last">
+					<button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+						<span class="fa fa-power-off"></span>
+					</button>
+					<!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+				</li>
+				<!-- END POWER OFF -->
+			</ul>
+			<!-- END X-NAVIGATION VERTICAL -->
+
+			<div class="page-content-wrap">
+				<!-- PAGE CONTENT WRAPPER -->
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="page-title-box">
+								<div class="pull-right">
+									<a href="javascript:void(0)" class="btn btn-xs btn-primary ripple"
+										onclick="toggleSmartSearch();"><i class="fa fa-search" aria-hidden="true"></i>
+										Search
+									</a>
+									<c:if test="${fn:containsIgnoreCase(roles,'ROLE_DOWNLOAD_CLIENT_LIST')}">
+										<button onclick="clientListDownload();" style="display: none;"
+											id="clientListDownload" class="btn btn-xs btn-primary ripple">
+											<i class="fa fa-download" aria-hidden="true"></i>
+											Download
+										</button>
+									</c:if>
+								</div>
+								<h4 class="page-title">Client List</h4>
+							</div>
+						</div>
+					</div>
+					<div class="" style="min-height: 73vh;">
+						<input type="hidden" id="poolBalanceUrl" value="${poolBalanceUrl}" />
+						<input type="hidden" id="listClientFeesUrl" value="${listClientFeesUrl}" />
+						<input type="hidden" id="updateClientFeesUrl" value="${updateClientFeesUrl}" />
+						<input type="hidden" id="listClientLimitsUrl" value="${listClientLimitsUrl}" />
+						<input type="hidden" id="updateClientLimitsUrl" value="${updateClientLimitsUrl}" />
+						<input type="hidden" id="setClientLimitsUrl" value="${setClientLimitsUrl}" />
+						<input type="hidden" id="defaultClientFeesUrl" value="${defaultClientFeesUrl}" />
+						<input type="hidden" id="client_code" />
+						<input type="hidden" id="clientId" />
+						<input type="hidden" id="clientListDownloadUrl" value="${clientListDownloadUrl}" />
+						<input type="hidden" id="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+						<input type="hidden" id="clientCodeValueHold" value="${clientCode}" />
+						<input type="hidden" id="programValueHold" value="${program}" />
+						<input type="hidden" id="fetchAllProgramUrl" value="${fetchAllProgramUrl}" />
+						<input type="hidden" id="getLogoListUrl" value="${getLogoListUrl}" />
+						<input type="hidden" id="getPlasticListUrl" value="${getPlasticListUrl}" />
+						<input type="hidden" id="getClientListByCodeUrl" value="${getClientListByCodeUrl}" />
+						<form class="row" id="smartSearchFieldsDiv" style="display: none;">
+							<div id="demo-custom-toolbar">
+								<div class="row">
+									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label>Client Name:</label>
+											<input type="text" id="searchInput" class="form-control clear"
+												placeholder="Enter client name">
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label>Client Code</label>
+											<select id="clientCode" name="clientCode" class="form-control enableSelect2"
+												required>
+												<option value="">Select an Option</option>
+												<option value="CLIENT_12345">CLIENT_12345</option>
+												<option value="CLIENT_123">CLIENT_123</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label>Mobile Number:</label>
+											<input type="text" id="contactNumber" class="form-control clear"
+												placeholder="Enter Mobile Number" />
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label>Email</label>
+											<input type="text" id="email" placeholder="Enter Email Id"
+												class="form-control clear" />
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-3 col-xs-12">
+										<div class="form-group">
+											<label>Program</label>
+											<select id="program" name="program" value=""
+												class="form-control enableSelect2 clear" required>
+												<option value="">Select Program</option>
+												<option value="GDS(SG97510116329)">
+													GDS(SG97510116329)
+												</option>
+												<option value="Marvel(SG3510116329)">
+													Marvel(SG3510116329)
+												</option>
+												<option value="ProgramX(SG5902776022)">
+													ProgramX(SG5902776022)
+												</option>
+												<option value="CMW Performance Test(SG626114375)">
+													CMW Performance Test(SG626114375)
+												</option>
+												<option value="FIN TECH FAST TRACK AUSTRALIA(AU7244181818)">
+													FIN TECH FAST TRACK AUSTRALIA(AU7244181818)
+												</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-3 col-xs-12">
+										<div class="form-group text-center mt-4">
+											<button type="button" id="submit_button"
+												class="btn btn-primary btn-sm px-5 ripple" title="Search"
+												onclick="getClientListSearch('0',false)">Filter</button>
+											<button class="btn btn-default btn-sm px-5 ripple" type="reset"
+												onclick="resetFields();">Clear</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+
+
+						<div class="panel-body p-0">
+							<div class="table-wrapper" class="table-responsive"
+								style="max-height: 65vh; overflow: auto;">
+								<table id="clientListReport" class="table table-striped table-bordered">
+									<thead>
+										<tr id="transRow">
+											<th>SN</th>
+											<th>Date</th>
+											<th>Name</th>
+											<th>Email</th>
+											<th>Program</th>
+											<th>Country</th>
+											<th>Contact No</th>
+											<th>Client Code</th>
+											<th>Client Type</th>
+											<th>Action</th>
+											<th>View Balance</th>
+											<th>Update Fees</th>
+										</tr>
+									</thead>
+									<tbody id="clientListTable">
+										<tr>
+											<td style="white-space: nowrap">1</td>
+											<td style="white-space: nowrap">2021/05/19 16:51:00</td>
+											<td style="white-space: nowrap">Subhasmita</td>
+											<td style="white-space: nowrap">info@gmail.com</td>
+											<td style="white-space: nowrap">Europe Region Setup</td>
+											<td style="white-space: nowrap">GB</td>
+											<td style="white-space: nowrap">+447766515137</td>
+											<td style="white-space: nowrap">2b33ss-j344jvvf-32jfffkad-2093-49032</td>
+											<td style="white-space: nowrap">Wallet</td>
+											<td style="white-space: nowrap"><a href="#"
+													onclick="openClientDetailsModel()">View Details</a></td>
+											<td style="white-space: nowrap"><a href="#"
+													onclick="viewClientAccountBalance()">View Balance</a></td>
+											<td><button class="btn btn-primary btn-sm"
+													onclick="setUpdateClientFeesModal()">Update Fees</button></td>
+											<!-- <td colspan="34" class="text-center" id="noClientList">No Data Found</td> -->
+										</tr>
+										<tr>
+											<td style="white-space: nowrap">1</td>
+											<td style="white-space: nowrap">2021/05/19 16:51:00</td>
+											<td style="white-space: nowrap">Subhasmita</td>
+											<td style="white-space: nowrap">info@gmail.com</td>
+											<td style="white-space: nowrap">FIN TECH FAST TRACK SINGAPORE</td>
+											<td style="white-space: nowrap">SG</td>
+											<td style="white-space: nowrap">+447766515137</td>
+											<td style="white-space: nowrap">2b33ss-j344jvvf-32jfffkad-2093-49032</td>
+											<td style="white-space: nowrap">Wallet</td>
+											<td style="white-space: nowrap"><a href="#"
+													onclick="openClientDetailsModel()">View Details</a></td>
+											<td style="white-space: nowrap"><a href="#"
+													onclick="viewClientAccountBalance()">View Balance</a></td>
+											<td><button class="btn btn-primary btn-sm"
+													onclick="setUpdateClientFeesModal()">Update Fees</button></td>
+
+										</tr>
+										<tr>
+											<td style="white-space: nowrap">1</td>
+											<td style="white-space: nowrap">2021/05/19 16:51:00</td>
+											<td style="white-space: nowrap">Subhasmita</td>
+											<td style="white-space: nowrap">info@gmail.com</td>
+											<td style="white-space: nowrap">Test Program</td>
+											<td style="white-space: nowrap">SG</td>
+											<td style="white-space: nowrap">+447766515137</td>
+											<td style="white-space: nowrap">2b33ss-j344jvvf-32jfffkad-2093-49032</td>
+											<td style="white-space: nowrap">Wallet</td>
+											<td style="white-space: nowrap"><a href="#"
+													onclick="openClientDetailsModel()">View Details</a></td>
+											<td style="white-space: nowrap"><a href="#"
+													onclick="viewClientAccountBalance()">View Balance</a></td>
+											<td><button class="btn btn-primary btn-sm"
+													onclick="setUpdateClientFeesModal()">Update Fees</button></td>
+
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="fileDownloadDiv" style="display: none;"></div>
+							<div class="paginationWrapper">
+								<p id="paging_info" class="pull-left"></p>
+								<input type="hidden" id="clientList_totalPages" value="1" />
+								<div class="pull-right">
+									<ul class="pagination-sm" id="pagination"></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="clientDetailsModel" role="dialog">
+			<div class="modal-dialog modal-dialog-xl modal-dialog-centered">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h5 class="modal-title" id="title">Client Name : Subhasmita</h5>
+						<h5 class="modal-title" id="programName">Program Name : Ruppee Region Setup</h5>
+						<h5 class="modal-title" id="markup">Markup : 0.5</h5>
+						<h5 class="modal-title" id="balanceThreshold">Balance threshold : 0</h5>
+						<h5 class="modal-title" id="complianceStatusCallbackUrl">Compliance Status Callback Url : </h5>
+						<h5 class="modal-title" id="complianceCallbackUrl">Transaction Compliance Callback Url : </h5>
+						<h5 class="modal-title" id="enableCompliance">Enable compliance : False</h5>
+						<h5 class="modal-title" id="autoManualApproval">Auto manual approval : False</h5>
+						<h5 class="modal-title" id="clientIdNumber">Client id number : </h5>
+						<h5 class="modal-title" id="riskScore">Risk score : </h5>
+						<h5 class="modal-title" id="notificationWebhook">Notification webhook : </h5>
+						<h5 class="modal-title" id="tncName">Tnc name : B2BSUBHASMITA</h5>
+						<h5 class="modal-title" id="deduplicationFlag">Deduplication flag : False</h5>
+						<h5 class="modal-title" id="prefundName">Prefund name : Subhasmita</h5>
+						<h5 class="modal-title" id="uniqueCustomer">Unique customer : False</h5>
+						<h5 class="modal-title" id="customerAuthUrl">Customer auth url : </h5>
+						<h5 class="modal-title" id="fundingInstrumentType">Funding instrument type: RESTRICTED</h5>
+						<h5 class="modal-title" id="cardTxnRedirectUrl">Card transaction redirect url : </h5>
+						<h5 class="modal-title" id="cardTxnProductCode">Card transaction product code : </h5>
+						<h5 class="modal-title" id="cardTxnNarrative">Card transaction narrative : </h5>
+						<h5 class="modal-title" id="ekycRedirectUrl">Ekyc redirect url : </h5>
+						<h5 class="modal-title" id="applePaySupport">Apple pay support : False</h5>
+						<h5 class="modal-title" id="googlePaySupport">Google pay support : False</h5>
+						<h5 class="modal-title" id="samsungPaySupport">Samsung pay support : False</h5>
+						<h5 class="modal-title" id="allowThirdPartyFunding">Allow Third Party Funding : False</h5>
+						<h5 class="modal-title" id="currencyAuthorizationType">Currency Authorization Type : DUAL</h5>
+
+					</div>
+					<div class="modal-body">
+						<div class="insta_grid_three">
+							<div>
+								<button id="plasticIds" name="plasticIds" class="btn btn-info btn-sm btn-block"
+									onclick="toggleplasticIdsDiv();">View Plastic IDs</button>
+							</div>
+							<div>
+								<button id="logoIds" name="logoIds" class="btn btn-info btn-sm btn-block"
+									onclick="toggleLogoIdsDiv();">View Logo IDs</button>
+							</div>
+							<input type="hidden" id="clientCode" name="clientCode" />
+							<div>
+								<button id="customers" name="customers" class="btn btn-info btn-sm btn-block">View
+									Customers</button>
+							</div>
+						</div>
+						<div id="plasticIdsDiv" class="table-responsive mt-2">
+							<table class="table table-striped table-bordered table-responsive">
+								<thead>
+									<tr>
+										<th>PLASTIC ID</th>
+										<th>DIGITAL ID</th>
+										<th>EMBOSSING VENDOR</th>
+										<th>DESCRIPTION</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>123456789</td>
+										<td>026030004</td>
+										<td>DZ CARDS</td>
+										<td>Europe</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="logoIdsDiv" class="table-responsive mt-2">
+							<table class="table table-striped table-bordered table-responsive">
+								<thead>
+									<tr>
+										<th>LOGO ID</th>
+										<th>EMOBOSSER LOGO IDENTIFIER</th>
+										<th>DESCRIPTION</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>001</td>
+										<td>119</td>
+										<td>Visa Platinum Debit</td>
+									</tr>
+									<tr>
+										<td>002</td>
+										<td>120</td>
+										<td>Visa Corporate T&E</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="modal fade" id="clientBalanceModel" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h5 class="modal-title">Client Balance</h5>
+					</div>
+					<div class="modal-body modal_body_responsive">
+						<div id="tableDiv" class="table-responsive">
+							<table id="balanceDetailsTable" class="table table-bordered table-striped table-condensed">
+								<thead>
+									<tr>
+										<th>Currency</th>
+										<th>Pool Accounts</th>
+										<th>Balance</th>
+									</tr>
+								</thead>
+								<tbody id="walletBalanceListTable">
+									<tr>
+										<td>EUR</td>
+										<td>CLIENT_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>GBP</td>
+										<td>CLIENT_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>AUD</td>
+										<td>CLIENT_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>USD</td>
+										<td>CLIENT_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>USD</td>
+										<td>EXPENSE_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>GBP</td>
+										<td>EXPENSE_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>AUD</td>
+										<td>EXPENSE_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>EUR</td>
+										<td>EXPENSE_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>USD</td>
+										<td>HOLD_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>GBP</td>
+										<td>HOLD_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>AUD</td>
+										<td>HOLD_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>EUR</td>
+										<td>HOLD_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>USD</td>
+										<td>INCOME_POOL</td>
+										<td>0.000000</td>
+									</tr>
+									<tr>
+										<td>GBP</td>
+										<td>INCOME_POOL</td>
+										<td>0.000000</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="paginationWrapper">
+							<p id="paging_info" class="pull-left"></p>
+							<div class="pull-right">
+								<ul class="pagination-sm" id="paginationn"></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- END PAGE CONTENT -->
+	</div>
+	<!-- END PAGE CONTAINER -->
+	</div>
+	</div>
+
+	<!-- MESSAGE BOX-->
+	<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+		<div class="mb-container">
+			<div class="mb-middle">
+				<div class="mb-icon">
+					<div>
+						<img alt="ahan" src="assets/img/logo-big.png" />
+					</div>
+				</div>
+				<div class="mb-title">
+					<span class="fa fa-sign-out"></span>
+					Log out of ahan?
+				</div>
+				<div class="mb-content">
+					<p>Are you sure you want to log out?</p>
+					<p>
+						Press No if you want to continue work. Press Yes to logout current
+						user.
+					</p>
+				</div>
+				<div class="mb-footer">
+					<button class="btn btn-default mb-control-close btn-block">
+						No
+					</button>
+					<a href="login.html" class="btn btn-block btn-primary">Yes</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END MESSAGE BOX-->
+
+	<!-- Success Modal -->
+	<div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+
+				<div class="modal-body">
+					<div class="text-center">
+						<img src="assets/img/source.gif"
+							style="width: 140px; margin-top: -91px; margin-bottom: 10px; position: relative;">
+						<div>
+							<h4 class="refunded_body mb-4"></h4>
+							<div class="text-center">
+								<button type="button" id="successModal" class="btn btn-success ripple px-5"
+									data-dismiss="modal" onclick="closeModal();">OK</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Failure Modal -->
+	<div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+
+				<div class="modal-body">
+					<div class="text-center">
+						<img src="assets/img/x.gif"
+							style="width: 140px; margin-top: -91px; margin-bottom: 10px; position: relative;">
+						<div>
+							<h4 class="refunded_body mb-4"></h4>
+							<div class="text-center">
+								<button type="button" class="btn btn-danger ripple px-5"
+									data-dismiss="modal">OK</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Set Fees -->
+	<div class="modal fade" id="updateClientFees" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-xl modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h3 class="modal-title">Set Fees</h3>
+				</div>
+				<div class="modal-body">
+					<div class="table_action_button mt-1 mb-2 text-right" id="table_action_button">
+						<button type="button" class="btn btn-xs btn-primary px-5 mr-2" onclick="editValues()"><i
+								class="far fa-edit"></i> Edit</button>
+						<button type="button" id="updateButton" class="btn btn-xs btn-success px-5"
+							onclick="updateFees()" disabled="disabled"><i class="fas fa-sync-alt"></i> Update</button>
+					</div>
+					<div class="table_wrap table-responsive table-vertical-responsive">
+						<table class="table table-condensed table-bordered">
+							<thead>
+								<tr>
+									<th>Sl.No</th>
+									<th>Date</th>
+									<th>Fees Name</th>
+									<th>Currency</th>
+									<th>Value</th>
+								</tr>
+							</thead>
+							<tbody id="feeListTable">
+								<tr>
+									<td>1</td>
+									<td>2021/05/19 17:05:00</td>
+									<td>NON_ATM_DECLINE_FEE</td>
+									<td>AUD</td>
+									<td>
+										<input type="radio" name="percent1" checked="checked" /> Flat
+										<input type="radio" name="percent1" /> Percent
+										<br>
+										<input type="number" value="0" class="form-control text-center" readonly>
+									</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>2021/05/19 17:05:00</td>
+									<td>NON_ATM_DECLINE_FEE</td>
+									<td>USD</td>
+									<td>
+										<input type="radio" name="percent2" checked="checked" /> Flat
+										<input type="radio" name="percent2" /> Percent
+										<br>
+										<input type="number" value="0" class="form-control text-center" readonly>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>2021/05/19 17:05:00</td>
+									<td>NON_ATM_DECLINE_FEE</td>
+									<td>GBP</td>
+									<td>
+										<input type="radio" name="percent3" checked="checked" /> Flat
+										<input type="radio" name="percent3" /> Percent
+										<br>
+										<input type="number" value="0" class="form-control text-center" readonly>
+									</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>2021/05/19 17:05:00</td>
+									<td>NON_ATM_DECLINE_FEE</td>
+									<td>EUR</td>
+									<td>
+										<input type="radio" name="percent4" checked="checked" /> Flat
+										<input type="radio" name="percent4" /> Percent
+										<br>
+										<input type="number" value="0" class="form-control text-center" readonly>
+									</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>2021/05/19 17:05:00</td>
+									<td>RMIT_CASH_FEE</td>
+									<td>EUR</td>
+									<td>
+										<input type="radio" name="percent5" checked="checked" /> Flat
+										<input type="radio" name="percent5" /> Percent
+										<br>
+										<input type="number" value="0" class="form-control text-center" readonly>
+									</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>2021/05/19 17:05:00</td>
+									<td>RMIT_CASH_FEE</td>
+									<td>AUD</td>
+									<td>
+										<input type="radio" name="percent6" checked="checked" /> Flat
+										<input type="radio" name="percent6" /> Percent
+										<br>
+										<input type="number" value="0" class="form-control text-center" readonly>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="paginationWrapper">
+						<p id="paging_info_fees" class="pull-left"></p>
+						<input type="hidden" id="totalPagesId" value="1" />
+						<div>
+							<ul class="pagination-sm pull-right" id="paginationn_fees"></ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Set Limits -->
+	<div class="modal fade" id="fetchClientLimitsModal" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h3 class="modal-title">Update Limits</h3>
+				</div>
+				<div class="modal-body">
+					<div class="table_wrap">
+						<div class="table-responsive">
+							<table class="table table-bordered table-striped table-condensed">
+								<thead>
+									<tr>
+										<th>Sl.No</th>
+										<th>Date</th>
+										<th>Account Type</th>
+										<th>Daily Limit</th>
+										<th>Monthly Limit</th>
+										<th>Current Limit</th>
+										<th>Annually Limit</th>
+										<th>Balance Limit</th>
+										<th>Daily Count</th>
+										<th>Monthly Count</th>
+										<th>Annually Count</th>
+										<th>Hold Balance Limit</th>
+										<th>Edit</th>
+										<th>Update</th>
+									</tr>
+								</thead>
+								<tbody id="limitListTable"></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!--=========================== Warning Modal ===================-->
+	<div class="modal fade" tabindex="-1" role="dialog" id="warningModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="warning-bg">
+						<div class="btn_group">
+							<button class="btn btn-success btn-block" type="button" id="warning_button"
+								onclick="defaultFees()">Yes</button>
+							<button class="btn btn-danger btn-block" type="button">No</button>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!--=========================== set Fees Modal ===================-->
+	<div class="modal fade" tabindex="-1" role="dialog" id="setFeesModal">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h3 class="modal-title">Set Limits</h3>
+				</div>
+				<div class="modal-body">
+					<div class="setFeesWrapper">
+						<form>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Daily Limit</label>
+										<input type="number" class="form-control" id="daily_limit" name="dailyLimit">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Monthly Limit</label>
+										<input type="number" class="form-control" id="monthly_limit"
+											name="monthlyLimit">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Current Limit</label>
+										<input type="number" class="form-control" id="current_limit"
+											name="currentLimit">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Annually Limit</label>
+										<input type="number" class="form-control" id="annually_limit"
+											name="annuallyLimit">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Balance Limit</label>
+										<input type="number" class="form-control" id="balance_limit"
+											name="balanceLimit">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Daily Count</label>
+										<input type="number" class="form-control" id="daily_count" name="dailyCount">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Monthly Count</label>
+										<input type="number" class="form-control" id="monthly_count"
+											name="monthlyCount">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Annually Count</label>
+										<input type="number" class="form-control" id="annually_count"
+											name="annuallyCount">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Compliance Level</label>
+										<select class="form-control selectpicker" name="accountType"
+											id="complainceLevel">
+											<option value="PENDING">PENDING</option>
+											<option value="SCREENING">SCREENING</option>
+											<option value="SCREENING_KYC">SCREENING_KYC</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Hold Balance Limit</label>
+										<input type="number" class="form-control" id="hold_balance_limit"
+											name="holdBalanceLimit">
+									</div>
+								</div>
+
+							</div>
+							<div class="form-group text-center">
+								<button id="submitButton" class="btn btn-primary px-5" type="button"
+									onclick="setClientLimits()">Save</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- START PRELOADS -->
+	<audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+	<audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+	<!-- END PRELOADS -->
+
+	<!-- START SCRIPTS -->
+	<!-- START PLUGINS -->
+	<script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+	<script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+	<script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+	<!-- END PLUGINS -->
+	<script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/moment.min.js?version=2.29.0"></script>
+	<script type="text/javascript" src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+	<!-- END THIS PAGE PLUGINS-->
+
+	<!-- START TEMPLATE -->
+	<script type="text/javascript" src="assets/js/settings.min.js"></script>
+	<script type="text/javascript" src="assets/js/actions.js"></script>
+	<script type="text/javascript" src="assets/js/generateTableWithNonClickableRows.js"></script>
+	<script type="text/javascript" src="assets/js/loader.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+	<script type="text/javascript" src="assets/js/floatingscroll.js"></script>
+	<!-- END TEMPLATE -->
+	<!-- END SCRIPTS -->
+
+	<script>
+		function openClientDetailsModel() {
+			$("#clientDetailsModel").modal("show");
+		}
+		function toggleplasticIdsDiv() {
+			$("#plasticIdsDiv").slideToggle();
+			$("#logoIdsDiv").hide();
+		}
+
+		function toggleLogoIdsDiv() {
+			$("#logoIdsDiv").slideToggle();
+			$("#plasticIdsDiv").hide();
+		}
+
+		function viewClientAccountBalance() {
+			$("#clientBalanceModel").modal("show");
+		}
+
+		function setUpdateClientFeesModal() {
+			$("#updateClientFees").modal("show");
+		}
+
+		function toggleSmartSearch() {
+			$("#smartSearchFieldsDiv").slideToggle();
+		}
+
+		$("#program").select2({
+			placeholder: 'Select a Program',
+			allowClear: false,
+			dropdownAutoWidth: false,
+			width: '100%',
+			dropdownCss: {
+				'width': 'inherit'
+			}
+		});
+	</script>
+
+	<!-- <script type="text/javascript">
+	
+	/* Universal Spinner with text for Button */
+	var spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+</script>
+
+<script>
+	function viewClientAccountBalance(){
+		$("#clientBalanceModel").modal("show");
+	}
+
+	function setUpdateClientFeesModal(){
+		$("#updateClientFees").modal("show");
+	}
+</script>
+
+<script>
+	$("#searchInput").keyup(function () {
+		// Split the current value of the filter textbox
+		let data = this.value.split(" ");
+		// Get the table rows
+		var rows = $("#tbody").find("tr");
+		if (this.value === "") {
+			rows.show();
+			return;
+		}
+		
+		// Hide all the rows initially
+		rows.hide();
+		
+		// Filter the rows; check each term in data
+		rows.filter(function (i, v) {
+			for (var d = 0; d < data.length; ++d) {
+				if ($(this).is(":contains('" + data[d] + "')")) {
+					return true;
+				}
+			}
+			return false;
+		})
+			// Show the rows that match.
+			.show();
+	}).focus(function () { // style the filter box
+		this.value = "";
+		$(this).css({
+			"color": "black"
+		});
+		$(this).unbind('focus');
+	}).css({
+		"color": "#C0C0C0"
+	});
+	
+	// make contains case insensitive globally
+	// (if you prefer, create a new Contains or containsCI function)
+	$.expr[":"].contains = $.expr.createPseudo(function (arg) {
+		return function (elem) {
+			return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+		};
+	});
+	
+	function fetchClientAccountBalance(clientCode) {
+		$.ajax({
+			type: "GET",
+			url: $("#poolBalanceUrl").val() + "client" + "/" + clientCode + "/" + "balance",
+			timeout: 600000,
+			async: false,
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+				xhr.setRequestHeader("clientCode", clientCode);
+			},
+			success: function (data, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				data = sanitize(unSanitize(data));
+				
+				$("#clientBalanceModel").modal("show");
+				addTable(data, $("#balanceDetailsTable"));
+			},
+			error: function (data) {
+				if (data.status = 500) {
+					var responseMessage = JSON.parse(data.responseText);
+					var message = responseMessage.message;
+					$("#clientBalanceModel").modal('hide');
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(message);
+				} else if (data.status = 400) {
+					$("#clientBalanceModel").modal('hide');
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(data.responseText);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function addTable(list, appendObj) {
+		var slno = 0;
+		var trHTML = '';
+		if (list != null && list != '' && list.length > 0) {
+			$("#walletBalanceListTable").empty();
+			$(list).each(function (i, item) {
+				var eachRowData = list[i];
+				var accountType = eachRowData.accountType;
+				var balance = eachRowData.balance.toFixed(4);
+				var currencyObject = eachRowData.currency;
+				var curSymbol = currencyObject.curSymbol;
+				slno = slno + 1;
+				trHTML += '<tr class="testingg"><td>' + curSymbol + '</td>' + '<td>' + accountType + '</td>' + '<td>' + balance + '</td>';
+				trHTML += '</tr>';
+			});
+			$('#walletBalanceListTable').html(trHTML);
+		} else {
+			$("#walletBalanceListTable").empty();
+			trHTML += '<tr class="odd testingg"><td class="dataTables_empty" colspan="15" valign="top">No data available in table</td></tr>';
+		}
+	}
+	
+	function openClientDetailsModel(id, clientName, email, contactNo, clientCode, programName, markup, balanceThreshold, complianceStatusCallbackUrl, enableCompliance, autoManualApproval, clientIdNumber, riskScore, notificationWebhook, tncName, deduplicationFlag, prefundName, uniqueCustomer, customerAuthUrl, fundingInstrumentType, cardTxnRedirectUrl, ekycRedirectUrl, applePaySupport, googlePaySupport, samsungPaySupport, allowThirdPartyFunding, cardTxnProductCode, cardTxnNarrative, complianceCallbackUrl, currencyAuthorizationType) {
+		
+		$("#client_code").val(clientCode);
+		var table = "";
+		var table2 = "";
+		$("#plasticIdsDiv").html(table);
+		$("#logoIdsDiv").html(table);
+		
+		$("#title").html("Client Name : " + clientName);
+		$("#programName").html("Program Name : " + programName);
+		$("#markup").html("Markup : " + markup);
+		$("#balanceThreshold").html("Balance threshold : " + balanceThreshold);
+		$("#complianceStatusCallbackUrl").html("Compliance Status Callback Url : " + complianceStatusCallbackUrl);
+		$("#complianceCallbackUrl").html("Transaction Compliance Callback Url : " + complianceCallbackUrl);
+		$("#enableCompliance").html("Enable compliance : " + enableCompliance);
+		$("#autoManualApproval").html("Auto manual approval : " + autoManualApproval);
+		$("#clientIdNumber").html("Client id number : " + clientIdNumber);
+		$("#riskScore").html("Risk score : " + riskScore);
+		$("#notificationWebhook").html("Notification webhook : " + notificationWebhook);
+		$("#tncName").html("Tnc name : " + tncName);
+		$("#deduplicationFlag").html("Deduplication flag : " + deduplicationFlag);
+		$("#prefundName").html("Prefund name : " + prefundName);
+		$("#uniqueCustomer").html("Unique customer : " + uniqueCustomer);
+		$("#customerAuthUrl").html("Customer auth url : " + customerAuthUrl);
+		$("#fundingInstrumentType").html("Funding instrument type: " + fundingInstrumentType);
+		$("#cardTxnRedirectUrl").html("Card transaction redirect url : " + cardTxnRedirectUrl);
+		$("#cardTxnProductCode").html("Card transaction product code : " + cardTxnProductCode);
+		$("#cardTxnNarrative").html("Card transaction narrative  : " + cardTxnNarrative);
+		$("#ekycRedirectUrl").html("Ekyc redirect url : " + ekycRedirectUrl);
+		$("#applePaySupport").html("Apple pay support : " + applePaySupport);
+		$("#googlePaySupport").html("Google pay support : " + googlePaySupport);
+		$("#samsungPaySupport").html("Samsung pay support : " + samsungPaySupport);
+		$("#allowThirdPartyFunding").html("Allow Third Party Funding : " + allowThirdPartyFunding);
+		$("#currencyAuthorizationType").html("Currency Authorization Type : " + currencyAuthorizationType);
+		$.ajax({
+			url: $("#getPlasticListUrl").val() + clientCode,
+			type: "GET",
+			async: false,
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (result, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				result = sanitize(unSanitize(result));
+				
+				table = '<table id="plasticIdsTable" class="table table-bordered">';
+				table += "<thead><tr><th>Plastic Id</th><th>Digital Id</th><th>Embossing Vendor</th><th>Description</th></tr></thead><tbody>";
+				var itemVal = result;
+				if (itemVal != null && itemVal !== '' && itemVal !== "[]" && itemVal.length > 0) {
+					$(itemVal).each(function (i, item) {
+						table += "<tr>";
+						table += '<td>' + ((itemVal[i].plasticId == null) ? "" : itemVal[i].plasticId) + '</td>';
+						table += '<td>' + ((itemVal[i].digitalId == null) ? "" : itemVal[i].digitalId) + '</td>';
+						table += '<td>' + ((itemVal[i].embossingVendor == null) ? "" : itemVal[i].embossingVendor) + '</td>';
+						table += '<td>' + ((itemVal[i].description == null) ? "" : itemVal[i].description) + '</td>';
+						table += "</tr>";
+					});
+				} else {
+					table += "<tr>";
+					table += "<td style='text-align:center;' colspan='4'>No Data Found</td>";
+					table += "</tr>";
+				}
+				table += "</tbody></table>";
+				$("#plasticIdsDiv").html(table);
+				
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+		
+		$.ajax({
+			type: "GET",
+			url: $("#getLogoListUrl").val() + "client/" + clientCode + "/logos",
+			timeout: 600000,
+			async: false,
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (result, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				result = sanitize(unSanitize(result));
+				
+				var itemVal = result;
+				table2 = '<table id="IdsTable" class="table table-bordered">';
+				table2 += "<thead><tr><th>Logo Id</th><th>Embosser Logo Identifier</th><th>Description</th></tr></thead><tbody>";
+				if (itemVal != null && itemVal !== '' && itemVal !== "[]" && itemVal.length > 0) {
+					$(itemVal).each(function (i, item) {
+						table2 += "<tr>";
+						table2 += '<td>' + ((itemVal[i].logoId == null) ? "" : itemVal[i].logoId) + '</td>';
+						table2 += '<td>' + ((itemVal[i].logoIdentifier == null) ? "" : itemVal[i].logoIdentifier) + '</td>';
+						table2 += '<td style=\"white-space: nowrap\">' + ((itemVal[i].description == null) ? "" : itemVal[i].description) + '</td>';
+						table2 += "</tr>";
+					});
+				} else {
+					table2 += "<tr>";
+					table2 += "<td style='text-align: center;' colspan='3'>No Data Found</td>";
+					table2 += "</tr>";
+				}
+				table2 += "</tbody></table>";
+				$("#logoIdsDiv").html(table2);
+			},
+			error: function (data) {
+				if (data.status = 500) {
+					table2 += "<tr>";
+					table2 += "<td style='text-align: center;' colspan='3'>No Data Found</td>";
+					table2 += "</tr>";
+				} else if (data.status = 400) {
+					table2 += "<tr>";
+					table2 += "<td style='text-align: center;' colspan='3'>No Data Found</td>";
+					table2 += "</tr>";
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+		$("#plasticIdsDiv").css({"display": "none"});
+		$("#logoIdsDiv").css({"display": "none"});
+		$("#clientDetailsModel").modal("show");
+	}
+	
+	function toggleplasticIdsDiv() {
+		$("#plasticIdsDiv").slideToggle();
+		$("#logoIdsDiv").hide();
+	}
+	
+	function toggleLogoIdsDiv() {
+		$("#logoIdsDiv").slideToggle();
+		$("#plasticIdsDiv").hide();
+	}
+	
+	function openCustomerPage() {
+		var clientCode = $("#client_code").val();
+		window.open("${pageContext.request.contextPath}/customerList?clientCode=" + clientCode);
+	}
+	
+	function openUpdateClientFeesModal(clientCode, clientId) {
+		$("#client_code").val(clientCode);
+		$("#clientId").val(clientId);
+		clientFeesTable(0);
+	}
+	
+	function clientFeesTable(value) {
+		var paging = value;
+		var clientCode = $("#client_code").val();
+		var url = $("#listClientFeesUrl").val();
+		
+		$.ajax({
+			url: url,
+			type: "GET",
+			data: {
+				page: paging,
+				size: 10,
+				order: "DESC",
+				clientHashId: clientCode
+			},
+			async: false,
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (data, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				data = sanitize(unSanitize(data));
+				
+				var trHTML = '';
+				var btnHTML;
+				if (trHTML === '') {
+					var slno = (paging * 10);
+					var startno = (paging * 10) + 1;
+					$("#feeListTable").empty();
+					$('#table_action_button').empty();
+					var itemVal = data.feesList;
+					console.log(itemVal);
+					if (itemVal != null && itemVal !== '' && itemVal !== "[]" && itemVal.length > 0) {
+						$(itemVal).each(function (i, item) {
+							slno = slno + 1;
+							var createdAtDate = new Date(itemVal[i].feeCurrency.createdAt);
+							var date = createdAtDate.getDate();
+							var month = createdAtDate.getMonth() + 1;
+							var year = createdAtDate.getFullYear();
+							var hour = createdAtDate.getHours();
+							var minute = createdAtDate.getMinutes();
+							var seconds = createdAtDate.getSeconds();
+							var createdAt = year + "/" + month + "/" + date + " " + hour + ":" + minute + ":" + seconds;
+							trHTML += '<tr class="update_fees">' + '<td>' + slno + '</td>' + '<td style=\"white-space: nowrap\">' + ((createdAt == null) ? "NA" :
+								createdAt) + '</td>' + '<td style=\"white-space: nowrap\" id="feeName_' + slno + '">' + ((itemVal[i].feeName == null) ? "NA" :
+								itemVal[i].feeName) + '</td>' + '<td style=\"white-space: nowrap\" id="feeCurrency_' + slno + '">' + ((itemVal[i].feeCurrency.localCode == null) ? "NA" :
+								itemVal[i].feeCurrency.localCode) + '</td>' + "";
+							
+							
+							trHTML += '<td style=\"white-space: nowrap\" >';
+							trHTML += '<div class="input_radio">';
+							
+							if (itemVal[i].fixed === true) {
+								trHTML += '<input type="radio" name="percent_' + slno + '" id ="flat_' + slno + '" class ="flat" checked="checked" /> Flat';
+							} else {
+								trHTML += '<input type="radio" name="percent_' + slno + '" id ="flat_' + slno + '" class ="flat" /> Flat';
+							}
+							trHTML += '&nbsp;&nbsp;&nbsp;';
+							if (itemVal[i].fixed === false) {
+								trHTML += '<input type="radio" name="percent_' + slno + '" id="per_' + slno + '" class="per" checked ="checked" /> Percent';
+							} else {
+								trHTML += '<input type="radio" name="percent_' + slno + '" id="per_' + slno + '" class="per" /> Percent';
+							}
+							trHTML += '<br><br>';
+							trHTML += '<input type="number" id="enableInput" name="" value = ' + itemVal[i].feeValue + ' class="text-center edit" disabled="disabled" />';
+							var hiddenFeeName = ((itemVal[i].feeName == null) ? "NA" : itemVal[i].feeName);
+							var hiddenCurrency = ((itemVal[i].feeCurrency.localCode == null) ? "NA" : itemVal[i].feeCurrency.localCode);
+							trHTML += '<input type="hidden" id="feeNameHidden_' + slno + '" value="' + hiddenFeeName + '"/>';
+							trHTML += '<input type="hidden" id="feeCurrencyHidden_' + slno + '" value="' + hiddenCurrency + '"/>';
+							trHTML += '</div>';
+							trHTML += '</td>';
+							
+							trHTML += '</tr>';
+						});
+						//trHTML +='<td>'+'<td>'+'</td>'+'<td>'+'<td>'+'<td style=\"white-space: nowrap\"><button typr="button" class="btn btn-xs btn-primary px-5 mr-2" onclick="editValues()"><i class="far fa-edit"></i> Edit</button>' + '<button type="button" id="updateButton" class="btn btn-xs btn-success px-5" onclick="updateFees('+slno+')" disabled="disabled"><i class="fas fa-sync-alt"></i> Update</button>' + '</td>'+'</td>'+'</td>'+'</td>';
+						btnHTML = '<button type="button" class="btn btn-xs btn-primary px-5 mr-2" onclick="editValues()"><i class="far fa-edit"></i> Edit</button>' + '<button type="button" id="updateButton" class="btn btn-xs btn-success px-5" onclick="updateFees(' + slno + ')" disabled="disabled"><i class="fas fa-sync-alt"></i> Update</button>'
+					} else {
+						$("#feeListTable").empty();
+						trHTML += '<tr class="odd testingg"><td class="dataTables_empty" colspan="17">No fees list available in table</td></tr>';
+					}
+					
+					$('#feeListTable').html(trHTML);
+					$('#table_action_button').append(btnHTML);
+					$("#updateClientFees").modal("show");
+				}
+				paginationForFeesList(data.pagination.totalPages, 1);
+				$("#paging_info_fees").html("Showing " + startno + " to " + slno + " of " + data.pagination.totalElements + " entries");
+			},
+			error: function (data) {
+				if (data.status = 500) {
+					var responseMessage = JSON.parse(data.responseText);
+					var message = responseMessage.message;
+					if (message === "No fee setup configuration found for this client") {
+						$("#warningModal").modal('show');
+					} else {
+						$("#error_refundNotification").modal('show');
+						$(".refunded_body").html(message);
+					}
+				} else if (data.status = 400) {
+					$("#clientBalanceModel").modal('hide');
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(data.responseText);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function paginationForFeesList(totalPages, val) {
+		if (val === '0') {
+			$('#paginationn_fees').twbsPagination('destroy');
+		}
+		if (totalPages === 0) {
+			totalPages = 1;
+		}
+		$('#paginationn_fees').twbsPagination({
+			totalPages: totalPages,
+			visiblePages: 10,
+			onPageClick: function (event, page) {
+				if ($('#totalPagesId').val() != 1) {
+					clientFeesTable(page - 1);
+				} else {
+					$('#totalPagesId').val(2);
+				}
+			}
+		});
+	}
+	
+	function closeModal() {
+		getClientListSearch('0');
+	}
+	
+	var valueArr = [];
+	
+	function editValues() {
+		var feeValue = "enableInput";
+		var updateButton = "updateButton";
+		$(".edit").prop("disabled", false);
+		$(".edit").each(function (index, element) {
+			valueArr.push($(this).val());
+		});
+		$("#" + updateButton).prop("disabled", false);
+	}
+	
+	
+	function updateFees(slno) {
+		var resultantArray = new Array();
+		$(".input_radio").each(function (index, element) {
+			var eachDivElementsArray = $(element).children();
+			var flatRadioBtnElement = eachDivElementsArray[0];
+			var perRadioBtnElement = eachDivElementsArray[1];
+			var inputElement = eachDivElementsArray[4];
+			var feeNameInputElement = eachDivElementsArray[5];
+			var feeCurrencyInputElement = eachDivElementsArray[6];
+			
+			var elementsObject = new Object();
+			elementsObject.flatValue = flatRadioBtnElement.checked;
+			elementsObject.percentageValue = perRadioBtnElement.checked;
+			elementsObject.feeValue = inputElement.value;
+			elementsObject.feeName = feeNameInputElement.value;
+			elementsObject.feeCurrency = feeCurrencyInputElement.value;
+			
+			resultantArray.push(elementsObject);
+			
+		});
+		
+		var changedValueArr = [];
+		$(".edit").each(function (index, element) {
+			changedValueArr.push($(this).val());
+		});
+		
+		var success = false;
+		var clientCode = $("#client_code").val();
+		var url = $("#updateClientFeesUrl").val() + clientCode;
+		
+		resultantArray = JSON.stringify(unSanitize(resultantArray));
+		$.ajax({
+			url: url,
+			type: "PUT",
+			contentType: "application/json",
+			async: false,
+			data: "{\"collectiveValues\":" + resultantArray + "}",
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (data, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				data = sanitize(unSanitize(data));
+				
+				success = true;
+				$(".refunded_body").html(data);
+			},
+			error: function (data) {
+				success = false;
+				if (data.status = 500) {
+					var responseMessage = JSON.parse(data.responseText);
+					var message = responseMessage.message;
+					
+					$(".refunded_body").html(message);
+				} else if (data.status = 400) {
+					
+					$(".refunded_body").html(data.responseText);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+		if (success) {
+			$("#updateClientFees").modal('hide');
+			$("#success_refundNotification").modal('show');
+		} else {
+			$("#updateClientFees").modal('hide');
+			$("#error_refundNotification").modal('show');
+		}
+	}
+	
+	function openUpdateClientLimitsModal(clientCode) {
+		$("#client_code").val(clientCode);
+		var slno = 0;
+		var url = $("#listClientLimitsUrl").val() + "client" + "/" + clientCode + "/" + "wallet" + "/" + "fetchLimits";
+		$.ajax({
+			url: url,
+			type: "GET",
+			async: false,
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (data, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				data = sanitize(unSanitize(data));
+				
+				var trHTML = '';
+				if (trHTML === '') {
+					$("#limitListTable").empty();
+					if (data != null && data !== '' && data !== "[]" && data.length > 0) {
+						$(data).each(function (i, item) {
+							var itemVal = data;
+							slno = slno + 1;
+							var createdAtDate = new Date(itemVal[i].createdAt);
+							var date = createdAtDate.getDate();
+							var month = createdAtDate.getMonth() + 1;
+							var year = createdAtDate.getFullYear();
+							var hour = createdAtDate.getHours();
+							var minute = createdAtDate.getMinutes();
+							var seconds = createdAtDate.getSeconds();
+							var createdAt = year + "/" + month + "/" + date + " " + hour + ":" + minute + ":" + seconds;
+							trHTML += '<tr class="update_Limits">' + '<td>' + slno + '</td>' + '<td style=\"white-space: nowrap\">' + ((createdAt == null) ? "NA" :
+								createdAt) + '</td>' + '<td style=\"white-space: nowrap\" id="complainceLevel_' + slno + '">' + ((itemVal[i].complianceLevel == null) ? "NA" :
+								itemVal[i].complianceLevel) + '</td>' + '<td style=\"white-space: nowrap\" >' + '<input type="number" id="dailyLimit_' + slno + '" value = ' + itemVal[i].dailyLimit + ' class="text-center" disabled="disabled">' + '</td>' + '<td style=\"white-space: nowrap\" >' + '<input type="number" id="monthlyLimit_' + slno + '" value = ' + itemVal[i].monthlyLimit + ' class="text-center" disabled="disabled">' + '</td>' + '<td style=\"white-space: nowrap\" >' + '<input type="number" id="currentLimit_' + slno + '" value = ' + itemVal[i].currentLimit + ' class="text-center" disabled="disabled">' + '</td>' + '<td style=\"white-space: nowrap\" >' + '<input type="number" id="annuallyLimit_' + slno + '" value = ' + itemVal[i].annuallyLimit + ' class="text-center" disabled="disabled">' + '</td>' + '<td style=\"white-space: nowrap\" >' + '<input type="number" id="balanceLimit_' + slno + '" value = ' + itemVal[i].balanceLimit + ' class="text-center" disabled="disabled">' + '</td>' + '<td style=\"white-space: nowrap\" >' + '<input type="number" id="dailyCount_' + slno + '" value = ' + itemVal[i].dailyCount + ' class="text-center" disabled="disabled">' + '</td>' + '<td style=\"white-space: nowrap\" >' + '<input type="number" id="monthlyCount_' + slno + '" value = ' + itemVal[i].monthlyCount + ' class="text-center" disabled="disabled">' + '</td>' + '<td style=\"white-space: nowrap\" >' + '<input type="number" id="annuallyCount_' + slno + '" value = ' + itemVal[i].annuallyCount + ' class="text-center" disabled="disabled">' + '</td>' + '<td style=\"white-space: nowrap\" >' + '<input type="number" id="holdBalanceLimit_' + slno + '" value = ' + itemVal[i].holdBalanceLimit + ' class="text-center" disabled="disabled">' + '</td>' + '<td style=\"white-space: nowrap\">' + '<button class="btn btn-xs btn-primary ripple" type="button" onclick="editLimitValues(' + slno + ')" title="Edit"><i class="fas fa-edit"></i></button>' + '</td>' + '<td style=\"white-space: nowrap\">' + '<button type="button" id="updateLimitButton_' + slno + '" class="btn btn-xs btn-success ripple" onclick="updateLimit(' + slno + ')" disabled="disabled" title="Update"><i class="fas fa-sync-alt"></i></button>' + '</td>';
+							trHTML += '</tr>';
+						});
+					} else {
+						$("#limitListTable").empty();
+						trHTML += '<tr class="odd testingg"><td class="dataTables_empty" colspan="17">No fees list available in table</td></tr>';
+					}
+					$('#limitListTable').html(trHTML);
+					$("#fetchClientLimitsModal").modal("show");
+				}
+			},
+			error: function (data) {
+				if (data.status = 500) {
+					var responseMessage = JSON.parse(data.responseText);
+					var message = responseMessage.message;
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(message);
+				} else if (data.status = 400) {
+					$("#clientBalanceModel").modal('hide');
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(data.responseText);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function openClientLimitsModal(clientCode) {
+		$("#client_code").val(clientCode);
+		$("#setFeesModal").modal("show");
+	}
+	
+	function setClientLimits() {
+		$("#submitButton").html(spinnerUrl);
+		var clientCode = $("#client_code").val();
+		var balanceLimit = $("#balance_limit").val();
+		var monthlyLimit = $("#monthly_limit").val();
+		var currentLimit = $("#current_limit").val();
+		var annuallyLimit = $("#annually_limit").val();
+		var dailyLimit = $("#daily_limit").val();
+		var dailyCount = $("#daily_count").val();
+		var monthlyCount = $("#monthly_count").val();
+		var annuallyCount = $("#annually_count").val();
+		var complianceLevel = $("#complainceLevel").val();
+		var holdBalanceLimit = $("#hold_balance_limit").val();
+		
+		let data = JSON.stringify(unSanitize({
+			"balanceLimit": balanceLimit,
+			"monthlyLimit": monthlyLimit,
+			"currentLimit": currentLimit,
+			"annuallyLimit": annuallyLimit,
+			"dailyLimit": dailyLimit,
+			"dailyCount": dailyCount,
+			"monthlyCount": monthlyCount,
+			"annuallyCount": annuallyCount,
+			"complianceLevel": complianceLevel,
+			"holdBalanceLimit": holdBalanceLimit
+			
+		}));
+		
+		var url = $("#setClientLimitsUrl").val() + "client" + "/" + clientCode + "/" + "wallet" + "/" + "setLimits";
+		$.ajax({
+			type: "POST",
+			contentType: "application/json",
+			url: url,
+			data: data,
+			processData: false,
+			cache: false,
+			timeout: 600000,
+			async: false,
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (data, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				data = sanitize(unSanitize(data));
+				
+				$("#setFeesModal").modal('hide');
+				$("#success_refundNotification").modal('show');
+				$(".refunded_body").html(data.message);
+				$("#submitButton").html('Save');
+			},
+			error: function (data) {
+				if (data.status === 500) {
+					var responseMessage = JSON.parse(data.responseText);
+					var message = responseMessage.message;
+					$("#setFeesModal").modal('hide');
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(message);
+					$("#submitButton").html('Save');
+				} else if (data.status === 400) {
+					var responseMessage = JSON.parse(data.responseText);
+					var message = responseMessage.message;
+					$("#setFeesModal").modal('hide');
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(message);
+					$("#submitButton").html('Save');
+				} else {
+					$("#setFeesModal").modal('hide');
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(data.responseText);
+					$("#submitButton").html('Save');
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function editLimitValues(slno) {
+		var dailyLimit = "dailyLimit_" + slno;
+		var monthlyLimit = "monthlyLimit_" + slno;
+		var balanceLimit = "balanceLimit_" + slno;
+		var dailyCount = "dailyCount_" + slno;
+		var monthlyCount = "monthlyCount_" + slno;
+		var currentLimit = "currentLimit_" + slno;
+		var annuallyLimit = "annuallyLimit_" + slno;
+		var annuallyCount = "annuallyCount_" + slno;
+		var updateButton = "updateLimitButton_" + slno;
+		var holdBalanceLimit = "holdBalanceLimit_" + slno;
+		$("#" + annuallyCount).prop("disabled", false);
+		$("#" + annuallyLimit).prop("disabled", false);
+		$("#" + currentLimit).prop("disabled", false);
+		$("#" + dailyLimit).prop("disabled", false);
+		$("#" + monthlyLimit).prop("disabled", false);
+		$("#" + balanceLimit).prop("disabled", false);
+		$("#" + dailyCount).prop("disabled", false);
+		$("#" + monthlyCount).prop("disabled", false);
+		$("#" + updateButton).prop("disabled", false);
+		$("#" + holdBalanceLimit).prop("disabled", false);
+	}
+	
+	function updateLimit(slno) {
+		var complianceLevel = $("#complainceLevel_" + slno).html();
+		var dailyLimit = $("#dailyLimit_" + slno).val();
+		var monthlyLimit = $("#monthlyLimit_" + slno).val();
+		var balanceLimit = $("#balanceLimit_" + slno).val();
+		var dailyCount = $("#dailyCount_" + slno).val();
+		var monthlyCount = $("#monthlyCount_" + slno).val();
+		var currentLimit = $("#currentLimit_" + slno).val();
+		var annuallyLimit = $("#annuallyLimit_" + slno).val();
+		var annuallyCount = $("#annuallyCount_" + slno).val();
+		var clientCode = $("#client_code").val();
+		var holdBalanceLimit = $("#holdBalanceLimit_" + slno).val();
+		var url = $("#updateClientLimitsUrl").val() + "client" + "/" + clientCode + "/" + "wallet" + "/" + "updateLimits";
+		
+		let data = JSON.stringify(unSanitize({
+			"dailyLimit": dailyLimit,
+			"monthlyLimit": monthlyLimit,
+			"balanceLimit": balanceLimit,
+			"dailyCount": dailyCount,
+			"monthlyCount": monthlyCount,
+			"currentLimit": currentLimit,
+			"annuallyLimit": annuallyLimit,
+			"annuallyCount": annuallyCount,
+			"complianceLevel": complianceLevel,
+			"holdBalanceLimit": holdBalanceLimit
+		}));
+		
+		$.ajax({
+			url: url,
+			type: "PUT",
+			contentType: "application/json",
+			data: data,
+			async: false,
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (data, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				data = sanitize(unSanitize(data));
+				
+				$("#fetchClientLimitsModal").modal('hide');
+				$("#success_refundNotification").modal('show');
+				$(".refunded_body").html(data.message);
+			},
+			error: function (data) {
+				if (data.status = 500) {
+					var responseMessage = JSON.parse(data.responseText);
+					var message = responseMessage.message;
+					$("#fetchClientLimitsModal").modal('hide');
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(message);
+				} else if (data.status = 400) {
+					var responseMessage = JSON.parse(data.responseText);
+					var message = responseMessage.message;
+					$("#fetchClientLimitsModal").modal('hide');
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(message);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function defaultFees() {
+		var clientId = $("#clientId").val();
+		var url = $("#defaultClientFeesUrl").val() + clientId;
+		$("#warning_button").html("please wait ...");
+		$.ajax({
+			url: url,
+			type: "GET",
+			async: false,
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (data, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				data = sanitize(unSanitize(data));
+				
+				$("#warningModal").modal('hide');
+				$("#success_refundNotification").modal('show');
+				$(".refunded_body").html(data);
+				$("#warning_button").html("Yes");
+			},
+			error: function (data) {
+				if (data.status = 500) {
+					var responseMessage = JSON.parse(data.responseText);
+					var message = responseMessage.message;
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(message);
+					$("#warning_button").html("Yes");
+				} else if (data.status = 400) {
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html(data.responseText);
+					$("#warning_button").html("Yes");
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function toggleSmartSearch() {
+		$("#smartSearchFieldsDiv").slideToggle();
+	}
+	
+	function htmlDecode(input) {
+		var doc = new DOMParser().parseFromString(input, "text/html");
+		return doc.documentElement.textContent;
+	}
+	
+	function getClientListSearch(page, isPaging) {
+		$("#submit_button").html(spinnerUrl);
+		$("#submit_button").attr("disabled", true);
+		var clientCode = $("#clientCode").val();
+		var name = $("#searchInput").val();
+		var contactNumber = $("#contactNumber").val();
+		var email = $("#email").val();
+		var program = $("#program").val();
+		
+		
+		let data = JSON.stringify(unSanitize({
+			name: name,
+			clientCode: clientCode,
+			contactNumber: contactNumber,
+			email: email,
+			program: program
+		}));
+		
+		$.ajax({
+			url: $('#getClientListByCodeUrl').val() + "?page=" + page + "&size=10&order=DESC",
+			type: "POST",
+			contentType: "application/json",
+			data: data,
+			async: false,
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (result, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				result = sanitize(unSanitize(result));
+				
+				$("#submit_button").html("Filter");
+				$("#submit_button").attr("disabled", false);
+				var trHTML = '';
+				if (trHTML === '') {
+					var slno = (page * 10);
+					var startno = (page * 10) + 1;
+					$("#clientListDownload").show();
+					$("#clientListTable").empty();
+					$("#smartSearchFieldsDiv").slideUp();
+					var itemVal = result.content;
+					if (itemVal.length > 0) {
+						$(itemVal).each(function (i, item) {
+							slno = slno + 1;
+							var createdAtDate = new Date(itemVal[i].createdAt);
+							var date = createdAtDate.getDate();
+							var month = createdAtDate.getMonth() + 1;
+							var year = createdAtDate.getFullYear();
+							var hour = createdAtDate.getHours();
+							var minute = createdAtDate.getMinutes();
+							var seconds = createdAtDate.getSeconds();
+							var createdAt = year + "/" + month + "/" + date + " " + hour + ":" + minute + ":" + seconds;
+							trHTML += '<tr id="1">';
+							trHTML += '<td style="white-space: nowrap">' + slno + '</td>';
+							trHTML += '<td style="white-space: nowrap">' + createdAt + '</td>';
+							trHTML += '<td style="white-space: nowrap">' + itemVal[i].name + '</td>';
+							trHTML += '<td style="white-space: nowrap">' + itemVal[i].email + '</td>';
+							trHTML += '<td style="white-space: nowrap">' + itemVal[i].programDetail.name + '</td>';
+							trHTML += '<td style="white-space: nowrap">' + itemVal[i].countryCode + '</td>';
+							trHTML += '<td style="white-space: nowrap">' + itemVal[i].contactNo + '</td>';
+							trHTML += '<td style="white-space: nowrap">' + itemVal[i].clientCode + '</td>';
+							trHTML += '<td style="white-space: nowrap">' + itemVal[i].clientType + '</td>';
+							var complianceStatusCallbackUrl = itemVal[i].complianceStatusCallbackUrl == null ? "" : itemVal[i].complianceStatusCallbackUrl;
+							var clientIdNumber = itemVal[i].clientIdNumber == null ? "" : itemVal[i].clientIdNumber;
+							var riskScore = itemVal[i].riskScore == null ? "" : itemVal[i].riskScore;
+							var notificationWebhook = itemVal[i].notificationWebhook == null ? "" : itemVal[i].notificationWebhook;
+							var tncName = itemVal[i].tncName == null ? "" : itemVal[i].tncName;
+							var prefundName = itemVal[i].prefundName == null ? "" : itemVal[i].prefundName;
+							var customerAuthUrl = itemVal[i].customerAuthUrl == null ? "" : itemVal[i].customerAuthUrl;
+							var fundingInstrumentType = itemVal[i].fundingInstrumentType == null ? "" : itemVal[i].fundingInstrumentType;
+							var cardTxnRedirectUrl = itemVal[i].cardTxnRedirectUrl == null ? "" : itemVal[i].cardTxnRedirectUrl;
+							var ekycRedirectUrl = itemVal[i].ekycRedirectUrl == null ? "" : itemVal[i].ekycRedirectUrl;
+							var complianceCallbackUrl = itemVal[i].complianceCallbackUrl == null ? "" : itemVal[i].complianceCallbackUrl;
+							var action = "<a onclick ='openClientDetailsModel(\"" + slno + "\", \"" + itemVal[i].name + "\", \"" + itemVal[i].email + "\", \"" + itemVal[i].contactNo + "\", \"" + itemVal[i].clientCode + "\", \"" + itemVal[i].programDetail.name + "\",\"" + itemVal[i].markup + "\",\"" + itemVal[i].balanceThreshold + "\",\"" + complianceStatusCallbackUrl + "\",\"" + itemVal[i].enableCompliance + "\",\"" + itemVal[i].autoManualApproval + "\",\"" + clientIdNumber + "\",\"" + riskScore + "\",\"" + notificationWebhook + "\",\"" + tncName + "\",\"" + itemVal[i].deduplicationFlag + "\",\"" + prefundName + "\",\"" + itemVal[i].uniqueCustomer + "\",\"" + customerAuthUrl + "\",\"" + fundingInstrumentType + "\",\"" + cardTxnRedirectUrl + "\",\"" + ekycRedirectUrl + "\",\"" + itemVal[i].applePaySupport + "\",\"" + itemVal[i].googlePaySupport + "\",\"" + itemVal[i].samsungPaySupport + "\",\"" + itemVal[i].allowThirdPartyFunding + "\",\"" + itemVal[i].cardTxnProductCode + "\",\"" + itemVal[i].cardTxnNarrative + "\",\"" + complianceCallbackUrl + "\",\"" + itemVal[i].currencyAuthorizationType + "\");'>View Details</a>";
+							var viewBalance = "<a onclick='fetchClientAccountBalance(\"" + itemVal[i].clientCode + "\");'>View Balance</a>";
+							var updateFees = "<button class='btn btn-primary btn-xs btn-block'" + "onclick = 'openUpdateClientFeesModal(\"" + itemVal[i].clientCode + "\",\"" + slno + "\");'>Update Fees</button>";
+							
+							trHTML += '<td style="white-space: nowrap">' + action + '</td>';
+							trHTML += '<td style="white-space: nowrap">' + viewBalance + '</td><td style="white-space: nowrap">' + updateFees + '</td>';
+							trHTML += '</tr>';
+						});
+						if (page == 0 && isPaging == true) {
+							page = 1;
+						}
+						pagination(result.totalPages, page);
+						$("#paging_info").html("Showing " + startno + " to " + slno + " of " + result.totalElements + " entries");
+						$("#noClientList").hide();
+						$('#clientListTable').append(trHTML);
+					} else {
+						$('#pagination').twbsPagination('destroy');
+						$(".testingg").empty();
+						$("#clientListDownload").hide();
+						trHTML = '<tr class="odd testingg"><td class="dataTables_empty" colspan="15" valign="top"><h4>No data available in table</h4></td></tr>';
+						$('#clientListTable').append(trHTML);
+						$("#paging_info").html('');
+					}
+				} else {
+					$('#pagination').twbsPagination('destroy');
+					$(".testingg").empty();
+					$("#clientListDownload").hide();
+					trHTML += '<tr class="odd testingg"><td class="dataTables_empty" colspan="15" valign="top"><h4>No data available in table</h4></td></tr>';
+					$('#clientListTable').append(trHTML);
+					$("#paging_info").html('');
+				}
+				if (page == 0 && isPaging == true) {
+					page = 1;
+				}
+			},
+			error: function (data) {
+				var trHTML = '';
+				if (data.readyState == 0) {
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html("service is temporarily down,please try again later!");
+				} else if (data.status === 500) {
+					$('#paginationn').twbsPagination('destroy');
+					$(".testingg").empty();
+					$("#clientListDownload").hide();
+					trHTML += '<tr class="odd testingg"><td class="dataTables_empty" colspan="15" valign="top"><h4>No data available in table</h4></td></tr>';
+					$('#clientListTable').append(trHTML);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function pagination(totalPages, val) {
+		var value = $("#clientList_totalPages").val(val);
+		if (val == '0') {
+			$('#pagination').twbsPagination('destroy');
+		}
+		if (totalPages === 0) {
+			totalPages = 1;
+		}
+		$('#pagination').twbsPagination({
+			totalPages: totalPages,
+			visiblePages: 10,
+			startPage: 1,
+			hideOnlyOnePage: false,
+			initiateStartPageClick: false,
+			first: 'First',
+			prev: 'Previous',
+			next: 'Next',
+			last: 'Last',
+			onPageClick: function (event, page) {
+				if (value != 1) {
+					getClientListSearch(page - 1, true);
+				} else {
+					$('#clientList_totalPages').val(2);
+				}
+			}
+		});
+	}
+	
+	function getClientList() {
+		generateClientDropdown($("#fetchAllClientUrl").val(), false, "clientCode", null);
+	}
+	
+	function clientListDownload() {
+		$("#clientListDownload").attr("disabled", true);
+		$("#clientListDownload").html("Please Wait... <i class='fas fa-spinner fa-spin'></i>");
+		const clientCode = $("#clientCode").val();
+		const clientName = $("#searchInput").val();
+		const contactNumber = $("#contactNumber").val();
+		const email = $("#email").val();
+		
+		const clientListDownloadUrl = $("#clientListDownloadUrl").val() + "?" + "clientCode=" + clientCode + "&clientName=" + clientName + "&contactNumber=" + contactNumber + "&email=" + email;
+		$.ajax({
+			url: clientListDownloadUrl,
+			type: 'GET',
+			async: true,
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			xhrFields: {
+				responseType: 'blob'
+			},
+			success: function (data, status, xhr) {
+				const a = document.createElement('a');
+				const url = window.URL.createObjectURL(data);
+				a.href = url;
+				a.download = "Client_Report_" + new Date().getTime() + ".xlsx";
+				document.body.append(a);
+				a.click();
+				a.remove();
+				window.URL.revokeObjectURL(url);
+			},
+			error: function (data) {
+				if (data.readyState === 0) {
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html("service is temporarily down,please try again later.");
+				} else {
+					$("#error_refundNotification").modal('show');
+					$(".refunded_body").html("File not found");
+				}
+			},
+			complete: function (xhr, status) {
+				const contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				$("#clientListDownload").attr("disabled", false);
+				$("#clientListDownload").html('<i class="fa fa-download" aria-hidden="true"></i> Download');
+			}
+		});
+	}
+	
+	function getProgramList() {
+		if ($("#programValueHold").val() != null && $("#programValueHold").val() != '') {
+			$('#program').val($("#programValueHold").val());
+			var optionTag = '<option value=' + $("#programValueHold").val() + '>' + $("#programValueHold").val() + '</option>';
+			
+		} else {
+			
+			$.ajax({
+				url: $("#fetchAllProgramUrl").val(),
+				type: "get",
+				data: {
+					page: 0,
+					size: 1000,
+					order: 'DESC'
+				},
+				async: false,
+				beforeSend: function (xhr) {
+					setAuthTokenInReqHeader(xhr);
+					setCsrfTokenInRequestHeader(xhr);
+				},
+				success: function (result, status, xhr) {
+					var contextPath = "${pageContext.request.contextPath}";
+					setAndReturnNewAuthToken(xhr, contextPath);
+					setAndReturnNewCsrfToken(xhr, contextPath);
+					result = sanitize(unSanitize(result));
+					
+					var optionTag = "<option value = ''></option>";
+					if (result.content != null && result.content != '' && result.content.length > 0) {
+						for (var i = 0; i < result.content.length; i++) {
+							var eachOption = result.content[i];
+							optionTag += "<option>" + eachOption.name + " </option>";
+						}
+						$("#program").html(optionTag);
+						$("#program").select2({
+							placeholder: 'Select a Program',
+							allowClear: false,
+							dropdownAutoWidth: false,
+							width: '100%',
+							dropdownCss: {
+								'width': 'inherit'
+							}
+						});
+						
+						if ($("#programValueHold").val() != null && $("#programValueHold").val() != '') {
+							$('#program').val($("#programValueHold").val());
+							$('.enableSelect2').trigger('change');
+						}
+					} else {
+						$("#program").html(optionTag);
+						$("#program").select2({
+							placeholder: 'select a Program',
+							allowClear: false,
+							dropdownAutoWidth: false,
+							width: '100%',
+							dropdownCss: {
+								'width': 'inherit'
+							}
+						});
+					}
+				},
+				complete: function (xhr, status) {
+					var contextPath = "${pageContext.request.contextPath}";
+					setAndReturnNewAuthToken(xhr, contextPath);
+					setAndReturnNewCsrfToken(xhr, contextPath);
+				}
+			});
+		}
+	}
+	
+	function resetFields() {
+		$(".clear").each(function (index, element) {
+			$(element).val("");
+		});
+		$("#program").trigger('change');
+		
+		var clientDetails = $("#clientDetails").val();
+		
+		var decodedClientDetails = window.atob(clientDetails);
+		if (decodedClientDetails == undefined || decodedClientDetails == null || decodedClientDetails == "" || decodedClientDetails == "[]" || decodedClientDetails.length == 0) {
+			
+			$("#clientCode").val("");
+			$("#clientCode").trigger('change');
+		}
+	}
+
+</script> -->
+
+</body>
+
+</html>

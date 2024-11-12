@@ -1,0 +1,25 @@
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+	<div class="mb-container">
+		<div class="mb-middle">
+			<div class="mb-icon">
+				<div>
+					<img alt="ahan" src="${pageContext.request.contextPath}/static/img/logo-big.png">
+				</div>
+			</div>
+			<div class="mb-title">
+				<span class="fa fa-sign-out"></span>
+				Log out of ahan?
+			</div>
+			<div class="mb-content">
+				<p>Are you sure you want to log out?</p>
+				<p>Press No if you want to continue work. Press Yes to logout
+					current user.</p>
+			</div>
+			<div class="mb-footer">
+				<button class="btn btn-default mb-control-close btn-block">No</button>
+				<a href="${pageContext.request.contextPath}/authenticate/logout"
+					class="btn btn-block btn-primary">Yes</a>
+			</div>
+		</div>
+	</div>
+</div>

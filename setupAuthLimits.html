@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- META SECTION -->
+  <title>ahan | Setup Auth Limits</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+
+  <!-- EOF CSS INCLUDE -->
+</head>
+
+<body>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+
+      <div class="page-content-wrap" style="min-height: 80vh">
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <h4 class="page-title">Setup Auth Limits</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel">
+                <div class="panel-body">
+                  <div id="hiddenFields"></div>
+
+                  <form id="setAuthLimitsform" method="post" action="#">
+                    <h4 id="inPageErrorMessage" class="error text-center"></h4>
+                    <h4 id="inPageSuccessMessage" class="success text-center"></h4>
+                    <input type="hidden" id="successMsg" name="successMsg" value="${successMessage}" />
+                    <input type="hidden" id="errorMsg" name="errorMsg" value="${errorMessage}" />
+                    <input type="hidden" id="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+                    <input type="hidden" id="currencyListClientUrl" value="${currencyListClientUrl}" />
+                    <input type="hidden" id="setUpAuthLimitsUrl" value="${setUpAuthLimitsUrl}" />
+                    <input type="hidden" id="authLimitsUrl" value="${authLimitsUrl}" />
+
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <div>
+                          <input type="hidden" id="clientCodeValueHold" value="${clientCode}" />
+                          <label for="clientCode" class="control-label">Client:
+                            <sup>*</sup>
+                          </label>
+                          <select id="clientCode" name="clientCode" class="form-control">
+                            <option value="">Select a Client</option>
+                            <option value="Cards_Client_TEST_4(9a2a5ee-145d-45dss-51dede-39dwdwdwdwd)">
+                              Cards_Client_TEST_4(9a2a5ee-145d-45dss-51dede-39dwdwdwdwd)
+                            </option>
+                            <option value="Cards_Client_TEST_1(65eeefda544-145d-45dss-51dede-2s3de3drd42)">
+                              Cards_Client_TEST_1(65eeefda544-145d-45dss-51dede-2s3de3drd42)
+                            </option>
+                            <option value="Cards_Client_TEST_1(67cfada66-6544fcddds-45dss-51dede-76f4fredx)">
+                              Cards_Client_TEST_1(67cfada66-6544fcddds-45dss-51dede-76f4fredx)
+                            </option>
+                            <option value="Hyperface(908jjdsd-67fffd-655675fdddsss-635fdffdfd)">
+                              Hyperface(908jjdsd-67fffd-655675fdddsss-635fdffdfd)
+                            </option>
+                          </select>
+                        </div>
+                        <span class="error field_err" id="clientCodeError"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <div>
+                          <label for="allowedCurrency" class="control-label">Allowed Currency:<sup>*</sup></label>
+                          <input type="hidden" id="currencyCodeValueHold" name="currencyCodeValueHold"
+                            value="${client.currencyCode}" />
+                          <select id="currencyCode" name="currencyCode" class="form-control enableSelect2" required>
+                            <option value="">Select Currency</option>
+                            <option value="USD">USD</option>
+                            <option value="SGD">SGD</option>
+                          </select>
+                        </div>
+                        <span class="error field_err" id="currencyCodeError"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <label for="dailyLimit" class="control-label">Daily Limit:
+                        </label>
+                        <input class="form-control" id="dailyLimit" type="number" value="999999999" />
+                        <span id="dailyLimitError" class="error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <label for="dailyCount" class="control-label">Daily Count:
+                        </label>
+                        <input class="form-control" id="dailyCount" type="number" value="999999999" />
+                        <span id="dailyCountError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <label for="monthlyLimit" class="control-label">Monthly Limit:
+                        </label>
+                        <input class="form-control" id="monthlyLimit" type="number" value="999999999" />
+                        <span id="monthlyLimitError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <label for="monthlyCount" class="control-label">Monthly Count:
+                        </label>
+                        <input class="form-control" id="monthlyCount" type="number" value="999999999" />
+                        <span id="monthlyCountError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <label for="perTxnLimit" class="control-label">Per Transaction Limit:
+                        </label>
+                        <input class="form-control" id="perTxnLimit" type="number" value="999999999" />
+                        <span id="perTxnLimitError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <label for="perCashWidthdrawalLimit" class="control-label">Per Cash Withdrawal Limit:
+                        </label>
+                        <input class="form-control" id="perCashWidthdrawalLimit" type="number" value="999999999" />
+                        <span id="perCashWidthdrawalLimitError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <label for="dailyCashWidthdrawalLimit" class="control-label">Daily Cash Withdrawal Limit:
+                        </label>
+                        <input class="form-control" id="dailyCashWidthdrawalLimit" type="number" value="999999999" />
+                        <span id="dailyCashWidthdrawalLimitError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <label for="dailyCashWidthdrawalCount" class="control-label">Daily Cash Withdrawal Count:
+                        </label>
+                        <input class="form-control" id="dailyCashWidthdrawalCount" type="number" value="999999999" />
+                        <span id="dailyCashWidthdrawalCountError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <label for="perIntlTxnCashWidthdrawalLimit" class="control-label">Per Cash Withdrawal Limit
+                          Intl:
+                        </label>
+                        <input class="form-control" id="perIntlTxnCashWidthdrawalLimit" type="number"
+                          value="999999999" />
+                        <span id="perIntlTxnCashWidthdrawalLimitError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                      <div class="form-group">
+                        <label for="dailyIntlTxnCashWidthdrawalLimit" class="control-label">Daily Cash Withdrawal Limit
+                          Intl:
+                        </label>
+                        <input class="form-control" id="dailyIntlTxnCashWidthdrawalLimit" type="number"
+                          value="999999999" />
+                        <span id="dailyIntlTxnCashWidthdrawalLimitError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12 mt-5">
+                      <div class="form-group text-center">
+                        <button id="submitButton" type="submit" class="btn btn-primary ripple px-5"
+                          onclick="validateFormAndSubmit(event);">
+                          Submit
+                        </button>
+                        <button id="updateButton" type="submit" class="btn btn-primary ripple px-5"
+                          onclick="validateFormAndUpdate(event);">
+                          Update
+                        </button>
+                        <button id="clearButton" type="reset" class="btn btn-default ripple px-5"
+                          onclick="resetFields();">
+                          clear
+                        </button>
+                      </div>
+                    </div>
+
+                    <input type="hidden" id="setUpPaymentIdUrl" name="setUpPaymentIdUrl" value="${setUpPaymentIdUrl}" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-13">
+              <!--table for added currencies -->
+              <div class="table-responsive">
+                <table id="addedAuthLimitsTable" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>SL NO.</th>
+                      <th>ALLOWED CURRENCY</th>
+                      <th>DAILY LIMIT</th>
+                      <th>DAILY COUNT</th>
+                      <th>MONTHLY LIMIT</th>
+                      <th>MONTHLY COUNT</th>
+                      <th>PER TXN LIMIT</th>
+                      <th>PER CASH WITDRAWAL LIMIT</th>
+                      <th>DAILY CASH WITDRAWAL LIMIT</th>
+                      <th>DAILY CASH WITDRAWAL COUNT</th>
+                      <th>PER CASH WITDRAWAL LIMIT INTL</th>
+                      <th>DAILY CASH WITDRAWAL LIMIT INTL</th>
+                      <th>ACTION</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>SGD</td>
+                      <td>5000</td>
+                      <td>500</td>
+                      <td>30000</td>
+                      <td>30000</td>
+                      <td>999999999</td>
+                      <td>999999999</td>
+                      <td>999999999</td>
+                      <td>999999999</td>
+                      <td>999999999</td>
+                      <td>999999999</td>
+                      <td><a href="#">Edit Details</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+      </div>
+    </div>
+    <!-- END PAGE CONTAINER -->
+  </div>
+
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div style="text-align: center">
+                <button type="button" id="successModal" class="btn btn-success ripple px-5" data-dismiss="modal"
+                  onclick="closeModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger ripple px-5" data-dismiss="modal" onclick="closeModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
+
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.min.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- Validation SCRIPTS -->
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <!-- END SCRIPTS -->
+
+  <script>
+    $("#clientCode").select2({
+      placeholder: "Select a Client",
+      allowClear: false,
+      dropdownAutoWidth: false,
+      width: "100%",
+      dropdownCss: {
+        width: "inherit",
+      },
+    });
+    $("#currencyCode").select2({
+      placeholder: "Select Currency",
+      allowClear: false,
+      dropdownAutoWidth: false,
+      width: "100%",
+      dropdownCss: {
+        width: "inherit",
+      },
+    });
+  </script>
+
+  <script>
+    var currencyFull = [];
+    var currencyOld = [];
+    /* Universal Spinner with text for Button */
+    var spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+    //to get the currency drop down
+    function populateCurrency() {
+      $.ajax({
+        url: $("#getCountryListUrl").val(),
+        type: "get",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          result = sanitize(unSanitize(result));
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+
+          currencyFull = result;
+          var optionTag = "<option value = ''></option>";
+          for (var i = 0; i < result.length; i++) {
+            var eachOption = result[i];
+
+            if (
+              eachOption.currencyName != null &&
+              eachOption.currencyName != "null" &&
+              eachOption.currencyName != "" &&
+              eachOption.currencyCode != null &&
+              eachOption.currencyCode != "null" &&
+              eachOption.currencyCode != "" &&
+              eachOption.name != null &&
+              eachOption.name != "null" &&
+              eachOption.name != ""
+            ) {
+              optionTag +=
+                "<option value = " +
+                eachOption.currencyCode +
+                ">" +
+                eachOption.currencyName +
+                " (" +
+                eachOption.currencyCode +
+                ")(" +
+                eachOption.Name +
+                ")</option>";
+            }
+          }
+          $("#currencyCode").html(optionTag);
+          $("#currencyCode").select2({
+            placeholder: "Select currency",
+            allowClear: false,
+            width: "100%",
+            dropdownAutoWidth: false,
+            dropdownCss: { width: "inherit" },
+          });
+          if (
+            $("#baseCurrencyText").val() != null &&
+            $("#baseCurrencyText").val() != ""
+          ) {
+            $(
+              "#currencyCode option:contains(" +
+              $("#baseCurrencyText").val() +
+              ")"
+            ).attr("selected", "selected");
+            $("#currencyCode").trigger("change");
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function getClientList() {
+      generateClientDropdown(
+        $("#fetchAllClientUrl").val(),
+        false,
+        "clientCode",
+        null
+      );
+    }
+    $("#clientCode").change(function () {
+      getServiceData();
+      getCurrencyServiceData();
+    });
+
+    function getCurrencyServiceData() {
+      var optionTag = "";
+      var client_code = $("#clientCode").val();
+      if (
+        client_code == null ||
+        client_code === "null" ||
+        client_code === "" ||
+        client_code === undefined
+      ) {
+        return;
+      }
+      if (client_code != null && client_code.includes("#")) {
+        valid = false;
+      } else {
+        $("#currencyCode").children("option").remove();
+        $("#currencyCode").empty();
+        $("#currencyCode").val(null).trigger("change");
+        $.ajax({
+          type: "get",
+          contentType: "application/json",
+          url: $("#currencyListClientUrl").val() + unSanitize(client_code),
+          dataType: "json",
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            if (result != null) {
+              optionTag += "<option></option>";
+              for (var i = 0; i < result.length; i++) {
+                var eachOption = result[i];
+                if (
+                  eachOption.curSymbol != "" &&
+                  eachOption.curSymbol != null &&
+                  eachOption.curSymbol !== "null" &&
+                  eachOption.curSymbol !== ""
+                ) {
+                  optionTag +=
+                    "<option value = " +
+                    eachOption.curSymbol +
+                    ">" +
+                    eachOption.curSymbol +
+                    "</option>";
+                }
+              }
+              $("#currencyCode").html(optionTag);
+              $("#currencyCode").select2({
+                placeholder: "Select currency",
+                allowClear: false,
+                width: "100%",
+                dropdownAutoWidth: false,
+                dropdownCss: { width: "inherit" },
+              });
+              if (
+                $("#currencyCodeValueHold").val() != null &&
+                $("#currencyCodeValueHold").val() !== ""
+              ) {
+                $("#currencyCode").val($("#currencyCodeValueHold").val());
+                $("#currencyCode").trigger("change");
+              }
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+    }
+
+    function getServiceData() {
+      var client_code = $("#clientCode").val();
+      var tableLoading = $("#loading");
+      var optionTag = "";
+      if (
+        client_code == null ||
+        client_code === "null" ||
+        client_code === "" ||
+        client_code === undefined
+      ) {
+        return;
+      }
+      if (client_code != null && client_code.includes("#")) {
+        var valid = false;
+        optionTag = "<option value='#'>Select currency</option>";
+        $("#currencyCode1").html(sanitize(unSanitize(optionTag)));
+      } else {
+        $("#currencyCode").children("option").remove();
+        $("#currencyCode").empty();
+        $("#currencyCode").val(null).trigger("change");
+        $.ajax({
+          type: "GET",
+          contentType: "application/json",
+          url: $("#authLimitsUrl").val() + client_code + "/limits/auth",
+          dataType: "json",
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            result = sanitize(unSanitize(result));
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+
+            //changes to populate added currencies of selected client
+            var count = 0;
+            var table = "<thead>";
+            table += "<tr>";
+            table += "<th>Sl.No.</th>";
+            table += "<th>Allowed Currency</th>";
+            table += "<th>Daily Limit</th>";
+            table += "<th>Daily Count</th>";
+            table += "<th>Monthly Limit</th>";
+            table += "<th>Monthly Count</th>";
+            table += "<th>Per Txn Limit</th>";
+            table += "<th>Per Cash Withdrawal Limit</th>";
+            table += "<th>Daily Cash Withdrawal Limit</th>";
+            table += "<th>Daily Cash Withdrawal Count</th>";
+            table += "<th>Per Cash Withdrawal Limit Intl</th>";
+            table += "<th>Daily Cash Withdrawal Limit Intl</th>";
+            table += "<th>Action</th>";
+            table += "</tr>";
+            table += "</thead>";
+            table += "<tbody>";
+
+            if (result != null) {
+              currencyOld = result;
+              //console.log(result);
+              for (var i = 0; i < result.length; i++) {
+                var eachOption = result[i];
+
+                if (
+                  eachOption.currencyCode !== "" &&
+                  eachOption.currencyCode != null &&
+                  eachOption.currencyCode !== "null" &&
+                  eachOption.currencyCode !== ""
+                ) {
+                  optionTag +=
+                    "<option value = " +
+                    eachOption.currencyCode +
+                    ">" +
+                    eachOption.currencyCode +
+                    "</option>";
+                  table += "<tr>";
+                  table += "<td>" + ++count + "</td>";
+                  table += "<td>" + eachOption.currencyCode + "</td>";
+                  table += "<td>" + eachOption.dailyLimit + "</td>";
+                  table += "<td>" + eachOption.dailyCount + "</td>";
+                  table += "<td>" + eachOption.monthlyLimit + "</td>";
+                  table += "<td>" + eachOption.monthlyCount + "</td>";
+                  table += "<td>" + eachOption.perTransactionLimit + "</td>";
+                  table +=
+                    "<td>" + eachOption.perCashWithdrawalLimit + "</td>";
+                  table +=
+                    "<td>" + eachOption.dailyCashWithdrawalLimit + "</td>";
+                  table +=
+                    "<td>" + eachOption.dailyCashWithdrawalCount + "</td>";
+                  table +=
+                    "<td>" + eachOption.perCashWithdrawalLimitIntl + "</td>";
+                  table +=
+                    "<td>" +
+                    eachOption.dailyCashWithdrawalLimitIntl +
+                    "</td>";
+                  table +=
+                    '<td style="white-space: nowrap"><a href="javascript:;" onclick="editDetails(\'' +
+                    eachOption.currencyCode +
+                    "','" +
+                    eachOption.dailyLimit +
+                    "','" +
+                    eachOption.dailyCount +
+                    "','" +
+                    eachOption.monthlyLimit +
+                    "','" +
+                    eachOption.monthlyCount +
+                    "','" +
+                    eachOption.perTransactionLimit +
+                    "','" +
+                    eachOption.perCashWithdrawalLimit +
+                    "','" +
+                    eachOption.dailyCashWithdrawalLimit +
+                    "','" +
+                    eachOption.dailyCashWithdrawalCount +
+                    "','" +
+                    eachOption.perCashWithdrawalLimitIntl +
+                    "','" +
+                    eachOption.dailyCashWithdrawalLimitIntl +
+                    "');\">Edit Details</a></td>";
+                  table += "</tr>";
+                }
+              }
+              table += "</tbody>";
+              tableLoading.css("display", "none");
+              $("#addedAuthLimitsTable").html(table);
+
+              $("#currencyCode1").html(optionTag);
+              $(".enableSelect2").select2({
+                placeholder: "Select currency",
+                allowClear: false,
+                width: "100%",
+                dropdownAutoWidth: false,
+                dropdownCss: { width: "inherit" },
+              });
+
+              if (
+                $("#baseCurrencyCodeValueHold").val() != null &&
+                $("#destinationCurrencyCodeValueHold").val() != ""
+              ) {
+                $("#currencyCode1").val(
+                  $("#baseCurrencyCodeValueHold").val()
+                );
+                $(".enableSelect2").trigger("change");
+                $(".enableSelect2").trigger("change");
+              }
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+    }
+
+    $("#updateButton").attr("disabled", true);
+
+    function editDetails(
+      currencyCode,
+      dailyLimit,
+      dailyCount,
+      monthlyLimit,
+      monthlyCount,
+      perTxnLimit,
+      perCashWidthdrawalLimit,
+      dailyCashWidthdrawalLimit,
+      dailyCashWidthdrawalCount,
+      perIntlTxnCashWidthdrawalLimit,
+      dailyIntlTxnCashWidthdrawalLimit
+    ) {
+      $("#clientCode").attr("disabled", true);
+      $("#submitButton").attr("disabled", true);
+      $("#updateButton").attr("disabled", false);
+      populateSingleCurrency(currencyCode);
+      $("#dailyLimit").val(dailyLimit).trigger("change");
+      $("#dailyCount").val(dailyCount).trigger("change");
+      $("#monthlyLimit").val(monthlyLimit).trigger("change");
+      $("#monthlyCount").val(monthlyCount).trigger("change");
+      $("#perTxnLimit").val(perTxnLimit).trigger("change");
+      $("#perCashWidthdrawalLimit")
+        .val(perCashWidthdrawalLimit)
+        .trigger("change");
+      $("#dailyCashWidthdrawalLimit")
+        .val(dailyCashWidthdrawalLimit)
+        .trigger("change");
+      $("#dailyCashWidthdrawalCount")
+        .val(dailyCashWidthdrawalCount)
+        .trigger("change");
+      $("#perIntlTxnCashWidthdrawalLimit")
+        .val(perIntlTxnCashWidthdrawalLimit)
+        .trigger("change");
+      $("#dailyIntlTxnCashWidthdrawalLimit")
+        .val(dailyIntlTxnCashWidthdrawalLimit)
+        .trigger("change");
+    }
+
+    function populateSingleCurrency(currencyCode) {
+      $("#currencyCode").val(currencyCode).trigger("change");
+      $("#currencyCode").attr("disabled", true);
+    }
+    function resetFields(event) {
+      $("#clientCode").attr("disabled", false);
+      $("#submitButton").attr("disabled", false);
+      $("#currencyCode").attr("disabled", false);
+      $("#updateButton").attr("disabled", true);
+      $("#clientCode").val(null).trigger("change");
+      $("#currencyCode").empty();
+      $("#dailyLimit").val();
+      $("#dailyCount").val();
+      $("#addedAuthLimitsTable").empty();
+      $("#dailyLimit").val();
+      $("#monthlyLimit").val();
+      $("#monthlyCount").val();
+      $("#perTxnLimit").val();
+      $("#perCashWidthdrawalLimit").val();
+      $("#dailyCashWidthdrawalLimit").val();
+      $("#dailyCashWidthdrawalCount").val();
+      $("#perIntlTxnCashWidthdrawalLimit").val();
+      $("#dailyIntlTxnCashWidthdrawalLimit").val();
+    }
+    function validateFormAndSubmit(event) {
+      event.preventDefault();
+      var isValid = true;
+      var errorMessage = "";
+
+      var clientCode = $("#clientCode").val();
+      var allowedCurrencyCode = $("#currencyCode").val();
+      var dailyLimit = $("#dailyLimit").val();
+      var dailyCount = $("#dailyCount").val();
+      var monthlyLimit = $("#monthlyLimit").val();
+      var monthlyCount = $("#monthlyCount").val();
+      var perTxnLimit = $("#perTxnLimit").val();
+      var perCashWidthdrawalLimit = $("#perCashWidthdrawalLimit").val();
+      var dailyCashWidthdrawalLimit = $("#dailyCashWidthdrawalLimit").val();
+      var dailyCashWidthdrawalCount = $("#dailyCashWidthdrawalCount").val();
+      var perIntlTxnCashWidthdrawalLimit = $(
+        "#perIntlTxnCashWidthdrawalLimit"
+      ).val();
+      var dailyIntlTxnCashWidthdrawalLimit = $(
+        "#dailyIntlTxnCashWidthdrawalLimit"
+      ).val();
+
+      if (clientCode == null || clientCode == "") {
+        isValid = false;
+        $("#clientCodeError").html("Please select a client!");
+      }
+      if (allowedCurrencyCode == null || allowedCurrencyCode == "") {
+        isValid = false;
+        $("#currencyCodeError").html("Please select currency!");
+      }
+      if (isValid == false) {
+        var timeout = setTimeout(function () {
+          $(".error").each(function (index, element) {
+            $("#" + element.id).html("");
+          });
+        }, 3000);
+      } else {
+        var multitext = $("#allowedCurrency option:selected")
+          .toArray()
+          .map((item) => item.text)
+          .join();
+        $("#allowedCurrencyCodeValueHold").val(multitext);
+
+        $("#inPageErrorMessage").html("");
+        $("#submitButton").attr("disabled", true);
+        $("#submitButton").html(spinnerUrl);
+
+        $.ajax({
+          url: $("#setUpAuthLimitsUrl").val() + clientCode + "/limits/auth",
+          type: "POST",
+          contentType: "application/json",
+          data: JSON.stringify(
+            unSanitize({
+              currencyCode: "" + allowedCurrencyCode,
+              dailyLimit: "" + dailyLimit,
+              dailyCount: "" + dailyCount,
+              monthlyLimit: "" + monthlyLimit,
+              monthlyCount: "" + monthlyCount,
+              perTransactionLimit: "" + perTxnLimit,
+              perCashWithdrawalLimit: "" + perCashWidthdrawalLimit,
+              dailyCashWithdrawalLimit: "" + dailyCashWidthdrawalLimit,
+              perCashWithdrawalLimitIntl: "" + perIntlTxnCashWidthdrawalLimit,
+              dailyCashWithdrawalLimitIntl:
+                "" + dailyIntlTxnCashWidthdrawalLimit,
+              dailyCashWithdrawalCount: "" + dailyCashWidthdrawalCount,
+            })
+          ),
+          cache: false,
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+
+            $("#submitButton").attr("disabled", false);
+            $("#submitButton").html("Submit");
+            $("#success_refundNotification").modal("show");
+            $(".refunded_body").html(data.message);
+          },
+          error: function (data) {
+            var responseMessage = JSON.parse(data.responseText);
+            var message = responseMessage.message;
+            if (data.readyState == 0) {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(
+                "service is temporarily down,please try again later."
+              );
+
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(message);
+              $("#btnSubmit").attr("disabled", false);
+              $("#btnSubmit").html("Submit");
+            } else if (data.status == 400) {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(message);
+            } else {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(message);
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+    }
+
+    function validateFormAndUpdate(event) {
+      event.preventDefault();
+      var isValid = true;
+      var errorMessage = "";
+
+      var clientCode = $("#clientCode").val();
+      var allowedCurrencyCode = $("#currencyCode").val();
+      var dailyLimit = $("#dailyLimit").val();
+      var dailyCount = $("#dailyCount").val();
+      var monthlyLimit = $("#monthlyLimit").val();
+      var monthlyCount = $("#monthlyCount").val();
+      var perTxnLimit = $("#perTxnLimit").val();
+      var perCashWidthdrawalLimit = $("#perCashWidthdrawalLimit").val();
+      var dailyCashWidthdrawalLimit = $("#dailyCashWidthdrawalLimit").val();
+      var dailyCashWidthdrawalCount = $("#dailyCashWidthdrawalCount").val();
+      var perIntlTxnCashWidthdrawalLimit = $(
+        "#perIntlTxnCashWidthdrawalLimit"
+      ).val();
+      var dailyIntlTxnCashWidthdrawalLimit = $(
+        "#dailyIntlTxnCashWidthdrawalLimit"
+      ).val();
+
+      if (clientCode == null || clientCode == "") {
+        isValid = false;
+        $("#clientCodeError").html("Please select a client!");
+      }
+
+      if (allowedCurrencyCode == null || allowedCurrencyCode == "") {
+        isValid = false;
+        $("#currencyCodeError").html("Please select currency!");
+      }
+      if (isValid == false) {
+        var timeout = setTimeout(function () {
+          $(".error").each(function (index, element) {
+            $("#" + element.id).html("");
+          });
+        }, 3000);
+      } else {
+        var multitext = $("#allowedCurrency option:selected")
+          .toArray()
+          .map((item) => item.text)
+          .join();
+        $("#allowedCurrencyCodeValueHold").val(multitext);
+
+        $("#inPageErrorMessage").html("");
+        $("#submitButton").attr("disabled", true);
+        $("#submitButton").html(spinnerUrl);
+
+        $.ajax({
+          url: $("#setUpAuthLimitsUrl").val() + clientCode + "/limits/auth",
+          type: "PUT",
+          contentType: "application/json",
+          data: JSON.stringify(
+            unSanitize({
+              currencyCode: "" + allowedCurrencyCode,
+              dailyLimit: "" + dailyLimit,
+              dailyCount: "" + dailyCount,
+              monthlyLimit: "" + monthlyLimit,
+              monthlyCount: "" + monthlyCount,
+              perTransactionLimit: "" + perTxnLimit,
+              perCashWithdrawalLimit: "" + perCashWidthdrawalLimit,
+              dailyCashWithdrawalLimit: "" + dailyCashWidthdrawalLimit,
+              perCashWithdrawalLimitIntl: "" + perIntlTxnCashWidthdrawalLimit,
+              dailyCashWithdrawalLimitIntl:
+                "" + dailyIntlTxnCashWidthdrawalLimit,
+              dailyCashWithdrawalCount: "" + dailyCashWidthdrawalCount,
+            })
+          ),
+          cache: false,
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+
+            $("#submitButton").attr("disabled", false);
+            $("#submitButton").html("Submit");
+            $("#success_refundNotification").modal("show");
+            $(".refunded_body").html(data.message);
+          },
+          error: function (data) {
+            var responseMessage = JSON.parse(data.responseText);
+            var message = responseMessage.message;
+            if (data.readyState == 0) {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(
+                "service is temporarily down,please try again later."
+              );
+
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(message);
+              $("#btnSubmit").attr("disabled", false);
+              $("#btnSubmit").html("Submit");
+            } else if (data.status == 400) {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(message);
+            } else {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(message);
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+    }
+
+    function closeModal() {
+      window.location.reload(true);
+    }
+  </script>
+</body>
+
+</html>

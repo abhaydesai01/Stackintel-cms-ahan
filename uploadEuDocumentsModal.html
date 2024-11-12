@@ -1,0 +1,607 @@
+<!-- Upload eu Documents Modal start -->
+<div id="uploadeuDocuments" role="dialog" class="modal fade">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Upload EU Documents</h4>
+			</div>
+			<div class="modal-body">
+				<form enctype="multipart/form-data" id="euUploadDocForm" class="row">
+					<div id="euIdentificationAndAddressDD_Div" style="margin-bottom: 100px;">
+						<div class="col-sm-6 col-xs-12">
+							<div class="form-group">
+								<label for="euIdentificationDocDD"> Identification Document<sup>*</sup></label>
+								<select id="euIdentificationDocDD" class="form-control" name="euIdentificationDocDD" onchange="validateIdentificationDocDD();showOrHideCommonFields();showOrHideSubmitBtn();">
+									<option value="">Select One</option>
+									<option value="passport">Passport</option>
+									<option value="national_id">National ID</option>
+								</select>
+								<span class="error field_err" id="euIdentificationDocDDError"></span>
+							</div>
+						</div>
+						<div id="euAddressDocumentDropDownDiv" class="col-sm-6 col-xs-12" style="display: none;">
+							<div class="form-group">
+								<label for="euAddressDocumentDD"> Address Document <sup>*</sup></label>
+								<select id="euAddressDocumentDD" class="form-control" name="euAddressDocumentDD" onchange="validateAddressDocDD();showOrHideCommonFields();showOrHideSubmitBtn();">
+									<option value="">Select One</option>
+									<option value="bankStatement">Bank Statement</option>
+									<option value="utilityBill">Utility Bill</option>
+								</select>
+								<span class="error field_err" id="euAddressDocumentDDError"></span>
+							</div>
+						</div>
+					</div>
+					
+					<div id="euContentsDiv">
+						<div id="euCommonElementsDiv" style="display: none;">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="selfieWithId">Selfie with id<sup>*</sup></label>
+									<input type="file" class="form-control" id="selfieWithId" name="selfieWithId" onchange="isValidPdfOrImage(this, 'selfieWithIdError', 'uploadeuDocSubmitBtn');" />
+									<span id="selfieWithIdError" class="error field_err"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div id="euIdentificationDocElementsDiv" style="display: none;">
+							<div id="euPassportDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euPassportNumber"> Passport Number <sup>*</sup></label>
+										<input type="text" id="euPassportNumber" name="euPassportNumber" class="form-control" />
+										<span class="error field_err" id="euPassportNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euPassportIssuingCountry"> Passport Issuing Country <sup>*</sup></label>
+										<select id="euPassportIssuingCountry" name="euPassportIssuingCountry" class="form-control enableSelect2"></select>
+										<p class="error field_err" id="euPassportIssuingCountryError"></p>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euPassportExpiryDate"> Passport Expiry Date <sup>*</sup></label>
+										<input type="text" id="euPassportExpiryDate" name="euPassportExpiryDate" class="form-control" readonly />
+										<span id="euPassportExpiryDateError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euPassportFront"> Passport Front <sup>*</sup></label>
+										<input type="file" id="euPassportFront" name="euPassportFront" class="form-control" onchange="isValidPdfOrImage(this, 'euPassportFrontError', 'uploadeuDocSubmitBtn');" />
+										<span id="euPassportFrontError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euPassportBack"> Passport Back <sup>*</sup></label>
+										<input type="file" id="euPassportBack" name="euPassportBack" class="form-control" onchange="isValidPdfOrImage(this, 'euPassportBackError', 'uploadeuDocSubmitBtn');" />
+										<span id="euPassportBackError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div id="euNationalIdDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="nationalIdNumber"> National ID Number <sup>*</sup></label>
+										<input type="text" id="nationalIdNumber" name="nationalIdNumber" class="form-control" />
+										<span class="error field_err" id="nationalIdNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="nationalIdIssuingAuthority"> National ID Issuing Authority <sup>*</sup></label>
+										<input id="nationalIdIssuingAuthority" name="nationalIdIssuingAuthority" class="form-control" />
+										<span class="error field_err" id="nationalIdIssuingAuthorityError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="nationalIdExpiryDate"> National ID Expiry Date <sup>*</sup></label>
+										<input type="text" id="nationalIdExpiryDate" name="nationalIdExpiryDate" class="form-control" readonly />
+										<span id="nationalIdExpiryDateError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="nationalIdFront"> National ID Front <sup>*</sup></label>
+										<input type="file" id="nationalIdFront" name="nationalIdFront" class="form-control" onchange="isValidPdfOrImage(this, 'nationalIdFrontError', 'uploadeuDocSubmitBtn');" />
+										<span id="nationalIdFrontError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="nationalIdBack"> National ID Back <sup>*</sup></label>
+										<input type="file" id="nationalIdBack" name="nationalIdBack" class="form-control" onchange="isValidPdfOrImage(this, 'nationalIdBackError', 'uploadeuDocSubmitBtn');" />
+										<span id="nationalIdBackError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="euAddressDocElementsDiv" style="display: none;">
+							<div id="euBankStatementDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euBankAccountNumber"> Bank Account Number <sup>*</sup></label>
+										<input type="text" id="euBankAccountNumber" name="euBankAccountNumber" class="form-control" />
+										<span class="error field_err" id="euBankAccountNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euBankName"> Bank Name <sup>*</sup></label>
+										<input type="text" id="euBankName" name="euBankName" class="form-control" />
+										<span class="error field_err" id="euBankNameError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euStatementGeneratedOn">Statement generation date <sup>*</sup></label>
+										<input type="text" id="euStatementGeneratedOn" name="euStatementGeneratedOn" class="form-control" readonly />
+										<span class="error field_err" id="euStatementGeneratedOnError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euBankStatement"> Bank Statement <sup>*</sup></label>
+										<input type="file" id="euBankStatement" name="euBankStatement" class="form-control" onchange="isValidPdfOrImage(this, 'euBankStatementError', 'uploadeuDocSubmitBtn');" />
+										<span id="euBankStatementError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div id="euUtilityBillDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euUtilityBillNumber"> Utility Bill Number <sup>*</sup></label>
+										<input type="text" id="euUtilityBillNumber" name="euUtilityBillNumber" class="form-control" />
+										<span class="error field_err" id="euUtilityBillNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euUtilityCompanyName"> Utility Company Name <sup>*</sup></label>
+										<input type="text" id="euUtilityCompanyName" name="euUtilityCompanyName" class="form-control" />
+										<span class="error field_err" id="euUtilityCompanyNameError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euUtilityBillGeneratedOn"> Utility Bill Generated Date <sup>*</sup></label>
+										<input type="text" id="euUtilityBillGeneratedOn" name="euUtilityBillGeneratedOn" class="form-control" readonly />
+										<span class="error field_err" id="euUtilityBillGeneratedOnError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="euUtilityBill"> Utility Document <sup>*</sup></label>
+										<input type="file" id="euUtilityBill" name="euUtilityBill" class="form-control" onchange="isValidPdfOrImage(this, 'euUtilityBillError', 'uploadeuDocSubmitBtn');" />
+										<span id="euUtilityBillError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+				<br />
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="form-group text-center">
+							<button id="uploadeuDocSubmitBtn" type="button" onclick="validateAndSubmiteuDoc(event);" class="btn btn-success px-5 ripple">Submit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Upload eu Documents Modal end -->
+
+<script>
+	function openEuDocUploadModal() {
+		populateCountryDD();
+		$("#uploadeuDocSubmitBtn").hide();
+		$("#uploadeuDocuments").modal("show");
+	}
+	
+	function populateCountryDD() {
+		countryListObject = sanitize(unSanitize(countryListObject));
+		if (countryListObject == null || countryListObject == "" || countryListObject == undefined) {
+			return;
+		}
+		
+		var optionTag = "<option value = ''>Select a Country</option>";
+		for (var i = 0; i < (countryListObject.length); i++) {
+			var eachOption = countryListObject[i];
+			optionTag += "<option value = " + eachOption.iso2 + ">" + eachOption.name + " (" + eachOption.iso2 + ")</option>";
+		}
+		
+		$("#euPassportIssuingCountry").html(optionTag);
+		
+		$('.enableSelect2').select2({
+			placeholder: 'Select an option',
+			allowClear: true,
+			dropdowneutoWidth: false,
+			width: '100%',
+			dropdownCss: {'width': 'inherit'}
+		});
+	}
+	
+	function disableSubmitBtn() {
+		$("#uploadeuDocSubmitBtn").attr("disabled", true);
+		$("#uploadeuDocSubmitBtn").html("Please Wait...");
+	}
+	
+	function enableSubmitBtn() {
+		$("#uploadeuDocSubmitBtn").attr("disabled", false);
+		$("#uploadeuDocSubmitBtn").html("Submit");
+	}
+	
+	function validateAndSubmiteuDoc(event) {
+		event.preventDefault();
+		disableSubmitBtn();
+		
+		var clientHashId = $("#clientCode").val();
+		var customerHashId = $("#customerHashId").val();
+		
+		if (isBlank(clientHashId)) {
+			$("#inPageErrorMessage").html("Client hash id is mandatory!");
+			enableSubmitBtn();
+			return;
+		}
+		if (isBlank(customerHashId)) {
+			$("#inPageErrorMessage").html("Customer hash id is mandatory!");
+			enableSubmitBtn();
+			return;
+		}
+		
+		if (validateFields()) {
+			submitRequest(clientHashId, customerHashId);
+		} else {
+			enableSubmitBtn();
+		}
+	}
+	
+	function isValidPassportFields(currentInvalidCount) {
+		var euPassportNumber = $("#euPassportNumber").val();
+		var euPassportIssuingCountry = $("#euPassportIssuingCountry").val();
+		var euPassportExpiryDate = $("#euPassportExpiryDate").val();
+		var euPassportFront = $("#euPassportFront").val();
+		var euPassportBack = $("#euPassportBack").val();
+		
+		if (isBlank(euPassportNumber)) {
+			++currentInvalidCount;
+			$("#euPassportNumberError").html("Passport number is mandatory!");
+		}
+		if (isBlank(euPassportIssuingCountry)) {
+			++currentInvalidCount;
+			$("#euPassportIssuingCountryError").html("Passport issuance country is mandatory!");
+		}
+		if (isBlank(euPassportExpiryDate)) {
+			++currentInvalidCount;
+			$("#euPassportExpiryDateError").html("Passport expiry date is mandatory!");
+		}
+		if (isBlank(euPassportFront)) {
+			++currentInvalidCount;
+			$("#euPassportFrontError").html("Passport front is mandatory!");
+		}
+		if (isBlank(euPassportBack)) {
+			++currentInvalidCount;
+			$("#euPassportBackError").html("Passport back is mandatory!");
+		}
+		
+		return currentInvalidCount;
+		
+	}
+	
+	function isValidBankStmtFields(currentInvalidCount) {
+		var euBankAccountNumber = $("#euBankAccountNumber").val();
+		var euBankName = $("#euBankName").val();
+		var euStatementGeneratedOn = $("#euStatementGeneratedOn").val();
+		var euBankStatement = $("#euBankStatement").val();
+		
+		if (isBlank(euBankAccountNumber)) {
+			++currentInvalidCount;
+			$("#euBankAccountNumberError").html("Bank acount no. is mandatory!");
+		}
+		if (isBlank(euBankName)) {
+			++currentInvalidCount;
+			$("#euBankNameError").html("Bank name is mandatory!");
+		}
+		if (isBlank(euStatementGeneratedOn)) {
+			++currentInvalidCount;
+			$("#euStatementGeneratedOnError").html("Bank statement generation date is mandatory!");
+		}
+		if (isBlank(euBankStatement)) {
+			++currentInvalidCount;
+			$("#euBankStatementError").html("Bank statement document is mandatory!");
+		}
+		
+		return currentInvalidCount;
+	}
+	
+	function isValidUtilityBillFields(currentInvalidCount) {
+		var euUtilityBillNumber = $("#euUtilityBillNumber").val();
+		var euUtilityCompanyName = $("#euUtilityCompanyName").val();
+		var euUtilityBillGeneratedOn = $("#euUtilityBillGeneratedOn").val();
+		var euUtilityBill = $("#euUtilityBill").val();
+		
+		if (isBlank(euUtilityBillNumber)) {
+			++currentInvalidCount;
+			$("#euUtilityBillNumberError").html("Utility bill no. is mandatory!");
+		}
+		if (isBlank(euUtilityCompanyName)) {
+			++currentInvalidCount;
+			$("#euUtilityCompanyNameError").html("Utility bill company name is mandatory!");
+		}
+		if (isBlank(euUtilityBillGeneratedOn)) {
+			++currentInvalidCount;
+			$("#euUtilityBillGeneratedOnError").html("Utility bill generation date is mandatory!");
+		}
+		if (isBlank(euUtilityBill)) {
+			++currentInvalidCount;
+			$("#euUtilityBillError").html("Utility document is mandatory!");
+		}
+		
+		return currentInvalidCount;
+	}
+	
+	function isValidNationalIdFields(currentInvalidCount) {
+		var nationalIdNumber = $("#nationalIdNumber").val();
+		var nationalIdIssuingAuthority = $("#nationalIdIssuingAuthority").val();
+		var nationalIdExpiryDate = $("#nationalIdExpiryDate").val();
+		var nationalIdFront = $("#nationalIdFront").val();
+		var nationalIdBack = $("#nationalIdBack").val();
+		
+		if (isBlank(nationalIdNumber)) {
+			++currentInvalidCount;
+			$("#nationalIdNumberError").html("National ID number is mandatory!");
+		}
+		if (isBlank(nationalIdIssuingAuthority)) {
+			++currentInvalidCount;
+			$("#nationalIdIssuingAuthorityError").html("National ID issuance authority is mandatory!");
+		}
+		if (isBlank(nationalIdExpiryDate)) {
+			++currentInvalidCount;
+			$("#nationalIdExpiryDateError").html("National ID expiry date is mandatory!");
+		}
+		if (isBlank(nationalIdFront)) {
+			++currentInvalidCount;
+			$("#nationalIdFrontError").html("National ID front is mandatory!");
+		}
+		if (isBlank(nationalIdBack)) {
+			++currentInvalidCount;
+			$("#nationalIdBackError").html("National ID back is mandatory!");
+		}
+		
+		return currentInvalidCount;
+	}
+	
+	function validateFields() {
+		var invalidCount = 0;
+		
+		var euIdentificationDocDD = $("#euIdentificationDocDD").val();
+		var euAddressDocumentDD = $("#euAddressDocumentDD").val();
+		
+		var selfieWithId = $("#selfieWithId").val();
+		
+		if (isBlank(euIdentificationDocDD)) {
+			++invalidCount;
+			$("#euIdentificationDocDDError").html("Identification Document is mandatory!");
+		}
+		if (isBlank(euAddressDocumentDD)) {
+			++invalidCount;
+			$("#euAddressDocumentDDError").html("Address Document is mandatory!");
+		}
+		
+		if (isBlank(selfieWithId)) {
+			++invalidCount;
+			$("#selfieWithIdError").html("Selfie with id is mandatory!");
+		}
+		
+		if (euIdentificationDocDD == "passport") {
+			invalidCount = isValidPassportFields(invalidCount);
+		} else if (euIdentificationDocDD == "national_id") {
+			invalidCount = isValidNationalIdFields(invalidCount);
+		}
+		
+		if (euAddressDocumentDD == "bankStatement") {
+			invalidCount = isValidBankStmtFields(invalidCount);
+		} else if (euAddressDocumentDD == "utilityBill") {
+			invalidCount = isValidUtilityBillFields(invalidCount);
+		}
+		clearErrorFields();
+		return (invalidCount == 0);
+	}
+	
+	function submitRequest(clientHashId, customerHashId) {
+		const url = "${pageContext.request.contextPath}" + $("#uploadEuDocumentsUrl").val() + unSanitize(clientHashId) + "/customer/" + unSanitize(customerHashId) + "/eu/documentUpload";
+		form = $("#euUploadDocForm")[0];
+		var data = new FormData(form);
+		
+		$.ajax({
+			url: url,
+			data: data,
+			processData: false,
+			contentType: false,
+			cache: false,
+			type: 'POST',
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (result, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				sanitize(unSanitize(result));
+				
+				$("#uploadeuDocuments").modal("hide");
+				$("#success_refundNotification").modal('show');
+				$(".refunded_body").html("Documents uploaded successfully!");
+			},
+			error: function (xhr) {
+				$("#uploadeuDocuments").modal("hide");
+				$("#error_refundNotification").modal('show');
+				if (xhr.readyState == 0) {
+					$(".refunded_body").html("service is temporarily down,please try again later.");
+				} else if (xhr.readyState == 4) {
+					var responseJSON = xhr.responseJSON;
+					var message = responseJSON.message;
+					$(".refunded_body").html(message);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function hideAllElements() {
+		$("#euAddressDocumentDropDownDiv").hide("slow", "linear");
+		$("#euCommonElementsDiv").hide("slow", "linear");
+		$("#euIdentificationDocElementsDiv").hide("slow", "linear");
+		$("#euPassportDiv").hide("slow", "linear");
+		$("#euNationalIdDiv").hide("slow", "linear");
+		$("#euAddressDocElementsDiv").hide("slow", "linear");
+		$("#euBankStatementDiv").hide("slow", "linear");
+		$("#euUtilityBillDiv").hide("slow", "linear");
+		
+		$("#uploadeuDocSubmitBtn").hide("slow", "linear");
+	}
+	
+	function showPassportAndHideNationalId() {
+		$("#euCommonElementsDiv").show("slow", "linear");
+		$("#euIdentificationDocElementsDiv").show("slow", "linear");
+		$("#euPassportDiv").show("slow", "linear");
+		
+		$("#euNationalIdDiv").hide("slow", "linear");
+	}
+	
+	function showNationalIdAndHidePassport() {
+		$("#euCommonElementsDiv").show("slow", "linear");
+		$("#euIdentificationDocElementsDiv").show("slow", "linear");
+		$("#euNationalIdDiv").show("slow", "linear");
+		
+		$("#euPassportDiv").hide("slow", "linear");
+	}
+	
+	function validateIdentificationDocDD() {
+		var euIdentificationDocDD = $("#euIdentificationDocDD").val();
+		if (isBlank(euIdentificationDocDD)) {
+			$("#euAddressDocumentDD").val("");
+			$("#euIdentificationDocDDError").html("Select one Identification Document!");
+			hideAllElements();
+		} else {
+			showAddressDocDD();
+			if (euIdentificationDocDD == "passport") {
+				showPassportAndHideNationalId();
+			} else if (euIdentificationDocDD == "national_id") {
+				showNationalIdAndHidePassport();
+			}
+		}
+		clearErrorFields();
+	}
+	
+	function clearErrorFields() {
+		setTimeout(function () {
+			$(".error").each(function (index, element) {
+				$(element).html("");
+			});
+		}, 3000);
+	}
+	
+	function showAddressDocDD() {
+		$("#euAddressDocumentDropDownDiv").show("slow", "linear");
+	}
+	
+	function showOrHideCommonFields() {
+		var euIdentificationDocDD = $("#euIdentificationDocDD").val();
+		var euAddressDocumentDD = $("#euAddressDocumentDD").val();
+		if (isBlank(euIdentificationDocDD) && isBlank(euAddressDocumentDD)) {
+			$("#euCommonElementsDiv").hide("slow", "linear");
+			return;
+		}
+		$("#euCommonElementsDiv").show("slow", "linear");
+	}
+	
+	function hideAllAddDocElements() {
+		$("#euCommonElementsDiv").hide("slow", "linear");
+		$("#euAddressDocElementsDiv").hide("slow", "linear");
+		$("#euBankStatementDiv").hide("slow", "linear");
+		$("#euUtilityBillDiv").hide("slow", "linear");
+	}
+	
+	function showBankAndHideUtility() {
+		$("#euAddressDocElementsDiv").show("slow", "linear");
+		$("#euBankStatementDiv").show("slow", "linear");
+		
+		$("#euUtilityBillDiv").hide("slow", "linear");
+	}
+	
+	function showUtilityAndHideBank() {
+		$("#euAddressDocElementsDiv").show("slow", "linear");
+		$("#euUtilityBillDiv").show("slow", "linear");
+		
+		$("#euBankStatementDiv").hide("slow", "linear");
+	}
+	
+	function validateAddressDocDD() {
+		var euAddressDocumentDD = $("#euAddressDocumentDD").val();
+		if (isBlank(euAddressDocumentDD)) {
+			$("#euAddressDocumentDDError").html("Select one Address Document!");
+			hideAllAddDocElements();
+			clearErrorFields();
+			return;
+		}
+		if (euAddressDocumentDD == "bankStatement") {
+			showBankAndHideUtility();
+			return;
+		}
+		if (euAddressDocumentDD == "utilityBill") {
+			showUtilityAndHideBank();
+			
+		}
+	}
+	
+	function isBlank(input) {
+		if (typeof input == "string") {
+			input = input.trim();
+		}
+		if (input == null || input == "null" || input == "" || input == undefined) {
+			return true;
+		}
+		return false;
+	}
+	
+	function showOrHideSubmitBtn() {
+		var euIdentificationDocDD = $("#euIdentificationDocDD").val();
+		var euAddressDocumentDD = $("#euAddressDocumentDD").val();
+		
+		if (isBlank(euIdentificationDocDD) || isBlank(euAddressDocumentDD)) {
+			$("#uploadeuDocSubmitBtn").hide();
+			return;
+		}
+		$("#uploadeuDocSubmitBtn").show();
+	}
+</script>

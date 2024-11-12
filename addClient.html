@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- META SECTION -->
+  <title>ahan | Add Client</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+  <!-- EOF CSS INCLUDE -->
+  <style>
+    .select2-container .select2-selection--multiple {
+      max-height: 122px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+
+      <div class="page-content-wrap">
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="container-fluid" style="min-height: 87vh">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <div class="pull-right">
+                  <a class="btn btn-primary btn-sm ripple" href="clientList.html">
+                    <i class="fas fa-external-link-alt"></i>
+                    View Client List
+                  </a>
+                </div>
+                <h4 class="page-title">Add Client</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel">
+                <!--Block Styled Form -->
+                <!--===================================================-->
+                <div class="panel-body">
+                  <form id="addClientform" method="post">
+                    <input type="hidden" id="successMsg" name="successMsg" value="${successMessage}" />
+                    <input type="hidden" id="errorMsg" name="errorMsg" value="${errorMessage}" />
+                    <h4 id="inPageErrorMessage" class="error text-center"></h4>
+                    <input type="hidden" id="loggedInUserName" name="loggedInUserName" value="${loginUsername}" />
+                    <input type="hidden" id="getProgramListUrl" name="getProgramListUrl" value="${getProgramListUrl}" />
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="programCode" class="control-label">Program<sup>*</sup></label>
+                          <input type="hidden" id="programCodeValueHold" value="" />
+                          <select id="programCode" name="programCode" class="form-control enableSelect2"
+                            onchange="getLogoId()">
+                            <option value="">Select a Program</option>
+                            <option value="GDS(SG97510116329)">
+                              GDS(SG97510116329)
+                            </option>
+                            <option value="Marvel(SG3510116329)">
+                              Marvel(SG3510116329)
+                            </option>
+                            <option value="ProgramX(SG5902776022)">
+                              ProgramX(SG5902776022)
+                            </option>
+                            <option value="CMW Performance Test(SG626114375)">
+                              CMW Performance Test(SG626114375)
+                            </option>
+                            <option value="FIN TECH FAST TRACK AUSTRALIA(AU7244181818)">
+                              FIN TECH FAST TRACK AUSTRALIA(AU7244181818)
+                            </option>
+                          </select>
+                          <p id="programCodeError" class="error field_err"></p>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group" style="margin-bottom: 0px">
+                          <label class="control-label">Logo ID<sup>*</sup></label>
+                          <input type="hidden" id="logoIdValueHold" value="" />
+                          <select id="logoId" name="logoId" placeholder="Select Logo Id"
+                            class="form-control enableSelect2" required>
+                            <option value="">Select logo ID</option>
+                            <option value="Visa Corporate T&E Prepaid-002">
+                              Visa Corporate T&E Prepaid-002
+                            </option>
+                            <option value="467250-AU-002">
+                              467250 -AU -002
+                            </option>
+                            <option value="342354-AU-343">
+                              342354-AU-343
+                            </option>
+                            <option value="999991-AU-904">
+                              999991-AU-904
+                            </option>
+                            <option value="999991-AU-905">
+                              999991-AU-905
+                            </option>
+                            <option value="999991-AU-906">
+                              999991-AU-906
+                            </option>
+                            <option value="467250-AU-001">
+                              467250-AU-001
+                            </option>
+                          </select>
+                          <p id="logoIdError" class="error field_err"></p>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label class="control-label">Company Name<sup>*</sup></label>
+                          <input type="text" name="name" placeholder="Enter Company Name" class="form-control"
+                            id="companyName" required />
+                          <span id="companyNameError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label class="control-label">First Name<sup>*</sup></label>
+                          <input type="text" name="firstName" id="firstName" placeholder="Enter First Name"
+                            class="form-control" required onkeyup="isAlphabetWihSpace(this);" />
+                          <span id="firstNameError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label class="control-label">Last Name<sup>*</sup></label>
+                          <input type="text" name="lastName" id="lastName" placeholder="Enter Last Name"
+                            class="form-control" required onkeyup="isAlphabetWihSpace(this);" />
+                          <span id="lastNameError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label class="control-label">Email<sup>*</sup></label>
+                          <input type="email" name="email" placeholder="Enter Email" class="form-control" id="email"
+                            required />
+                          <span id="emailError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="currencyCode" class="control-label">Country<sup>*</sup></label>
+                          <input type="hidden" id="countryCodeValueHold" name="countryCodeValueHold" value="" />
+                          <select id="countryCode" name="countryCode" class="form-control enableSelect2" required
+                            onchange="populatePhoneCode(this.id);">
+                            <option value="">Select an Option</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Guinea">Guinea</option>
+                          </select>
+                          <p id="countryCodeError" class="error field_err"></p>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="currencyCode" class="control-label">Base Currency<sup>*</sup></label>
+                          <input type="hidden" id="currencyCodeValueHold" name="currencyCodeValueHold" value="" />
+                          <input type="hidden" id="baseCurrencyValueHold" name="baseCurrencyValueHold" value="" />
+                          <input type="hidden" id="baseCurrencyText" value="" />
+                          <select id="currencyCode" name="currencyCode" class="form-control enableSelect2" required>
+                            <option value="">Select Base Currency</option>
+                            <option value="Afghanistan Afghani(AFN)(Afghanistan)">
+                              Afghanistan Afghani(AFN)(Afghanistan)
+                            </option>
+                            <option value="Eura Member Countries(EUR)">
+                              Eura Member Countries(EUR)
+                            </option>
+                            <option value="Albania Lek(ALL)(Albania)">
+                              Albania Lek(ALL)(Albania)
+                            </option>
+                            <option value="Algerian Dinar(DZD)(Algeria)">
+                              Algerian Dinar(DZD)(Algeria)
+                            </option>
+                            <option value="United States Dollar(USD)">
+                              United States Dollar(USD)
+                            </option>
+                            <option value="Australia Dollar(AUD)(Australia)">
+                              Australia Dollar(AUD)(Australia)
+                            </option>
+                            <option value="Australia Dollar(AUD)(Christmas Island)">
+                              Australia Dollar(AUD)(Christmas Island)
+                            </option>
+                            <option value="Australia Dollar(AUD)(Cocos (Keeling) Island)">
+                              Australia Dollar(AUD)(Cocos (Keeling) Island)
+                            </option>
+                          </select>
+                          <p id="currencyCodeError" class="error field_err"></p>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label class="control-label">Contact Number<sup>*</sup></label>
+                          <div class="mobile_wrapper">
+                            <input class="form-control" id="teleCode" readonly="readonly" name="mobileCode" />
+                            <input class="form-control empty" id="contactNumber" name="contactNumber" maxlength="21"
+                              onkeyup="isContactNumber(this);" placeholder="field length is 20" />
+                          </div>
+                          <span id="contactNoError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="clientTypeCode" class="control-label">Client Type<sup>*</sup></label>
+                          <input type="hidden" id="clientTypeCode" />
+                          <input type="hidden" id="clientTypeCodeHold" name="clientTypeCodeHold" value="" />
+                          <select id="clientTypeCodeName" name="clientTypeCode" class="form-control selectpicker">
+                            <option value="WALLET">Wallet</option>
+                            <option value="AMAZE">Amaze</option>
+                            <option value="RHA">RHA</option>
+                          </select>
+                          <span id="clientTypeError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="markup" class="control-label">Currency Exchange Fees<sup>*</sup></label>
+                          <input type="text" id="markup" name="markup" class="form-control"
+                            onkeyup="isValidDecimalNumberWithPercentage(this);checkUpperThreshold();"
+                            placeholder="Enter the markup in percentage" required />
+                          <span id="markupError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="eKycRedirectUrl" class="control-label">E-kyc Redirect URL</label>
+                          <input type="text" id="eKycRedirectUrl" name="eKycRedirectUrl" class="form-control"
+                            placeholder="Enter the ekyc redirect URL" required />
+                          <span id="eKycRedirectUrlError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="complianceStatusCallbackUrl" class="control-label">Compliance Status Callback
+                            URL</label>
+                          <input type="text" id="complianceStatusCallbackUrl" name="complianceStatusCallbackUrl"
+                            value="" class="form-control" placeholder="Enter the compliance status callback URL"
+                            required />
+                          <span id="complianceStatusCallbackUrlError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="complianceCallbackUrl" class="control-label">Transaction Compliance Callback
+                            URL</label>
+                          <input type="text" id="complianceCallbackUrl" name="complianceCallbackUrl" value=""
+                            class="form-control" placeholder="Enter the Transaction compliance status callback URL"
+                            required />
+                          <span id="complianceCallbackUrlError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="autoManualApproval" class="control-label">Auto Manual Approval</label>
+                          <select class="form-control" id="autoManualApproval" name="autoManualApproval">
+                            <option value="false">False</option>
+                            <option value="true">True</option>
+                          </select>
+                          <span id="autoManualApprovalError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="riskScore" class="control-label">Risk Score</label>
+                          <input type="text" id="riskScore" name="riskScore" class="form-control"
+                            placeholder="Enter the risk score" required />
+                          <span id="riskScoreError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="autoManualApproval" class="control-label">Add
+                            TermsAndConditions<sup>*</sup></label>
+                          <select class="form-control" id="addTermsAndConditionsList"
+                            name="addTermsAndConditionsList"></select>
+                          <span id="addTermsAndConditionsListError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="deduplicationFlag" class="control-label">Deduplication Flag
+                            Type<sup>*</sup></label>
+                          <select class="form-control" id="deduplicationFlag" name="deduplicationFlag">
+                            <option value="false" selected>
+                              Email And Mobile Unique
+                            </option>
+                            <option value="true">Email Unique</option>
+
+                            <!-- <span
+                              id="deduplicationFlagError"
+                              class="error field_err"
+                              ></span
+                            > -->
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label class="control-label">Pre-Fund Name<sup>*</sup></label>
+                          <input type="text" name="prefundName" id="prefundName" placeholder="Enter Pre-Fund Name"
+                            value="" class="form-control" required onkeyup="isAlphabetWihSpace(this);" />
+                          <span id="prefundNameError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="clientIdNumber" class="control-label">CIN</label>
+                          <input type="text" id="clientIdNumber" name="clientIdNumber" value="" class="form-control"
+                            placeholder="Enter the client id number" required />
+                          <span id="clientIdNumberError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="uniqueCustomer" class="control-label">Assign Unique Customer Id</label>
+                          <select class="form-control" id="uniqueCustomer" name="uniqueCustomer">
+                            <option value="false">False</option>
+                            <option value="true">True</option>
+                          </select>
+                          <span id="uniqueCustomerError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="allowThirdPartyFunding" class="control-label">Allow Third Party Funding</label>
+                          <select class="form-control" id="allowThirdPartyFunding" name="allowThirdPartyFunding">
+                            <option value="false">False</option>
+                            <option value="true">True</option>
+                          </select>
+                          <span id="allowThirdPartyFundingError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="fundingInstrumentType" class="control-label">Funding Instrument Type</label>
+                          <select class="form-control" id="fundingInstrumentType" name="fundingInstrumentType"
+                            onChange="onFundingInstrumentTypeChange(this)">
+                            <option value="RESTRICTED">RESTRICTED</option>
+                            <option value="ONLY_DEBIT">ONLY DEBIT</option>
+                            <option value="CREDIT_AND_DEBIT">
+                              CREDIT AND DEBIT
+                            </option>
+                          </select>
+                          <span id="fundingInstrumentTypeError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="currencyAuthorizationType" class="control-label">Currency Authorization
+                            Type</label>
+                          <select class="form-control" id="currencyAuthorizationType" name="currencyAuthorizationType">
+                            <option value="MULTI">MULTI</option>
+                            <option value="DUAL">DUAL</option>
+                            <option value="SINGLE">SINGLE</option>
+                          </select>
+                          <span id="currencyAuthorizationTypeError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="cardTxnRedirectUrl" class="control-label">Card Transaction Redirect URL</label>
+                          <input type="text" id="cardTxnRedirectUrl" name="cardTxnRedirectUrl" class="form-control"
+                            placeholder="Enter Card Trasaction Redirect Url" disabled />
+                          <span id="cardTxnRedirectUrlError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="cardTxnProductCode" class="control-label">Card Transaction Product Code</label>
+                          <input type="text" id="cardTxnProductCode" name="cardTxnProductCode" class="form-control"
+                            placeholder="Enter Card Transaction Product Code" disabled />
+                          <span id="cardTxnProductCodeError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="cardTxnNarrative" class="control-label">Card Transaction Narrative</label>
+                          <input type="text" id="cardTxnNarrative" name="cardTxnNarrative" class="form-control"
+                            placeholder="Enter Default Trancation Narrative" disabled />
+                          <span id="cardTxnNarrativeError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="customerAuthUrl" class="control-label">Customer authentication URL</label>
+                          <input type="text" id="customerAuthUrl" name="customerAuthUrl" class="form-control"
+                            placeholder="Enter the customer authentication URL" required />
+                          <span id="customerAuthUrlError" class="error field_err"></span>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group text-center">
+                          <button id="btnSubmit" type="button" class="btn btn-primary px-5 ripple" value="Submit"
+                            onclick="validateMultiselect(event,'name');">
+                            Add Client
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!--===================================================-->
+                <!--End Block Styled Form -->
+              </div>
+              <input type="hidden" id="addClientUrl" name="addClientUrl" value="${addClientUrl}" />
+              <input type="hidden" id="getTncNameUrl" name="getTncNameUrl" value="${getTncNameUrl}" />
+              <input type="hidden" id="logoByProgramUrl" name="logoByProgramUrl" value="${logoByProgramUrl}" />
+              <input type="hidden" id="getCountryListUrl" name="getCountryListUrl" value="${getCountryListUrl}" />
+            </div>
+          </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+      </div>
+    </div>
+    <!-- END PAGE CONTAINER -->
+  </div>
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+  <!-- Success Modal -->
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " alt="" />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button id="confirmButton" type="button" class="btn btn-success px-5" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " alt="" />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- Validation SCRIPTS -->
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+
+  <script>
+    $("#programCode").select2({
+      placeholder: "Select a Program",
+      allowClear: false,
+      dropdownAutoWidth: false,
+      width: "100%",
+      dropdownCss: {
+        width: "inherit",
+      },
+    });
+    $("#logoId").select2({
+      placeholder: "Select logo id",
+      width: "100%",
+      allowClear: false,
+      multiple: false,
+      dropdownAutoWidth: false,
+      dropdownCss: { width: "inherit" },
+    });
+    $("#countryCode").select2({
+      placeholder: "Select an option",
+      allowClear: false,
+      width: "100%",
+      dropdownAutoWidth: false,
+      dropdownCss: { width: "inherit" },
+    });
+    $("#currencyCode").select2({
+      placeholder: "Select a base currency",
+      allowClear: false,
+      width: "100%",
+      dropdownAutoWidth: false,
+      dropdownCss: { width: "inherit" },
+    });
+  </script>
+  <!-- END SCRIPTS -->
+  <!-- <script>
+      /* Universal Spinner with text for Button */
+      var spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+      var currencyObject;
+      $("document").ready(function () {
+        $(".se-pre-con").hide();
+        var errorMsg = $("#errorMsg").val();
+        var successMsg = $("#successMsg").val();
+        if (successMsg != "") {
+          $("#success_refundNotification").modal("show");
+          $(".refunded_body").html(sanitize(unSanitize(successMsg)));
+        } else if (errorMsg != "") {
+          $("#error_refundNotification").modal("show");
+          $(".refunded_body").html(sanitize(unSanitize(errorMsg)));
+        }
+
+        $("#success_refundNotification").on("hidden.bs.modal", function () {
+          window.location.href = "${pageContext.request.contextPath}/addClient";
+        });
+
+        $.ajax({
+          url: $("#getProgramListUrl").val() + "?page=0&size=1000&order=DESC",
+          type: "get",
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            var optionTag = "<option value = ''></option>";
+            for (var i = 0; i < result.content.length; i++) {
+              var eachOption = result.content[i];
+              optionTag +=
+                "<option value = " +
+                eachOption.programCode +
+                ">" +
+                eachOption.name +
+                " (" +
+                eachOption.programCode +
+                ")" +
+                "</option>";
+            }
+            $("#programCode").html(optionTag);
+            $("#programCode").select2({
+              placeholder: "Select an option",
+              width: "100%",
+              allowClear: false,
+              dropdownAutoWidth: false,
+              dropdownCss: { width: "inherit" },
+            });
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+
+        //to get the country drop down
+        $.ajax({
+          url: $("#getCountryListUrl").val(),
+          type: "get",
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            var optionTag = "<option value = ''></option>";
+            for (var i = 0; i < result.length; i++) {
+              var eachOption = result[i];
+              if (
+                eachOption.name != null &&
+                eachOption.name != "null" &&
+                eachOption.name != "" &&
+                eachOption.iso2 != null &&
+                eachOption.iso2 != "null" &&
+                eachOption.iso2 != "" &&
+                eachOption.phoneCode != null &&
+                eachOption.phoneCode != "null" &&
+                eachOption.phoneCode != ""
+              ) {
+                optionTag +=
+                  "<option value = " +
+                  eachOption.iso2 +
+                  ">" +
+                  eachOption.name +
+                  "</option>";
+              }
+            }
+            $("#countryCode").html(optionTag);
+            $("#countryCode").select2({
+              placeholder: "Select an option",
+              allowClear: false,
+              width: "100%",
+              dropdownAutoWidth: false,
+              dropdownCss: { width: "inherit" },
+            });
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+
+        //to get the currency drop down
+        $.ajax({
+          url: $("#getCountryListUrl").val(),
+          type: "get",
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            currencyObject = result;
+            var optionTag = "<option value = ''></option>";
+            for (var i = 0; i < result.length; i++) {
+              var eachOption = result[i];
+
+              if (
+                eachOption.currencyName != null &&
+                eachOption.currencyName != "null" &&
+                eachOption.currencyName != "" &&
+                eachOption.currencyCode != null &&
+                eachOption.currencyCode != "null" &&
+                eachOption.currencyCode != "" &&
+                eachOption.name != null &&
+                eachOption.name != "null" &&
+                eachOption.name != ""
+              ) {
+                optionTag +=
+                  "<option value = " +
+                  eachOption.currencyCode +
+                  ">" +
+                  eachOption.currencyName +
+                  " (" +
+                  eachOption.currencyCode +
+                  ")(" +
+                  eachOption.name +
+                  ")</option>";
+              }
+            }
+            $("#currencyCode").html(optionTag);
+            $("#currencyCode").select2({
+              placeholder: "Select a base currency",
+              allowClear: false,
+              width: "100%",
+              dropdownAutoWidth: false,
+              dropdownCss: { width: "inherit" },
+            });
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+
+        //Added By Rahul Swarnkar
+
+        $.ajax({
+          url: $("#getTncNameUrl").val(),
+          type: "GET",
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            result = remove_duplicates(result.content);
+
+            var optionTag = "<option value = ''></option>";
+            for (var i = 0; i < result.length; i++) {
+              var eachOption = result[i];
+              optionTag +=
+                "<option value = " +
+                eachOption +
+                ">" +
+                eachOption +
+                "</option>";
+            }
+            $("#addTermsAndConditionsList").html(optionTag);
+            $("#addTermsAndConditionsList").select2({
+              placeholder: "Select an option",
+              width: "100%",
+              allowClear: false,
+              dropdownAutoWidth: false,
+              dropdownCss: { width: "inherit" },
+            });
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+
+        function remove_duplicates(arr) {
+          var obj = {};
+          var ret_arr = [];
+          for (var i = 0; i < arr.length; i++) {
+            obj[arr[i]] = true;
+          }
+          for (var key in obj) {
+            ret_arr.push(key);
+          }
+          return ret_arr;
+        }
+
+        //Added By Rahul Swarnkar
+      });
+
+      function getLogoId() {
+        programCode = $("#programCode").val();
+        $.ajax({
+          url: $("#logoByProgramUrl").val() + unSanitize(programCode),
+          type: "GET",
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            if (result != "") {
+              var optionTag = "";
+              for (var i = 0; i < result.length; i++) {
+                var eachOption = result[i];
+                optionTag +=
+                  "<option value = " +
+                  eachOption.embosserLogoIdentifier +
+                  ">" +
+                  eachOption.logoId +
+                  " - " +
+                  eachOption.description +
+                  "</option>";
+              }
+              $("#logoId").html(optionTag);
+              $("#logoId").select2({
+                placeholder: "Select logo",
+                width: "100%",
+                allowClear: false,
+                multiple: true,
+                dropdownAutoWidth: false,
+                dropdownCss: { width: "inherit" },
+              });
+            } else {
+              $("#logoId").select2({
+                placeholder: "Select logo",
+                width: "100%",
+                allowClear: false,
+                dropdownAutoWidth: false,
+                dropdownCss: { width: "inherit" },
+              });
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+
+      function populateMultiselect(event, privilegeNameId, nameId) {
+        event.preventDefault();
+
+        privilegeNameId = sanitize(unSanitize(privilegeNameId));
+        nameId = sanitize(unSanitize(nameId));
+
+        var count = 0;
+        var optionId = "";
+        var privilegeNameValue = sanitize(
+          unSanitize($("#" + privilegeNameId).val())
+        );
+        if (privilegeNameValue != "") {
+          if (privilegeNameValue.includes(" ")) {
+            var privilegeNameSplittedArray = privilegeNameValue.split(" ");
+            for (var j = 0; j < privilegeNameSplittedArray.length; j++) {
+              optionId += privilegeNameSplittedArray[j] + "_";
+            }
+          } else {
+            optionId = privilegeNameValue;
+          }
+
+          var dropdownValue = $("#" + nameId).html();
+          var allOptionElements = document.getElementById("" + nameId).options;
+
+          for (var i = 0; i < allOptionElements.length; i++) {
+            if (allOptionElements[i].value == privilegeNameValue) {
+              count++;
+              break;
+            }
+          }
+
+          if (count == 0) {
+            if (dropdownValue == "") {
+              dropdownValue =
+                "<option id = '" +
+                optionId +
+                "' value = '" +
+                privilegeNameValue +
+                "'>" +
+                privilegeNameValue +
+                "</option>";
+            } else {
+              dropdownValue +=
+                "<option id = '" +
+                optionId +
+                "' value = '" +
+                privilegeNameValue +
+                "'>" +
+                privilegeNameValue +
+                "</option>";
+            }
+            $("#" + nameId).html(dropdownValue);
+            $("#" + optionId).attr("selected", true);
+          }
+        }
+      }
+
+      function validateMultiselect(event, multiselectDDId) {
+        event.preventDefault();
+
+        multiselectDDId = sanitize(unSanitize(multiselectDDId));
+
+        let programCode = $("#programCode").val();
+        let logoId = $("#logoId").val();
+        let companyName = $("#companyName").val();
+        let firstName = $("#firstName").val();
+        let lastName = $("#lastName").val();
+        let email = $("#email").val();
+        let countryCode = $("#countryCode").val();
+        let currencyCode = $("#currencyCode").val();
+        let teleCode = $("#teleCode").val();
+        let contactNo = $("#contactNumber").val();
+        let clientType = $("#clientTypeCodeName").val();
+        let markup = $("#markup").val();
+        let eKycRedirectUrl = $("#eKycRedirectUrl").val();
+        let complianceStatusCallbackUrl = $(
+          "#complianceStatusCallbackUrl"
+        ).val();
+        let complianceCallbackUrl = $("#complianceCallbackUrl").val();
+        let riskScore = $("#riskScore").val();
+        let clientIdNumber = $("#clientIdNumber").val();
+        let autoManualApproval = $("#autoManualApproval").val();
+        let tncName = $("#addTermsAndConditionsList").val();
+        let emailPattern =
+          "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        let deduplicationFlag = $("#deduplicationFlag").val();
+        let prefundName = $("#prefundName").val();
+        let uniqueCustomer = $("#uniqueCustomer").val();
+        let customerAuthUrl = $("#customerAuthUrl").val();
+        let fundingInstrumentType = $("#fundingInstrumentType").val();
+        let cardTxnRedirectUrl = $("#cardTxnRedirectUrl").val();
+        let allowThirdPartyFunding = $("#allowThirdPartyFunding").val();
+        let cardTxnProductCode = $("#cardTxnProductCode").val();
+        let cardTxnNarrative = $("#cardTxnNarrative").val();
+        let currencyAuthorizationType = $("#currencyAuthorizationType").val();
+        let valid = true;
+        if (programCode == null || programCode === "") {
+          valid = false;
+          $("#programCodeError").html("Select Program Code ");
+        }
+        if (logoId == null || logoId === "") {
+          valid = false;
+          $("#logoIdError").html("Select Logo Id ");
+        }
+        if (companyName == null || companyName === "") {
+          valid = false;
+          $("#companyNameError").html("Enter Company Name ");
+        }
+        if (firstName == null || firstName === "") {
+          valid = false;
+          $("#firstNameError").html("Enter First Name ");
+        }
+        if (lastName == null || lastName === "") {
+          valid = false;
+          $("#lastNameError").html("Enter Last Name ");
+        }
+        if (email == null || email === "") {
+          valid = false;
+          $("#emailError").html("Enter Email");
+        } else if (!email.match(emailPattern)) {
+          valid = false;
+          $("#emailError").html("Enter Valid Email ");
+        }
+        if (countryCode == null || countryCode === "") {
+          valid = false;
+          $("#countryCodeError").html("Select Country ");
+        }
+        if (currencyCode == null || currencyCode === "") {
+          valid = false;
+          $("#currencyCodeError").html("Select Base Currency ");
+        }
+        if (contactNo == null || contactNo === "") {
+          valid = false;
+          $("#contactNoError").html("Enter Contact No ");
+        } else if (contactNo.length < 8 || contactNo.length > 15) {
+          valid = false;
+          $("#contactNoError").html("Length should be between 8 to 15 ");
+        }
+        if (clientType == null || clientType === "") {
+          valid = false;
+          $("#clientTypeError").html("Select Client Type ");
+        }
+        if (markup == null || markup === "") {
+          valid = false;
+          $("#markupError").html("Select Markup ");
+        }
+        if (tncName == null || tncName === "") {
+          valid = false;
+          $("#addTermsAndConditionsListError").html("Select TnC Name ");
+        }
+        if (prefundName == null || prefundName === "") {
+          valid = false;
+          $("#prefundNameError").html("Enter Pre-Fund Name ");
+        }
+        if (
+          (fundingInstrumentType === "ONLY_DEBIT" ||
+            fundingInstrumentType === "CREDIT_AND_DEBIT") &&
+          isBlankInput(cardTxnRedirectUrl)
+        ) {
+          valid = false;
+          $("#cardTxnRedirectUrlError").html(
+            "Enter Card Transactional Redirect URL"
+          );
+        }
+        if (
+          (fundingInstrumentType === "ONLY_DEBIT" ||
+            fundingInstrumentType === "CREDIT_AND_DEBIT") &&
+          isBlankInput(cardTxnProductCode)
+        ) {
+          valid = false;
+          $("#cardTxnProductCodeError").html(
+            "Enter Card Transaction Product Code"
+          );
+        }
+        if (
+          (fundingInstrumentType === "ONLY_DEBIT" ||
+            fundingInstrumentType === "CREDIT_AND_DEBIT") &&
+          isBlankInput(cardTxnNarrative)
+        ) {
+          valid = false;
+          $("#cardTxnNarrativeError").html("Enter Card Transaction Narrative");
+        }
+        if (valid === true) {
+          $("#btnSubmit").attr("disabled", true);
+          $("#btnSubmit").html(spinnerUrl);
+          let multiselectDDValue = $("#" + multiselectDDId).val();
+          let markup = $("#markup").val().replace("%", "%");
+          $("#markup").val(sanitize(unSanitize(markup)));
+
+          if (multiselectDDValue !== "") {
+            //stop submit the form, we will post it manually.
+            event.preventDefault();
+            // disabled the submit button
+            $("#btnSubmit").attr("disabled", true);
+            $("#btnSubmit").html(spinnerUrl);
+            let data = JSON.stringify(
+              unSanitize({
+                programCode: programCode,
+                logoId: logoId.toString(),
+                name: companyName,
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                countryCode: countryCode,
+                currencyCode: currencyCode,
+                contactNo: teleCode + contactNo,
+                clientType: clientType,
+                markup: markup,
+                loggedInUserName: $("#loggedInUserName").val(),
+                eKycRedirectUrl: eKycRedirectUrl,
+                complianceStatusCallbackUrl: complianceStatusCallbackUrl,
+                complianceCallbackUrl: complianceCallbackUrl,
+                clientIdNumber: clientIdNumber,
+                riskScore: riskScore,
+                autoManualApproval: autoManualApproval,
+                tncName: tncName,
+                deduplicationFlag: deduplicationFlag,
+                prefundName: prefundName,
+                uniqueCustomer: uniqueCustomer,
+                customerAuthUrl: customerAuthUrl,
+                fundingInstrumentType: fundingInstrumentType,
+                cardTxnRedirectUrl: cardTxnRedirectUrl,
+                allowThirdPartyFunding: allowThirdPartyFunding,
+                cardTxnProductCode: cardTxnProductCode,
+                cardTxnNarrative: cardTxnNarrative,
+                currencyAuthorizationType: currencyAuthorizationType,
+              })
+            );
+            $.ajax({
+              type: "POST",
+              url: $("#addClientUrl").val(),
+              contentType: "application/json",
+              data: data,
+              processData: true,
+              cache: false,
+              beforeSend: function (xhr) {
+                setAuthTokenInReqHeader(xhr);
+                setCsrfTokenInRequestHeader(xhr);
+              },
+              success: function (result, status, xhr) {
+                let contextPath = "${pageContext.request.contextPath}";
+                setAndReturnNewAuthToken(xhr, contextPath);
+                setAndReturnNewCsrfToken(xhr, contextPath);
+                result = sanitize(unSanitize(result));
+
+                $("#success_refundNotification").modal("show");
+                $(".refunded_body").html("Client added successfully");
+                $("#btnSubmit").attr("disabled", false);
+                $("#btnSubmit").html("Add Client");
+                $("#addClientform")[0].reset();
+              },
+              error: function (data) {
+                console.log(data.status);
+                const parsedData = data.responseJSON;
+                $("#btnSubmit").attr("disabled", false);
+                $("#btnSubmit").html("Add Client");
+                if (data.readyState === 0) {
+                  $("#error_refundNotification").modal("show");
+                  $(".refunded_body").html(
+                    "Service is temporarily down,please try again later."
+                  );
+                }
+                if (data.status === 500) {
+                  const error = parsedData.errors;
+                  let errors = "";
+                  for (let i = 0; i < error.length; i++) {
+                    errors += "<p>" + error[i] + "</p></ br>";
+                  }
+                  $("#error_refundNotification").modal("show");
+                  $(".refunded_body").html(errors);
+                } else if (data.status === 400) {
+                  const error = parsedData.errors;
+                  let errors = "";
+                  for (let i = 0; i < error.length; i++) {
+                    errors += "<p>" + error[i] + "</p></ br>";
+                  }
+                  $("#error_refundNotification").modal("show");
+                  $(".refunded_body").html(errors);
+                } else {
+                  $("#error_refundNotification").modal("show");
+                  $(".refunded_body").html(parsedData.message);
+                }
+              },
+              complete: function (xhr, status) {
+                let contextPath = "${pageContext.request.contextPath}";
+                setAndReturnNewAuthToken(xhr, contextPath);
+                setAndReturnNewCsrfToken(xhr, contextPath);
+              },
+            });
+          } else {
+            $("#inPageErrorMessage").html("Please add plastic ids");
+          }
+        } else {
+          setTimeout(function () {
+            $("#programCodeError").html("");
+            $("#logoIdError").html("");
+            $("#companyNameError").html("");
+            $("#firstNameError").html("");
+            $("#lastNameError").html("");
+            $("#countryCodeError").html("");
+            $("#emailError").html("");
+            $("#currencyCodeError").html("");
+            $("#clientTypeError").html("");
+            $("#contactNoError").html("");
+            $("#markupError").html("");
+            $("#prefundNameError").html("");
+            $("#addTermsAndConditionsListError").html("");
+            $("#cardTxnRedirectUrlError").html("");
+            $("#cardTxnProductCodeError").html("");
+            $("#cardTxnNarrativeError").html("");
+          }, 3000);
+        }
+      }
+
+      function multiSelectValueHold() {
+        var multiSelectValue = $("#nameValueHold").val();
+        if (
+          multiSelectValue != "" &&
+          multiSelectValue != "null" &&
+          multiSelectValue != "NULL"
+        ) {
+        }
+      }
+
+      function populatePhoneCode(countryCodeId) {
+        var countryCodeValue = sanitize(
+          unSanitize($("#" + countryCodeId).val())
+        );
+        var contactNumber = sanitize(unSanitize($("#contactNumber").val()));
+        if (
+          contactNumber == null ||
+          contactNumber == "null" ||
+          contactNumber == "" ||
+          contactNumber.length < 8
+        ) {
+          $.ajax({
+            url: $("#getCountryListUrl").val(),
+            type: "get",
+            async: false,
+            beforeSend: function (xhr) {
+              setAuthTokenInReqHeader(xhr);
+              setCsrfTokenInRequestHeader(xhr);
+            },
+            success: function (result, status, xhr) {
+              var contextPath = "${pageContext.request.contextPath}";
+              setAndReturnNewAuthToken(xhr, contextPath);
+              setAndReturnNewCsrfToken(xhr, contextPath);
+              result = sanitize(unSanitize(result));
+
+              var optionTag = "";
+              for (var i = 0; i < result.length; i++) {
+                var eachOption = result[i];
+                if (countryCodeValue === eachOption.iso2) {
+                  if (eachOption.phoneCode.includes("+") === false) {
+                    $("#teleCode").val("+" + eachOption.phoneCode);
+                  } else {
+                    $("#teleCode").val(eachOption.phoneCode);
+                  }
+                  break;
+                }
+              }
+            },
+            complete: function (xhr, status) {
+              var contextPath = "${pageContext.request.contextPath}";
+              setAndReturnNewAuthToken(xhr, contextPath);
+              setAndReturnNewCsrfToken(xhr, contextPath);
+            },
+          });
+        }
+      }
+
+      function checkUpperThreshold() {
+        var markup = eval($("#markup").val());
+        if (markup > 100.0) {
+          markup = 100.0;
+          $("#markup").val(sanitize(unSanitize(markup)));
+        }
+      }
+
+      $("#fundingInstrumentType").select2({
+        width: "100%",
+        minimumResultsForSearch: Infinity,
+      });
+
+      $("#currencyAuthorizationType").select2({
+        width: "100%",
+        minimumResultsForSearch: Infinity,
+      });
+
+      function onFundingInstrumentTypeChange(el) {
+        var selectedVal = $(el, ":selected").val();
+        if (selectedVal != "RESTRICTED") {
+          $("#cardTxnRedirectUrl").attr("disabled", false);
+          $("#cardTxnProductCode").attr("disabled", false);
+          $("#cardTxnNarrative").attr("disabled", false);
+        } else {
+          $("#cardTxnRedirectUrl").val("");
+          $("#cardTxnRedirectUrl").attr("disabled", true);
+          $("#cardTxnRedirectUrlError").html("");
+
+          $("#cardTxnProductCode").val("");
+          $("#cardTxnProductCode").attr("disabled", true);
+          $("#cardTxnProductCodeError").html("");
+
+          $("#cardTxnNarrative").val("");
+          $("#cardTxnNarrative").attr("disabled", true);
+          $("#cardTxnNarrativeError").html("");
+        }
+      }
+    </script> -->
+</body>
+
+</html>

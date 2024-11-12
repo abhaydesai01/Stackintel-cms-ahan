@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- META SECTION -->
+  <title>ahan | Canned Reports</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+  <!-- EOF CSS INCLUDE -->
+
+  <style type="text/css">
+    tr.collapse_header {
+      display: none;
+    }
+
+    tr.tab_head,
+    tr.header {
+      display: table-row;
+    }
+
+    tr.tab_head th {
+      z-index: 99;
+    }
+
+    .comReprt {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .comReprt .comReprt_item {
+      width: 23%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="hiddenFields">
+    <input type="hidden" id="fetchAllClientUrl" name="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+    <input type="hidden" id="fetchReportsListUrl" name="fetchReportsListUrl" value="${fetchReportsListUrl}" />
+    <input type="hidden" id="fetchAllReportsNameUrl" name="fetchAllReportsNameUrl" value="${fetchAllReportsNameUrl}" />
+    <input type="hidden" id="downloadClientReportUrl" name="downloadClientReportUrl"
+      value="${downloadClientReportUrl}" />
+  </div>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+      <!-- PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrap">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <div class="pull-right">
+                  <a id="smartSearch" href="javascript:void(0)" class="btn btn-xs btn-primary ripple"
+                    onclick="toggleSmartSearch();">
+                    <i class="fa fa-search" aria-hidden="true"></i> Search
+                  </a>
+                </div>
+                <h4 class="page-title">Canned Reports</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="" style="min-height: 73vh">
+            <div class="panel-body p-0" style="position: relative">
+              <form class="comReprt" id="smartSearchFieldsDiv" style="display: none">
+                <div class="comReprt_item">
+                  <!-- <div class="col-md-4 col-sm-6 col-xs-12"> -->
+                  <div class="form-group">
+                    <label>Select Date</label>
+                    <input type="text" name="dateRange" class="form-control" id="daterange" placeholder="Select a date"
+                      readonly />
+                    <!-- </div> -->
+                  </div>
+                </div>
+
+                <div class="comReprt_item">
+                  <div class="form-group">
+                    <label>Select Report Name</label>
+                    <select id="cannedReportTypes" class="form-control selectpicker">
+                      <option value="">Select Report Name</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="comReprt_item">
+                  <div class="form-group">
+                    <label for="clientCode">Select Client</label>
+                    <input type="hidden" id="clientCodeValueHold" value="${clientCode}" />
+                    <select id="clientCode" name="clientCode" class="form-control">
+                      <option value="">Select a Client</option>
+                      <option value="Card_Client_TEST_4">
+                        Card_Client_TEST_4
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="comReprt_item pt-4">
+                  <div class="form-group text-center">
+                    <button id="smartSearchSubmitBtn" name="smartSearchSubmitBtn" type="button"
+                      class="btn btn-primary btn-sm px-5 ripple"
+                      onclick="destroyPagination(); getFilteredCannedReportsList('0');">
+                      Filter
+                    </button>
+                    <button class="btn btn-default btn-sm px-5 ripple" type="reset" onclick="resetFields();">
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <div id="tableDiv" class="table-responsive" style="max-height: 70vh; overflow: auto">
+                <table id="cardListTable" class="table table-bordered table-striped">
+                  <thead>
+                    <tr class="tab_head">
+                      <th>Sl.No.</th>
+                      <th>Date and Time</th>
+                      <th>Client Hash Id</th>
+                      <th>Report Name</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Filename</th>
+                      <th>Download</th>
+                      <th>Status</th>
+                      <th>Remarks</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cannedReportDetailsTbody">
+                    <tr class="text-center">
+                      <td colspan="10">No data available in table</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="paginationDiv" class="paginationWrapper">
+                <input type="hidden" id="totalPages_Id" value="1" />
+                <div class="pull-right">
+                  <ul class="pagination-sm" id="paginations"></ul>
+                </div>
+                <p id="paging_infos" class="pull-left"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+  </div>
+  <!-- END PAGE CONTAINER -->
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 id="successModalId" class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" id="successModal" class="btn btn-success px-5 ripple" data-dismiss="modal"
+                  onclick="closeAllModals();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 id="errorModalId" class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal"
+                  onclick="closeAllModals();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.min.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <script type="text/javascript" src="assets/js/generateTableWithNonClickableRows.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <script type="text/javascript" src="assets/js/floatingscroll.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/moment.min.js?version=2.29.0"></script>
+  <script type="text/javascript" src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+  <script type="text/javascript" src="assets/js/dateRange.js"></script>
+  <script type="text/javascript" src="assets/js/UUID/uuidv4.min.js"></script>
+  <script type="text/javascript" src="assets/js/linkify.min.js"></script>
+  <script type="text/javascript" src="assets/js/linkify-jquery.min.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- END SCRIPTS -->
+  <script>
+    /* Universal Spinner with text for Button */
+    const spinnerUrl =
+      "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+    var innerLoopSerialNo = 0;
+    var allComplianceStatus;
+
+    $(function () {
+      $(".table-responsive").floatingScrollbar();
+    });
+
+    function toggleSmartSearch() {
+      $("#smartSearchFieldsDiv").slideToggle();
+    }
+
+    function isBlank(input) {
+      if (input == null || input === "null" || input === undefined) {
+        return "";
+      }
+      return input;
+    }
+
+    $(document).ready(function () {
+      getReportTypes();
+      getClientList();
+    });
+
+    function destroyPagination() {
+      $("#paginations").twbsPagination("destroy");
+    }
+
+    function getFilteredCannedReportsList(page) {
+      var dateRange = $("#daterange").val();
+      var dateArray = dateRange.split("-");
+      var d = new Date(dateArray[0]);
+      var d1 = new Date(dateArray[1]);
+
+      var startDate = $.datepicker.formatDate("yy-mm-dd", d);
+      var endDate = $.datepicker.formatDate("yy-mm-dd", d1);
+
+      if (startDate === "NaN-NaN-NaN" && endDate === "NaN-NaN-NaN") {
+        startDate = "";
+        endDate = "";
+      }
+
+      var cannedReportTypes = isBlank($("#cannedReportTypes").val());
+      var clientCode = isBlank($("#clientCode").val());
+
+      //if (jQuery.isEmptyObject(transactionType)) {
+      //	transactionType = null;
+      //}
+      getcannedReportsList(
+        page,
+        startDate,
+        endDate,
+        cannedReportTypes,
+        clientCode
+      );
+    }
+
+    function getcannedReportsList(
+      page,
+      startDate,
+      endDate,
+      cannedReportTypes,
+      clientCode
+    ) {
+      var loadingIcon =
+        "<tr><td colspan=130 style='text-align:center'><img style='max-width:50px;' src = 'assets/img/loading.gif'></img></td></tr>";
+      $("#cannedReportDetailsTbody").html(loadingIcon);
+      $("#smartSearchFieldsDiv").slideUp();
+      $("#smartSearchSubmitBtn").html(spinnerUrl);
+
+      page =
+        page != null && page !== "null" && page !== "undefined" && page !== ""
+          ? page
+          : 0;
+      clientCode =
+        clientCode != null &&
+          clientCode !== "null" &&
+          clientCode !== "undefined" &&
+          clientCode !== ""
+          ? clientCode
+          : "all";
+      cannedReportTypes =
+        cannedReportTypes != null &&
+          cannedReportTypes !== "null" &&
+          cannedReportTypes !== "undefined" &&
+          cannedReportTypes !== ""
+          ? cannedReportTypes
+          : "all";
+
+      var dataInObjectFormat = {};
+
+      dataInObjectFormat.page = page;
+      dataInObjectFormat.startDate = startDate;
+      dataInObjectFormat.endDate = endDate;
+      dataInObjectFormat.reportName = cannedReportTypes;
+      dataInObjectFormat.clientCode = clientCode;
+
+      var dataInJSONFormat = JSON.stringify(unSanitize(dataInObjectFormat));
+
+      var totalPages = "";
+      $.ajax({
+        url: $("#fetchReportsListUrl").val(),
+        type: "POST",
+        async: true,
+        contentType: "application/json",
+        data: dataInJSONFormat,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(result));
+
+          $("#smartSearchSubmitBtn").html("Filter");
+          var tableData = "";
+          var slNo = page * 20;
+          var startNo = page * 20 + 1;
+          if (Object.keys(result).length === 0) {
+            tableData += "<tr>";
+            tableData +=
+              "<td colspan=130 style='text-align:center;'>No Records found</td>";
+            tableData += "</tr>";
+            $("#paging_infos").html("");
+          } else {
+            totalPages = result.pagination.totalPages;
+            tableData += generateCannedReportsTableData(
+              result,
+              slNo,
+              startNo
+            );
+          }
+          $("#cannedReportDetailsTbody").html(tableData);
+          paginationForCannedReportList(totalPages);
+        },
+        error: function (xhr) {
+          var tableData = "";
+          tableData += "<tr>";
+          tableData +=
+            "<td colspan=130 style='text-align:center;'>No Records found</td>";
+          tableData += "</tr>";
+          $("#cannedReportDetailsTbody").html(tableData);
+          $("#paging_infos").html("No entries found!");
+          $("#smartSearchSubmitBtn").html("Filter");
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function generateCannedReportsTableData(result, slNo, startNo) {
+      var tableData = "";
+      var totalElements = "";
+      var itemVal = result.clientReportDetails;
+      if (
+        itemVal != null &&
+        itemVal !== "" &&
+        itemVal !== "[]" &&
+        itemVal.length > 0
+      ) {
+        $(itemVal).each(function (i, item) {
+          slNo = slNo + 1;
+          var eachObject = itemVal[i];
+          totalElements = result.pagination.totalElements;
+          tableData += "<tr class='header'>";
+          tableData += "<td>" + slNo + "</td>";
+          tableData +=
+            '<td style="white-space: nowrap">' +
+            eachObject.createdAt +
+            "</td>";
+          tableData +=
+            '<td style="white-space: nowrap">' +
+            eachObject.clientHashId +
+            "</td>";
+          tableData += "<td>" + eachObject.reportName + "</td>";
+          tableData +=
+            '<td style="white-space: nowrap">' +
+            eachObject.startDate +
+            "</td>";
+          tableData +=
+            '<td style="white-space: nowrap">' + eachObject.endDate + "</td>";
+          if (
+            eachObject.fileName == null ||
+            eachObject.fileName === "" ||
+            eachObject.fileName === undefined
+          ) {
+            tableData +=
+              '<td><p style="white-space: nowrap;"><strong>-</strong></td>';
+            tableData +=
+              '<td><p style="white-space: nowrap;"><strong>-</strong></td>';
+          } else {
+            tableData +=
+              '<td style="white-space: nowrap">' +
+              eachObject.fileName +
+              "</td>";
+            tableData +=
+              '<td style="white-space: nowrap"><a href="javascript:;" onclick="downloadReport(\'' +
+              eachObject.filePath +
+              "','" +
+              eachObject.fileName +
+              "');\">Download</a></td>";
+          }
+          tableData += "<td>" + eachObject.status + "</td>";
+          tableData += "<td>" + eachObject.remarks + "</td>";
+          tableData += "</tr>";
+        });
+      }
+      $("#paging_infos").html(
+        "Showing " +
+        startNo +
+        " to " +
+        slNo +
+        " of " +
+        totalElements +
+        " entries"
+      );
+      return tableData;
+    }
+
+    function paginationForCannedReportList(totalPages) {
+      $("#paginations").twbsPagination({
+        totalPages: totalPages,
+        visiblePages: 10,
+        initiateStartPageClick: false,
+        onPageClick: function (event, page) {
+          getFilteredCannedReportsList(page - 1);
+        },
+      });
+    }
+
+    function toggleAccordian(element) {
+      $(element).text(function (_, value) {
+        return value === "-" ? "+" : "-";
+      });
+      $(element)
+        .closest("tr.header")
+        .next("#collapse_header")
+        .slideToggle(100)
+        .css("display", "table-row");
+    }
+
+    function getClientList() {
+      generateClientDropdown(
+        $("#fetchAllClientUrl").val(),
+        false,
+        "clientCode",
+        null
+      );
+    }
+
+    function closeAllModals() {
+      $(".modal").each(function (index, element) {
+        var id = element.id;
+        $("#" + id).modal("hide");
+      });
+      getFilteredCannedReportsList(0);
+    }
+
+    function resetFields() {
+      $(".clear").each(function (index, element) {
+        $(element).val("");
+      });
+      $("#cannedReportTypes").val(null).trigger("change");
+
+      var clientDetails = $("#clientDetails").val();
+
+      var decodedClientDetails = window.atob(clientDetails);
+      if (
+        decodedClientDetails === undefined ||
+        decodedClientDetails == null ||
+        decodedClientDetails === "" ||
+        decodedClientDetails === [] ||
+        decodedClientDetails.length === 0
+      ) {
+        $("#clientCode").val("");
+        $("#clientCode").trigger("change");
+      }
+    }
+
+    $(".staticEnableSelect2").select2({
+      placeholder: "Select Identity Type",
+      allowClear: true,
+      dropdownAutoWidth: false,
+      width: "100%",
+      dropdownCss: { width: "inherit" },
+    });
+
+    function getReportTypes() {
+      $.ajax({
+        url: $("#fetchAllReportsNameUrl").val(),
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+
+          var optionTag = "";
+          optionTag += "<option></option>";
+          if (result != null && result != "" && result.length > 0) {
+            for (var i = 0; i < result.length; i++) {
+              var eachOption = result[i];
+              optionTag +=
+                "<option value = " +
+                eachOption +
+                ">" +
+                eachOption +
+                "</option>";
+            }
+            $("#cannedReportTypes").html(optionTag);
+            $("#cannedReportTypes").select2({
+              placeholder: "Select Report Name",
+              width: "100%",
+              allowClear: true,
+              dropdownAutoWidth: true,
+            });
+
+            if (
+              $("#transactionTypeValuehold").val() != null &&
+              $("#region_listValuehold").val() != "null" &&
+              $("#region_listValuehold").val() != ""
+            ) {
+              $("#cannedReportTypes").val(
+                $("#transactionTypeValuehold").val()
+              );
+              $("#cannedReportTypes").trigger("change");
+            }
+          } else {
+            $("#cannedReportTypes").html(optionTag);
+            $("#cannedReportTypes").select2({
+              placeholder: "Select Report Name",
+              allowClear: false,
+              dropdownAutoWidth: false,
+              width: "100%",
+              dropdownCss: {
+                width: "inherit",
+              },
+            });
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function downloadReport(filePath, fileName) {
+      $.ajax({
+        url: $("#downloadClientReportUrl").val() + "?fileName=" + filePath,
+        type: "GET",
+        async: true,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        xhrFields: {
+          responseType: "blob",
+        },
+        success: function (data, status, xhr) {
+          var a = document.createElement("a");
+          var url = window.URL.createObjectURL(data);
+          a.href = url;
+          a.download = fileName;
+          document.body.append(a);
+          a.click();
+          a.remove();
+          window.URL.revokeObjectURL(url);
+        },
+        error: function (data) {
+          if (data.readyState == 0) {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(
+              "service is temporarily down,please try again later."
+            );
+          } else {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html("File not found");
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+  </script>
+</body>
+
+</html>

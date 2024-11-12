@@ -1,0 +1,92 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+		<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+			<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+				<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+					<%@page isELIgnored="false" %>
+						<!DOCTYPE html>
+						<html lang="en">
+
+						<head>
+							<%@include file="commonPage.jsp" %>
+								<script type="text/javascript"
+									src="${pageContext.request.contextPath}/static/js/CommonValidations.js"></script>
+								<!-- META SECTION -->
+								<title>ahan</title>
+								<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+								<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+								<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+								<link rel="stylesheet"
+									href="${pageContext.request.contextPath}/static/css/error/style.css">
+								<link
+									href='//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic'
+									rel='stylesheet' type='text/css'>
+
+
+								<link rel="icon" href="${pageContext.request.contextPath}/static/img/favicon.ico"
+									type="image/x-icon" />
+								<!-- END META SECTION -->
+
+								<script type="application/x-javascript">
+		addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false);
+		
+		function hideURLbar() { window.scrollTo(0, 1); }
+	</script>
+
+								<script
+									src="${pageContext.request.contextPath}/static/js/error/jquery-1.11.1.min.js"></script>
+
+								<!-- EOF CSS INCLUDE -->
+						</head>
+
+						<body>
+							<div class="main">
+								<div class="agile">
+									<div class="agileits_main_grid">
+										<div class="agileits_main_grid_left">
+											<img src="${pageContext.request.contextPath}/static/img/error/logo.png"
+												style="width: 300px;">
+										</div>
+										<div class="clear"></div>
+									</div>
+
+									<div class="">
+										<div class="text">
+											<!-- <h1>PAGE NOT FOUND</h1>	 -->
+
+											<h1>Access Denied!</h1>
+											<h4>Please contact the system Admin.</h4>
+
+										</div>
+										<div class="image">
+											<img src="${pageContext.request.contextPath}/static/img/error/error.svg">
+										</div>
+										<div class="clear"></div>
+									</div>
+
+									<!-- <div class="footer">
+				<p>&copy; <a href="www.msewa.com"> Msewa Software Pvt Ltd.</a> | 2017 All Rights Reserved.</p>
+			</div> -->
+									<div class="wthree">
+										<div class="back">
+											<a href="${pageContext.request.contextPath}/">Take Me Home</a>
+										</div>
+										<!-- <div class="social-icons w3agile">
+					<ul>
+						<li>Follow us on :</li>
+						<li><a href="#" class="facebook"><img src="images/fb.png" title="facebook" alt="facebook"></a></li>
+						<li><a href="#" class="twitter"><img src="images/tw.png" title="twitter" alt="twitter"></a></li>
+						<li><a href="#" class="googleplus"><img src="images/gp.png" title="googleplus" alt="googleplus"></a></li>
+						<div class="clear"></div>
+					</ul>
+				</div> -->
+										<div class="clear"></div>
+									</div>
+								</div>
+							</div>
+
+
+						</body>
+
+						</html>

@@ -1,0 +1,3527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+  <!-- META SECTION -->
+  <title>ahan | Transaction Report</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/js/plugins/tableexport/tableexport.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/datepicker.css" />
+  <!-- EOF CSS INCLUDE -->
+  <style type="text/css">
+    tr.collapse_header {
+      display: none;
+    }
+
+    tr.transRow,
+    tr.testingg {
+      display: table-row;
+    }
+
+    .select2-container--default .select2-search--inline .select2-search__field {
+      width: inherit !important;
+    }
+
+    .select2-container .select2-selection--multiple {
+      min-height: 120px;
+    }
+  </style>
+</head>
+
+<body onload="getTransactionTypes();getTransactionLabels();">
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+
+      <!-- PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrap">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <div class="pull-right">
+                  <a href="javascript:void(0)" class="btn btn-xs btn-primary ripple" onclick="toggleSmartSearch();"><i
+                      class="fa fa-search" aria-hidden="true"></i> Search
+                  </a>
+                  <button onclick="download();" style="display: none" id="transactionDownload"
+                    class="btn btn-xs btn-primary ripple">
+                    <i class="fa fa-download" aria-hidden="true"></i> Download
+                  </button>
+                </div>
+                <h4 class="page-title">Transaction Report</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="mb-3" style="min-height: 73vh">
+                <div class="panel-body p-0">
+                  <form class="row trxnRepot" id="smartSearchFieldsDiv" style="display: none">
+                    <input type="hidden" id="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+                    <input type="hidden" id="allReportListUrl" value="${allReportListUrl}" />
+                    <input type="hidden" id="clientCodeValueHold" value="${clientCode}" />
+                    <input type="hidden" id="username" value="${username}" />
+                    <input type="hidden" id="password" value="${password}" />
+                    <input type="hidden" id="transactionDownlodUrl" value="${transactionDownlodUrl}" />
+                    <input type="hidden" id="releaseUrl" value="${releaseUrl}" />
+                    <input type="hidden" id="release_transactionCode" />
+                    <input type="hidden" id="adHocNotificationUrl" value="${adHocNotificationUrl}" />
+                    <input type="hidden" id="transactionTypesUrl" value="${transactionTypesUrl}" />
+                    <input type="hidden" id="transactionLabelsUrl" value="${transactionLabelsUrl}" />
+                    <input type="hidden" id="waiveFeeUrl" value="${waiveFeeUrl}" />
+                    <input type="hidden" id="transactionId" />
+                    <input type="hidden" id="raiseDisputeUrl" value="${raiseDisputeUrl}" />
+                    <input type="hidden" id="remittanceTransactionStatusUrl"
+                      value="${remittanceTransactionStatusUrl}" />
+                    <input type="hidden" id="getCountryListUrl" value="${getCountryListUrl}" />
+                    <div class="row">
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Select Date</label>
+                          <input type="text" name="dateRange" class="form-control" id="daterange"
+                            placeholder="Select a date" readonly />
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Enter Wallet HashId</label>
+                          <input type="text" class="form-control" name="walletHashId" id="walletHashId"
+                            placeholder="Enter wallet hash id" />
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Customer HashId</label>
+                          <input type="text" class="form-control clearForm" name="customerHashId" id="customerHashId"
+                            placeholder="Enter customer hash id" />
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label class="control-label">Transaction Type<sup>*</sup></label>
+                          <input type="hidden" id="transactionTypeValuehold" name="transactionTypeValuehold" value="" />
+                          <select id="transactionType" name="transactionType" class="form-control enableSelect2"
+                            required>
+                            <option value="">Select Transaction Type</option>
+                            <option value="Wallet">Wallet</option>
+                          </select>
+                          <p class="error field_err" id="error_region"></p>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Transaction Status</label>
+                          <select id="transactionstatus" class="form-control selectpicker">
+                            <option value="All">All</option>
+                            <option value="APPROVED">Approved</option>
+                            <option value="DECLINED">Declined</option>
+                            <option value="REVERSAL">Reversal</option>
+                            <option value="BLOCKED">Blocked</option>
+                            <option value="PENDING">Pending</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Settlement Status</label>
+                          <select id="settlementstatus" class="form-control selectpicker">
+                            <option value="All">All</option>
+                            <option value="SETTLED">Settled</option>
+                            <option value="UNSETTLED">Unsettled</option>
+                            <option value="RELEASED">Released</option>
+                            <option value="WAIVED">Waived</option>
+                            <option value="DISPUTED">Disputed</option>
+                            <option value="DISPUTE_CLOSED">
+                              Dispute Closed
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Select Client</label>
+                          <select id="clientCode" name="clientCode" class="form-control select2" required>
+                            <option value="">Select Client</option>
+                            <option value="Card_Client_TEST_4">
+                              Card_Client_TEST_4
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>16 Digit Card Number</label>
+                          <input type="text" class="form-control clearForm" name="cardNumber" id="cardNumber"
+                            maxlength="16" onkeyup="isNumber(this);" placeholder="Enter card no." />
+                          <span id="cardNumberError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="billingCurrency" class="control-label">Billing Currency</label>
+                          <select id="billingCurrency" name="billingCurrency" class="form-control enableSelect2"
+                            required>
+                            <option value="">Select Billing Currency</option>
+                          </select>
+                          <span id="billingCurrencyError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Billing Amount</label>
+                          <input type="text" onkeyup="validateUpto2DecimalPlaces(this);" class="form-control clearForm"
+                            name="billingAmount" id="billingAmount" placeholder="Enter Billing Amount" />
+                          <span id="billingAmountError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="transactionCurrency" class="control-label">Transaction Currency</label>
+                          <select id="transactionCurrency" name="transactionCurrency" class="form-control enableSelect2"
+                            required>
+                            <option value="">
+                              Select Transaction Currency
+                            </option>
+                          </select>
+                          <span id="transactionCurrencyError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Transaction Amount</label>
+                          <input type="text" class="form-control clearForm" name="transactionAmount"
+                            id="transactionAmount" onkeyup="validateUpto2DecimalPlaces(this);"
+                            placeholder="Enter Transaction Amount" />
+                          <span id="transactionAmountError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label for="effectiveAuthCurrency" class="control-label">Auth Currency</label>
+                          <select id="effectiveAuthCurrency" name="effectiveAuthCurrency"
+                            class="form-control enableSelect2" required>
+                            <option value="">Select Auth Currency</option>
+                          </select>
+                          <span id="effectiveAuthCurrencyError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Auth Amount</label>
+                          <input type="text" class="form-control clearForm" name="effectiveAuthAmount"
+                            id="effectiveAuthAmount" onkeyup="validateUpto2DecimalPlaces(this);"
+                            placeholder="Enter Auth Amount" />
+                          <span id="effectiveAuthAmountError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Auth Code</label>
+                          <input type="text" class="form-control clearForm" name="authCode" id="authCode"
+                            placeholder="Enter Auth Code" onkeyup="IsAlphanumericWithoutSpace(this);" />
+                          <span id="authCodeError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label class="control-label">Transaction Label</label>
+                          <select id="transactionsLabelsKey" name="transactionsLabelsKey"
+                            class="form-control enableSelect2" required>
+                            <option value="">Select Transaction Label</option>
+                          </select>
+                          <span id="transactionsLabelsKeyError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label class="control-label">Transaction Label Value</label>
+                          <input type="text" class="form-control clearForm" name="transactionsLabelsValue"
+                            id="transactionsLabelsValue" placeholder="Enter Transactions Label Value" />
+                          <span id="transactionsLabelsValueError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>System Trace Audit Number</label>
+                          <input type="text" class="form-control clearForm" name="systemTraceAuditNumber"
+                            id="systemTraceAuditNumber" placeholder="Enter System Trace Audit Number" />
+                          <span id="systemTraceAuditNumberError" class="error"></span>
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-sm-12 col-xs-12" id="smartSearchSubmitBtnDiv">
+                        <div class="form-group text-center" style="margin-top: 25px">
+                          <button type="button" id="filterBtn" class="btn btn-primary btn-sm px-5 ripple" title="Search"
+                            onclick="fetchMe(0,false);">
+                            Filter
+                          </button>
+                          <button class="btn btn-default btn-sm px-5 ripple" type="reset" onclick="resetFields()">
+                            Clear
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="table-wrapper table-responsive" style="max-height: 68vh; overflow: auto">
+                    <table id="Transaction_Report" class="table table-striped table-bordered">
+                      <thead>
+                        <tr id="transRow">
+                          <th>SN</th>
+                          <th>Date</th>
+                          <th>Settlement Status</th>
+                          <th>Transaction Status</th>
+                          <th>Transaction Type</th>
+                          <th>Transaction currency</th>
+                          <th>Transaction Amount</th>
+                          <th>Billing Currency</th>
+                          <th>Billing Amount</th>
+                          <th>Auth Currency</th>
+                          <th>Auth Amount</th>
+                          <th>Effective Auth Amount</th>
+                          <th>Previous Balance</th>
+                          <th>Settlement Amount</th>
+                          <th>Settlement Currency</th>
+                          <th>Pocket Definition</th>
+                          <th>MaskedCard Number</th>
+                          <th>Merchant Category</th>
+                          <th>Merchant Code</th>
+                          <th>Merchant Name</th>
+                          <th>Authorization Code</th>
+                          <th>Pos Entry Mode</th>
+                          <th>System Trace Audit Number</th>
+                          <th>Comments</th>
+                          <th>Client Hash Id</th>
+                          <th>Card Hash Id</th>
+                          <th>Customer Hash Id</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="transactionListTable">
+                        <tr>
+                          <td style="white-space: nowrap">1</td>
+                          <td style="white-space: nowrap">
+                            2021/05/20 11:08:27
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-warning">UNSETTLED</span>
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">APPROVED</span>
+                          </td>
+                          <td style="white-space: nowrap">Debit</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">19918</td>
+                          <td style="white-space: nowrap">0</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">DEFAULT</td>
+                          <td style="white-space: nowrap">
+                            4931-99xx-xxxx-3160
+                          </td>
+                          <td style="white-space: nowrap">Utilities</td>
+                          <td style="white-space: nowrap">5045</td>
+                          <td style="white-space: nowrap">
+                            TESCO STORES BALOON ST HK HK
+                          </td>
+                          <td style="white-space: nowrap">549519</td>
+                          <td style="white-space: nowrap">0100</td>
+                          <td style="white-space: nowrap">008724</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">
+                            26cB7a55-fgfd-77asdf76-scf552551-gfsd5ft
+                          </td>
+                          <td style="white-space: nowrap">
+                            654dstf-yd7yyys-ftrasee54rd4333s-s3s54ss
+                          </td>
+                          <td style="white-space: nowrap">
+                            <a href="#">7876dass-786gfs-6dsytsr-gsf45454-has76</a>
+                          </td>
+                          <td style="white-space: nowrap"></td>
+                        </tr>
+                        <tr>
+                          <td style="white-space: nowrap">2</td>
+                          <td style="white-space: nowrap">
+                            2021/05/20 11:08:27
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-warning">UNSETTLED</span>
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">APPROVED</span>
+                          </td>
+                          <td style="white-space: nowrap">Debit</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">19918</td>
+                          <td style="white-space: nowrap">0</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">DEFAULT</td>
+                          <td style="white-space: nowrap">
+                            4931-99xx-xxxx-3160
+                          </td>
+                          <td style="white-space: nowrap">Utilities</td>
+                          <td style="white-space: nowrap">5045</td>
+                          <td style="white-space: nowrap">
+                            TESCO STORES BALOON ST HK HK
+                          </td>
+                          <td style="white-space: nowrap">549519</td>
+                          <td style="white-space: nowrap">0100</td>
+                          <td style="white-space: nowrap">008724</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">
+                            26cB7a55-fgfd-77asdf76-scf552551-gfsd5ft
+                          </td>
+                          <td style="white-space: nowrap">
+                            654dstf-yd7yyys-ftrasee54rd4333s-s3s54ss
+                          </td>
+                          <td style="white-space: nowrap">
+                            <a href="#">7876dass-786gfs-6dsytsr-gsf45454-has76</a>
+                          </td>
+                          <td style="white-space: nowrap"></td>
+                        </tr>
+                        <tr>
+                          <td style="white-space: nowrap">3</td>
+                          <td style="white-space: nowrap">
+                            2021/05/20 11:08:27
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-warning">UNSETTLED</span>
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">APPROVED</span>
+                          </td>
+                          <td style="white-space: nowrap">Debit</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">19918</td>
+                          <td style="white-space: nowrap">0</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">DEFAULT</td>
+                          <td style="white-space: nowrap">
+                            4931-99xx-xxxx-3160
+                          </td>
+                          <td style="white-space: nowrap">Utilities</td>
+                          <td style="white-space: nowrap">5045</td>
+                          <td style="white-space: nowrap">
+                            TESCO STORES BALOON ST HK HK
+                          </td>
+                          <td style="white-space: nowrap">549519</td>
+                          <td style="white-space: nowrap">0100</td>
+                          <td style="white-space: nowrap">008724</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">
+                            26cB7a55-fgfd-77asdf76-scf552551-gfsd5ft
+                          </td>
+                          <td style="white-space: nowrap">
+                            654dstf-yd7yyys-ftrasee54rd4333s-s3s54ss
+                          </td>
+                          <td style="white-space: nowrap">
+                            <a href="#">7876dass-786gfs-6dsytsr-gsf45454-has76</a>
+                          </td>
+                          <td style="white-space: nowrap"></td>
+                        </tr>
+                        <tr>
+                          <td style="white-space: nowrap">4</td>
+                          <td style="white-space: nowrap">
+                            2021/05/20 11:08:27
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-warning">UNSETTLED</span>
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">APPROVED</span>
+                          </td>
+                          <td style="white-space: nowrap">Debit</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">19918</td>
+                          <td style="white-space: nowrap">0</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">DEFAULT</td>
+                          <td style="white-space: nowrap">
+                            4931-99xx-xxxx-3160
+                          </td>
+                          <td style="white-space: nowrap">Utilities</td>
+                          <td style="white-space: nowrap">5045</td>
+                          <td style="white-space: nowrap">
+                            TESCO STORES BALOON ST HK HK
+                          </td>
+                          <td style="white-space: nowrap">549519</td>
+                          <td style="white-space: nowrap">0100</td>
+                          <td style="white-space: nowrap">008724</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">
+                            26cB7a55-fgfd-77asdf76-scf552551-gfsd5ft
+                          </td>
+                          <td style="white-space: nowrap">
+                            654dstf-yd7yyys-ftrasee54rd4333s-s3s54ss
+                          </td>
+                          <td style="white-space: nowrap">
+                            <a href="#">7876dass-786gfs-6dsytsr-gsf45454-has76</a>
+                          </td>
+                          <td style="white-space: nowrap"></td>
+                        </tr>
+                        <tr>
+                          <td style="white-space: nowrap">5</td>
+                          <td style="white-space: nowrap">
+                            2021/05/20 11:08:27
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">SETTLED</span>
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">APPROVED</span>
+                          </td>
+                          <td style="white-space: nowrap">Debit</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">19918</td>
+                          <td style="white-space: nowrap">0</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">DEFAULT</td>
+                          <td style="white-space: nowrap">
+                            4931-99xx-xxxx-3160
+                          </td>
+                          <td style="white-space: nowrap">Utilities</td>
+                          <td style="white-space: nowrap">5045</td>
+                          <td style="white-space: nowrap">
+                            TESCO STORES BALOON ST HK HK
+                          </td>
+                          <td style="white-space: nowrap">549519</td>
+                          <td style="white-space: nowrap">0100</td>
+                          <td style="white-space: nowrap">008724</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">
+                            26cB7a55-fgfd-77asdf76-scf552551-gfsd5ft
+                          </td>
+                          <td style="white-space: nowrap">
+                            654dstf-yd7yyys-ftrasee54rd4333s-s3s54ss
+                          </td>
+                          <td style="white-space: nowrap">
+                            <a href="#">7876dass-786gfs-6dsytsr-gsf45454-has76</a>
+                          </td>
+                          <td style="white-space: nowrap"></td>
+                        </tr>
+                        <tr>
+                          <td style="white-space: nowrap">6</td>
+                          <td style="white-space: nowrap">
+                            2021/05/20 11:08:27
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-warning">UNSETTLED</span>
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">APPROVED</span>
+                          </td>
+                          <td style="white-space: nowrap">Debit</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">19918</td>
+                          <td style="white-space: nowrap">0</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">DEFAULT</td>
+                          <td style="white-space: nowrap">
+                            4931-99xx-xxxx-3160
+                          </td>
+                          <td style="white-space: nowrap">Utilities</td>
+                          <td style="white-space: nowrap">5045</td>
+                          <td style="white-space: nowrap">
+                            TESCO STORES BALOON ST HK HK
+                          </td>
+                          <td style="white-space: nowrap">549519</td>
+                          <td style="white-space: nowrap">0100</td>
+                          <td style="white-space: nowrap">008724</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">
+                            26cB7a55-fgfd-77asdf76-scf552551-gfsd5ft
+                          </td>
+                          <td style="white-space: nowrap">
+                            654dstf-yd7yyys-ftrasee54rd4333s-s3s54ss
+                          </td>
+                          <td style="white-space: nowrap">
+                            <a href="#">7876dass-786gfs-6dsytsr-gsf45454-has76</a>
+                          </td>
+                          <td style="white-space: nowrap"></td>
+                        </tr>
+                        <tr>
+                          <td style="white-space: nowrap">7</td>
+                          <td style="white-space: nowrap">
+                            2021/05/20 11:08:27
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">SETTLED</span>
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">APPROVED</span>
+                          </td>
+                          <td style="white-space: nowrap">Debit</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">19918</td>
+                          <td style="white-space: nowrap">0</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">DEFAULT</td>
+                          <td style="white-space: nowrap">
+                            4931-99xx-xxxx-3160
+                          </td>
+                          <td style="white-space: nowrap">Utilities</td>
+                          <td style="white-space: nowrap">5045</td>
+                          <td style="white-space: nowrap">
+                            TESCO STORES BALOON ST HK HK
+                          </td>
+                          <td style="white-space: nowrap">549519</td>
+                          <td style="white-space: nowrap">0100</td>
+                          <td style="white-space: nowrap">008724</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">
+                            26cB7a55-fgfd-77asdf76-scf552551-gfsd5ft
+                          </td>
+                          <td style="white-space: nowrap">
+                            654dstf-yd7yyys-ftrasee54rd4333s-s3s54ss
+                          </td>
+                          <td style="white-space: nowrap">
+                            <a href="#">7876dass-786gfs-6dsytsr-gsf45454-has76</a>
+                          </td>
+                          <td style="white-space: nowrap"></td>
+                        </tr>
+                        <tr>
+                          <td style="white-space: nowrap">8</td>
+                          <td style="white-space: nowrap">
+                            2021/05/20 11:08:27
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-warning">UNSETTLED</span>
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">APPROVED</span>
+                          </td>
+                          <td style="white-space: nowrap">Debit</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">19918</td>
+                          <td style="white-space: nowrap">0</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">DEFAULT</td>
+                          <td style="white-space: nowrap">
+                            4931-99xx-xxxx-3160
+                          </td>
+                          <td style="white-space: nowrap">Utilities</td>
+                          <td style="white-space: nowrap">5045</td>
+                          <td style="white-space: nowrap">
+                            TESCO STORES BALOON ST HK HK
+                          </td>
+                          <td style="white-space: nowrap">549519</td>
+                          <td style="white-space: nowrap">0100</td>
+                          <td style="white-space: nowrap">008724</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">
+                            26cB7a55-fgfd-77asdf76-scf552551-gfsd5ft
+                          </td>
+                          <td style="white-space: nowrap">
+                            654dstf-yd7yyys-ftrasee54rd4333s-s3s54ss
+                          </td>
+                          <td style="white-space: nowrap">
+                            <a href="#">7876dass-786gfs-6dsytsr-gsf45454-has76</a>
+                          </td>
+                          <td style="white-space: nowrap"></td>
+                        </tr>
+                        <tr>
+                          <td style="white-space: nowrap">9</td>
+                          <td style="white-space: nowrap">
+                            2021/05/20 11:08:27
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">SETTLED</span>
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">APPROVED</span>
+                          </td>
+                          <td style="white-space: nowrap">Debit</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">19918</td>
+                          <td style="white-space: nowrap">0</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">DEFAULT</td>
+                          <td style="white-space: nowrap">
+                            4931-99xx-xxxx-3160
+                          </td>
+                          <td style="white-space: nowrap">Utilities</td>
+                          <td style="white-space: nowrap">5045</td>
+                          <td style="white-space: nowrap">
+                            TESCO STORES BALOON ST HK HK
+                          </td>
+                          <td style="white-space: nowrap">549519</td>
+                          <td style="white-space: nowrap">0100</td>
+                          <td style="white-space: nowrap">008724</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">
+                            26cB7a55-fgfd-77asdf76-scf552551-gfsd5ft
+                          </td>
+                          <td style="white-space: nowrap">
+                            654dstf-yd7yyys-ftrasee54rd4333s-s3s54ss
+                          </td>
+                          <td style="white-space: nowrap">
+                            <a href="#">7876dass-786gfs-6dsytsr-gsf45454-has76</a>
+                          </td>
+                          <td style="white-space: nowrap"></td>
+                        </tr>
+                        <tr>
+                          <td style="white-space: nowrap">10</td>
+                          <td style="white-space: nowrap">
+                            2021/05/20 11:08:27
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-warning">UNSETTLED</span>
+                          </td>
+                          <td style="white-space: nowrap">
+                            <span class="badge badge-success">APPROVED</span>
+                          </td>
+                          <td style="white-space: nowrap">Debit</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">HKD</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">200</td>
+                          <td style="white-space: nowrap">19918</td>
+                          <td style="white-space: nowrap">0</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">DEFAULT</td>
+                          <td style="white-space: nowrap">
+                            4931-99xx-xxxx-3160
+                          </td>
+                          <td style="white-space: nowrap">Utilities</td>
+                          <td style="white-space: nowrap">5045</td>
+                          <td style="white-space: nowrap">
+                            TESCO STORES BALOON ST HK HK
+                          </td>
+                          <td style="white-space: nowrap">549519</td>
+                          <td style="white-space: nowrap">0100</td>
+                          <td style="white-space: nowrap">008724</td>
+                          <td style="white-space: nowrap"></td>
+                          <td style="white-space: nowrap">
+                            26cB7a55-fgfd-77asdf76-scf552551-gfsd5ft
+                          </td>
+                          <td style="white-space: nowrap">
+                            654dstf-yd7yyys-ftrasee54rd4333s-s3s54ss
+                          </td>
+                          <td style="white-space: nowrap">
+                            <a href="#">7876dass-786gfs-6dsytsr-gsf45454-has76</a>
+                          </td>
+                          <td style="white-space: nowrap"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="paginationWrapper">
+                    <p id="paging_info" class="pull-left"></p>
+                    <input type="hidden" id="totalPagesId" value="1" />
+                    <div class="pull-right">
+                      <ul class="pagination-sm" id="paginationn"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+  </div>
+  <!-- END PAGE CONTAINER -->
+
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+  <!-- Fail Modal -->
+  <div id="failModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <div class="modal-body" id="documentImage">
+          <center id="errorMessage" class="alert alert-danger"></center>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="successModal" role="dialog" class="modal fade">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <div class="modal-body">
+          <center id="success_message" class="alert alert-success"></center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="success_transactionNotification" role="dialog" data-backdrop="static"
+    data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button id="success_button" type="button" class="btn btn-success px-5 ripple" data-dismiss="modal"
+                  onclick="onrelease();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="hiddenFields"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_transactionNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button id="failure_button" type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal"
+                  onclick="onrelease();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" role="dialog" id="confirmModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title" id="title_card">Release Transaction</h4>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <h3 class="modal-title" id="title_card">
+              Do you want to release this transaction ?
+            </h3>
+          </div>
+          <div class="btn_group text-center">
+            <button class="btn btn-success px-5 ripple" type="button" id="warning_button"
+              onclick="releaseTransaction()">
+              Yes
+            </button>
+            <button class="btn btn-danger px-5 ripple" type="button" onclick="closeTransaction()">
+              No
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <div class="modal fade" role="dialog" id="sendAlertModal" data-backdrop="static" data-keyboard="false">
+    <input type="hidden" id="sendAlertModalCardNumber" />
+    <input type="hidden" id="sendAlertModalClientCode" />
+    <input type="hidden" id="sendAlertModalCustomerHashId" />
+    <input type="hidden" id="sendAlertModalTransactionCode" />
+    <input type="hidden" id="sendAlertModalCardHashId" />
+
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title" id="title_card">Send Notification</h4>
+        </div>
+        <div class="modal-body">
+          <form id="adHocNotificationform" method="POST">
+            <div class="form-group">
+              <label>Template Type</label>
+              <select class="form-control" id="templateType" name="templateType"
+                onchange="onNotification(templateType.value, notificationType.value, sendAlertModalCardNumber.value, sendAlertModalClientCode.value, sendAlertModalCustomerHashId.value, sendAlertModalTransactionCode.value, sendAlertModalCardHashId.value)">
+                <option value="">Select Template Type</option>
+                <option value="CARD_SUSPECTED_MISUSE">
+                  CARD_SUSPECTED_MISUSE
+                </option>
+                <option value="CARD_GOOGLEPAY">CARD_GOOGLEPAY</option>
+                <option value="CARD_SUSPECTED_COMPROMIS">
+                  CARD_SUSPECTED_COMPROMIS
+                </option>
+                <option value="CARD_RISK_AWARENESS_PIN">
+                  CARD_RISK_AWARENESS_PIN
+                </option>
+              </select>
+              <p id="inputTypeError" class="error"></p>
+            </div>
+
+            <div class="form-group">
+              <label>Notification Type</label>
+              <select class="form-control" id="notificationType" name="notificationType"
+                onchange="onNotification(templateType.value, notificationType.value, sendAlertModalCardNumber.value, sendAlertModalClientCode.value, sendAlertModalCustomerHashId.value, sendAlertModalTransactionCode.value, sendAlertModalCardHashId.value)">
+                <option value="">Select Notification Type</option>
+                <option value="SMS">SMS</option>
+                <option value="EMAIL">EMAIL</option>
+              </select>
+              <p id="notificationTypeError" class="error"></p>
+            </div>
+            <div class="form-group">
+              <label>Input Type</label>
+              <input type="text" id="inputType" name="inputType" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+              <label>Input Value</label>
+              <input type="text" class="form-control" id="inputValue" name="inputValue" />
+              <p id="inputValueError" class="error"></p>
+            </div>
+            <div class="form-group">
+              <label>Notification Templates</label>
+              <select class="form-control" id="notificationTemplate" name="notificationTemplate"></select>
+              <p id="notificationTemplateError" class="error"></p>
+            </div>
+            <div class="form-group text-center">
+              <button id="btnSubmit" class="btn btn-primary btn-sm ripple" onclick="sendNotification()">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!-- ============= Raise Dispute Modal ============= -->
+  <div class="modal fade" role="dialog" id="raiseDisputeModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title" id="title_card">Raise Dispute</h4>
+        </div>
+        <div class="modal-body">
+          <form id="raiseDisputeForm">
+            <div class="form-group">
+              <label>Dispute Reason</label>
+              <select class="form-control" id="disputeReason" name="disputeReason" onchange="">
+                <option value="">Select Reason</option>
+                <option value="Card not present Fraud">
+                  Card not present Fraud
+                </option>
+                <option value="Card Present Fraud">Card Present Fraud</option>
+                <option value="Counterfeit Fraud">Counterfeit Fraud</option>
+                <option value="Declined Authorization">
+                  Declined Authorization
+                </option>
+                <option value="No Authorization">No Authorization</option>
+              </select>
+              <p id="disputeReasonError" class="error"></p>
+            </div>
+            <div class="form-group">
+              <label>Dispute Amount</label>
+              <input type="text" class="form-control" id="disputeAmount" name="disputeAmount"
+                onkeyup="isValidDecimalNumber(this);" />
+
+              <p id="disputeAmountError" class="error"></p>
+            </div>
+            <div class="form-group">
+              <label>Dispute Currency</label>
+              <select class="form-control" id="disputeCurrency" name="disputeCurr">
+                <!-- <option value="">Select Dispute Currency</option> -->
+                <!-- <option value="Billing Currency">Billing Currency</option>
+							<option value="Auth Currency">Auth Currency</option> -->
+              </select>
+              <p id="disputeCurrencyError" class="error"></p>
+            </div>
+            <div class="form-group">
+              <label>Dispute Date</label>
+              <input type="text" class="form-control" id="disputeDate" name="disputeDate" readonly />
+              <p id="disputeDateError" class="error"></p>
+            </div>
+            <div class="form-group text-center">
+              <button type="button" id="submitDisputeBtn" class="btn btn-primary btn-sm ripple"
+                onclick="raiseDispute()">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!-- ============= Manage Dispute Modal ============= -->
+  <div class="modal fade" role="dialog" id="manageDisputeModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title" id="title_card">Manage Dispute</h4>
+        </div>
+        <div class="modal-body">
+          <form id="manageDisputeForm" class="row">
+            <div class="form-group col-md-6">
+              <label>Dispute Reason</label>
+              <input type="text" class="form-control" id="manageDisputeReason" name="manageDisputeReason" readonly />
+              <p id="manageDisputeReasonError" class="error"></p>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Dispute Amount</label>
+              <input type="text" class="form-control" id="manageDisputeAmount" name="manageDisputeAmount" readonly />
+              <p id="manageDisputeAmountError" class="error"></p>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Dispute Currency</label>
+              <input type="text" class="form-control" id="manageDisputeCurrency" name="manageDisputeCurrency"
+                readonly />
+              <p id="manageDisputeCurrencyError" class="error"></p>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Dispute Date</label>
+              <input type="text" class="form-control" id="manageDisputeDate" name="manageDisputeDate" readonly />
+              <p id="manageDisputeDateError" class="error"></p>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Action</label>
+              <select class="form-control" id="manageDisputeAction" name="manageDisputeAction">
+                <option value="">Select Action</option>
+                <option value="Chargeback_Credit">Chargeback Credit</option>
+                <option value="Representment">Representment</option>
+              </select>
+              <p id="manageDisputeActionError" class="error"></p>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Action Amount</label>
+              <input type="text" class="form-control" id="manageDisputeActionAmount" name="manageDisputeActionAmount"
+                onkeyup="isValidDecimalNumber(this);" />
+              <p id="manageDisputeActionAmountError" class="error"></p>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Action Currency</label>
+              <select class="form-control" id="manageDisputeActionCurrency" name="disputeCurr">
+                <!-- <option value="">Select Action Currency</option> -->
+                <!-- <option value="billing_currency">Billing Currency</option>
+							<option value="auth_currency">Auth Currency</option> -->
+              </select>
+              <p id="manageDisputeActionCurrencyError" class="error"></p>
+            </div>
+            <div class="form-group col-md-12 text-center">
+              <button type="button" id="submitManageDisputeBtn" class="btn btn-primary btn-sm ripple"
+                onclick="manageDispute()">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <div class="modal fade" id="success_adHocNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button id="success_button" type="button" class="btn btn-success px-5 ripple" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="success_waiveFee" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button id="success_button" type="button" class="btn btn-success px-5 ripple" data-dismiss="modal"
+                  onClick="onrelease()">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_waiveFee" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal" onClick="onrelease()">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Comment Modal -->
+  <div id="waiveCommentModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title">Add Comment</h4>
+        </div>
+        <div class="modal-body">
+          <form enctype="multipart/form-data" id="testComment">
+            <div class="row">
+              <div class="col-md-12 mb-2">
+                <div class="form-group">
+                  <label>Add Comment<sup>*</sup></label>
+                  <textarea rows="2" class="form-control" id="waiveFeeComment" name="waiveFeeComment" id="add_Comment"
+                    placeholder="Enter Comment" maxlength="250"></textarea>
+                  <span id="remainingChar" style="display: block; text-align: right"></span>
+                  <span id="waiveFeeCommentError" class="error field_err"></span>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group text-center">
+                  <button id="commentSubmitBtn" type="button" class="btn btn-success px-5 ripple"
+                    onclick="waiveFee(event)">
+                    Submit
+                  </button>
+                  <button type="button" class="btn btn-danger px-5 ripple" onclick="closeWaiveCommentModal()">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Show Status Modal -->
+  <div class="modal fade" id="show_StatusModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-lg modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title">Remittance Transaction Status</h4>
+        </div>
+        <div class="modal-body">
+          <!-- <input type="hidden" id="customerHashIdResident" name="customerHashIdResident" value="" /> -->
+          <div class="form-group">
+            <div class="table-wrapper table-responsive">
+              <table id="Status_Report" class="table table-striped table-bordered">
+                <thead>
+                  <tr id="transRow">
+                    <th>SlNo.</th>
+                    <th>systemReferenceNumber</th>
+                    <th>status</th>
+                    <th>lastUpdatedAt</th>
+                    <th>partnerReferanceNumber</th>
+                  </tr>
+                </thead>
+                <tbody id="statusListTable">
+                  <!-- <tr>
+								<td colspan="34" class="text-center">No Transaction Found</td>
+							</tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Show Status Modal -->
+
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/moment.min.js?version=2.29.0"></script>
+  <script type="text/javascript" src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+  <!-- END THIS PAGE PLUGINS-->
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.min.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <script type="text/javascript" src="assets/js/generateTableWithNonClickableRows.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <script type="text/javascript" src="assets/js/floatingscroll.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/tableexport/FileSaver.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/tableexport/tableExport.js"></script>
+  <script type="text/javascript" src="assets/js/dateRange.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- END SCRIPTS -->
+  <script></script>
+
+  <script type="text/javascript">
+    // Onload Scripts
+    $(function () {
+      $(".table-wrapper").floatingScrollbar();
+      getClientList();
+      getCurrencyCode();
+      $(".se-pre-con").hide();
+    });
+
+    /* Universal Spinner with text for Button */
+    var spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+    function getClientList() {
+      generateClientDropdown(
+        $("#fetchAllClientUrl").val(),
+        false,
+        "clientCode",
+        null
+      );
+    }
+
+    function getCurrencyCode() {
+      $.ajax({
+        url: $("#getCountryListUrl").val(),
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+
+          currencyObject = result;
+          let optionTag = "<option value = ''></option>";
+          for (let i = 0; i < result.length; i++) {
+            let eachOption = result[i];
+
+            if (
+              eachOption.currencyName != null &&
+              eachOption.currencyName !== "null" &&
+              eachOption.currencyName !== "" &&
+              eachOption.currencyCode != null &&
+              eachOption.currencyCode !== "null" &&
+              eachOption.currencyCode !== "" &&
+              eachOption.name != null &&
+              eachOption.name !== "null" &&
+              eachOption.name !== ""
+            ) {
+              optionTag +=
+                "<option value = " +
+                eachOption.currencyCode +
+                ">" +
+                eachOption.currencyCode +
+                " (" +
+                eachOption.currencyName +
+                ")</option>";
+            }
+          }
+          $("#billingCurrency").html(optionTag);
+          $("#billingCurrency").select2({
+            placeholder: "Select a billing currency",
+            allowClear: true,
+            width: "100%",
+            dropdownAutoWidth: false,
+            dropdownCss: {
+              width: "inherit",
+            },
+          });
+          $("#transactionCurrency").html(optionTag);
+          $("#transactionCurrency").select2({
+            placeholder: "Select a transaction currency",
+            allowClear: true,
+            width: "100%",
+            dropdownAutoWidth: false,
+            dropdownCss: {
+              width: "inherit",
+            },
+          });
+          $("#effectiveAuthCurrency").html(optionTag);
+          $("#effectiveAuthCurrency").select2({
+            placeholder: "Select a auth currency",
+            allowClear: true,
+            width: "100%",
+            dropdownAutoWidth: false,
+            dropdownCss: {
+              width: "inherit",
+            },
+          });
+        },
+        complete: function (xhr, status) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function fetchMe(value, isPaging) {
+      $("#filterBtn").html(spinnerUrl);
+      let localCode = "";
+      let paging = value;
+      let dateRange = $("#daterange").val();
+      let transactionReportType = $("#transactionType").val();
+      let transactionStatus = $("#transactionstatus").val();
+      let settlementStatus = $("#settlementstatus").val();
+      let clientCode = $("#clientCode").val();
+      let walletHashId = $("#walletHashId").val();
+      let customerHashId = $("#customerHashId").val();
+      let cardNumber = $("#cardNumber").val();
+      let billingCurrency = $("#billingCurrency").val();
+      let transactionCurrency = $("#transactionCurrency").val();
+      let transactionAmount = $("#transactionAmount").val();
+      let billingAmount = $("#billingAmount").val();
+      let effectiveAuthCurrency = $("#effectiveAuthCurrency").val();
+      let effectiveAuthAmount = $("#effectiveAuthAmount").val();
+      let authCode = $("#authCode").val();
+      let systemTraceAuditNumber = $("#systemTraceAuditNumber").val();
+      let transactionsLabelsKey = $("#transactionsLabelsKey").val();
+      let transactionsLabelsValue = $("#transactionsLabelsValue").val();
+      let dateArray = dateRange.split("-");
+      let d = new Date(dateArray[0]);
+      let d1 = new Date(dateArray[1]);
+      let startDate = $.datepicker.formatDate("yy-mm-dd", d);
+      let endDate = $.datepicker.formatDate("yy-mm-dd", d1);
+      if (startDate === "NaN-NaN-NaN" && endDate === "NaN-NaN-NaN") {
+        startDate = "";
+        endDate = "";
+      }
+      if (jQuery.isEmptyObject(transactionReportType)) {
+        transactionReportType = null;
+      }
+
+      $.ajax({
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        url: $("#allReportListUrl").val(),
+        data: JSON.stringify(
+          unSanitize({
+            page: paging,
+            order: "",
+            property: "",
+            size: 20,
+            startDate: startDate,
+            endDate: endDate,
+            status: transactionStatus,
+            settlementStatus: settlementStatus,
+            clientCode: clientCode,
+            transactionReportType: transactionReportType,
+            walletHashId: walletHashId,
+            customerHashId: customerHashId,
+            cardNumber: cardNumber,
+            billingCurrency: billingCurrency,
+            transactionCurrency: transactionCurrency,
+            billingAmount: billingAmount,
+            transactionAmount: transactionAmount,
+            effectiveAuthCurrency: effectiveAuthCurrency,
+            effectiveAuthAmount: effectiveAuthAmount,
+            authCode: authCode,
+            systemTraceAuditNumber: systemTraceAuditNumber,
+            transactionsLabelsKey: transactionsLabelsKey,
+            transactionsLabelsValue: transactionsLabelsValue,
+          })
+        ),
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (data, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          data = sanitize(unSanitize(data));
+
+          $("#filterBtn").html("Filter");
+          let trHTML = "";
+          let slno = paging * 20;
+          let startno = paging * 20 + 1;
+          if (trHTML === "") {
+            $("#transactionDownload").show();
+            $("#transactionListTable").empty();
+            $("#smartSearchFieldsDiv").slideUp();
+            var itemVal = data.transactionList;
+            if (
+              itemVal != null &&
+              itemVal !== "" &&
+              itemVal !== "[]" &&
+              itemVal.length > 0
+            ) {
+              $(itemVal).each(function (i, item) {
+                slno = slno + 1;
+                let createdAtDate = new Date(itemVal[i].createdAt);
+                let date = createdAtDate.getDate();
+                let month = createdAtDate.getMonth() + 1;
+                let year = createdAtDate.getFullYear();
+                let hour = createdAtDate.getHours();
+                let minute = createdAtDate.getMinutes();
+                let seconds = createdAtDate.getSeconds();
+                let createdAt =
+                  year +
+                  "/" +
+                  month +
+                  "/" +
+                  date +
+                  " " +
+                  hour +
+                  ":" +
+                  minute +
+                  ":" +
+                  seconds;
+                trHTML += '<tr class="testingg header">';
+                trHTML +=
+                  '<td class="collapse_btn"><span onclick="toggleAccordian(this);" class="plus" title="Click here to expand the row">+</span> ' +
+                  slno +
+                  "</td>";
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (createdAt == null ? "NA" : createdAt) +
+                  "</td>";
+                switch (itemVal[i].settlementStatus) {
+                  case "APPROVED":
+                    trHTML +=
+                      "<td>" +
+                      '<span class="badge badge-success tstatus">' +
+                      itemVal[i].settlementStatus +
+                      "</span>" +
+                      "</td>";
+                    break;
+                  case "PENDING":
+                    trHTML +=
+                      "<td>" +
+                      '<span class="badge badge-info tstatus">' +
+                      itemVal[i].settlementStatus +
+                      "</span>" +
+                      "</td>";
+                    break;
+                  case "DECLINED":
+                    trHTML +=
+                      "<td>" +
+                      '<span class="badge badge-danger tstatus">' +
+                      itemVal[i].settlementStatus +
+                      "</span>" +
+                      "</td>";
+                    break;
+                  case "SETTLED":
+                    trHTML +=
+                      "<td>" +
+                      '<span class="badge badge-success tstatus">' +
+                      itemVal[i].settlementStatus +
+                      "</span>" +
+                      "</td>";
+                    break;
+                  case "UNSETTLED":
+                    trHTML +=
+                      "<td>" +
+                      '<span class="badge badge-warning tstatus">' +
+                      itemVal[i].settlementStatus +
+                      "</span>" +
+                      "</td>";
+                    break;
+                  default:
+                    trHTML +=
+                      "<td>" +
+                      '<span class="badge badge-default tstatus">' +
+                      (itemVal[i].settlementStatus == null
+                        ? "NA"
+                        : itemVal[i].settlementStatus) +
+                      "</span>" +
+                      "</td>";
+                    break;
+                }
+                switch (itemVal[i].transactionStatus) {
+                  case "APPROVED":
+                    trHTML +=
+                      "<td>" +
+                      '<span class="badge badge-success tstatus">' +
+                      itemVal[i].transactionStatus +
+                      "</span>" +
+                      "</td>";
+                    break;
+                  case "PENDING":
+                    trHTML +=
+                      "<td>" +
+                      '<span class="badge badge-info tstatus">' +
+                      itemVal[i].transactionStatus +
+                      "</span>" +
+                      "</td>";
+                    break;
+                  case "DECLINED":
+                    trHTML +=
+                      "<td>" +
+                      '<span class="badge badge-danger tstatus">' +
+                      itemVal[i].transactionStatus +
+                      "</span>" +
+                      "</td>";
+                    break;
+                  default:
+                    trHTML +=
+                      "<td>" +
+                      '<span class="badge badge-default tstatus">' +
+                      (itemVal[i].transactionStatus == null
+                        ? "NA"
+                        : itemVal[i].transactionStatus) +
+                      "</span>" +
+                      "</td>";
+                    break;
+                }
+                let userDetailsUrl = "";
+                if (itemVal[i].customerHashId != null) {
+                  let url =
+                    "${pageContext.request.contextPath}/customer/customerDetails?customerHashId=" +
+                    itemVal[i].customerHashId;
+                  userDetailsUrl =
+                    "<a href='#' onclick='window.open(\"" +
+                    url +
+                    "\");'>" +
+                    itemVal[i].customerHashId +
+                    "</a>";
+                }
+                trHTML +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].transactionType == null
+                    ? ""
+                    : itemVal[i].transactionType) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].transactionCurrencyCode == null
+                    ? ""
+                    : itemVal[i].transactionCurrencyCode) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].cardTransactionAmount == null
+                    ? ""
+                    : itemVal[i].cardTransactionAmount) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].billingCurrencyCode == null
+                    ? ""
+                    : itemVal[i].billingCurrencyCode) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].amount == null ? "" : itemVal[i].amount) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].authCurrency == null
+                    ? ""
+                    : itemVal[i].authCurrency) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].authAmount == null
+                    ? ""
+                    : itemVal[i].authAmount) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].effectiveAuthAmount == null
+                    ? ""
+                    : itemVal[i].effectiveAuthAmount) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].previousAmount == null
+                    ? ""
+                    : itemVal[i].previousAmount) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].settlementAmount == null
+                    ? ""
+                    : itemVal[i].settlementAmount) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].settlementCurrency == null
+                    ? ""
+                    : itemVal[i].settlementCurrency) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].pocketDefinition == null
+                    ? ""
+                    : itemVal[i].pocketDefinition) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].cardNumber == null
+                    ? ""
+                    : itemVal[i].cardNumber) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].mcc == null ? "" : itemVal[i].mcc) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].merchantCategoryCode == null
+                    ? ""
+                    : itemVal[i].merchantCategoryCode) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].merchantLocation == null
+                    ? ""
+                    : itemVal[i].merchantLocation) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].transactionCode == null
+                    ? ""
+                    : itemVal[i].transactionCode) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].posEntryMode == null
+                    ? ""
+                    : itemVal[i].posEntryMode) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].systemTraceAuditNumber == null
+                    ? ""
+                    : itemVal[i].systemTraceAuditNumber) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].comments == null ? "" : itemVal[i].comments) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].clientCode == null
+                    ? ""
+                    : itemVal[i].clientCode) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].cardHashId == null
+                    ? ""
+                    : itemVal[i].cardHashId) +
+                  "</td>" +
+                  '<td style="white-space: nowrap">' +
+                  userDetailsUrl +
+                  "</td>" +
+                  "<td>" +
+                  '<div class="dropdown alert-dropdown">' +
+                  '<a href="javascript:;" style="padding: 0 10px; cursor: pointer;" class="dropdown-toggle" type="button" id="dropdownMenu' +
+                  slno +
+                  '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="glyphicon glyphicon-option-horizontal"></i></a>' +
+                  '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu' +
+                  slno +
+                  '">';
+
+                if (
+                  itemVal[i].settlementStatus === "UNSETTLED" &&
+                  itemVal[i].transactionStatus === "APPROVED"
+                ) {
+                  trHTML +=
+                    "<li><a href='javascript:;' onclick=release('" +
+                    itemVal[i].transactionCode +
+                    "')>Release</a></li>";
+                } else if (
+                  itemVal[i].settlementStatus === "SETTLED" &&
+                  itemVal[i].transactionStatus === "APPROVED" &&
+                  itemVal[i].transactionType === "Fee_Debit"
+                ) {
+                  trHTML +=
+                    "<li><a href='javascript:;' onclick='getWaiveFeeComment(\"" +
+                    itemVal[i].transactionId +
+                    "\")'>Waive Fee</a></li>";
+                } else if (
+                  itemVal[i].settlementStatus === "SETTLED" &&
+                  itemVal[i].transactionType === "Debit" &&
+                  itemVal[i].amount > 0
+                ) {
+                  trHTML +=
+                    "<li><a href='javascript:;' onclick=showRaiseDisputePopup(" +
+                    itemVal[i].transactionId +
+                    ',"' +
+                    itemVal[i].billingCurrencyCode +
+                    '")>Raise Dispute</a></li>';
+                } else if (
+                  itemVal[i].settlementStatus === "DISPUTED" &&
+                  itemVal[i].transactionType === "Debit" &&
+                  itemVal[i].amount > 0
+                ) {
+                  trHTML +=
+                    "<li><a href='javascript:;' onclick=manageDisputePopup(" +
+                    itemVal[i].transactionId +
+                    ',"' +
+                    itemVal[i].billingCurrencyCode +
+                    '")>Manage Dispute</a></li>';
+                }
+
+                if (itemVal[i].transactionType === "Remittance_Debit") {
+                  trHTML +=
+                    "<li><a href='javascript:;' onclick=showStatusModal('" +
+                    itemVal[i].systemTraceAuditNumber +
+                    "')>Remittance Details</a></li>";
+                }
+                trHTML +=
+                  "<li><a href='javascript:;' onclick=\"sendAlert('" +
+                  itemVal[i].cardNumber +
+                  "', '" +
+                  itemVal[i].clientCode +
+                  "', '" +
+                  itemVal[i].customerHashId +
+                  "' , '" +
+                  itemVal[i].transactionCode +
+                  "' , '" +
+                  itemVal[i].cardHashId +
+                  "')\">Send Alert</a></li>";
+                +"</ul>" + "</div>" + "</td>" + "</tr>";
+
+                trHTML += "<tr id='collapse_header' class='collapse_header'>";
+                trHTML += "<td colspan='28'>";
+                trHTML += '<div class="row">';
+                trHTML += '<div class="col-md-6">';
+                trHTML += '<div class="custDtls_wrapper">';
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Pos Entry Capability Code :</h5><h5>' +
+                  (itemVal[i].posEntryCapabilityCode == null
+                    ? ""
+                    : itemVal[i].posEntryCapabilityCode) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Replacement Amount :</h5><h5>' +
+                  (itemVal[i].replacementAmount == null
+                    ? ""
+                    : itemVal[i].replacementAmount) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Settlement Auth Amount :</h5><h5>' +
+                  (itemVal[i].settlementAuthAmount == null
+                    ? ""
+                    : itemVal[i].settlementAuthAmount) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Settlement Transaction Amount :</h5><h5>' +
+                  (itemVal[i].settlementTransactionAmount == null
+                    ? ""
+                    : itemVal[i].settlementTransactionAmount) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Exchange Rate :</h5><h5>' +
+                  (itemVal[i].billingConversionRate == null
+                    ? ""
+                    : itemVal[i].billingConversionRate) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Current Withholding Balance :</h5><h5>' +
+                  (itemVal[i].currentWithholdingBalance == null
+                    ? ""
+                    : itemVal[i].currentWithholdingBalance) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Wallet Id :</h5><h5>' +
+                  (itemVal[i].walletId == null ? "" : itemVal[i].walletId) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Merchant Id :</h5><h5>' +
+                  (itemVal[i].mid == null ? "" : itemVal[i].mid) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Debit :</h5><h5>' +
+                  (itemVal[i].debit == null ? "" : itemVal[i].debit) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Retrieval Reference Number :</h5><h5>' +
+                  (itemVal[i].retrievalReferenceNumber == null
+                    ? ""
+                    : itemVal[i].retrievalReferenceNumber) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Pos Condition Code :</h5><h5>' +
+                  (itemVal[i].posConditionCode == null
+                    ? ""
+                    : itemVal[i].posConditionCode) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Terminal Id :</h5><h5>' +
+                  (itemVal[i].tid == null ? "" : itemVal[i].tid) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Processing Code :</h5><h5>' +
+                  (itemVal[i].processingCode == null
+                    ? ""
+                    : itemVal[i].processingCode) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Original Date of Transaction :</h5><h5>' +
+                  (itemVal[i].originalDateOfTransaction == null
+                    ? ""
+                    : itemVal[i].originalDateOfTransaction) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Original System Trace Audit Number :</h5><h5>' +
+                  (itemVal[i].originalStan == null
+                    ? ""
+                    : itemVal[i].originalStan) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Acquiring Institution Code :</h5><h5>' +
+                  (itemVal[i].acquiringInstitutionCode == null
+                    ? ""
+                    : itemVal[i].acquiringInstitutionCode) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Original Acquiring Institution Code :</h5><h5>' +
+                  (itemVal[i].originalAcquiringInstitutionCode == null
+                    ? ""
+                    : itemVal[i].originalAcquiringInstitutionCode) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Acquirer Country Code :</h5><h5>' +
+                  (itemVal[i].acquiringInstitutionCountryCode == null
+                    ? ""
+                    : itemVal[i].acquiringInstitutionCountryCode) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Expiry Date :</h5><h5>' +
+                  (itemVal[i].expiryDate == null
+                    ? ""
+                    : itemVal[i].expiryDate) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Merchant Latitude :</h5><h5>' +
+                  (itemVal[i].merchantLatitude == null
+                    ? ""
+                    : itemVal[i].merchantLatitude) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Merchant Longitude :</h5><h5>' +
+                  (itemVal[i].merchantLongitude == null
+                    ? ""
+                    : itemVal[i].merchantLongitude) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Merchant Tagged Name :</h5><h5>' +
+                  (itemVal[i].merchantTaggedName == null
+                    ? ""
+                    : itemVal[i].merchantTaggedName) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Merchant Zoom Index :</h5><h5>' +
+                  (itemVal[i].merchantZoomIndex == null
+                    ? ""
+                    : itemVal[i].merchantZoomIndex) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Business Transaction :</h5><h5>' +
+                  (itemVal[i].businessTransaction == null
+                    ? ""
+                    : itemVal[i].businessTransaction) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Receipt URL :</h5><h5>' +
+                  (itemVal[i].receiptUrl == null
+                    ? ""
+                    : itemVal[i].receiptUrl) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Receipt Type :</h5><h5>' +
+                  (itemVal[i].receiptType == null
+                    ? ""
+                    : itemVal[i].receiptType) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Receipt File Name :</h5><h5>' +
+                  (itemVal[i].receiptFileName == null
+                    ? ""
+                    : itemVal[i].receiptFileName) +
+                  "</h5>";
+                trHTML +=
+                  '<h5 style="font-weight: 600; font-size: 13px;">Labels :</h5><h5>' +
+                  (itemVal[i].labels == null ? "" : itemVal[i].labels) +
+                  "</h5>";
+                trHTML += "</div>";
+                trHTML += "</div>";
+                trHTML += "</div></td></tr>";
+              });
+            } else {
+              $("#transactionListTable").empty();
+              trHTML +=
+                '<tr class="odd testingg"><td class="dataTables_empty" colspan="55" valign="top">No Transaction available in table</td></tr>';
+              /* Reset Code */
+              $("#paginationn").twbsPagination("destroy");
+              $("#paging_info").html("");
+              $("#transactionDownload").hide();
+              $("#filterBtn").html("Filter");
+            }
+            $("#filterBtn").html("Filter");
+            $("#transactionListTable").html(trHTML);
+            highlight_row(Transaction_Report);
+          }
+          if (value === 0 && isPaging === true) {
+            value = 1;
+          }
+          paginationForTransaction(data.pagination.totalPages, value);
+          $("#paging_info").html(
+            "Showing " +
+            startno +
+            " to " +
+            slno +
+            " of " +
+            data.pagination.totalElements +
+            " entries"
+          );
+        },
+        error: function (xhr) {
+          if (xhr.readyState === 0) {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(
+              "service is temporarily down,please try again later!"
+            );
+          } else {
+            $("#smartSearchFieldsDiv").slideUp();
+            var trHTML = "";
+            var responseMessage = JSON.parse(xhr.responseText);
+            var message = responseMessage.message;
+            $("#paginationn").twbsPagination("destroy");
+            $(".testingg").empty();
+            $("#transactionListTable").empty();
+            trHTML +=
+              '<tr class="odd testingg"><td class="dataTables_empty" colspan="45" valign="top">' +
+              "No Records Found !" +
+              "</td></tr>";
+            $("#transactionListTable").append(trHTML);
+            $("#paging_info").html("");
+            $("#transactionDownload").hide();
+            $("#filterBtn").html("Filter");
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function toggleAccordian(element) {
+      $(element).text(function (_, value) {
+        return value == "-" ? "+" : "-";
+      });
+      $(element)
+        .closest("tr.header")
+        .next("#collapse_header")
+        .slideToggle(100)
+        .css("display", "table-row");
+    }
+
+    function download() {
+      $("#transactionDownload").attr("disabled", true);
+      $("#transactionDownload").html(
+        "Please Wait... <i class='fas fa-spinner fa-spin'></i>"
+      );
+
+      const dateRange = $("#daterange").val();
+      const dateArray = dateRange.split("-");
+      const d = new Date(dateArray[0]);
+      const d1 = new Date(dateArray[1]);
+      let startDate = $.datepicker.formatDate("yy-mm-dd", d);
+      let endDate = $.datepicker.formatDate("yy-mm-dd", d1);
+      if (startDate === "NaN-NaN-NaN" && endDate === "NaN-NaN-NaN") {
+        startDate = "";
+        endDate = "";
+      }
+      const customerHashId = $("#customerHashId").val();
+      const walletHashId = $("#walletHashId").val();
+      const transactionType = $("#transactionType").val();
+      const transactionStatus = $("#transactionstatus").val();
+      const settlementStatus = $("#settlementstatus").val();
+      const clientCode = $("#clientCode").val();
+      const cardNumber = $("#cardNumber").val();
+      const billingCurrency = $("#billingCurrency").val();
+      const transactionCurrency = $("#transactionCurrency").val();
+      const transactionAmount = $("#transactionAmount").val();
+      const billingAmount = $("#billingAmount").val();
+      const effectiveAuthCurrency = $("#effectiveAuthCurrency").val();
+      const effectiveAuthAmount = $("#effectiveAuthAmount").val();
+      const authCode = $("#authCode").val();
+      const systemTraceAuditNumber = $("#systemTraceAuditNumber").val();
+      const transactionsLabelsKey = $("#transactionsLabelsKey").val();
+      const transactionsLabelsValue = $("#transactionsLabelsValue").val();
+
+      const transactionDownlodUrl =
+        $("#transactionDownlodUrl").val() +
+        "?" +
+        "startDate=" +
+        startDate +
+        "&endDate=" +
+        endDate +
+        "&customerHashId=" +
+        customerHashId +
+        "&walletHashId=" +
+        walletHashId +
+        "&transactionType=" +
+        transactionType +
+        "&transactionStatus=" +
+        transactionStatus +
+        "&settlementStatus=" +
+        settlementStatus +
+        "&clientCode=" +
+        clientCode +
+        "&cardNumber=" +
+        cardNumber +
+        "&billingCurrency=" +
+        billingCurrency +
+        "&transactionCurrency=" +
+        transactionCurrency +
+        "&transactionAmount=" +
+        transactionAmount +
+        "&billingAmount=" +
+        billingAmount +
+        "&effectiveAuthCurrency=" +
+        effectiveAuthCurrency +
+        "&effectiveAuthAmount=" +
+        effectiveAuthAmount +
+        "&authCode=" +
+        authCode +
+        "&systemTraceAuditNumber=" +
+        systemTraceAuditNumber +
+        "&transactionsLabelsKey=" +
+        transactionsLabelsKey +
+        "&transactionsLabelsValue=" +
+        transactionsLabelsValue;
+
+      $.ajax({
+        url: transactionDownlodUrl,
+        type: "GET",
+        async: true,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        xhrFields: {
+          responseType: "blob",
+        },
+        success: function (data, status, xhr) {
+          const a = document.createElement("a");
+          const url = window.URL.createObjectURL(data);
+          a.href = url;
+          a.download = "Transaction_Report_" + new Date().getTime() + ".csv";
+          document.body.append(a);
+          a.click();
+          a.remove();
+          window.URL.revokeObjectURL(url);
+        },
+        error: function (data) {
+          if (data.readyState == 0) {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(
+              "service is temporarily down,please try again later."
+            );
+          } else {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html("File not found");
+          }
+        },
+        complete: function (xhr, status) {
+          const contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          $("#transactionDownload").attr("disabled", false);
+          $("#transactionDownload").html(
+            '<i class="fa fa-download" aria-hidden="true"></i> Download'
+          );
+        },
+      });
+    }
+
+    function paginationForTransaction(totalPages, val) {
+      var value = $("#totalPagesId").val(val);
+      if (val == "0") {
+        $("#paginationn").twbsPagination("destroy");
+      }
+      if (totalPages === 0) {
+        totalPages = 1;
+      }
+
+      $("#paginationn").twbsPagination({
+        totalPages: totalPages,
+        visiblePages: 10,
+        startPage: 1,
+        hideOnlyOnePage: false,
+        initiateStartPageClick: false,
+        first: "First",
+        prev: "Previous",
+        next: "Next",
+        last: "Last",
+        onPageClick: function (event, page) {
+          if (value != 1) {
+            fetchMe(page - 1, true);
+          } else {
+            $("#totalPagesId").val(2);
+          }
+        },
+      });
+    }
+
+    function toggleSmartSearch() {
+      $("#smartSearchFieldsDiv").slideToggle();
+    }
+
+    function resetFields() {
+      $(".enableSelect2").val(null).trigger("change");
+      $("#clientCode").val(null).trigger("change");
+      $(".selectpicker").val(null).trigger("change");
+      $("#reportrange span").html("");
+      $("#daterange").val("");
+      $(".clearForm").val("");
+    }
+
+    function release(transactionCode) {
+      $("#release_transactionCode").val(transactionCode);
+      $("#confirmModal").modal("show");
+    }
+
+    function showStatusModal(systemTraceAuditNumber) {
+      fetchRemittanceTransactionStatus(systemTraceAuditNumber);
+      $("#show_StatusModal").modal("show");
+    }
+
+    function fetchRemittanceTransactionStatus(systemTraceAuditNumber) {
+      var url =
+        $("#remittanceTransactionStatusUrl").val() +
+        "?" +
+        "referenceNumber=" +
+        systemTraceAuditNumber;
+      $.ajax({
+        async: false,
+        url: url,
+        type: "GET",
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+          addTable(result);
+          $("#success_refundNotification").modal("show");
+          $(".refunded_body").html(result.message);
+        },
+        error: function (xhr) {
+          if (data.readyState == 0) {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(
+              "service is temporarily down,please try again later."
+            );
+          }
+          if ((data.status = 500)) {
+            var responseMessage = JSON.parse(data.responseText);
+            var message = responseMessage.message;
+
+            $(".refunded_body").html(message);
+            $("#error_refundNotification").modal("show");
+          } else if (data.status == 400) {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(data.responseText);
+          } else {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(data.responseText);
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function addTable(list) {
+      var slno = 0;
+      var trHTML = "";
+      if (list != null && list !== "" && list.length > 0) {
+        var table = "";
+        $(list).each(function (i, item) {
+          var eachRowData = list[i];
+          var remittanceTransaction = eachRowData;
+          //var createdAt = new Date(tncDetailObject.createdAt).toLocaleDateString("en-US");
+          var systemReferenceNumber =
+            remittanceTransaction.systemReferenceNumber;
+          var status = remittanceTransaction.status;
+          var lastUpdatedAt = remittanceTransaction.lastUpdatedAt;
+          var partnerReferanceNumber =
+            remittanceTransaction.partnerReferanceNumber;
+          slno = slno + 1;
+          table +=
+            '<tr class="testingg"><td>' +
+            slno +
+            "</td>" +
+            '<td style="white-space: nowrap">' +
+            systemReferenceNumber +
+            "</td>" +
+            '<td style="white-space: nowrap">' +
+            status +
+            "</td>" +
+            '<td style="white-space: nowrap">' +
+            lastUpdatedAt +
+            "</td>" +
+            '<td style="white-space: nowrap">' +
+            partnerReferanceNumber +
+            "</td>";
+          table += "</tr>";
+        });
+        $("#statusListTable").html(table);
+      } else {
+        $("#statusListTable").empty();
+        table +=
+          '<tr class="odd testingg"><td class="dataTables_empty" colspan="5">No Transaction Found</td></tr>';
+        $("#statusListTable").html(table);
+      }
+    }
+
+    function releaseTransaction() {
+      var transactionCode = $("#release_transactionCode").val();
+      $("#warning_button").attr("disabled", true);
+      $("#warning_button").html(spinnerUrl);
+      $.ajax({
+        url: $("#releaseUrl").val() + transactionCode,
+        type: "GET",
+        cache: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+
+          $("#confirmModal").modal("hide");
+          $("#success_transactionNotification").modal("show");
+          $(".refunded_body").html("Transaction is released successfully.");
+          $("#warning_button").attr("disabled", false);
+          $("#warning_button").html("release");
+        },
+        error: function (data) {
+          $("#confirmModal").modal("hide");
+          $("#error_transactionNotification").modal("show");
+          $(".refunded_body").html(data.message);
+          $("#warning_button").attr("disabled", false);
+          $("#warning_button").html("release");
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function onrelease() {
+      fetchMe("0", false);
+    }
+
+    function closeTransaction() {
+      $("#confirmModal").modal("hide");
+    }
+
+    function sendAlert(
+      cardNumber,
+      clientCode,
+      customerHashId,
+      transactionCode,
+      cardHashId
+    ) {
+      $("#sendAlertModalCardNumber").val(cardNumber);
+      $("#sendAlertModalClientCode").val(clientCode);
+      $("#sendAlertModalCustomerHashId").val(customerHashId);
+      $("#sendAlertModalTransactionCode").val(transactionCode);
+      $("#sendAlertModalCardHashId").val(cardHashId);
+      $("#sendAlertModal").modal("show");
+    }
+
+    function sendNotification() {
+      event.preventDefault();
+      var inputType = $("#inputType").val();
+      var inputValue = $("#inputValue").val();
+      var notificationType = $("#notificationType").val();
+      var notificationTemplate = $("#notificationTemplate").val();
+      var clientCode = $("#sendAlertModalClientCode").val();
+
+      valid = true;
+
+      if (inputValue == null || inputValue == "") {
+        valid = false;
+        $("#inputValueError").html("Enter Input value !");
+      }
+      if (notificationType == null || notificationType == "") {
+        valid = false;
+        $("#notificationTypeError").html("Select Notification Type !");
+      }
+      if (notificationTemplate == null || notificationTemplate == "") {
+        valid = false;
+        $("#notificationTemplateError").html(
+          "Select Notification Template !"
+        );
+      }
+
+      if (valid == true) {
+        $("#btnSubmit").attr("disabled", true);
+        $("#btnSubmit").html(spinnerUrl);
+        var adHocNotificationUrl = $("#adHocNotificationUrl").val();
+
+        $.ajax({
+          type: "POST",
+          url: adHocNotificationUrl,
+          cache: false,
+          async: false,
+          contentType: "application/json; charset=UTF-8",
+          data: JSON.stringify(
+            unSanitize({
+              inputType: inputType,
+              inputValue: inputValue,
+              notificationType: notificationType,
+              notificationTemplate: notificationTemplate,
+              clientHashId: clientCode,
+            })
+          ),
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            $("#sendAlertModal").modal("hide");
+            $("#adHocNotificationform")[0].reset();
+            $("#success_adHocNotification").modal("show");
+            $(".refunded_body").html("Notification Sent Successfully !");
+            $("#btnSubmit").attr("disabled", false);
+            $("#btnSubmit").html("Submit");
+          },
+          error: function (xhr) {
+            var message = xhr.responseText;
+            $("#sendAlertModal").modal("hide");
+            $("#adHocNotificationform")[0].reset();
+            $("#btnSubmit").attr("disabled", false);
+            $("#btnSubmit").html("Submit");
+            $(".refunded_body").html(message);
+            $("#error_refundNotification").modal("show");
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      } else {
+        setTimeout(function () {
+          $("#inputTypeError").html("");
+          $("#inputValueError").html("");
+          $("#notificationTypeError").html("");
+          $("#notificationTemplateError").html("");
+        }, 3000);
+      }
+    }
+
+    function onNotification(
+      templateType,
+      notificationType,
+      cardNumber,
+      clientCode,
+      customerHashId,
+      transactionCode,
+      cardHashId
+    ) {
+      var templateOptions = "";
+      if ("SMS" === notificationType) {
+        if ("CARD_SUSPECTED_MISUSE" === templateType) {
+          templateOptions +=
+            '<option value="CARD_SUSPECTED_MISUSE__SMS">CARD_SUSPECTED_MISUSE_SMS</option>';
+          $("#notificationTemplate").html(templateOptions);
+          $("#inputType").val("Transaction_ID").val();
+          $("#inputValue").val(transactionCode).attr("disabled", true);
+        }
+        if ("CARD_GOOGLEPAY" === templateType) {
+          templateOptions +=
+            '<option value="CARD_GOOGLEPAY__SMS">CARD_GOOGLEPAY_SMS</option>';
+          $("#notificationTemplate").html(templateOptions);
+          $("#inputType").val("Customer_Hash");
+          $("#inputValue").val(customerHashId).attr("disabled", true);
+        }
+        if ("CARD_SUSPECTED_COMPROMIS" === templateType) {
+          templateOptions +=
+            '<option value="CARD_SUSPECTED_COMPROMISE__SMS">CARD_SUSPECTED_COMPROMISE_SMS</option>';
+          $("#notificationTemplate").html(templateOptions);
+          $("#inputType").val("Card_Number");
+          $("#inputValue").val(cardHashId).attr("disabled", true);
+        }
+        if ("CARD_RISK_AWARENESS_PIN" === templateType) {
+          templateOptions +=
+            '<option value="CARD_RISK_AWARENESS_PIN__SMS">CARD_RISK_AWARENESS_PIN_SMS</option>';
+          $("#notificationTemplate").html(templateOptions);
+          $("#inputType").val("Mobile_Number");
+          $("#inputValue").val("").attr("disabled", false);
+        }
+      }
+      if ("EMAIL" === notificationType) {
+        if ("CARD_SUSPECTED_MISUSE" === templateType) {
+          templateOptions +=
+            '<option value="CARD_SUSPECTED_MISUSE__EMAIL">CARD_SUSPECTED_MISUSE_EMAIL</option>';
+          $("#notificationTemplate").html(templateOptions);
+          $("#inputType").val("Transaction_ID");
+          $("#inputValue").val(transactionCode).attr("disabled", true);
+        }
+        if ("CARD_GOOGLEPAY" === templateType) {
+          templateOptions +=
+            '<option value="CARD_GOOGLEPAY__EMAIL">CARD_GOOGLEPAY_EMAIL</option>';
+          $("#notificationTemplate").html(templateOptions);
+          $("#inputType").val("Customer_Hash");
+          $("#inputValue").val(customerHashId).attr("disabled", true);
+        }
+        if ("CARD_SUSPECTED_COMPROMIS" === templateType) {
+          templateOptions +=
+            '<option value="CARD_SUSPECTED_COMPROMISE__EMAIL">CARD_SUSPECTED_COMPROMISE_EMAIL</option>';
+          $("#notificationTemplate").html(templateOptions);
+          $("#inputType").val("Card_Number");
+          $("#inputValue").val(cardHashId).attr("disabled", true);
+        }
+        if ("CARD_RISK_AWARENESS_PIN" === templateType) {
+          templateOptions +=
+            '<option value="CARD_RISK_AWARENESS_PIN__EMAIL">CARD_RISK_AWARENESS_EMAIL</option>';
+          $("#notificationTemplate").html(templateOptions);
+          $("#inputType").val("Email_ID");
+          $("#inputValue").val("").attr("disabled", false);
+        }
+      }
+    }
+
+    function getTransactionTypes() {
+      $.ajax({
+        url: $("#transactionTypesUrl").val(),
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+
+          var optionTag = "";
+          if (result != null && result != "" && result.length > 0) {
+            for (var i = 0; i < result.length; i++) {
+              var eachOption = result[i];
+              optionTag +=
+                "<option value = " +
+                eachOption +
+                ">" +
+                eachOption +
+                "</option>";
+            }
+            $("#transactionType").html(optionTag);
+            $("#transactionType").select2({
+              placeholder: "Select Transaction Type",
+              width: "100%",
+              allowClear: true,
+              dropdownAutoWidth: false,
+              multiple: true,
+            });
+
+            if (
+              $("#transactionTypeValuehold").val() != null &&
+              $("#region_listValuehold").val() != "null" &&
+              $("#region_listValuehold").val() != ""
+            ) {
+              $("#transactionType").val($("#transactionTypeValuehold").val());
+              $("#transactionType").trigger("change");
+            }
+          } else {
+            $("#transactionType").html(optionTag);
+            $("#transactionType").select2({
+              placeholder: "Select a Transaction Type",
+              allowClear: false,
+              dropdownAutoWidth: false,
+              width: "100%",
+              dropdownCss: {
+                width: "inherit",
+              },
+            });
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function getTransactionLabels() {
+      $.ajax({
+        url: $("#transactionLabelsUrl").val(),
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+
+          var optionTag = "<option value = ''></option>";
+          if (result != null && result != "" && result.length > 0) {
+            for (var i = 0; i < result.length; i++) {
+              var eachOption = result[i];
+              optionTag +=
+                "<option value = " +
+                eachOption +
+                ">" +
+                eachOption +
+                "</option>";
+            }
+            $("#transactionsLabelsKey").html(optionTag);
+            $("#transactionsLabelsKey").select2({
+              placeholder: "Select a transaction label",
+              allowClear: true,
+              width: "100%",
+              dropdownAutoWidth: false,
+              dropdownCss: {
+                width: "inherit",
+              },
+            });
+          } else {
+            $("#transactionsLabelsKey").html(optionTag);
+            $("#transactionsLabelsKey").select2({
+              placeholder: "Select a Transaction Label",
+              allowClear: false,
+              dropdownAutoWidth: false,
+              width: "100%",
+              dropdownCss: {
+                width: "inherit",
+              },
+            });
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function getWaiveFeeComment(transactionId) {
+      $("#transactionId").val(transactionId);
+      $("#waiveFeeComment").val("");
+      $("waiveFeeCommentError").val("");
+      $("#waiveCommentModal").modal("show");
+    }
+
+    function waiveFee(event) {
+      var waive_fee_url = $("#waiveFeeUrl").val();
+      var transactionId = $("#transactionId").val();
+      var comments = $("#waiveFeeComment").val();
+      event.preventDefault();
+
+      valid = true;
+      if (comments == null || comments == "") {
+        valid = false;
+        $("#waiveFeeCommentError").html("Madandatory field !");
+      }
+
+      if (valid) {
+        $.ajax({
+          type: "POST",
+          url: waive_fee_url,
+          contentType: "application/json",
+          dataType: "json",
+          data: JSON.stringify(
+            unSanitize({
+              transactionId: transactionId,
+              comments: comments,
+            })
+          ),
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            $("#waiveCommentModal").modal("hide");
+            $("#adHocNotificationform")[0].reset();
+            $("#success_waiveFee").modal("show");
+            //$(".refunded_body").html(xhr.responseText.message);
+            $(".refunded_body").html(result.message);
+            $("#btnSubmit").attr("disabled", false);
+            $("#btnSubmit").html("Submit");
+          },
+          error: function (xhr) {
+            var message = JSON.parse(xhr.responseText).message;
+            $("#waiveCommentModal").modal("hide");
+            $("#adHocNotificationform")[0].reset();
+            $("#btnSubmit").attr("disabled", false);
+            $("#btnSubmit").html("Submit");
+            $(".refunded_body").html(message);
+            $("#error_waiveFee").modal("show");
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+
+            $("waiveFeeComment").val("");
+          },
+        });
+      } else {
+        setTimeout(function () {
+          $("#waiveFeeCommentError").html("");
+        }, 3000);
+      }
+    }
+
+    function refreshPage() {
+      window.location.reload();
+    }
+
+    function closeWaiveCommentModal() {
+      $("#waiveCommentModal").modal("hide");
+    }
+
+    function todayDateInit(fieldNme) {
+      /* ===== Date init ======= */
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1; //January is 0!
+      var yyyy = today.getFullYear();
+
+      if (dd < 10) {
+        dd = "0" + dd;
+      }
+      if (mm < 10) {
+        mm = "0" + mm;
+      }
+      today = yyyy + "-" + mm + "-" + dd;
+      $(fieldNme).val(today);
+    }
+
+    /* =============================On Raise Dispute ========== */
+    function showRaiseDisputePopup(transactionId, billCurrency) {
+      $("#transactionId").val(transactionId);
+      todayDateInit($('input[name="disputeDate"]'));
+      $("#raiseDisputeModal").modal("show");
+      console.log(transactionId);
+      console.log(billCurrency);
+      let dispCurr =
+        "<option>Select Dispute Currency</option><option value=" +
+        billCurrency +
+        ">" +
+        billCurrency +
+        "</option>";
+      $("#disputeCurrency").empty();
+      $("#disputeCurrency").append(dispCurr);
+    }
+
+    function raiseDispute() {
+      var raiseDisputeUrl = $("#raiseDisputeUrl").val();
+      var transactionId = $("#transactionId").val();
+      var disputeReason = $("#disputeReason").val();
+      var disputeAmount = $("#disputeAmount").val();
+      var disputeCurrency = $("#disputeCurrency").val();
+      var disputeDate = $("#disputeDate").val();
+
+      valid = true;
+      if (disputeReason == null || disputeReason == "") {
+        valid = false;
+        $("#disputeReasonError").html("Madandatory field !");
+      }
+      if (disputeAmount == null || disputeAmount == "") {
+        valid = false;
+        $("#disputeAmountError").html("Madandatory field !");
+      }
+      if (disputeCurrency == null || disputeCurrency == "") {
+        valid = false;
+        $("#disputeCurrencyError").html("Madandatory field !");
+      }
+
+      if (valid) {
+        $("#submitDisputeBtn").attr("disabled", true);
+        $.ajax({
+          type: "POST",
+          url: raiseDisputeUrl + unSanitize(transactionId),
+          contentType: "application/json",
+          dataType: "json",
+          data: JSON.stringify(
+            unSanitize({
+              disputeReason: disputeReason,
+              disputeAmount: disputeAmount,
+              disputeCurrency: disputeCurrency,
+              disputeDate: disputeDate,
+            })
+          ),
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            $("#raiseDisputeModal").modal("hide");
+            $("#raiseDisputeForm")[0].reset();
+            $("#success_waiveFee").modal("show");
+            $(".refunded_body").html(result.message);
+            $("#submitDisputeBtn").attr("disabled", false);
+            $("#submitDisputeBtn").html("Submit");
+          },
+          error: function (xhr) {
+            var message = JSON.parse(xhr.responseText).message;
+            $("#raiseDisputeModal").modal("hide");
+            $("#raiseDisputeForm")[0].reset();
+            $("#submitDisputeBtn").attr("disabled", false);
+            $("#submitDisputeBtn").html("Submit");
+            $(".refunded_body").html(message);
+            $("#error_waiveFee").modal("show");
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      } else {
+        setTimeout(function () {
+          $("#disputeReasonError").html("");
+          $("#disputeAmountError").html("");
+          $("#disputeCurrencyError").html("");
+        }, 3000);
+      }
+    }
+
+    /* ================== Manage Dispute ============= */
+
+    function manageDisputePopup(transactionId, billingCurrency) {
+      console.log(transactionId);
+      var raiseDisputeUrl = $("#raiseDisputeUrl").val();
+      $("#transactionId").val(transactionId);
+      $("#manageDisputeActionCurrency").empty();
+      let actionCurr =
+        "<option>Select Action Currency</option><option value=" +
+        billingCurrency +
+        ">" +
+        billingCurrency +
+        "</option>";
+      $.ajax({
+        type: "GET",
+        url: raiseDisputeUrl + unSanitize(transactionId),
+        contentType: "application/json",
+        dataType: "json",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+
+          $("#manageDisputeReason").val(result.disputeReason);
+          $("#manageDisputeAmount").val(result.disputeAmount);
+          $("#manageDisputeCurrency").val(result.disputeCurrency);
+          $("#manageDisputeDate").val(result.disputeDate);
+          $("#manageDisputeActionCurrency").append(actionCurr);
+          $("#manageDisputeModal").modal("show");
+        },
+        error: function (xhr) {
+          var message = JSON.parse(xhr.responseText).message;
+          $(".refunded_body").html(message);
+          $("#error_waiveFee").modal("show");
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function manageDispute() {
+      var transactionId = $("#transactionId").val();
+      var manageDisputeUrl = $("#raiseDisputeUrl").val();
+      var manageDisputeAction = $("#manageDisputeAction").val();
+      var manageDisputeActionAmount = $("#manageDisputeActionAmount").val();
+      var manageDisputeActionCurrency = $(
+        "#manageDisputeActionCurrency"
+      ).val();
+
+      valid = true;
+      if (manageDisputeAction == null || manageDisputeAction == "") {
+        valid = false;
+        $("#manageDisputeActionError").html("Madandatory field !");
+      }
+      if (
+        manageDisputeActionAmount == null ||
+        manageDisputeActionAmount == ""
+      ) {
+        valid = false;
+        $("#manageDisputeActionAmountError").html("Madandatory field !");
+      }
+      if (
+        manageDisputeActionCurrency == null ||
+        manageDisputeActionCurrency == ""
+      ) {
+        valid = false;
+        $("#manageDisputeActionCurrencyError").html("Madandatory field !");
+      }
+
+      if (valid) {
+        $("#submitDisputeBtn").attr("disabled", true);
+        $.ajax({
+          type: "PUT",
+          url: manageDisputeUrl + unSanitize(transactionId),
+          contentType: "application/json",
+          dataType: "json",
+          data: JSON.stringify(
+            unSanitize({
+              action: manageDisputeAction,
+              actionAmount: manageDisputeActionAmount,
+              actionCurrency: manageDisputeActionCurrency,
+            })
+          ),
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (result, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            result = sanitize(unSanitize(result));
+
+            $("#manageDisputeModal").modal("hide");
+            $("#manageDisputeForm")[0].reset();
+            $("#success_waiveFee").modal("show");
+            $(".refunded_body").html(result.message);
+            $("#submitDisputeBtn").attr("disabled", false);
+            $("#submitDisputeBtn").html("Submit");
+          },
+          error: function (xhr) {
+            var message = JSON.parse(xhr.responseText).message;
+            $("#manageDisputeModal").modal("hide");
+            $("#manageDisputeForm")[0].reset();
+            $("#submitDisputeBtn").attr("disabled", false);
+            $("#submitDisputeBtn").html("Submit");
+            $(".refunded_body").html(message);
+            $("#error_waiveFee").modal("show");
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      } else {
+        setTimeout(function () {
+          $("#manageDisputeActionError").html("");
+          $("#manageDisputeActionAmountError").html("");
+          $("#manageDisputeActionCurrencyError").html("");
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+
+</html>

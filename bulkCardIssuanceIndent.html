@@ -1,0 +1,1410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+  <script type="text/javascript" src="assets/js/CommonValidations.js"></script>
+  <!-- META SECTION -->
+  <title>ahan | Bulk Card Issuance Indent</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+  <!-- EOF CSS INCLUDE -->
+</head>
+
+<body>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+
+      <!-- PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrap">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <div class="pull-right">
+                  <a href="javascript:void(0)" class="btn btn-xs btn-primary ripple" onclick="toggleSmartSearch();">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    Search
+                  </a>
+                </div>
+                <h4 class="page-title">Bulk Card Issuance Indent</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="" style="min-height: 73vh">
+                <div class="panel-body p-0" style="position: relative">
+                  <form id="smartSearchFieldsDiv" class="bulkCard" style="display: none">
+                    <input type="hidden" id="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+                    <input type="hidden" id="allReportListUrl" value="${allReportListUrl}" />
+                    <input type="hidden" id="clientCodeValueHold" value="${clientCode}" />
+                    <input type="hidden" id="username" value="${username}" />
+                    <input type="hidden" id="password" value="${password}" />
+                    <div class="row">
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Select Date<sup>*</sup></label>
+                          <input type="text" name="dateRange" class="form-control" id="daterange"
+                            placeholder="Select a date" readonly />
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Card Proxy Number</label>
+                          <input type="text" class="form-control" name="accountNumber" id="accountNumber"
+                            placeholder="Enter Card Proxy Number" />
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Email Id</label>
+                          <input type="text" class="form-control" name="email" id="email"
+                            placeholder="Enter Email Id" />
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>MaskCard Number</label>
+                          <input type="text" class="form-control" name="maskCardNumber" id="maskCardNumber"
+                            placeholder="Enter MaskCard Number" />
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                          <label>Status<sup>*</sup></label>
+                          <select id="bulkCardIssuancestatus" class="form-control selectpicker">
+                            <option value="ALL">All</option>
+                            <option value="ASSIGNED">Assigned</option>
+                            <option value="UNASSIGNED">Unassigned</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group mt-4 text-center">
+                          <button type="button" id="filterBtn" class="btn btn-primary btn-sm px-5 ripple"
+                            onclick="generateBulkCardIssuanceTable(0);">
+                            Filter
+                          </button>
+                          <button type="reset" class="btn btn-default btn-sm px-5 ripple">
+                            Clear
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+
+                  <h4 id="errorMessage" class="error text-center"></h4>
+                  <h4 id="successMessage" class="success text-center"></h4>
+                  <div id="errorDiv"></div>
+                  <h4 id="inPageErrorMessage" class="error text-center"></h4>
+                  <h4 id="inPageSuccessMessage" class="success text-center"></h4>
+
+                  <input type="hidden" id="bulkCardIssuanceIndenturl" name="bulkCardIssuanceIndenturl"
+                    value="${bulkCardIssuanceIndenturl}" />
+                  <input type="hidden" id="clientCode" value="${clientCode}" />
+
+                  <div id="tableDiv" class="table-responsive" style="max-height: 70vh; overflow: auto">
+                    <table id="aznacFileListTable" class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>SL.NO.</th>
+                          <th>CREATED AT</th>
+                          <th>IDENT ID</th>
+                          <th>APPLICATION REFERENCE NUMBER</th>
+                          <th>CLIENT HASH ID</th>
+                          <th>CUSTOMER HASH ID</th>
+                          <th>CARD PROXY NUMBER</th>
+                          <th>CUSTOMER NUMBER</th>
+                          <th>CARD HASH ID</th>
+                          <th>MASK CARD NUMBER</th>
+                          <th>REGION</th>
+                          <th>COUNTRY CODE</th>
+                          <th>DATE OF BIRTH</th>
+                          <th>EMAIL</th>
+                          <th>TITLE</th>
+                          <th>FIRST NAME</th>
+                          <th>LAST NAME</th>
+                          <th>MIDDLE NAME</th>
+                          <th>MOBILE NUMBER</th>
+                          <th>PREFERRED NAME</th>
+                          <th>GENDER</th>
+                          <th>PERMANENT ADDRESS LINE1</th>
+                          <th>PERMANENT ADDRESS LINE2</th>
+                          <th>PERMANENT ADDRESS CITY</th>
+                          <th>PERMANENT ADDRESS COUNTRY</th>
+                          <th>PERMANENT ADDRESS POSTAL CODE</th>
+                          <th>CURRENT ADDRESS1</th>
+                          <th>CURRENT ADDRESS2</th>
+                          <th>CURRENT ADDRESS CITY</th>
+                          <th>CURRENT ADDRESS COUNTRY</th>
+                          <th>CURRENT ADDRESS POSTAL CODE</th>
+                          <th>CORRESPONDENCE ADDRESS LINE1</th>
+                          <th>CORRESPONDENCE ADDRESS LINE2</th>
+                          <th>CORRESPONDENCE ADDRESS CITY</th>
+                          <th>CORRESPONDENCE ADDRESS COUNTRY</th>
+                          <th>CORRESPONDENCE ADDRESS POSTAL CODE</th>
+                          <th>EMBOSSER NAME1</th>
+                          <th>EMBOSSER NAME2</th>
+                          <th>PLACTIC ID</th>
+                          <th>LOGO ID</th>
+                          <th>ISSUE DELIVERY OPTION</th>
+                          <th>STATUS</th>
+                          <th>ERROR</th>
+                        </tr>
+                        <tr class="text-center">
+                          <td colspan="44">No data available in table</td>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                  <div class="paginationWrapper">
+                    <p id="paging_info" class="pull-left"></p>
+                    <input type="hidden" id="totalPagesId" value="1" />
+                    <div class="pull-right">
+                      <ul class="pagination-sm" id="paginationn"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+      </div>
+      <!-- END PAGE CONTAINER -->
+    </div>
+  </div>
+
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body"></h4>
+              <div class="text-center">
+                <button id="confirmButton" type="button" class="btn btn-success px-5" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="hiddenFields"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
+
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.min.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <script type="text/javascript" src="assets/js/generateTableWithClickableRows.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <script type="text/javascript" src="assets/js/floatingscroll.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/moment.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+  <script type="text/javascript" src="assets/js/dateRange.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- END SCRIPTS -->
+
+  <script>
+    function toggleSmartSearch() {
+      $("#smartSearchFieldsDiv").slideToggle();
+    }
+  </script>
+
+  <!-- <script type="text/javascript">
+      // Onload Scripts
+      $(function () {
+        getClientList();
+        generateBulkCardIssuanceTable(0);
+        $(".se-pre-con").hide();
+        $(".table-responsive").floatingScrollbar();
+      });
+
+      /* Universal Spinner with text for Button */
+      var spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+      function getClientList() {
+        generateClientDropdown(
+          $("#fetchAllClientUrl").val(),
+          false,
+          "clientList",
+          null
+        );
+        $("#clientCodeLabel").hide();
+      }
+
+      function generateBulkCardIssuanceTable(value) {
+        var localCode = "";
+        var paging = value;
+        var dateRange = $("#daterange").val();
+        var accountNumber = $("#accountNumber").val();
+        var email = $("#email").val();
+        var maskCardNumber = $("#maskCardNumber").val();
+        var status = $("#bulkCardIssuancestatus").val();
+        var clientCode = $("#clientList").val();
+        var dateArray = dateRange.split("-");
+
+        var startDate = "";
+        var endDate = "";
+
+        if (
+          dateArray != null &&
+          dateArray != "" &&
+          dateArray != undefined &&
+          dateArray.length == 2
+        ) {
+          var d = new Date(dateArray[0].trim());
+          var d1 = new Date(dateArray[1].trim());
+          startDate = $.datepicker.formatDate("yy-mm-dd", d);
+          endDate = $.datepicker.formatDate("yy-mm-dd", d1);
+        }
+        $("#filterBtn").html(spinnerUrl);
+
+        $.ajax({
+          type: "POST",
+          dataType: "json",
+          contentType: "application/json",
+          url: $("#bulkCardIssuanceIndenturl").val(),
+          data: JSON.stringify({
+            page: paging,
+            order: "",
+            property: "",
+            size: 20,
+            startDate: startDate,
+            endDate: endDate,
+            accountNumber: accountNumber,
+            email: email,
+            maskCardNumber: maskCardNumber,
+            status: status,
+          }),
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+
+            $("#filterBtn").html("Filter");
+            $("#smartSearchFieldsDiv").slideUp();
+            var count = 0;
+            var slno = paging * 20;
+            var startno = paging * 20 + 1;
+            var itemVal = data.content;
+            var table = "<thead>";
+            table += "<tr>";
+            table += "<th>Sl.No.</th>";
+            table += "<th>Created At</th>";
+            table += "<th>Ident ID</th>";
+            table += "<th>Application Reference Number</th>";
+            table += "<th>Client Hash ID</th>";
+            table += "<th>Customer Hash ID</th>";
+            table += "<th>Card Proxy Number</th>";
+            table += "<th>Customer Number</th>";
+            table += "<th>Card Hash ID</th>";
+            table += "<th>Mask Card Number</th>";
+            table += "<th>Region</th>";
+            table += "<th>Country Code</th>";
+            table += "<th>Date Of Birth</th>";
+            table += "<th>Email</th>";
+            table += "<th>Title</th>";
+            table += "<th>First Name</th>";
+            table += "<th>Last Name</th>";
+            table += "<th>Middle Name</th>";
+            table += "<th>Mobile Number</th>";
+            table += "<th>Preferred Name</th>";
+            table += "<th>Gender</th>";
+            table += "<th>Permanent Address Line1</th>";
+            table += "<th>Permanent Address Line2</th>";
+            table += "<th>Permanent Address City</th>";
+            table += "<th>Permanent Address Country</th>";
+            table += "<th>Permanent Address Postal Code</th>";
+            table += "<th>Current Address1</th>";
+            table += "<th>Current Address2</th>";
+            table += "<th>Current Address City</th>";
+            table += "<th>Current Address Country</th>";
+            table += "<th>Current Address postal Code</th>";
+            table += "<th>Correspondence Address Line1</th>";
+            table += "<th>Correspondence Address Line2</th>";
+            table += "<th>Correspondence Address City</th>";
+            table += "<th>Correspondence Address Country</th>";
+            table += "<th>Correspondence Address Postal Code</th>";
+            table += "<th>Embosser Name1</th>";
+            table += "<th>Embosser Name2</th>";
+            table += "<th>Plactic ID</th>";
+            table += "<th>Logo ID</th>";
+            table += "<th>Issue Delivery Option</th>";
+            table += "<th>Status</th>";
+            table += "<th>Error</th>";
+            table += "</tr>";
+            table += "</thead>";
+            table += "<tbody>";
+            console.log("length===" + data.content);
+            if (
+              itemVal != null &&
+              itemVal !== "" &&
+              itemVal !== "[]" &&
+              itemVal.length > 0
+            ) {
+              for (var i = 0; i < itemVal.length; i++) {
+                var eachCustomerDocumentObject = itemVal[i];
+                if (
+                  eachCustomerDocumentObject === null ||
+                  eachCustomerDocumentObject === ""
+                ) {
+                }
+                table += "<tr>";
+                table += "<td>" + ++count + "</td>";
+                slno = slno + 1;
+                var createdAtDate = new Date(
+                  eachCustomerDocumentObject.createdAt
+                );
+                var date = createdAtDate.getDate();
+                var month = createdAtDate.getMonth() + 1;
+                var year = createdAtDate.getFullYear();
+                var hour = createdAtDate.getHours();
+                var minute = createdAtDate.getMinutes();
+                var seconds = createdAtDate.getSeconds();
+                var createdAt =
+                  year +
+                  "/" +
+                  month +
+                  "/" +
+                  date +
+                  " " +
+                  hour +
+                  ":" +
+                  minute +
+                  ":" +
+                  seconds;
+
+                table += "<td>" + createdAt + "</td>";
+                table += "<td>" + eachCustomerDocumentObject.identId + "</td>";
+                table +=
+                  "<td>" +
+                  eachCustomerDocumentObject.applicationReferenceNumber +
+                  "</td>";
+                table +=
+                  "<td style='white-space: nowrap'>" +
+                  (eachCustomerDocumentObject.clientCode == null ||
+                  eachCustomerDocumentObject.clientCode == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.clientCode) +
+                  "</td>";
+                table +=
+                  "<td style='white-space: nowrap'>" +
+                  (eachCustomerDocumentObject.customerId == null ||
+                  eachCustomerDocumentObject.customerId == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.customerId) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.accountNumber == null ||
+                  eachCustomerDocumentObject.accountNumber == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.accountNumber) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.aznacCustomerNumber == null ||
+                  eachCustomerDocumentObject.aznacCustomerNumber == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.aznacCustomerNumber) +
+                  "</td>";
+                table +=
+                  "<td style='white-space: nowrap'>" +
+                  (eachCustomerDocumentObject.cardId == null ||
+                  eachCustomerDocumentObject.cardId == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.cardId) +
+                  "</td>";
+                table +=
+                  "<td style='white-space: nowrap'>" +
+                  (eachCustomerDocumentObject.maskCardNumber == null ||
+                  eachCustomerDocumentObject.maskCardNumber == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.maskCardNumber) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.regionCode == null ||
+                  eachCustomerDocumentObject.regionCode == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.regionCode) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.countryCode == null ||
+                  eachCustomerDocumentObject.countryCode == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.countryCode) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.dateOfBirth == null ||
+                  eachCustomerDocumentObject.dateOfBirth == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.dateOfBirth) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.email == null ||
+                  eachCustomerDocumentObject.email == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.email) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.title == null ||
+                  eachCustomerDocumentObject.title == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.title) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.firstName == null ||
+                  eachCustomerDocumentObject.firstName == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.firstName) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.lastName == null ||
+                  eachCustomerDocumentObject.lastName == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.lastName) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.middleName == null ||
+                  eachCustomerDocumentObject.middleName == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.middleName) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.mobileNumber == null ||
+                  eachCustomerDocumentObject.mobileNumber == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.mobileNumber) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.preferredName == null ||
+                  eachCustomerDocumentObject.preferredName == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.preferredName) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.gender == null ||
+                  eachCustomerDocumentObject.gender == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.gender == 1
+                    ? "Male"
+                    : "Female") +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.permanentAddressLine1 == null ||
+                  eachCustomerDocumentObject.permanentAddressLine1 == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.permanentAddressLine1) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.permanentAddressLine2 == null ||
+                  eachCustomerDocumentObject.permanentAddressLine2 == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.permanentAddressLine2) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.permanentAddressCity == null ||
+                  eachCustomerDocumentObject.permanentAddressCity == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.permanentAddressCity) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.permanentAddressCountry == null ||
+                  eachCustomerDocumentObject.permanentAddressCountry == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.permanentAddressCountry) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.permanentAddressPostalCode ==
+                    null ||
+                  eachCustomerDocumentObject.permanentAddressPostalCode == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.permanentAddressPostalCode) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.currentLineAddress1 == null ||
+                  eachCustomerDocumentObject.currentLineAddress1 == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.currentLineAddress1) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.currentLineAddress2 == null ||
+                  eachCustomerDocumentObject.currentLineAddress2 == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.currentLineAddress2) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.currentAddressCity == null ||
+                  eachCustomerDocumentObject.currentAddressCity == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.currentAddressCity) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.currentAddressCountry == null ||
+                  eachCustomerDocumentObject.currentAddressCountry == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.currentAddressCountry) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.currentAddressPostalCode ==
+                    null ||
+                  eachCustomerDocumentObject.currentAddressPostalCode == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.currentAddressPostalCode) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.correspondenceAddressLine1 ==
+                    null ||
+                  eachCustomerDocumentObject.correspondenceAddressLine1 == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.correspondenceAddressLine1) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.correspondenceAddressLine2 ==
+                    null ||
+                  eachCustomerDocumentObject.correspondenceAddressLine2 == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.correspondenceAddressLine2) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.correspondenceAddressCity ==
+                    null ||
+                  eachCustomerDocumentObject.correspondenceAddressCity == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.correspondenceAddressCity) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.correspondenceAddressCountry ==
+                    null ||
+                  eachCustomerDocumentObject.correspondenceAddressCountry == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.correspondenceAddressCountry) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.correspondenceAddressPostalCode ==
+                    null ||
+                  eachCustomerDocumentObject.correspondenceAddressPostalCode ==
+                    ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.correspondenceAddressPostalCode) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.embosserName1 == null ||
+                  eachCustomerDocumentObject.embosserName1 == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.embosserName1) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.embosserName2 == null ||
+                  eachCustomerDocumentObject.embosserName2 == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.embosserName2) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.plasticId == null ||
+                  eachCustomerDocumentObject.plasticId == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.plasticId) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.logoId == null ||
+                  eachCustomerDocumentObject.logoId == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.logoId) +
+                  "</td>";
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.issueDeliveryOption == null ||
+                  eachCustomerDocumentObject.issueDeliveryOption == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.issueDeliveryOption) +
+                  "</td>";
+                /* table += "<td>"
+								+ ((eachCustomerDocumentObject.status == null || eachCustomerDocumentObject.status == "") ? "NA" : eachCustomerDocumentObject.status)
+								+ "</td>"; */
+                if (
+                  eachCustomerDocumentObject.status == null ||
+                  eachCustomerDocumentObject.status == ""
+                ) {
+                  table +=
+                    "<td><span class='badge badge-default'>NA</span></td>";
+                } else {
+                  switch (eachCustomerDocumentObject.status) {
+                    case "Unassigned":
+                      table +=
+                        "<td><span class='badge badge-warning'>" +
+                        eachCustomerDocumentObject.status +
+                        "</span></td>";
+                      break;
+                    case "Assigned":
+                      table +=
+                        "<td><span class='badge badge-success'>" +
+                        eachCustomerDocumentObject.status +
+                        "</span></td>";
+                      break;
+                    default:
+                      table +=
+                        "<td><span class='badge badge-default'>" +
+                        eachCustomerDocumentObject.status +
+                        "</span></td>";
+                  }
+                }
+                table +=
+                  "<td>" +
+                  (eachCustomerDocumentObject.errors == null ||
+                  eachCustomerDocumentObject.errors == ""
+                    ? "NA"
+                    : eachCustomerDocumentObject.errors) +
+                  "</td>";
+                table += "</tr>";
+              }
+            } else {
+              table +=
+                "<td class='dataTables_empty' colspan='43' valign='top'>No data available in table</td>";
+              table += "</tr>";
+            }
+            table += "</tbody>";
+            $("#aznacFileListTable").html(table);
+            paginationForTransaction(data.totalPages, value);
+            $("#paging_info").html(
+              "Showing " +
+                startno +
+                " to " +
+                slno +
+                " of " +
+                data.totalElements +
+                " entries"
+            );
+          },
+          error: function (xhr) {
+            if (xhr.readyState == 0) {
+              $("#error_refundNotification").modal("show");
+              $(".refunded_body").html(
+                "service is temporarily down,please try again later!"
+              );
+            } else if ((status = 500)) {
+              $("#filterBtn").html("Filter");
+              var table = "<thead>";
+              table += "<tr>";
+              table += "<th>Sl.No.</th>";
+              table += "<th>Created At</th>";
+              table += "<th>Ident iD</th>";
+              table += "<th>Application Reference Number</th>";
+              table += "<th>Client Hash ID</th>";
+              table += "<th>Customer Hash ID</th>";
+              table += "<th>Card Proxy Number</th>";
+              table += "<th>Customer Number</th>";
+              table += "<th>Card Hash ID</th>";
+              table += "<th>Mask Card Number</th>";
+              table += "<th>Region</th>";
+              table += "<th>Country Code</th>";
+              table += "<th>Date Of Birth</th>";
+              table += "<th>Email</th>";
+              table += "<th>Title</th>";
+              table += "<th>First Name</th>";
+              table += "<th>Last Name</th>";
+              table += "<th>Middle Name</th>";
+              table += "<th>Mobile Number</th>";
+              table += "<th>Preferred Name</th>";
+              table += "<th>Gender</th>";
+              table += "<th>Permanent Address Line1</th>";
+              table += "<th>Permanent Address Line2</th>";
+              table += "<th>Permanent Address City</th>";
+              table += "<th>Permanent Address Country</th>";
+              table += "<th>Permanent Address Postal Code</th>";
+              table += "<th>Current Address1</th>";
+              table += "<th>Current Address2</th>";
+              table += "<th>Current Address City</th>";
+              table += "<th>Current Address Country</th>";
+              table += "<th>Current Address postal Code</th>";
+              table += "<th>Correspondence Address Line1</th>";
+              table += "<th>Correspondence Address Line2</th>";
+              table += "<th>Correspondence Address City</th>";
+              table += "<th>Correspondence Address Country</th>";
+              table += "<th>Correspondence Address Postal Code</th>";
+              table += "<th>Embosser Name1</th>";
+              table += "<th>Embosser Name2</th>";
+              table += "<th>Plactic ID</th>";
+              table += "<th>Logo ID</th>";
+              table += "<th>Issue Delivery Option</th>";
+              table += "<th>Status</th>";
+              table += "<th>Error</th>";
+              table += "</tr>";
+              table += "</thead>";
+              table += "<tbody>";
+              table +=
+                "<td class='dataTables_empty' colspan='43' valign='top'>No data available in table</td>";
+              table += "</tr>";
+              table += "</tbody>";
+              $("#aznacFileListTable").html(table);
+            }
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+
+      function paginationForTransaction(totalPages, val) {
+        if (val == "0") {
+          $("#paginationn").twbsPagination("destroy");
+        }
+        if (totalPages === 0) {
+          totalPages = 1;
+        }
+
+        $("#paginationn").twbsPagination({
+          totalPages: totalPages,
+          visiblePages: 10,
+          initiateStartPageClick: false,
+          onPageClick: function (event, page) {
+            generateBulkCardIssuanceTable(page - 1);
+          },
+        });
+      }
+
+      $("#confirmButton").on("click", function () {
+        generateBulkCardIssuanceTable(0);
+      });
+
+      function closeModalAndRefresh() {
+        $("#aznacDetailsModel").modal({
+          show: false,
+          backdrop: "static",
+          keyboard: false,
+        });
+        window.location.reload(true);
+      }
+
+      function toggleSmartSearch() {
+        $("#smartSearchFieldsDiv").slideToggle();
+      }
+    </script> -->
+</body>
+
+</html>

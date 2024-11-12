@@ -1,0 +1,607 @@
+<!-- Upload HK Documents Modal start -->
+<div id="uploadHkDocuments" role="dialog" class="modal fade">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Upload HK Documents</h4>
+			</div>
+			<div class="modal-body">
+				<form enctype="multipart/form-data" id="hkUploadDocForm" class="row">
+					<div id="hkIdentificationAndAddressDD_Div" style="margin-bottom: 100px;">
+						<div class="col-sm-6 col-xs-12">
+							<div class="form-group">
+								<label for="hkIdentificationDocDD"> Identification Document<sup>*</sup></label>
+								<select id="hkIdentificationDocDD" class="form-control" name="hkIdentificationDocDD" onchange="validateIdentificationDocDD();showOrHideCommonFields();showOrHideSubmitBtn();">
+									<option value="">Select One</option>
+									<option value="passport">Passport</option>
+									<option value="national_id">National ID</option>
+								</select>
+								<span class="error field_err" id="hkIdentificationDocDDError"></span>
+							</div>
+						</div>
+						<div id="hkAddressDocumentDropDownDiv" class="col-sm-6 col-xs-12" style="display: none;">
+							<div class="form-group">
+								<label for="hkAddressDocumentDD"> Address Document <sup>*</sup></label>
+								<select id="hkAddressDocumentDD" class="form-control" name="hkAddressDocumentDD" onchange="validateAddressDocDD();showOrHideCommonFields();showOrHideSubmitBtn();">
+									<option value="">Select One</option>
+									<option value="bankStatement">Bank Statement</option>
+									<option value="utilityBill">Utility Bill</option>
+								</select>
+								<span class="error field_err" id="hkAddressDocumentDDError"></span>
+							</div>
+						</div>
+					</div>
+					
+					<div id="hkContentsDiv">
+						<div id="hkCommonElementsDiv" style="display: none;">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="selfieWithId">Selfie with id<sup>*</sup></label>
+									<input type="file" class="form-control" id="selfieWithId" name="selfieWithId" onchange="isValidPdfOrImage(this, 'selfieWithIdError', 'uploadHkDocSubmitBtn');" />
+									<span id="selfieWithIdError" class="error field_err"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div id="hkIdentificationDocElementsDiv" style="display: none;">
+							<div id="hkPassportDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkPassportNumber"> Passport Number <sup>*</sup></label>
+										<input type="text" id="hkPassportNumber" name="hkPassportNumber" class="form-control" />
+										<span class="error field_err" id="hkPassportNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkPassportIssuingCountry"> Passport Issuing Country <sup>*</sup></label>
+										<select id="hkPassportIssuingCountry" name="hkPassportIssuingCountry" class="form-control enableSelect2"></select>
+										<p class="error field_err" id="hkPassportIssuingCountryError"></p>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkPassportExpiryDate"> Passport Expiry Date <sup>*</sup></label>
+										<input type="text" id="hkPassportExpiryDate" name="hkPassportExpiryDate" class="form-control" readonly />
+										<span id="hkPassportExpiryDateError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkPassportFront"> Passport Front <sup>*</sup></label>
+										<input type="file" id="hkPassportFront" name="hkPassportFront" class="form-control" onchange="isValidPdfOrImage(this, 'hkPassportFrontError','uploadHkDocSubmitBtn');" />
+										<span id="hkPassportFrontError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkPassportBack"> Passport Back <sup>*</sup></label>
+										<input type="file" id="hkPassportBack" name="hkPassportBack" class="form-control" onchange="isValidPdfOrImage(this, 'hkPassportBackError','uploadHkDocSubmitBtn');" />
+										<span id="hkPassportBackError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div id="hkNationalIdDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="nationalIdNumber"> National ID Number <sup>*</sup></label>
+										<input type="text" id="nationalIdNumber" name="nationalIdNumber" class="form-control" />
+										<span class="error field_err" id="nationalIdNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="nationalIdIssuingAuthority"> National ID Issuing Authority <sup>*</sup></label>
+										<input id="nationalIdIssuingAuthority" name="nationalIdIssuingAuthority" class="form-control" />
+										<span class="error field_err" id="nationalIdIssuingAuthorityError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="nationalIdExpiryDate"> National ID Expiry Date <sup>*</sup></label>
+										<input type="text" id="nationalIdExpiryDate" name="nationalIdExpiryDate" class="form-control" readonly />
+										<span id="nationalIdExpiryDateError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="nationalIdFront"> National ID Front <sup>*</sup></label>
+										<input type="file" id="nationalIdFront" name="nationalIdFront" class="form-control" onchange="isValidPdfOrImage(this, 'nationalIdFrontError', 'uploadHkDocSubmitBtn');" />
+										<span id="nationalIdFrontError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="nationalIdBack"> National ID Back <sup>*</sup></label>
+										<input type="file" id="nationalIdBack" name="nationalIdBack" class="form-control" onchange="isValidPdfOrImage(this, 'nationalIdBackError', 'uploadHkDocSubmitBtn');" />
+										<span id="nationalIdBackError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="hkAddressDocElementsDiv" style="display: none;">
+							<div id="hkBankStatementDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkBankAccountNumber"> Bank Account Number <sup>*</sup></label>
+										<input type="text" id="hkBankAccountNumber" name="hkBankAccountNumber" class="form-control" />
+										<span class="error field_err" id="hkBankAccountNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkBankName"> Bank Name <sup>*</sup></label>
+										<input type="text" id="hkBankName" name="hkBankName" class="form-control" />
+										<span class="error field_err" id="hkBankNameError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkStatementGeneratedOn">Statement generation date <sup>*</sup></label>
+										<input type="text" id="hkStatementGeneratedOn" name="hkStatementGeneratedOn" class="form-control" readonly />
+										<span class="error field_err" id="hkStatementGeneratedOnError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkBankStatement"> Bank Statement <sup>*</sup></label>
+										<input type="file" id="hkBankStatement" name="hkBankStatement" class="form-control" onchange="isValidPdfOrImage(this, 'hkBankStatementError','uploadHkDocSubmitBtn');" />
+										<span id="hkBankStatementError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div id="hkUtilityBillDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkUtilityBillNumber"> Utility Bill Number <sup>*</sup></label>
+										<input type="text" id="hkUtilityBillNumber" name="hkUtilityBillNumber" class="form-control" />
+										<span class="error field_err" id="hkUtilityBillNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkUtilityCompanyName"> Utility Company Name <sup>*</sup></label>
+										<input type="text" id="hkUtilityCompanyName" name="hkUtilityCompanyName" class="form-control" />
+										<span class="error field_err" id="hkUtilityCompanyNameError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkUtilityBillGeneratedOn"> Utility Bill Generated Date <sup>*</sup></label>
+										<input type="text" id="hkUtilityBillGeneratedOn" name="hkUtilityBillGeneratedOn" class="form-control" readonly />
+										<span class="error field_err" id="hkUtilityBillGeneratedOnError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="hkUtilityBill"> Utility Document <sup>*</sup></label>
+										<input type="file" id="hkUtilityBill" name="hkUtilityBill" class="form-control" onchange="isValidPdfOrImage(this, 'hkUtilityBillError', 'uploadHkDocSubmitBtn');" />
+										<span id="hkUtilityBillError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+				<br />
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="form-group text-center">
+							<button id="uploadHkDocSubmitBtn" type="button" onclick="validateAndSubmitHkDoc(event);" class="btn btn-success px-5 ripple">Submit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Upload Hk Documents Modal end -->
+
+<script>
+	function openHkDocUploadModal() {
+		populateCountryDD();
+		$("#uploadHkDocSubmitBtn").hide();
+		$("#uploadHkDocuments").modal("show");
+	}
+	
+	function populateCountryDD() {
+		countryListObject = sanitize(unSanitize(countryListObject));
+		if (countryListObject == null || countryListObject == "" || countryListObject == undefined) {
+			return;
+		}
+		
+		var optionTag = "<option value = ''>Select a Country</option>";
+		for (var i = 0; i < (countryListObject.length); i++) {
+			var eachOption = countryListObject[i];
+			optionTag += "<option value = " + eachOption.iso2 + ">" + eachOption.name + " (" + eachOption.iso2 + ")</option>";
+		}
+		
+		$("#hkPassportIssuingCountry").html(optionTag);
+		
+		$('.enableSelect2').select2({
+			placeholder: 'Select an option',
+			allowClear: true,
+			dropdowneutoWidth: false,
+			width: '100%',
+			dropdownCss: {'width': 'inherit'}
+		});
+	}
+	
+	function disableSubmitBtn() {
+		$("#uploadHkDocSubmitBtn").attr("disabled", true);
+		$("#uploadHkDocSubmitBtn").html("Please Wait...");
+	}
+	
+	function enableSubmitBtn() {
+		$("#uploadHkDocSubmitBtn").attr("disabled", false);
+		$("#uploadHkDocSubmitBtn").html("Submit");
+	}
+	
+	function validateAndSubmitHkDoc(event) {
+		event.preventDefault();
+		disableSubmitBtn();
+		
+		var clientHashId = $("#clientCode").val();
+		var customerHashId = $("#customerHashId").val();
+		
+		if (isBlank(clientHashId)) {
+			$("#inPageErrorMessage").html("Client hash id is mandatory!");
+			enableSubmitBtn();
+			return;
+		}
+		if (isBlank(customerHashId)) {
+			$("#inPageErrorMessage").html("Customer hash id is mandatory!");
+			enableSubmitBtn();
+			return;
+		}
+		
+		if (validateFields()) {
+			submitRequest(clientHashId, customerHashId);
+		} else {
+			enableSubmitBtn();
+		}
+	}
+	
+	function isValidPassportFields(currentInvalidCount) {
+		var hkPassportNumber = $("#hkPassportNumber").val();
+		var hkPassportIssuingCountry = $("#hkPassportIssuingCountry").val();
+		var hkPassportExpiryDate = $("#hkPassportExpiryDate").val();
+		var hkPassportFront = $("#hkPassportFront").val();
+		var hkPassportBack = $("#hkPassportBack").val();
+		
+		if (isBlank(hkPassportNumber)) {
+			++currentInvalidCount;
+			$("#hkPassportNumberError").html("Passport number is mandatory!");
+		}
+		if (isBlank(hkPassportIssuingCountry)) {
+			++currentInvalidCount;
+			$("#hkPassportIssuingCountryError").html("Passport issuance country is mandatory!");
+		}
+		if (isBlank(hkPassportExpiryDate)) {
+			++currentInvalidCount;
+			$("#hkPassportExpiryDateError").html("Passport expiry date is mandatory!");
+		}
+		if (isBlank(hkPassportFront)) {
+			++currentInvalidCount;
+			$("#hkPassportFrontError").html("Passport front is mandatory!");
+		}
+		if (isBlank(hkPassportBack)) {
+			++currentInvalidCount;
+			$("#hkPassportBackError").html("Passport back is mandatory!");
+		}
+		
+		return currentInvalidCount;
+	}
+	
+	function isValidBankStmtFields(currentInvalidCount) {
+		var hkBankAccountNumber = $("#hkBankAccountNumber").val();
+		var hkBankName = $("#hkBankName").val();
+		var hkStatementGeneratedOn = $("#hkStatementGeneratedOn").val();
+		var hkBankStatement = $("#hkBankStatement").val();
+		
+		if (isBlank(hkBankAccountNumber)) {
+			++currentInvalidCount;
+			$("#hkBankAccountNumberError").html("Bank acount no. is mandatory!");
+		}
+		if (isBlank(hkBankName)) {
+			++currentInvalidCount;
+			$("#hkBankNameError").html("Bank name is mandatory!");
+		}
+		if (isBlank(hkStatementGeneratedOn)) {
+			++currentInvalidCount;
+			$("#hkStatementGeneratedOnError").html("Bank statement generation date is mandatory!");
+		}
+		if (isBlank(hkBankStatement)) {
+			++currentInvalidCount;
+			$("#hkBankStatementError").html("Bank statement document is mandatory!");
+		}
+		
+		return currentInvalidCount;
+	}
+	
+	function isValidUtilityBillFields(currentInvalidCount) {
+		var hkUtilityBillNumber = $("#hkUtilityBillNumber").val();
+		var hkUtilityCompanyName = $("#hkUtilityCompanyName").val();
+		var hkUtilityBillGeneratedOn = $("#hkUtilityBillGeneratedOn").val();
+		var hkUtilityBill = $("#hkUtilityBill").val();
+		
+		if (isBlank(hkUtilityBillNumber)) {
+			++currentInvalidCount;
+			$("#hkUtilityBillNumberError").html("Utility bill no. is mandatory!");
+		}
+		if (isBlank(hkUtilityCompanyName)) {
+			++currentInvalidCount;
+			$("#hkUtilityCompanyNameError").html("Utility bill company name is mandatory!");
+		}
+		if (isBlank(hkUtilityBillGeneratedOn)) {
+			++currentInvalidCount;
+			$("#hkUtilityBillGeneratedOnError").html("Utility bill generation date is mandatory!");
+		}
+		if (isBlank(hkUtilityBill)) {
+			++currentInvalidCount;
+			$("#hkUtilityBillError").html("Utility document is mandatory!");
+		}
+		
+		return currentInvalidCount;
+	}
+	
+	function isValidNationalIdFields(currentInvalidCount) {
+		var nationalIdNumber = $("#nationalIdNumber").val();
+		var nationalIdIssuingAuthority = $("#nationalIdIssuingAuthority").val();
+		var nationalIdExpiryDate = $("#nationalIdExpiryDate").val();
+		var nationalIdFront = $("#nationalIdFront").val();
+		var nationalIdBack = $("#nationalIdBack").val();
+		
+		if (isBlank(nationalIdNumber)) {
+			++currentInvalidCount;
+			$("#nationalIdNumberError").html("National ID number is mandatory!");
+		}
+		if (isBlank(nationalIdIssuingAuthority)) {
+			++currentInvalidCount;
+			$("#nationalIdIssuingAuthorityError").html("National ID issuance authority is mandatory!");
+		}
+		if (isBlank(nationalIdExpiryDate)) {
+			++currentInvalidCount;
+			$("#nationalIdExpiryDateError").html("National ID expiry date is mandatory!");
+		}
+		if (isBlank(nationalIdFront)) {
+			++currentInvalidCount;
+			$("#nationalIdFrontError").html("National ID front is mandatory!");
+		}
+		if (isBlank(nationalIdBack)) {
+			++currentInvalidCount;
+			$("#nationalIdBackError").html("National ID back is mandatory!");
+		}
+		
+		return currentInvalidCount;
+	}
+	
+	function validateFields() {
+		var invalidCount = 0;
+		
+		var hkIdentificationDocDD = $("#hkIdentificationDocDD").val();
+		var hkAddressDocumentDD = $("#hkAddressDocumentDD").val();
+		
+		var selfieWithId = $("#selfieWithId").val();
+		
+		if (isBlank(hkIdentificationDocDD)) {
+			++invalidCount;
+			$("#hkIdentificationDocDDError").html("Identification Document is mandatory!");
+		}
+		
+		if (isBlank(hkAddressDocumentDD)) {
+			++invalidCount;
+			$("#hkAddressDocumentDDError").html("Address Document is mandatory!");
+		}
+		
+		if (isBlank(selfieWithId)) {
+			++invalidCount;
+			$("#selfieWithIdError").html("Selfie with id is mandatory!");
+		}
+		
+		if (hkIdentificationDocDD == "passport") {
+			invalidCount = isValidPassportFields(invalidCount);
+		} else if (hkIdentificationDocDD == "national_id") {
+			invalidCount = isValidNationalIdFields(invalidCount);
+		}
+		
+		if (hkAddressDocumentDD == "bankStatement") {
+			invalidCount = isValidBankStmtFields(invalidCount);
+		} else if (hkAddressDocumentDD == "utilityBill") {
+			invalidCount = isValidUtilityBillFields(invalidCount);
+		}
+		clearErrorFields();
+		return (invalidCount == 0);
+	}
+	
+	function submitRequest(clientHashId, customerHashId) {
+		const url = "${pageContext.request.contextPath}" + $("#uploadHkDocumentsUrl").val() + unSanitize(clientHashId) + "/customer/" + unSanitize(customerHashId) + "/hk/documentUpload";
+		form = $("#hkUploadDocForm")[0];
+		var data = new FormData(form);
+		
+		$.ajax({
+			url: url,
+			data: data,
+			processData: false,
+			contentType: false,
+			cache: false,
+			type: 'POST',
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (result, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				result = sanitize(unSanitize(result));
+				
+				$("#uploadHkDocuments").modal("hide");
+				$("#success_refundNotification").modal('show');
+				$(".refunded_body").html("Documents uploaded successfully!");
+			},
+			error: function (xhr) {
+				$("#uploadHkDocuments").modal("hide");
+				$("#error_refundNotification").modal('show');
+				if (xhr.readyState == 0) {
+					$(".refunded_body").html("service is temporarily down,please try again later.");
+				} else if (xhr.readyState == 4) {
+					var responseJSON = xhr.responseJSON;
+					var message = responseJSON.message;
+					$(".refunded_body").html(message);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function hideAllElements() {
+		$("#hkAddressDocumentDropDownDiv").hide("slow", "linear");
+		$("#hkCommonElementsDiv").hide("slow", "linear");
+		$("#hkIdentificationDocElementsDiv").hide("slow", "linear");
+		$("#hkPassportDiv").hide("slow", "linear");
+		$("#hkNationalIdDiv").hide("slow", "linear");
+		$("#hkAddressDocElementsDiv").hide("slow", "linear");
+		$("#hkBankStatementDiv").hide("slow", "linear");
+		$("#hkUtilityBillDiv").hide("slow", "linear");
+		
+		$("#uploadHkDocSubmitBtn").hide("slow", "linear");
+	}
+	
+	function showPassportAndHideNationalId() {
+		$("#hkCommonElementsDiv").show("slow", "linear");
+		$("#hkIdentificationDocElementsDiv").show("slow", "linear");
+		$("#hkPassportDiv").show("slow", "linear");
+		
+		$("#hkNationalIdDiv").hide("slow", "linear");
+	}
+	
+	function showNationalIdAndHidePassport() {
+		$("#hkCommonElementsDiv").show("slow", "linear");
+		$("#hkIdentificationDocElementsDiv").show("slow", "linear");
+		$("#hkNationalIdDiv").show("slow", "linear");
+		
+		$("#hkPassportDiv").hide("slow", "linear");
+	}
+	
+	function validateIdentificationDocDD() {
+		var hkIdentificationDocDD = $("#hkIdentificationDocDD").val();
+		if (isBlank(hkIdentificationDocDD)) {
+			$("#hkAddressDocumentDD").val("");
+			$("#hkIdentificationDocDDError").html("Select one Identification Document!");
+			hideAllElements();
+		} else {
+			showAddressDocDD();
+			if (hkIdentificationDocDD == "passport") {
+				showPassportAndHideNationalId();
+			} else if (hkIdentificationDocDD == "national_id") {
+				showNationalIdAndHidePassport();
+			}
+		}
+		clearErrorFields();
+	}
+	
+	function clearErrorFields() {
+		setTimeout(function () {
+			$(".error").each(function (index, element) {
+				$(element).html("");
+			});
+		}, 3000);
+	}
+	
+	function showAddressDocDD() {
+		$("#hkAddressDocumentDropDownDiv").show("slow", "linear");
+	}
+	
+	function showOrHideCommonFields() {
+		var hkIdentificationDocDD = $("#hkIdentificationDocDD").val();
+		var hkAddressDocumentDD = $("#hkAddressDocumentDD").val();
+		if (isBlank(hkIdentificationDocDD) && isBlank(hkAddressDocumentDD)) {
+			$("#hkCommonElementsDiv").hide("slow", "linear");
+			return;
+		}
+		$("#hkCommonElementsDiv").show("slow", "linear");
+	}
+	
+	function hideAllAddDocElements() {
+		$("#hkCommonElementsDiv").hide("slow", "linear");
+		$("#hkAddressDocElementsDiv").hide("slow", "linear");
+		$("#hkBankStatementDiv").hide("slow", "linear");
+		$("#hkUtilityBillDiv").hide("slow", "linear");
+	}
+	
+	function showBankAndHideUtility() {
+		$("#hkAddressDocElementsDiv").show("slow", "linear");
+		$("#hkBankStatementDiv").show("slow", "linear");
+		
+		$("#hkUtilityBillDiv").hide("slow", "linear");
+	}
+	
+	function showUtilityAndHideBank() {
+		$("#hkAddressDocElementsDiv").show("slow", "linear");
+		$("#hkUtilityBillDiv").show("slow", "linear");
+		
+		$("#hkBankStatementDiv").hide("slow", "linear");
+	}
+	
+	function validateAddressDocDD() {
+		var hkAddressDocumentDD = $("#hkAddressDocumentDD").val();
+		if (isBlank(hkAddressDocumentDD)) {
+			$("#hkAddressDocumentDDError").html("Select one Address Document!");
+			hideAllAddDocElements();
+			clearErrorFields();
+			return;
+		}
+		if (hkAddressDocumentDD == "bankStatement") {
+			showBankAndHideUtility();
+			return;
+		}
+		if (hkAddressDocumentDD == "utilityBill") {
+			showUtilityAndHideBank();
+			
+		}
+	}
+	
+	function isBlank(input) {
+		if (typeof input === "string") {
+			input = input.trim();
+		}
+		if (input == null || input === "null" || input === "" || input === undefined) {
+			return true;
+		}
+		return false;
+	}
+	
+	function showOrHideSubmitBtn() {
+		var hkIdentificationDocDD = $("#hkIdentificationDocDD").val();
+		var hkAddressDocumentDD = $("#hkAddressDocumentDD").val();
+		
+		if (isBlank(hkIdentificationDocDD) || isBlank(hkAddressDocumentDD)) {
+			$("#uploadHkDocSubmitBtn").hide();
+			return;
+		}
+		$("#uploadHkDocSubmitBtn").show();
+	}
+</script>

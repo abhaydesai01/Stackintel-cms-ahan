@@ -1,0 +1,4342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- META SECTION -->
+	<title>ahan | Customer Compliance Report</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+	<!-- END META SECTION -->
+
+	<!-- CSS INCLUDE -->
+	<link rel="stylesheet" type="text/css" href="assets/css/theme-default.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/mystyle.css" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+	<!-- EOF CSS INCLUDE -->
+
+	<style type="text/css">
+		tr.collapse_header {
+			display: none;
+		}
+
+		tr.tab_head,
+		tr.header {
+			display: table-row;
+		}
+
+		tr.tab_head th {
+			z-index: 99;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="hiddenFields">
+		<input type="hidden" id="customerListUrl" value="${customerListUrl}" />
+		<input type="hidden" id="worldCheckUrl" name="worldCheckUrl" value="${worldCheckUrl}" />
+		<input type="hidden" id="truliooUrl" name="truliooUrl" value="${truliooUrl}" />
+		<input type="hidden" id="individualServiceDetailsUrl" name="individualServiceDetailsUrl"
+			value="${individualServiceDetailsUrl}" />
+		<input type="hidden" id="fetchAllComplianceStatusUrl" name="fetchAllComplianceStatusUrl"
+			value="${fetchAllComplianceStatusUrl}" />
+		<input type="hidden" id="updateComplianceStatusUrl" name="updateComplianceStatusUrl"
+			value="${updateComplianceStatusUrl}" />
+		<input type="hidden" id="fetchComplianceDocumentMetadataUrl" name="fetchComplianceDocumentMetadataUrl"
+			value="${fetchComplianceDocumentMetadataUrl}" />
+		<input type="hidden" id="fetchOnfidoDocumentsMetadata" name="fetchOnfidoDocumentsMetadata"
+			value="${fetchOnfidoDocumentsMetadata}" />
+		<input type="hidden" id="fetchRfiDocumentMetadataUrl" name="fetchRfiDocumentMetadataUrl"
+			value="${fetchRfiDocumentMetadataUrl}" />
+		<input type="hidden" id="fetchComplianceDocumentsUrl" name="fetchComplianceDocumentsUrl"
+			value="${fetchComplianceDocumentsUrl}" />
+		<input type="hidden" id="fetchAllClientUrl" name="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+		<input type="hidden" id="myInfoServiceDetailUrl" name="myInfoServiceDetailUrl"
+			value="${myInfoServiceDetailUrl}" />
+		<input type="hidden" id="fetchRfiTemplateDetails" name="fetchRfiTemplateDetails"
+			value="${fetchRfiTemplateDetails}" />
+		<input type="hidden" id="initiateRfiUrl" name="initiateRfiUrl" value="${initiateRfiUrl}" />
+		<input type="hidden" id="fetchInitiatedRfiDetails" name="fetchInitiatedRfiDetails"
+			value="${fetchInitiatedRfiDetails}" />
+		<input type="hidden" id="greenIdServiceDetailUrl" name="greenIdServiceDetailUrl"
+			value="${greenIdServiceDetailUrl}" />
+		<input type="hidden" id="riskServiceDetailUrl" name="riskServiceDetailUrl" value="${riskServiceDetailUrl}" />
+		<input type="hidden" id="blacklistServiceDetailUrl" name="blacklistServiceDetailUrl"
+			value="${blacklistServiceDetailUrl}" />
+		<input type="hidden" id="reInitiateScreening" name="reInitiateScreening" value="${reInitiateScreening}" />
+		<input type="hidden" id="auditTrailUrl" name="auditTrailUrl" value="${auditTrailUrl}" />
+		<input type="hidden" id="complianceResidentUrl" name="complianceResidentUrl" value="${complianceResidentUrl}" />
+		<input type="hidden" id="getCountryListUrl" value="${getCountryListUrl}" />
+		<!--Respond Rfi-->
+		<input type="hidden" id="respondRfiUrl" value="${respondRfiUrl}" />
+	</div>
+	<!-- preloader Start -->
+	<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
+	<!-- preloader Ends -->
+	<!-- START PAGE CONTAINER -->
+	<div class="page-container">
+		<div class="page-sidebar">
+			<!-- START X-NAVIGATION -->
+			<ul class="x-navigation side_custom_scroll" id="sidebarnav">
+				<li class="xn-logo">
+					<a href="index.html">ahan</a>
+					<a href="#" class="x-navigation-control"></a>
+				</li>
+				<li class="dashboard">
+					<a href="index.html">
+						<span class="fas fa-tachometer-alt"></span>
+						<span class="xn-text">Dashboard</span>
+					</a>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-box-open"></span>
+						<span class="xn-text">FD Products</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addEmboserLogo.html">
+								<span class="xn-text">Define Logo</span>
+							</a>
+						</li>
+						<li>
+							<a href="emboserLogoList.html">
+								<span class="xn-text">Embosser Logo List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-tasks"></span>
+						<span class="xn-text">Program</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addprogram.html">
+								<span class="xn-text">Create Program</span>
+							</a>
+						</li>
+						<li>
+							<a href="programList.html">
+								<span class="xn-text">Program List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-user-tie"></span>
+						<span class="xn-text">Client</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addTermsAndConditions.html">
+								<span class="xn-text">Add Terms And Conditions</span>
+							</a>
+						</li>
+						<li>
+							<a href="addClient.html">
+								<span class="xn-text">Add Client</span>
+							</a>
+						</li>
+						<li>
+							<a href="clientList.html">
+								<span class="xn-text">Client List</span>
+							</a>
+						</li>
+
+						<li class="xn-openable">
+							<a href="#" class="has-arrow">
+								<span class="xn-text">Setup Limits</span>
+							</a>
+							<ul>
+								<li>
+									<a href="setupAuthLimits.html">
+										<span class="xn-text">Setup Auth Limits</span>
+									</a>
+								</li>
+								<li>
+									<a href="setupRegulatoryLimits.html">
+										<span class="xn-text">Setup Regulatory Limits</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="addCurrency.html">
+								<span class="xn-text">Add Currency</span>
+							</a>
+						</li>
+						<li>
+							<a href="setupPaymentId.html">
+								<span class="xn-text">Setup Payment Id</span>
+							</a>
+						</li>
+						<li>
+							<a href="addComplianceConfiguration.html">
+								<span class="xn-text">Add Customer Compliance Config</span>
+							</a>
+						</li>
+						<li>
+							<a href="complianceConfigurationList.html">
+								<span class="xn-text">Customer Compliance Config View</span>
+							</a>
+						</li>
+						<li>
+							<a href="addPlasticId.html">
+								<span class="xn-text">Add Plastic Id</span>
+							</a>
+						</li>
+						<li>
+							<a href="addPocket.html">
+								<span class="xn-text">Add Pocket</span>
+							</a>
+						</li>
+						<li>
+							<a href="pocketList.html">
+								<span class="xn-text">Pocket List</span>
+							</a>
+						</li>
+						<li>
+							<a href="plasticIdList.html">
+								<span class="xn-text">Plastic Id List</span>
+							</a>
+						</li>
+						<li>
+							<a href="notificationTemplate.html">
+								<span class="xn-text">Notification Templates</span>
+							</a>
+						</li>
+						<li>
+							<a href="setupRemitAccounts.html">
+								<span class="xn-text">Setup Remit Accounts</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-handshake"></span>
+						<span class="xn-text">Client Relationship</span>
+					</a>
+					<ul>
+						<li>
+							<a href="persistClientRelationship.html">
+								<span class="xn-text">Add Client Relationship</span>
+							</a>
+						</li>
+					</ul>
+
+					<ul>
+						<li>
+							<a href="persistClientRelationshipMapping.html">
+								<span class="xn-text">Add Client Relationship Mapping</span>
+							</a>
+						</li>
+					</ul>
+
+					<ul>
+						<li>
+							<a href="fetchClientRelationships.html">
+								<span class="xn-text">Client Relationship List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-users"></span>
+						<span class="xn-text">Customer</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addCustomer.html">
+								<span class="xn-text">Add Customer</span>
+							</a>
+						</li>
+						<li>
+							<a href="customerList.html">
+								<span class="xn-text">Customer List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-user-check"></span>
+						<span class="xn-text">Customer Compliance</span>
+					</a>
+					<ul>
+						<li>
+							<a href="complianceReport.html">
+								<span class="xn-text">Customer Compliance Report</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="far fa-credit-card"></span>
+						<span class="xn-text">Cards</span>
+					</a>
+					<ul>
+						<li>
+							<a href="cardList.html">Card List</a>
+						</li>
+						<li>
+							<a href="assignPhysicalCard.html">Assign Physical Card</a>
+						</li>
+						<li>
+							<a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+						</li>
+						<li>
+							<a href="bulkCardIssuanceIndent.html">
+								Bulk Card Issuance Indent</a>
+						</li>
+						<li>
+							<a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+						</li>
+						<li>
+							<a href="bulkCardIssuanceResponse.html">
+								Bulk Card Issuance Response</a>
+						</li>
+						<li>
+							<a href="embossingRecordStatus.html">
+								Embossing Record Status</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-search-dollar"></span>
+						<span class="xn-text">Transaction Compliance</span>
+					</a>
+					<ul>
+						<li>
+							<a href="transactionComplianceProfile.html">
+								<span class="xn-text">Transaction Compliance Profile</span>
+							</a>
+						</li>
+						<li>
+							<a href="transactionComplianceProfileMapping.html">
+								<span class="xn-text">Transaction Compliance Profile Mapping</span>
+							</a>
+						</li>
+						<li>
+							<a href="transactionsCompliance.html">
+								<span class="xn-text">Transaction Compliance Report</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-copy"></span>
+						<span class="xn-text">Reports</span>
+					</a>
+					<ul>
+						<li>
+							<a href="transactionReport.html">
+								<span class="xn-text">Transaction Reports</span>
+							</a>
+						</li>
+						<li>
+							<a href="settlementReport.html">
+								<span class="xn-text">Settlement Reports</span>
+							</a>
+						</li>
+						<li>
+							<a href="cannedReport.html">
+								<span class="xn-text">Canned Reports</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-hand-holding-usd"></span>
+						<span class="xn-text">Client Funds</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addPrefundRequest.html">
+								<span class="xn-text">Client Prefund Request</span>
+							</a>
+						</li>
+						<li>
+							<a href="prefundList.html">
+								<span class="xn-text">Client Prefund Approval</span>
+							</a>
+						</li>
+						<li>
+							<a href="addRefundRequest.html">
+								<span class="xn-text">Client Refund Request</span>
+							</a>
+						</li>
+						<li>
+							<a href="refundList.html">
+								<span class="xn-text">Client Refund Approval</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-wallet"></span>
+						<span class="xn-text">Wallet Fund Request</span>
+					</a>
+					<ul>
+						<li>
+							<a href="walletFundRequest.html">
+								<span class="xn-text">Wallet Fund Request</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-unlock-alt"></span>
+						<span class="xn-text">ICC Transactions</span>
+					</a>
+					<ul>
+						<li>
+							<a href="matchingEngine.html">
+								<span class="xn-text">ICC Transactions</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-users-cog"></span>
+						<span class="xn-text">Bulk Customer Registration</span>
+					</a>
+					<ul>
+						<li>
+							<a href="customerDocumentUpload.html">
+								<span class="xn-text">Bulk Customer Registration</span>
+							</a>
+						</li>
+						<li>
+							<a href="customerDocumentsList.html">
+								<span class="xn-text">Bulk Customer List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-money-check-alt"></span>
+						<span class="xn-text">Bulk Wallet Topup</span>
+					</a>
+					<ul>
+						<li>
+							<a href="bulkWalletTopup.html">
+								<span class="xn-text">Bulk Wallet TopUp</span>
+							</a>
+						</li>
+						<li>
+							<a href="bulkwallettopupdocument.html">
+								<span class="xn-text">Bulk Wallet TopUp List</span>
+							</a>
+						</li>
+						<li>
+							<a href="bulkFeeFileUpload.html">
+								<span class="xn-text">Fee File Upload</span>
+							</a>
+						</li>
+						<li>
+							<a href="bulkFeeFileUploadList.html">
+								<span class="xn-text">Fee File Upload List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-money-check-alt"></span>
+						<span class="xn-text">Cashback Credit</span>
+					</a>
+					<ul>
+						<li>
+							<a href="cashbackCreditFileUpload.html">
+								<span class="xn-text">Cashback Credit File Upload</span>
+							</a>
+						</li>
+						<li>
+							<a href="cashbackCreditList.html">
+								<span class="xn-text">Cashback Credit List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-bell"></span>
+						<span class="xn-text">Bulk Ad-Hoc Notification</span>
+					</a>
+					<ul>
+						<li>
+							<a href="bulkNotification.html">
+								<span class="xn-text">Bulk Ad-Hoc Notification</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xn-openable">
+					<a href="#" class="has-arrow">
+						<span class="fas fa-user-cog"></span>
+						<span class="xn-text">Admin Services</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addRole.html">
+								<span class="xn-text">Add Role</span>
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="roleList.html">
+								<span class="xn-text">Role List</span>
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="addUser.html">
+								<span class="xn-text">Add Users</span>
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="fetchGroupList.html">
+								<span class="xn-text">User Group List</span>
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="userList.html">
+								<span class="xn-text">User List</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<!-- END X-NAVIGATION -->
+		</div>
+		<!-- END PAGE SIDEBAR -->
+
+		<!-- PAGE CONTENT -->
+		<div class="page-content">
+			<!-- START X-NAVIGATION VERTICAL -->
+			<ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+				<!-- TOGGLE NAVIGATION -->
+				<li class="xn-icon-button">
+					<button class="x-navigation-minimize btn-menu-mobile">
+						<span class="fas fa-indent"></span>
+					</button>
+				</li>
+				<!-- END TOGGLE NAVIGATION -->
+				<!-- SEARCH -->
+				<!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+				<!-- END SEARCH -->
+				<!-- POWER OFF -->
+				<li class="xn-icon-button pull-right last">
+					<button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+						<span class="fa fa-power-off"></span>
+					</button>
+					<!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+				</li>
+				<!-- END POWER OFF -->
+			</ul>
+			<!-- END X-NAVIGATION VERTICAL -->
+
+			<!-- PAGE CONTENT WRAPPER -->
+			<div class="page-content-wrap">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="page-title-box">
+								<div class="pull-right">
+									<a id="smartSearch" href="#" class="btn btn-xs btn-primary ripple"
+										onclick="toggleSmartSearch();">
+										<i class="fa fa-search" aria-hidden="true"></i> Search
+									</a>
+								</div>
+								<h4 class="page-title">Compliance Report</h4>
+							</div>
+						</div>
+					</div>
+					<div class="" style="min-height: 73vh">
+						<div class="panel-body p-0" style="position: relative">
+							<form class="row comReprt" id="smartSearchFieldsDiv" style="display: none">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="dateRange">Select Date<sup>*</sup></label>
+										<input type="text" name="dateRange" class="form-control clear" id="dateRange"
+											placeholder="Select a date" readonly />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="complianceId">Compliance ID</label>
+										<input type="text" id="complianceId" name="complianceId"
+											class="form-control clear" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="complianceStatusFilter">Overall Compliance Status</label>
+										<select id="complianceStatusFilter" name="complianceStatusFilter"
+											class="form-control clear">
+											<option value="">Select Status</option>
+											<option value="Active">Active</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="clientCode">Client</label>
+										<input type="hidden" id="clientCodeValueHold" value="${clientCode}" />
+										<select id="clientCode" name="clientCode" class="form-control">
+											<option value="">Select a Client</option>
+											<option value="Card_client_TEXT_4">
+												Card_client_TEXT_4
+											</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="customerEmail">Email</label>
+										<input type="text" id="customerEmail" name="customerEmail"
+											class="form-control clear" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="customerContact">Contact Number</label>
+										<input type="text" id="customerContact" name="customerContact"
+											class="form-control clear" />
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="firstName">First Name</label>
+										<input type="text" id="firstName" name="firstName" class="form-control clear" />
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="middleName">Middle Name</label>
+										<input type="text" id="middleName" name="middleName"
+											class="form-control clear" />
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="lastName">Last Name</label>
+										<input type="text" id="lastName" name="lastName" class="form-control clear" />
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="customerHashId">Customer Hash Id</label>
+										<input type="text" id="customerHashId" name="customerHashId"
+											class="form-control clear" />
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="countryCode">Country</label>
+										<input type="hidden" id="countryCodeValueHold"
+											value="${customer.countryCode}" />
+										<select id="countryCode" name="countryCode"
+											class="form-control enableSelect2 clear">
+											<option value="">Select Country</option>
+											<option value="India">India</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="complianceProfile">Compliance Profile</label>
+										<select id="complianceProfile" name="complianceProfile"
+											class="form-control clear">
+											<option value="">Select a compliance profile</option>
+											<option value="SG_B2C_NORMAL">SG B2C NORMAL</option>
+											<option value="SG_B2B_EMP_LETTER">
+												SG B2B EMP LETTER
+											</option>
+											<option value="SG_B2B_KYC">SG B2B KYC</option>
+											<option value="SG_SHIPPING">SG SHIPPING</option>
+											<option value="SG_B2B_SCREENING">
+												SG B2B SCREENING
+											</option>
+											<option value="AU_B2C_NORMAL">AU B2C NORMAL</option>
+											<option value="AU_B2B_EMP_LETTER">
+												AU B2B EMP LETTER
+											</option>
+											<option value="AU_B2B_KYC">AU B2B KYC</option>
+											<option value="AU_B2B_SCREENING">
+												AU B2B SCREENING
+											</option>
+											<option value="EU_B2C_NORMAL">EU B2C NORMAL</option>
+											<option value="EU_B2B_EMP_LETTER">
+												EU B2B EMP LETTER
+											</option>
+											<option value="EU_B2B_KYC">EU B2B KYC</option>
+											<option value="EU_B2B_SCREENING">
+												EU B2B SCREENING
+											</option>
+											<option value="HK_B2C_NORMAL">HK B2C NORMAL</option>
+											<option value="HK_B2B_EMP_LETTER">
+												HK B2B EMP LETTER
+											</option>
+											<option value="HK_B2B_KYC">HK B2B KYC</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="identifyType">Identify Type</label>
+										<select id="identifyType" name="identifyType"
+											class="form-control staticEnableSelect2 select2">
+											<option value="">Select Identify Type</option>
+											<option value="PASSPORT">PASSPORT</option>
+											<option value="NRIC">NRIC</option>
+											<option value="FIN">FIN</option>
+											<option value="DRIVERS_LICENCE">DRIVERS LICENCE</option>
+											<option value="MEDICARE_CARD">MEDICARE CARD</option>
+											<option value="UINFIN">UINFIN (SingpassID)</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="identifyValue">Identify Value</label>
+										<input type="text" id="identifyValue" name="identifyValue"
+											class="form-control clear" />
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group text-center">
+										<button id="smartSearchSubmitBtn" name="smartSearchSubmitBtn" type="button"
+											class="btn btn-primary btn-sm px-5 ripple"
+											onclick="destroyPagination(); getFilteredCustomerList('0');">
+											Filter
+										</button>
+										<button class="btn btn-default btn-sm px-5 ripple" type="reset"
+											onclick="resetFields();">
+											Clear
+										</button>
+									</div>
+								</div>
+							</form>
+
+							<div id="tableDiv" class="table-responsive" style="max-height: 70vh; overflow: auto">
+								<table id="cardListTable" class="table table-bordered table-striped">
+									<thead>
+										<tr class="tab_head">
+											<th>Sl.No.</th>
+											<th>Customer Creation Date</th>
+											<th>Email ID</th>
+											<th>Customer Name</th>
+											<th>Client Name</th>
+											<th>Compliance Remarks</th>
+											<th>Compliance Status</th>
+											<th>Compliance Services</th>
+										</tr>
+									</thead>
+									<tbody id="customerDetailsTbody">
+										<tr class="header table-row">
+											<td>
+												1
+												<span onclick="toggleAccordian(this);" class="plus"
+													title="Click here to expand the row">+</span>
+											</td>
+											<td>2021-05-20 11:03:00</td>
+											<td>info@gmail.com</td>
+											<td>Subhasmita Biswal</td>
+											<td>Cash-In-Asia</td>
+											<td>Document successfully uploaded</td>
+											<td>ACTION_REQUIRED</td>
+											<td>
+												Trulloo| COMPLETED <br />
+												REGULATORY BLACKLISTING | COMPLETED <br />
+												Risk | COMPLETED <br />
+												Manual | ACTION_REQUIRED
+											</td>
+										</tr>
+										<tr class="header table-row">
+											<td>
+												2
+												<span onclick="toggleAccordian(this);" class="plus"
+													title="Click here to expand the row">+</span>
+											</td>
+											<td>2021-05-20 11:03:00</td>
+											<td>info@gmail.com</td>
+											<td>Subhasmita Biswal</td>
+											<td>Cash-In-Asia</td>
+											<td>Status update</td>
+											<td>IN_PROGRESS</td>
+											<td>
+												Manual | IN_PROGRESS <br />
+												Trulloo| ACTION_REQUIRED <br />
+												REGULATORY BLACKLISTING | COMPLETED <br />
+												Risk | COMPLETED <br />
+											</td>
+										</tr>
+										<tr class="header table-row">
+											<td>
+												3
+												<span onclick="toggleAccordian(this);" class="plus"
+													title="Click here to expand the row">+</span>
+											</td>
+											<td>2021-05-20 11:03:00</td>
+											<td>info@gmail.com</td>
+											<td>Subhasmita Biswal</td>
+											<td>Cash-In-Asia</td>
+											<td>Document successfully uploaded</td>
+											<td>ACTION_REQUIRED</td>
+											<td>
+												Trulloo| COMPLETED <br />
+												REGULATORY BLACKLISTING | COMPLETED <br />
+												Risk | COMPLETED <br />
+												Manual | ACTION_REQUIRED
+											</td>
+										</tr>
+										<tr class="header table-row">
+											<td>
+												4
+												<span onclick="toggleAccordian(this);" class="plus"
+													title="Click here to expand the row">+</span>
+											</td>
+											<td>2021-05-20 11:03:00</td>
+											<td>info@gmail.com</td>
+											<td>Subhasmita Biswal</td>
+											<td>Cash-In-Asia</td>
+											<td>Document successfully uploaded</td>
+											<td>ACTION_REQUIRED</td>
+											<td>
+												Trulloo| COMPLETED <br />
+												REGULATORY BLACKLISTING | COMPLETED <br />
+												Risk | COMPLETED <br />
+												Manual | ACTION_REQUIRED
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="paginationDiv" class="paginationWrapper">
+								<input type="hidden" id="totalPages_Id" value="1" />
+								<div class="pull-right">
+									<ul class="pagination-sm" id="paginations"></ul>
+								</div>
+								<p id="paging_infos" class="pull-left"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE CONTENT -->
+	</div>
+	<!-- END PAGE CONTAINER -->
+
+	<!-- MESSAGE BOX-->
+	<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+		<div class="mb-container">
+			<div class="mb-middle">
+				<div class="mb-icon">
+					<div>
+						<img alt="ahan" src="assets/img/logo-big.png" />
+					</div>
+				</div>
+				<div class="mb-title">
+					<span class="fa fa-sign-out"></span>
+					Log out of ahan?
+				</div>
+				<div class="mb-content">
+					<p>Are you sure you want to log out?</p>
+					<p>
+						Press No if you want to continue work. Press Yes to logout current
+						user.
+					</p>
+				</div>
+				<div class="mb-footer">
+					<button class="btn btn-default mb-control-close btn-block">
+						No
+					</button>
+					<a href="login.html" class="btn btn-block btn-primary">Yes</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END MESSAGE BOX-->
+
+	<!-- Modal -->
+	<div class="modal fade" id="individualComplianceServiceStatusUpdateModal" role="dialog" data-backdrop="static"
+		data-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+					<h5 class="modal-title" id="title">Update Status</h5>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" id="StatusUpdateComplianceId" name="StatusUpdateComplianceId" />
+					<input type="hidden" id="ServiceId" name="ServiceId" />
+					<input type="hidden" id="referenceNumber" name="referenceNumber" />
+					<span id="complianceIdErr" class="error"></span>
+					<span id="ServiceIdErr" class="error"></span>
+					<span id="referenceNumberError" class="error"></span>
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+							<div class="form-group">
+								<label for="complianceStatus">Status<sup>*</sup></label>
+								<select id="complianceStatus" class="form-control"></select>
+								<span id="complianceStatusErr" class="error field_err"></span>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+							<div class="form-group">
+								<label for="complianceAction">Compliance Action</label>
+								<input type="text" id="complianceAction" name="complianceAction" class="form-control" />
+								<span id="complianceActionErr" class="error field_err"></span>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+							<div class="form-group">
+								<label for="actionBy">Update By<sup>*</sup> </label>
+								<input type="text" id="actionBy" name="actionBy" class="form-control"
+									value="${loginUsername}" readonly="readonly" />
+								<span id="actionByErr" class="error field_err"></span>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+							<div class="form-group">
+								<label for="remarks">Remarks<sup>*</sup> </label>
+								<textarea rows="2" id="remarks" name="remarks" class="form-control"></textarea>
+								<span id="remarksErr" class="error field_err"></span>
+							</div>
+						</div>
+						<div class="col-sm-12 text-center">
+							<div class="form-group">
+								<button class="btn btn-primary px-5 ripple" id="updateStatusSubmitBtn"
+									onclick="validateAndUpdateIndividualServiceStatus();">
+									Submit
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Rfi Template Details Modal -->
+	<div class="modal fade" id="rfiTemplateDetailsModal" role="dialog">
+		<div class="modal-dialog modal-dialog-xl modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+					<h5 class="modal-title" id="rfiTemplateDetailsTitle">
+						<b>Rfi Template Details</b>
+					</h5>
+				</div>
+				<div class="modal-body">
+					<div id="rfiTemplateDetailsTableDiv">
+						<input type="hidden" id="initiateRfiClientHashId" />
+						<input type="hidden" id="initiateRfiCustomerHashId" />
+						<div class="table-responsive" style="
+                  max-height: 520px;
+                  overflow: hidden;
+                  overflow-x: auto;
+                  overflow-y: auto;
+                ">
+							<table id="rfiTemplateDetailsTable" class="table table-striped table-bordered">
+								<thead id="rfiTemplateDetailsTableHead">
+									<tr>
+										<th>RFI Template ID</th>
+										<th>Name</th>
+										<th>Mandatory</th>
+										<th>Type</th>
+										<th>Document Type</th>
+										<th>Remarks</th>
+										<th>Raised By</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody id="rfiTemplateDetailsTableBody"></tbody>
+							</table>
+						</div>
+						<div style="text-align: center">
+							<button id="initiateRfiSubmitBtn" class="btn btn-success" onclick="initiateRfi();">
+								Submit
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Rfi Detail List Modal -->
+	<div class="modal fade" id="rfiDetailsModal" role="dialog">
+		<div class="modal-dialog modal-dialog-xl modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content" style="max-height: 100%">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+					<h5 class="modal-title" id="rfiDetailsTitle">Rfi Details</h5>
+				</div>
+				<div class="modal-body">
+					<div id="rfiDetailsTableDiv" class="table-responsive">
+						<table id="rfiDetailsTable" class="table table-striped table-bordered" style="overflow: scroll">
+							<thead id="rfiDetailsThead">
+								<tr>
+									<td>RFI ID</td>
+									<td>RFI Template ID</td>
+									<td>RFI Hash ID</td>
+									<td>Description</td>
+									<td>Mandatory</td>
+									<td>Type</td>
+									<td>Document Type</td>
+									<td>Remarks</td>
+									<td>Raised By</td>
+									<td>RFI Status</td>
+									<td>Action</td>
+								</tr>
+							</thead>
+							<tbody id="rfiDetailsTableBody"></tbody>
+						</table>
+					</div>
+					<div style="text-align: center">
+						<button id="respondRfiSubmitBtn" class="btn btn-success" onclick="respondRfi(event)">
+							Submit
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- History Modal -->
+	<div class="modal fade" id="historyModal" role="dialog">
+		<div class="modal-dialog modal-dialog-xl modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+					<h5 class="modal-title" id="historyTitle"></h5>
+				</div>
+				<div class="modal-body">
+					<div id="historyDetailsTableDiv">
+						<div class="table-responsive" style="
+                  max-height: 520px;
+                  overflow: hidden;
+                  overflow-x: auto;
+                  overflow-y: auto;
+                ">
+							<table id="historyDetailsTable" class="table table-striped table-bordered">
+								<thead id="historyDetailsTableHead">
+									<tr>
+										<th>Action</th>
+										<th>Date & Time</th>
+										<th>Remarks</th>
+										<th>Action By</th>
+									</tr>
+								</thead>
+								<tbody id="historyDetailsTableBody"></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="text-center">
+						<img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+						<div>
+							<h4 id="successModalId" class="refunded_body mb-4"></h4>
+							<div class="text-center">
+								<button type="button" id="successModal" class="btn btn-success px-5 ripple"
+									data-dismiss="modal" onclick="closeAllModals();">
+									OK
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="text-center">
+						<img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+						<div>
+							<h4 id="errorModalId" class="refunded_body mb-4"></h4>
+							<div class="text-center">
+								<button type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal"
+									onclick="closeAllModals();">
+									OK
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- update Resident Status Modal -->
+	<div class="modal fade" id="update_ResidentModal" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-sm modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+					<h4 class="modal-title">Update Resident Status</h4>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" id="customerHashIdResident" name="customerHashIdResident" value="" />
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<select class="form-control selectpicker" id="residentStatus" name="residentStatus">
+									<option value="NON_RESIDENT">NON_RESIDENT</option>
+									<option value="RESIDENT">RESIDENT</option>
+								</select>
+							</div>
+							<div class="form-group text-center">
+								<button class="btn btn-primary" onclick="updateResidentStatus()">
+									Submit
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- rfi address modal  -->
+	<!-- rfi respond  -->
+	<div class="modal fade" id="rfiAddressDetailsModal" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+					<h5 class="modal-title" id="title1">Update Status</h5>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+							<div class="form-group">
+								<label for="billingAddress1">Billing Address1</label>
+								<input type="text" id="billingAddress1" name="billingAddress1"
+									class="form-control address" maxlength="40" placeholder="Max length 40" />
+								<span id="billingAddress1Error" class="error field_err"></span>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+							<div class="form-group">
+								<label for="billingAddress2">Billing Address2</label>
+								<input type="text" id="billingAddress2" name="billingAddress2"
+									class="form-control address" maxlength="40" placeholder="Max length 40" />
+								<span id="billingAddress2Error" class="error field_err"></span>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+							<div class="form-group">
+								<label for="billingCity">Billing City</label>
+								<input type="text" id="billingCity" name="billingCity" class="form-control address"
+									maxlength="30" placeholder="Max length 30" />
+								<span id="billingCityError" class="error field_err"></span>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+							<div class="form-group">
+								<label for="billingState">Billing State</label>
+								<input type="text" id="billingState" name="billingState" class="form-control address"
+									maxlength="30" placeholder="Max length 30" />
+								<span id="billingStateError" class="error field_err"></span>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+							<div class="form-group">
+								<label for="billingZipCode">Billing ZipCode</label>
+								<input type="text" id="billingZipCode" name="billingZipCode"
+									class="form-control address" maxlength="10" onkeypress="return isNumber(event)"
+									placeholder="Only numeric. Max length 10" />
+								<span id="billingZipCodeError" class="error field_err"></span>
+							</div>
+						</div>
+
+						<div class="col-sm-12 text-center">
+							<div class="form-group">
+								<button class="btn btn-primary px-5 ripple" id="rfiAddressUpdateBtn"
+									onclick="saveRfiAddressDetails();">
+									Submit
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- START PRELOADS -->
+	<audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+	<audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+	<!-- END PRELOADS -->
+
+	<!-- START SCRIPTS -->
+	<!-- START PLUGINS -->
+	<script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+	<script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+	<script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+	<!-- END PLUGINS -->
+
+	<!-- START TEMPLATE -->
+	<script type="text/javascript" src="assets/js/settings.min.js"></script>
+	<script type="text/javascript" src="assets/js/actions.js"></script>
+	<script type="text/javascript" src="assets/js/generateTableWithNonClickableRows.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+	<script type="text/javascript" src="assets/js/loader.js"></script>
+
+	<script type="text/javascript" src="assets/js/floatingscroll.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/moment.min.js?version=2.29.0"></script>
+	<script type="text/javascript" src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+	<script type="text/javascript" src="assets/js/dateRange.js"></script>
+	<script type="text/javascript" src="assets/js/UUID/uuidv4.min.js"></script>
+	<script type="text/javascript" src="assets/js/linkify.min.js"></script>
+	<script type="text/javascript" src="assets/js/linkify-jquery.min.js"></script>
+
+	<script>
+		function toggleSmartSearch() {
+			$("#smartSearchFieldsDiv").slideToggle();
+		}
+
+      //   function toggleAccordian(element) {
+      //     $(element).text(function (_, value) {
+      //       return value === "-" ? "+" : "-";
+      //     });
+      //     $(element)
+      //       .closest("tr.header")
+      //       .next("#collapse_header")
+      //       .slideToggle(100)
+      //       .css("display", "table-row");
+      //   }
+	</script>
+
+	<!-- END TEMPLATE -->
+	<!-- END SCRIPTS -->
+	<!-- <script>
+      	/* Universal Spinner with text for Button */
+      	const spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+      	var innerLoopSerialNo = 0;
+      	var allComplianceStatus;
+
+      	$(function () {
+      		$('.table-responsive').floatingScrollbar();
+      	});
+
+      	function toggleSmartSearch() {
+      		$("#smartSearchFieldsDiv").slideToggle();
+      	}
+
+      	function isBlank(input) {
+      		if (input == null || input === "null" || input === undefined) {
+      			return "";
+      		}
+      		return input;
+      	}
+
+      	$(document).ready(function () {
+      		/* getCustomerList(0, "all", "", "complianceInitiated", "", "", ""); */
+      		generateComplianceStatusDropDown();
+      		generateComplianceStatusDropDownForFilter();
+      		getClientList();
+      		getCountryList();
+      	});
+
+      	function getCountryList() {
+      		$.ajax({
+      			url: $("#getCountryListUrl").val(),
+      			type: "GET",
+      			async: false,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var optionTag = "<option value = ''>Select an option</option>";
+      				for (var i = 0; i < result.length; i++) {
+      					var eachOption = result[i];
+      					optionTag += "<option value = " + eachOption.iso2 + ">" + eachOption.name + " (" + eachOption.iso2 + ")" + "</option>";
+      				}
+
+      				$("#countryCode").html(optionTag);
+      				$('.enableSelect2').select2({
+      					placeholder: 'Select an option',
+      					allowClear: true,
+      					dropdownAutoWidth: false,
+      					width: '100%',
+      					dropdownCss: {'width': 'inherit'}
+      				});
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function openViewHistoryModal(event, clientHashId, customerHashId, serviceId, modalTitle) {
+      		$(event.target).attr("disabled", true);
+      		$(event.target).html("Please Wait...");
+
+      		if (isValidViewHistoryRequest(clientHashId, customerHashId, serviceId) === false) {
+      			$(".refunded_body").html("Client hash, customer hash and service id is mandatory to view history");
+      			$("#error_refundNotification").modal('show');
+
+      			$(event.target).attr("disabled", false);
+      			$(event.target).html("View History");
+      			return;
+      		}
+      		getAuditTrailDetails(event, modalTitle, clientHashId, customerHashId, serviceId);
+      	}
+
+      	function getAuditTrailDetails(event, modalTitle, clientHashId, customerHashId, serviceId) {
+      		let output = "";
+
+      		$.ajax({
+      			url: ($("#auditTrailUrl").val() + clientHashId + "/customer/" + customerHashId + "/serviceId/" + serviceId),
+      			type: 'GET',
+      			async: true,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				if (result == null || result === undefined || result === [] || result === "" || result.length === 0) {
+      					output = "<tr><td colspan = 100 style = 'text-align : center;'>No data found</td></tr>";
+      				}
+
+      				for (var i = 0; i < result.length; i++) {
+      					var eachAuditDetail = result[i];
+
+      					output += "<tr>";
+      					output += "<td>" + defaultIfBlank(eachAuditDetail.action, "NA") + "</td>";
+      					output += "<td>" + defaultIfBlank(eachAuditDetail.dateTime, "NA") + "</td>";
+      					output += "<td>" + defaultIfBlank(eachAuditDetail.remarks, "NA") + "</td>";
+      					output += "<td>" + defaultIfBlank(eachAuditDetail.actionBy, "NA") + "</td>";
+      					output += "</tr>";
+      				}
+      			},
+      			error: function (data) {
+      				output = "<tr><td colspan = 100 style = 'text-align : center;'>No data found</td></tr>";
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+
+      				$("#historyTitle").html("<span class = 'badge badge-primary' style = 'font-size : 14px;'>" + modalTitle + "</span>");
+      				$("#historyDetailsTableBody").html(output);
+      				$("#historyModal").modal({
+      					backdrop: true,
+      					keyboard: false,
+      					show: true
+      				});
+
+      				$("#historyModal").draggable({
+      					handle: ".modal-header"
+      				});
+
+      				$(event.target).attr("disabled", false);
+      				$(event.target).html("View History");
+      			}
+      		});
+      	}
+
+      	function defaultIfBlank(inputString, defaultString) {
+      		inputString = String(inputString);
+
+      		if (inputString == null || inputString === undefined || inputString === "" || inputString.toLowerCase() === "null") {
+      			return defaultString;
+      		}
+      		if ((inputString.trim()).length === 0) {
+      			return defaultString;
+      		}
+      		return inputString;
+      	}
+
+      	function isValidViewHistoryRequest(clientHashId, customerHashId, serviceId) {
+      		var valid = true;
+
+      		if (clientHashId == null || clientHashId === "") {
+      			valid = false;
+      		}
+      		if (customerHashId == null || customerHashId === "") {
+      			valid = false;
+      		}
+      		if (serviceId == null || serviceId === "") {
+      			valid = false;
+      		}
+
+      		return valid;
+      	}
+
+      	function returnEmptyIfBlank(input) {
+      		if (input === undefined || input == null || input === "null") {
+      			return "";
+      		}
+      		return input;
+      	}
+
+      	function destroyPagination() {
+      		$('#paginations').twbsPagination("destroy");
+      	}
+
+      	function getFilteredCustomerList(page) {
+      		var dateRange = returnEmptyIfBlank($("#dateRange").val());
+
+      		var dateArray = dateRange.split('-');
+      		var d = new Date(dateArray[0]);
+      		var d1 = new Date(dateArray[1]);
+
+      		var startDate = $.datepicker.formatDate('yy-mm-dd', d);
+      		var endDate = $.datepicker.formatDate('yy-mm-dd', d1);
+
+      		if (startDate === 'NaN-NaN-NaN' || endDate === 'NaN-NaN-NaN' || (startDate.toString()).includes("NaN") || (endDate.toString()).includes("NaN")) {
+      			startDate = "";
+      			endDate = "";
+      		}
+
+      		var complianceId = isBlank($("#complianceId").val());
+      		if (complianceId === "") {
+      			complianceId = "complianceInitiated";
+      		}
+
+      		var clientHashId = isBlank($("#clientCode").val());
+      		var customerEmail = isBlank($("#customerEmail").val());
+      		var customerContact = isBlank($("#customerContact").val());
+      		var complianceStatus = isBlank($("#complianceStatusFilter").val());
+      		var firstName = isBlank($("#firstName").val());
+      		var middleName = isBlank($("#middleName").val());
+      		var lastName = isBlank($("#lastName").val());
+      		var customerHashId = isBlank($("#customerHashId").val());
+      		var complianceInitiatedCountryCode = isBlank($("#countryCode").val());
+      		var complianceProfile = isBlank($("#complianceProfile").val());
+      		var identifyType = $("#identifyType").val();
+      		var identifyValue = $("#identifyValue").val();
+
+      		getCustomerList(page, clientHashId, startDate, endDate, complianceId, customerEmail, customerContact, complianceStatus, firstName, middleName, lastName, customerHashId, complianceInitiatedCountryCode, complianceProfile, identifyType, identifyValue);
+      	}
+
+      	function getCustomerList(page, clientHashId, startDate, endDate, complianceId, customerEmail, customerContact, complianceStatus, firstName, middleName, lastName, customerHashId, complianceInitiatedCountryCode, complianceProfile, identifyType, identifyValue) {
+
+      		var loadingIcon = "<tr><td colspan=130 style='text-align:center'><img style='max-width:50px;' src = 'assets/img/loading.gif'></img></td></tr>"
+      		$("#customerDetailsTbody").html(loadingIcon);
+      		$("#smartSearchFieldsDiv").slideUp();
+      		$("#smartSearchSubmitBtn").html(spinnerUrl);
+
+      		page = ((page != null && page !== 'null' && page !== 'undefined' && page !== '') ? page : 0);
+      		clientHashId = ((clientHashId != null && clientHashId !== 'null' && clientHashId !== 'undefined') ? clientHashId : 'all');
+
+      		var dataInObjectFormat = {};
+
+      		dataInObjectFormat.page = page;
+      		dataInObjectFormat.clientCode = clientHashId;
+      		dataInObjectFormat.startDate = startDate;
+      		dataInObjectFormat.endDate = endDate;
+      		dataInObjectFormat.complianceId = complianceId;
+      		dataInObjectFormat.email = customerEmail;
+      		dataInObjectFormat.mobile = customerContact;
+      		dataInObjectFormat.complianceStatus = complianceStatus;
+      		dataInObjectFormat.firstName = firstName;
+      		dataInObjectFormat.middleName = middleName;
+      		dataInObjectFormat.lastName = lastName;
+      		dataInObjectFormat.customerHashId = customerHashId;
+      		dataInObjectFormat.complianceInitiatedCountryCode = complianceInitiatedCountryCode;
+      		dataInObjectFormat.complianceProfile = complianceProfile;
+      		dataInObjectFormat.identifyType = identifyType;
+      		dataInObjectFormat.identifyValue = identifyValue;
+
+      		var dataInJSONFormat = JSON.stringify(unSanitize(dataInObjectFormat));
+
+      		var totalPages = "";
+      		$.ajax({
+      			url: $("#customerListUrl").val(),
+      			type: 'POST',
+      			async: true,
+      			contentType: "application/json",
+      			data: dataInJSONFormat,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				$("#smartSearchSubmitBtn").html("Filter");
+      				var tableData = "";
+      				var slNo = (page * 20);
+      				var startNo = (page * 20) + 1;
+      				if (result.length === 0) {
+      					tableData += "<tr>";
+      					tableData += "<td colspan=130 style='text-align:center;'>No Records found</td>";
+      					tableData += "</tr>";
+      				} else {
+      					totalPages = result[0].totalPages;
+      					tableData += generateCustomerTableData(result, slNo, startNo);
+      				}
+      				$("#customerDetailsTbody").html(tableData);
+      				paginationForCustomerList(totalPages);
+      			},
+      			error: function (xhr) {
+      				var tableData = "";
+      				tableData += "<tr>";
+      				tableData += "<td colspan=130 style='text-align:center;'>No Records found</td>";
+      				tableData += "</tr>";
+      				$("#customerDetailsTbody").html(tableData);
+      				$("#paging_infos").html("No entries found!");
+      				$("#smartSearchSubmitBtn").html("Filter");
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function generateCustomerTableData(result, slNo, startNo) {
+      		var tableData = "";
+      		var totalElements = "";
+      		for (var i = 0; i < result.length; i++) {
+      			slNo = slNo + 1;
+      			var eachObject = result[i];
+      			totalElements = eachObject.totalElements;
+      			tableData += "<tr class='header'>";
+      			tableData += '<td class="collapse_btn"><span onclick="toggleAccordian(this);" class="plus" title="Click here to expand the row">+</span> ' + slNo + '</td>';
+      			tableData += "<td>" + eachObject.customerCreationDate + "</td>";
+      			tableData += "<td>" + eachObject.email + "</td>";
+      			tableData += "<td>" + getCustomerName(eachObject.firstName, eachObject.middleName, eachObject.lastName) + "</td>";
+      			tableData += "<td style=\"white-space: nowrap\">" + eachObject.clientName + "</td>";
+      			tableData += "<td>" + eachObject.complianceRemark + "</td>";
+
+      			var individualServiceDetails = getIndividualServiceDetails(eachObject.complianceId, eachObject);
+
+      			tableData += individualServiceDetails;
+
+      			tableData += '</div></div></div></td></tr>';
+      		}
+      		$("#paging_infos").html("Showing " + startNo + " to " + slNo + " of " + totalElements + " entries");
+      		return tableData;
+      	}
+
+      	//RESIDENT STATUS
+      	function updateResidentStatusModal(customerHashId) {
+      		$("#customerHashIdResident").val(customerHashId);
+      		$("#update_ResidentModal").modal('show');
+
+      	}
+
+      	function updateResidentStatus() {
+      		var residentStatus = $("#residentStatus").val();
+      		var customerHashId = $("#customerHashIdResident").val();
+      		$("#update_ResidentModal").modal('hide');
+
+      		var url = $("#complianceResidentUrl").val();
+      		url += customerHashId + '/residentStatus/' + residentStatus;
+      		$.ajax({
+      			async: false,
+      			url: url,
+      			type: "PUT",
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+      				$("#success_refundNotification").modal('show');
+      				$(".refunded_body").html(result.message);
+      			},
+      			error: function (jqXhr) {
+      				if (jqXhr.readyState == 0) {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html("service is temporarily down,please try again later.");
+      				}
+      				if (jqXhr.status = 500) {
+      					var responseMessage = JSON.parse(jqXhr.responseText);
+      					var message = responseMessage.message;
+
+      					$(".refunded_body").html(message);
+      					$("#error_refundNotification").modal('show');
+      				} else if (jqXhr.status == 400) {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html(jqXhr.responseText);
+      				} else {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html(jqXhr.responseText);
+      				}
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function getCustomerName(firstName, middleName, lastName) {
+      		var result = "";
+      		if (firstName != null && firstName !== "" && firstName !== undefined && firstName !== "null" && firstName.toLowerCase() !== "na") {
+      			result += firstName;
+      		}
+      		if (middleName != null && middleName !== "" && middleName !== undefined && middleName !== "null" && middleName.toLowerCase() !== "na") {
+      			result += " " + middleName;
+      		}
+      		if (lastName != null && lastName !== "" && lastName !== undefined && lastName !== "null" && lastName.toLowerCase() !== "na") {
+      			result += " " + lastName;
+      		}
+      		return result;
+      	}
+
+      	function getWorldCheckData(resultantElementId, complianceId, ServiceId, referenceNumber) {
+      		var url = $("#worldCheckUrl").val() + complianceId + "/" + ServiceId + "/" + referenceNumber + "/worldCheckServiceDetails";
+      		var loadingIcon = "<div style='text-align:center;'><img style='max-width:50px;'src='assets/img/loading.gif'></img></div>";
+      		$("#" + resultantElementId).html(loadingIcon);
+      		$.ajax({
+      			url: url,
+      			type: "GET",
+      			async: true,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var bodyObject = result.body;
+      				var keysArr = Object.keys(bodyObject);
+      				var index = 0;
+      				var startRecord = 0;
+      				var count = 0;
+      				var recordNumberToDisplay = 0;
+      				var tableData = "";
+      				var hyperLinks = "";
+      				var nonHyperLinks = "";
+
+      				for (var i = 0; (i < 20 && index <= keysArr.length); i++) {
+      					tableData += "<table class='table compl' id='worldCheckTable_'" + (recordNumberToDisplay + 1) + ">";
+      					tableData += "<thead>"
+      					tableData += "<tr>";
+      // 						tableData += "<th><hr style='border:1px solid #00000052;'></th>";
+      					tableData += "<th><hr style='border:1px solid #00000052;'></th>";
+      					tableData += "</tr>";
+      					tableData += "</thead>"
+      					tableData += "<tbody>";
+
+      					for (var j = index; j < keysArr.length; j++) {
+
+      						var eachKey = keysArr[j];
+
+      						var eachValue = bodyObject[eachKey];
+
+      						var splittedKey = eachKey.split("\.");
+
+      						var recordUnderProcess = eval(splittedKey[0].split("\[")[1].split("\]")[0]);
+
+      						recordNumberToDisplay = recordUnderProcess + 1;
+
+      						var keyToDisplay = splittedKey[(splittedKey.length) - 1];
+
+      						++count;
+
+      						if (count === 1) {
+      							startRecord = recordUnderProcess;
+      						}
+      						if (startRecord !== recordUnderProcess) {
+      							index = j;
+      							count = 0;
+      							break;
+      						}
+
+      						if (eachValue == null || eachValue === "null" || eachValue === undefined || eachValue === "") {
+      							eachValue = "-";
+      						}
+
+      						if (keyToDisplay.toLowerCase().includes("href") || keyToDisplay.toLowerCase().includes("uri") && eachValue !== "-") {
+      							nonHyperLinks += "<tr>";
+      							nonHyperLinks += "<td><strong>" + keyToDisplay + "</strong></td>";
+      							const url = '${pageContext.request.contextPath}/individualProfileDetails?url=' + eachValue;
+      							const viewProfileDetailsLink = "<a href='#' onclick='window.open(\"" + url + "\");'>" + "View Profile" + "</a>";
+      							var viewProfileDetailsLink = "<a target='_blank' href='${pageContext.request.contextPath}/individualProfileDetails?url=" + eachValue + "'>View Profile</a>";--%>
+      							nonHyperLinks += "<td>" + viewProfileDetailsLink + "</td>";
+      							nonHyperLinks += "</tr>";
+      						} else {
+      							nonHyperLinks += "<tr>";
+      							nonHyperLinks += "<td><strong>" + keyToDisplay + "</strong></td>";
+      							nonHyperLinks += "<td>" + eachValue + "</td>";
+      							nonHyperLinks += "</tr>";
+      						}
+      					}
+      					tableData += (hyperLinks + nonHyperLinks);
+      					tableData += "</tbody>";
+      					tableData += "</table>";
+      				}
+      				$("#" + resultantElementId).html(tableData);
+      			},
+      			error: function (xhr) {
+      				var tableData = "<table class='table compl' id='worldCheckTable_0'>";
+      				/* tableData += "<thead>"
+      					tableData += "<tr>";
+      					tableData += "<th><hr style='border:1px solid #00000000;'></th>";
+      					tableData += "<th><hr style='border:1px solid #00000000;'></th>";
+      					tableData += "</tr>";
+      					tableData += "</thead>" */
+      				tableData += "<tbody>";
+      				tableData += "<tr>";
+      				tableData += "<td colspan='2345' style='background-color: #efefef'><h3 class='text-center'>No data found!</h3></td>";
+      				tableData += "</tr>";
+      				tableData += "</tbody>";
+      				tableData += "</table>";
+      				$("#" + resultantElementId).html(tableData);
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function toggleHits(hitUuidClass) {
+      		$("." + hitUuidClass).each(function (index, element) {
+      			$(element).toggle("slow", "swing");
+      		});
+      	}
+
+      	function generateTruliooErrorTable(resultantElementId) {
+      		var bodyData = "<tr>";
+      		bodyData += "<td colspan='2345'><h2>No Data Found!</h2></td>";
+      		bodyData += "</tr>";
+      		$("#" + resultantElementId).html(bodyData);
+      	}
+
+      	function generateTruliooHeader(hitCount, hitUuidClass) {
+      		var hitsHeaderTr = "";
+
+      		hitsHeaderTr += "<tr>";
+      		hitsHeaderTr += "<td><hr /></td>";
+      		hitsHeaderTr += "<td><hr /></td>";
+      		hitsHeaderTr += "</tr>";
+
+      		hitsHeaderTr += "<tr>";
+      		hitsHeaderTr += '<td><span style="color:#00a9df;font-size: 30px;font-weight: 500;"><i>Hit</i></span><span style="color:#00a9df;"><i class="fa fa-users fa-lg" onclick = "toggleHits(\'' + hitUuidClass + '\');"></i></span></td>';
+      		hitsHeaderTr += '<td><span style="color:#00a9df;font-size: 30px;font-weight: 500;"><i>' + hitCount + '.</i></span></td>';
+      		hitsHeaderTr += "</tr>";
+
+      		return hitsHeaderTr;
+      	}
+
+      	function generateBasicHitDetailsForTrulioo(name, types, sources, media, hitUuidClass) {
+      		name = isBlankInput(name) ? "-" : name;
+      		types = isBlankInput(types) ? "-" : types;
+      		sources = isBlankInput(sources) ? "-" : sources;
+
+      		var basicHitDetailsTr = "";
+
+      		basicHitDetailsTr += "<tr class = '" + hitUuidClass + "'>";
+      		basicHitDetailsTr += "<td><b>Name</b></td>";
+      		basicHitDetailsTr += "<td>" + name + "</td>";
+      		basicHitDetailsTr += "</tr>";
+
+      		basicHitDetailsTr += "<tr class = '" + hitUuidClass + "'>";
+      		basicHitDetailsTr += "<td><b>Types</b></td>";
+      		basicHitDetailsTr += "<td>" + types + "</td>";
+      		basicHitDetailsTr += "</tr>";
+
+      		basicHitDetailsTr += "<tr class = '" + hitUuidClass + "'>";
+      		basicHitDetailsTr += "<td><b>Sources</b></td>";
+      		basicHitDetailsTr += "<td>" + sources + "</td>";
+      		basicHitDetailsTr += "</tr>";
+
+      		if (!isValidNonEmptyArray(media)) {
+      			basicHitDetailsTr += "<tr class = '" + hitUuidClass + "'>";
+      			basicHitDetailsTr += "<td><b>Media</b></td>";
+      			basicHitDetailsTr += "<td>-</td>";
+      			basicHitDetailsTr += "</tr>";
+      		} else {
+      			var uuid = generateRandomUuid();
+      			var accordianId = "truliooMediaAccordian_" + uuid;
+
+      			basicHitDetailsTr += "<tr class = '" + hitUuidClass + "'>";
+      			basicHitDetailsTr += "<td><b>Media</b></td>";
+
+      			var mediaToggleBtn = "<button style='border-radius:20px; margin-bottom:2px; padding:5px;' type='button' class='btn btn-info' data-toggle='collapse' data-target='#" + accordianId + "'>View Details <i class='fa fa-info-circle'></i></button>";
+      			var truliooAccordianData = "";
+
+      			for (var i = 0; i < media.length; i++) {
+      				var eachMediaObject = media[i];
+      				if (!isValidNonEmptyObject(eachMediaObject)) {
+      					continue;
+      				}
+      				truliooAccordianData += generateMediaAccordianForTrulioo(accordianId, eachMediaObject.date, eachMediaObject.snippet, eachMediaObject.title, eachMediaObject.url);
+      			}
+
+      			basicHitDetailsTr += "<td>" + (mediaToggleBtn + truliooAccordianData) + "</td>";
+      			basicHitDetailsTr += "</tr>";
+      		}
+
+      		return basicHitDetailsTr;
+      	}
+
+      	function generateAdditionalHitDetailsForTrulioo(additionalHitDetailsArr, hitUuidClass) {
+      		var uuid = generateRandomUuid();
+      		var accordianId = "truliooAdditionalDetailsAccordian_" + uuid;
+
+      		var additionalHitDetailsTr = "";
+
+      		additionalHitDetailsTr += "<tr class = '" + hitUuidClass + "'>";
+      		additionalHitDetailsTr += "<td><b>Additional Details</b></td>";
+
+      		var mediaToggleBtn = "<button style='border-radius:20px; margin-bottom:2px; padding:5px;' type='button' class='btn btn-info' data-toggle='collapse' data-target='#" + accordianId + "'>View Details <i class='fa fa-info-circle'></i></button>";
+      		var additionalDataHeader = "";
+      		var additionalDetailsData = "";
+      		var hyperLinkTr = "";
+      		var nonHyperLinkTr = "";
+      		var additionalDataFooter = "";
+
+
+      		additionalDataHeader += '<div id="' + accordianId + '" class="collapse">';
+      		additionalDataHeader += '<table class="table compl">';
+      		additionalDataHeader += '<thead>';
+      		additionalDataHeader += '<tr>';
+      		additionalDataHeader += '<th>Attribute</th>';
+      		additionalDataHeader += '<th>Value</th>';
+      		additionalDataHeader += '</tr>';
+      		additionalDataHeader += '</thead>';
+      		additionalDataHeader += '<tbody>';
+
+      		additionalDataFooter += '</tbody>';
+      		additionalDataFooter += '</table>';
+      		additionalDataFooter += '</div>';
+
+
+      		for (var i = 0; i < additionalHitDetailsArr.length; i++) {
+      			var eachAdditionalHitObj = additionalHitDetailsArr[i];
+
+      			if (!isValidNonEmptyObject(eachAdditionalHitObj)) {
+      				continue;
+      			}
+      			var additionalDetails = generateAdditionalDetailsAccordianForTrulioo(accordianId, eachAdditionalHitObj);
+
+      			if (additionalDetails.includes("http") || additionalDetails.includes("https")) {
+      				hyperLinkTr += additionalDetails;
+      				continue;
+      			}
+      			nonHyperLinkTr += additionalDetails;
+      		}
+
+      		additionalDetailsData += (hyperLinkTr + nonHyperLinkTr);
+      		if (isBlankInput(additionalDetailsData)) {
+      			return "";
+      		}
+
+      		additionalHitDetailsTr += "<td>" + (mediaToggleBtn + additionalDataHeader + additionalDetailsData + additionalDataFooter) + "</td>";
+      		additionalHitDetailsTr += "</tr>";
+
+      		return additionalHitDetailsTr;
+      	}
+
+      	function generateAdditionalDetailsAccordianForTrulioo(accordianId, eachAdditionalHitObj) {
+      		var additionalObjKeysArr = Object.keys(eachAdditionalHitObj);
+
+      		if (!isValidNonEmptyArray(additionalObjKeysArr)) {
+      			return "";
+      		}
+
+      		var result = '';
+
+      		for (var i = 0; i < additionalObjKeysArr.length; i++) {
+      			var key = additionalObjKeysArr[i];
+      			var value = isBlankInput(eachAdditionalHitObj[key]) ? "-" : eachAdditionalHitObj[key];
+      			if (value.includes("http") || value.includes("https")) {
+      				var processedValue = getBrSeperatedAnchorTagsAndReplacedStringArray(value);
+      				value = (processedValue[0] + processedValue[1]);
+      			}
+
+      			result += '<tr>';
+      			result += '<td style="white-space:nowrap">' + key + '</td>';
+      			result += '<td>' + value + '</td>';
+      			result += '</tr>';
+      		}
+
+      		result += '<tr>';
+      		result += '<td><hr style = "margin-top:5px; margin-bottom:5px;" /></td>';
+      		result += '<td><hr style = "margin-top:5px; margin-bottom:5px;" /></td>';
+      		result += '</tr>';
+
+      		return result;
+      	}
+
+      	function generateMediaAccordianForTrulioo(accordianId, date, snippet, title, url) {
+      		var accordian = '';
+
+      		accordian += '<div id="' + accordianId + '" class="collapse">';
+      		accordian += '<table class="table compl">';
+
+      		accordian += '<thead>';
+      		accordian += '<tr>';
+      		accordian += '<th>Attribute</th>';
+      		accordian += '<th>Value</th>';
+      		accordian += '</tr>';
+      		accordian += '</thead>';
+
+      		accordian += '<tbody>';
+      		accordian += '<tr>';
+      		accordian += '<td>Link</td>';
+
+      		var processedValue = getBrSeperatedAnchorTagsAndReplacedStringArray(url);
+
+      		accordian += '<td>' + (processedValue[0] + processedValue[1]) + '</td>';
+      		accordian += '</tr>';
+
+      		accordian += '<tr>';
+      		accordian += '<td>Date</td>';
+      		accordian += '<td>' + date + '</td>';
+      		accordian += '</tr>';
+
+      		accordian += '<tr>';
+      		accordian += '<td>Title</td>';
+      		accordian += '<td>' + title + '</td>';
+      		accordian += '</tr>';
+
+      		accordian += '<tr>';
+      		accordian += '<td>Snippet</td>';
+      		accordian += '<td>' + snippet + '</td>';
+      		accordian += '</tr>';
+
+      		accordian += '</tbody>';
+      		accordian += '</table>';
+      		accordian += '</div>';
+
+
+      		return accordian;
+      	}
+
+      	function toggleTruliooLinks() {
+      		$("#truliooLinks").toggle("slow", "linear");
+      	}
+
+      	function createAnchorTagsForTrulioo(links) {
+      		if (links === "") {
+      			return "-";
+      		}
+      		var splittedLinks = links.split(" ");
+      		if (splittedLinks.length === 0) {
+      			return "-";
+      		}
+      		var result = "";
+      		result += "<div id = 'truliooLinks'>"
+      		for (var i = 0; i < splittedLinks.length; i++) {
+      			const url = splittedLinks[i];
+      			result += "<a href='#' onclick='window.open(\"" + url + "\");'>" + url + "</a></br>";
+      			// result += "<a href = '" + splittedLinks[i] + "' target='_blank'>" + splittedLinks[i] + "</a></br>";
+      		}
+
+      		result += "</div>"
+      		return result;
+      	}
+
+      	function createHitStatusForTrulioo(hitStatus) {
+      		if (hitStatus === "") {
+      			return "-";
+      		}
+      		return hitStatus;
+      	}
+
+      	function getTruliooData(resultantElementId, complianceId, ServiceId, referenceNumber) {
+      		var url = $("#truliooUrl").val() + complianceId + "/" + ServiceId + "/" + referenceNumber + "/trulioServiceDetails";
+      		var loadingIcon = "<tr><td colspan=100 style='text-align:center;'><img style='max-width:50px;'src='assets/img/loading.gif'></img></td></tr>";
+      		$("#" + resultantElementId).html(loadingIcon);
+      		$.ajax({
+      			url: url,
+      			type: "GET",
+      			async: true,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				if (!isValidNonEmptyObject(result)) {
+      					generateTruliooErrorTable(resultantElementId);
+      					return;
+      				}
+
+      				var resultKeys = String(Object.keys(result));
+      				if (!resultKeys.includes("hitsArray") && !resultKeys.includes("links") && !resultKeys.includes("totalNoOfHits") && !resultKeys.includes("hitStatus")) {
+      					generateTruliooErrorTable(resultantElementId);
+      					return;
+      				}
+
+      				var totalNoOfHits = 0;
+      				if (resultKeys.includes("totalNoOfHits")) {
+      					totalNoOfHits = result.totalNoOfHits;
+      				}
+
+      				var links = "";
+      				if (resultKeys.includes("links")) {
+      					links = createAnchorTagsForTrulioo(result.links);
+      				}
+
+      				var hitStatus = "";
+      				if (resultKeys.includes("hitStatus")) {
+      					hitStatus = createHitStatusForTrulioo(result.hitStatus);
+      				}
+
+      				var bodyData = "";
+
+      				var totalNoOfHitsTr = "";
+      				var linksTr = "";
+      				var hitStatusTr = "";
+
+      				var hitsHeaderTr = "";
+      				var basicHitDetailsTr = "";
+      				var additionalHitDetailsTr = "";
+
+      				totalNoOfHitsTr += "<tr>";
+      				totalNoOfHitsTr += "<td><span class='text-info' style='font-size:20px; margin-bottom: 0.6em; white-space: nowrap;'>Total No. Of Hits</span></td>";
+      				if (totalNoOfHits === 0) {
+      					totalNoOfHitsTr += "<td><span class='text-info' style='font-size:20px; margin-bottom: 0.6em'>" + totalNoOfHits + "</span></td>";
+      				} else {
+      					totalNoOfHitsTr += "<td><span class='text-danger' style='font-size:20px; margin-bottom: 0.6em'>" + totalNoOfHits + "</span></td>";
+      				}
+      				totalNoOfHitsTr += "</tr>";
+
+      				bodyData += totalNoOfHitsTr;
+
+      				hitStatusTr += "<tr>";
+      				hitStatusTr += "<td><span class='text-info' style='font-size:20px; margin-bottom: 0.6em'>Hit Status</i></span></td>";
+      				if (hitStatus.toLowerCase().includes("hit")) {
+      					hitStatusTr += "<td><span class = 'text-danger' style='font-size:20px; margin-bottom: 0.6em'>" + hitStatus + "</span></></td>";
+      				} else if (hitStatus.toLowerCase().includes("clear")) {
+      					hitStatusTr += "<td><span class = 'text-success' style='font-size:20px; margin-bottom: 0.6em'>" + hitStatus + "</span></td>";
+      				} else {
+      					hitStatusTr += "<td><span class = 'text-info' style='font-size:20px; margin-bottom: 0.6em'>" + hitStatus + "</span></td>";
+      				}
+      				hitStatusTr += "</tr>";
+
+      				bodyData += hitStatusTr;
+
+      				linksTr += "<tr>";
+      				linksTr += "<td><span class='text-info'  title = 'Click to toggle links' onclick = 'toggleTruliooLinks()' style='font-size:20px;'>Links</span></td>";
+      				linksTr += "<td>" + links + "</td>";
+      				linksTr += "</tr>";
+
+      				bodyData += linksTr;
+
+      				var hitsArray = [];
+      				if (resultKeys.includes("hitsArray")) {
+      					hitsArray = result.hitsArray;
+      				}
+
+      				if (!isValidNonEmptyArray(hitsArray)) {
+      					$("#" + resultantElementId).html(bodyData);
+      					return;
+      				}
+
+      				for (var i = 0; i < hitsArray.length; i++) {
+      					var eachHitObject = hitsArray[i];
+      					if (!isValidNonEmptyObject(eachHitObject)) {
+      						continue;
+      					}
+
+      					var eachHitObjectKeys = String(Object.keys(eachHitObject));
+      					if (!eachHitObjectKeys.includes("basicHitDetails") && !eachHitObjectKeys.includes("additionalHitDetails")) {
+      						continue;
+      					}
+
+      					var hitUuidClass = "hit_" + generateRandomUuid();
+
+      					hitsHeaderTr += generateTruliooHeader((i + 1), hitUuidClass);
+
+      					if (!eachHitObjectKeys.includes("basicHitDetails")) {
+      						basicHitDetailsTr += generateBasicHitDetailsForTrulioo("-", "-", "-", "-", hitUuidClass);
+      					} else {
+      						var basicHitDetailsObj = eachHitObject.basicHitDetails;
+
+      						if (!isValidNonEmptyObject(basicHitDetailsObj)) {
+      							basicHitDetailsTr += generateBasicHitDetailsForTrulioo("-", "-", "-", "-", hitUuidClass);
+      						} else {
+      							basicHitDetailsTr += generateBasicHitDetailsForTrulioo(basicHitDetailsObj.name, basicHitDetailsObj.types, basicHitDetailsObj.sources, basicHitDetailsObj.media, hitUuidClass);
+      						}
+      					}
+
+      					if (eachHitObjectKeys.includes("additionalHitDetails")) {
+      						var additionalHitDetailsArr = eachHitObject.additionalHitDetails;
+
+      						if (isValidNonEmptyArray(additionalHitDetailsArr)) {
+      							additionalHitDetailsTr += generateAdditionalHitDetailsForTrulioo(additionalHitDetailsArr, hitUuidClass);
+      						}
+      					}
+
+      					bodyData += (hitsHeaderTr + basicHitDetailsTr + additionalHitDetailsTr);
+      					hitsHeaderTr = "";
+      					basicHitDetailsTr = "";
+      					additionalHitDetailsTr = "";
+      				}
+
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			error: function (xhr) {
+      				var bodyData = "<tr>";
+      				bodyData += "<td colspan='2345'><h2>No Data Found!</h2></td>";
+      				bodyData += "</tr>";
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function getFormattedValue(value) {
+      		if (value == null || value === "null" || value === "" || value === undefined) {
+      			return "-";
+      		}
+
+      		var finalValue = "";
+
+      		value = ((((value.split("\t")).join("\|")).split("\n")).join("\|"));
+
+      		var eachValueArray = value.split("\|");
+
+      		for (var index = 0; index < eachValueArray.length; index++) {
+
+      			var eachSplittedValue = eachValueArray[index];
+
+      			if (eachSplittedValue.includes("http") || eachSplittedValue.includes("https")) {
+      				const url = eachSplittedValue;
+      				finalValue += "<a href='#' onclick='window.open(\"" + url + "\");'>" + url + "</a><br>";
+      				// finalValue += "<a href = '" + eachSplittedValue + "' target = '_blank'>" + eachSplittedValue + "</a><br>";
+      			} else {
+      				finalValue += eachSplittedValue + "<br>";
+      			}
+      		}
+
+      		return finalValue;
+      	}
+
+      	function getMyInfoData(resultantElementId, complianceId, ServiceId, referenceNumber) {
+      		var url = $("#myInfoServiceDetailUrl").val() + complianceId + "/" + ServiceId + "/" + referenceNumber + "/myInfoServiceDetails";
+      		var loadingIcon = "<tr><td colspan=100 style='text-align:center;'><img style='max-width:50px;'src='assets/img/loading.gif'></img></td></tr>";
+      		$("#" + resultantElementId).html(loadingIcon);
+      		$.ajax({
+      			url: url,
+      			type: "GET",
+      			async: true,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var keysArray = Object.keys(result);
+      				var bodyData = "";
+      				var hyperLink = "";
+      				var nonHyperLink = "";
+      				for (var i = 0; i < keysArray.length; i++) {
+      					var eachKey = keysArray[i];
+      					var splittedKey = eachKey.split("\.");
+      					var keyToDisplay = splittedKey[splittedKey.length - 1];
+      					var eachValue = result[eachKey];
+      					if (eachValue == null || eachValue === "null" || eachValue === undefined || eachValue === "" || eachValue === {}) {
+      						eachValue = "-";
+      					}
+      					if ((keyToDisplay.toLowerCase().includes("href") || keyToDisplay.toLowerCase().includes("uri") || keyToDisplay.toLowerCase().includes("url")) && eachValue !== "-") {
+      						nonHyperLink += "<tr>";
+      						nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      						const url = eachValue;
+      						nonHyperLink += "<td><a href='#' onclick='window.open(\"" + url + "\");'>" + url + "</a></td>";
+      						// nonHyperLink += "<td><a target='_blank' href='" + eachValue + "'>" + eachValue + "</a></td>";
+      						nonHyperLink += "</tr>";
+      					} else {
+      						nonHyperLink += "<tr>";
+      						nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      						nonHyperLink += "<td>" + eachValue + "</td>";
+      						nonHyperLink += "</tr>";
+      					}
+      				}
+      				bodyData += (hyperLink + nonHyperLink);
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			error: function (xhr) {
+      				var bodyData = "<tr>";
+      				bodyData += "<td colspan='2345'><h2>No Data Found!</h2></td>";
+      				bodyData += "</tr>";
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function getManualData(resultantElementId, clientHashId, customerHashId, referenceNumber) {
+      		var url = $("#fetchComplianceDocumentMetadataUrl").val() + clientHashId + "/customer/" + customerHashId + "/referenceNumber/" + referenceNumber + "/fetchComplianceDocumentsMetadata";
+      		var loadingIcon = "<tr><td colspan=100 style='text-align:center;'><img style='max-width:50px;'src='assets/img/loading.gif'></img></td></tr>";
+      		$("#" + resultantElementId).html(loadingIcon);
+      		$.ajax({
+      			url: url,
+      			async: true,
+      			type: "GET",
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var bodyObject = result.body;
+      				var keysArray = Object.keys(bodyObject);
+      				var bodyData = "";
+      				var hyperLinks = "";
+
+      				for (var i = 0; i < keysArray.length; i++) {
+      					var eachKey = keysArray[i];
+      					if ((eachKey.toLowerCase()).includes("complianceid") || (eachKey.toLowerCase()).includes("status")) {
+      						continue;
+      					}
+
+      					var splittedKey = eachKey.split("\.");
+
+      					var keyToDisplay = splittedKey[splittedKey.length - 1];
+
+      					if (keyToDisplay === "identificationDocumentCount" || keyToDisplay === "identificationDocumentNumber" || keyToDisplay === "fileType" || keyToDisplay === "document" || keyToDisplay === "referenceNumber") {
+      						continue;
+      					}
+
+      					var eachValue = bodyObject[eachKey];
+
+      					if (eachValue == null || eachValue === "null" || eachValue === undefined || eachValue === "") {
+      						eachValue = "-";
+      					}
+
+      					if ((keyToDisplay.toLowerCase().includes("href") || keyToDisplay.toLowerCase().includes("uri") || keyToDisplay.toLowerCase().includes("url")) && eachValue !== "-") {
+      						bodyData += "<tr>";
+      						bodyData += "<td><strong>Content</strong></td>";
+      						var docData = fetchDocumentData(eachValue);
+      						bodyData += "<td>" + (docData.result) + "</td>";
+      						bodyData += "</tr>";
+      					} else if (eachValue !== "-") {
+      						bodyData += "<tr>";
+      						bodyData += "<td><strong>" + keyToDisplay + "</strong></td>";
+      						bodyData += "<td>" + eachValue + "</td>";
+      						bodyData += "</tr>";
+      					}
+      				}
+      				$("#" + resultantElementId).html((hyperLinks + bodyData));
+      			},
+      			error: function (xhr) {
+      				var bodyData = "<tr>";
+      				bodyData += "<td colspan='2345'><h2>No Data Found!</h2></td>";
+      				bodyData += "</tr>";
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function getOnfidoData(resultantElementId, clientHashId, customerHashId, referenceNumber) {
+      		var url = $("#fetchOnfidoDocumentsMetadata").val() + clientHashId + "/customer/" + customerHashId + "/referenceNumber/" + referenceNumber + "/fetchOnfidoDocumentsMetadata";
+      		var loadingIcon = "<tr><td colspan=100 style='text-align:center;'><img style='max-width:50px;'src='assets/img/loading.gif'></img></td></tr>";
+      		$("#" + resultantElementId).html(loadingIcon);
+      		$.ajax({
+      			url: url,
+      			async: true,
+      			type: "GET",
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var bodyObject = result.body;
+      				var keysArray = Object.keys(bodyObject);
+      				var bodyData = "";
+      				var hyperLinks = "";
+
+      				for (var i = 0; i < keysArray.length; i++) {
+      					var eachKey = keysArray[i];
+      					if ((eachKey.toLowerCase()).includes("complianceid") || (eachKey.toLowerCase()).includes("status")) {
+      						continue;
+      					}
+
+      					var splittedKey = eachKey.split("\.");
+
+      					var keyToDisplay = splittedKey[splittedKey.length - 1];
+
+      					if (keyToDisplay === "identificationDocumentCount" || keyToDisplay === "identificationDocumentNumber" || keyToDisplay === "fileType" || keyToDisplay === "document" || keyToDisplay === "referenceNumber") {
+      						continue;
+      					}
+
+      					var eachValue = bodyObject[eachKey];
+
+      					if (eachValue == null || eachValue === "null" || eachValue === undefined || eachValue === "") {
+      						eachValue = "-";
+      					}
+
+      					if ((Array.isArray(eachValue) && eachValue.length <= 0) || (Array.isArray(eachValue) === false && ((String)(typeof eachValue)).toLowerCase() === "object" && (Object.keys(eachValue)).length <= 0)) {
+      						continue;
+      					}
+
+      					if ((keyToDisplay.toLowerCase().includes("href") || keyToDisplay.toLowerCase().includes("uri") || keyToDisplay.toLowerCase().includes("url")) && eachValue !== "-") {
+      						if (!eachValue.toLowerCase().includes("http")) {
+      							continue;
+      						}
+      						bodyData += "<tr>";
+      						bodyData += "<td><strong>Content</strong></td>";
+      						var docData = fetchDocumentData(eachValue);
+      						bodyData += "<td>" + (docData.result) + "</td>";
+      						bodyData += "</tr>";
+      					} else if (eachValue !== "-") {
+      						bodyData += "<tr>";
+      						bodyData += "<td><strong>" + keyToDisplay + "</strong></td>";
+      						bodyData += "<td>" + eachValue + "</td>";
+      						bodyData += "</tr>";
+      					}
+      				}
+      				$("#" + resultantElementId).html((hyperLinks + bodyData));
+      			},
+      			error: function (xhr) {
+      				var bodyData = "<tr>";
+      				bodyData += "<td colspan='2345'><h2>No Data Found!</h2></td>";
+      				bodyData += "</tr>";
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function getRfiData(resultantElementId, clientHashId, customerHashId, serviceId, referenceNumber) {
+      		var url = $("#fetchRfiDocumentMetadataUrl").val() + clientHashId + "/customer/" + customerHashId + "/" + serviceId + "/" + referenceNumber + "/fetchRfiDocumentsMetadata";
+      		var loadingIcon = "<tr><td colspan=100 style='text-align:center;'><img style='max-width:50px;'src='assets/img/loading.gif'></img></td></tr>";
+      		$("#" + resultantElementId).html(loadingIcon);
+      		$.ajax({
+      			url: url,
+      			async: true,
+      			type: "GET",
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var bodyObject = result.body;
+      				var keysArray = Object.keys(bodyObject);
+      				var bodyData = "";
+      				var hyperLink = "";
+      				var nonHyperLink = "";
+      				for (var i = 0; i < keysArray.length; i++) {
+      					var eachKey = keysArray[i];
+      					if ((eachKey.toLowerCase()).includes("complianceid") || (eachKey.toLowerCase()).includes("status")) {
+      						continue;
+      					}
+      					var splittedKey = eachKey.split("\.");
+      					var keyToDisplay = splittedKey[splittedKey.length - 1];
+      					var eachValue = bodyObject[eachKey];
+      					if (eachValue == null || eachValue === "null" || eachValue === undefined || eachValue === "") {
+      						eachValue = "-";
+      					}
+      					if ((keyToDisplay.toLowerCase().includes("href") || keyToDisplay.toLowerCase().includes("uri") || keyToDisplay.toLowerCase().includes("url")) && eachValue !== "-") {
+      						nonHyperLink += "<tr>";
+      						nonHyperLink += "<td><strong>Content</strong></td>";
+      						var docData = fetchDocumentData(eachValue);
+      						nonHyperLink += "<td>" + (docData.result) + "</td>";
+      						nonHyperLink += "</tr>";
+      					} else if (eachValue !== "-") {
+      						nonHyperLink += "<tr>";
+      						nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      						nonHyperLink += "<td>" + eachValue + "</td>";
+      						nonHyperLink += "</tr>";
+      					}
+      				}
+      				bodyData += (hyperLink + nonHyperLink)
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			error: function (xhr) {
+      				var bodyData = "<tr>";
+      				bodyData += "<td colspan='2345'><h2>No Data Found!</h2></td>";
+      				bodyData += "</tr>";
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function getGreenIdData(resultantElementId, complianceId, customerHashId, serviceId, referenceNumber) {
+      		var url = $("#greenIdServiceDetailUrl").val() + complianceId + "/" + serviceId + "/" + referenceNumber + "/greenIdServiceDetails";
+      		var loadingIcon = "<tr><td colspan=100 style='text-align:center;'><img style='max-width:50px;'src='assets/img/loading.gif'></img></td></tr>";
+      		$("#" + resultantElementId).html(loadingIcon);
+      		$.ajax({
+      			url: url,
+      			type: "GET",
+      			async: true,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var keysArray = Object.keys(result);
+      				var bodyData = "";
+      				var hyperLink = "";
+      				var nonHyperLink = "";
+      				for (var i = 0; i < keysArray.length; i++) {
+      					var eachKey = keysArray[i];
+      					var splittedKey = eachKey.split("\.");
+      					var keyToDisplay = splittedKey[splittedKey.length - 1];
+      					var eachValue = result[eachKey];
+      					if (eachValue == null || eachValue === "null" || eachValue === undefined || eachValue === "" || eachValue === {}) {
+      						eachValue = "-";
+      					}
+      					if ((keyToDisplay.toLowerCase().includes("href") || keyToDisplay.toLowerCase().includes("uri") || keyToDisplay.toLowerCase().includes("url")) && eachValue !== "-") {
+      						nonHyperLink += "<tr>";
+      						nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      						nonHyperLink += "<td><a href='#' onclick='window.open(\"" + eachValue + "\");'>" + eachValue + "</a></td>";
+      						// nonHyperLink += "<td><a target='_blank' href='" + eachValue + "'>" + eachValue + "</a></td>";
+      						nonHyperLink += "</tr>";
+      					} else {
+      						nonHyperLink += "<tr>";
+      						nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      						nonHyperLink += "<td>" + eachValue + "</td>";
+      						nonHyperLink += "</tr>";
+      					}
+      				}
+      				bodyData += (hyperLink + nonHyperLink);
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			error: function (xhr) {
+      				var bodyData = "<tr>";
+      				bodyData += "<td colspan='2345'><h2>No Data Found!</h2></td>";
+      				bodyData += "</tr>";
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function getRiskData(resultantElementId, complianceId, customerHashId, serviceId, referenceNumber) {
+      		var url = $("#riskServiceDetailUrl").val() + complianceId + "/" + serviceId + "/" + referenceNumber + "/riskServiceDetails";
+      		var loadingIcon = "<tr><td colspan=100 style='text-align:center;'><img style='max-width:50px;'src='assets/img/loading.gif'></img></td></tr>";
+      		$("#" + resultantElementId).html(loadingIcon);
+      		$.ajax({
+      			url: url,
+      			type: "GET",
+      			async: true,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var keysArray = Object.keys(result);
+      				var bodyData = "";
+      				var hyperLink = "";
+      				var nonHyperLink = "";
+      				for (var i = 0; i < keysArray.length; i++) {
+      					var eachKey = keysArray[i];
+      					var splittedKey = eachKey.split("\.");
+      					var keyToDisplay = splittedKey[splittedKey.length - 1];
+      					var eachValue = result[eachKey];
+      					if (eachValue == null || eachValue === "null" || eachValue === undefined || eachValue === "") {
+      						eachValue = "-";
+      					}
+      					if ((keyToDisplay.toLowerCase().includes("href") || keyToDisplay.toLowerCase().includes("uri") || keyToDisplay.toLowerCase().includes("url")) && eachValue !== "-") {
+      						if (eachValue.includes("/profile")) {
+      							const url = '${pageContext.request.contextPath}/individualProfileDetails?url=' + eachValue;
+      							var viewProfileDetailsLink = "<a href='#' onclick='window.open(\"" + url + "\");'>" + "View Profile" + "</a>";
+      							<%--var viewProfileDetailsLink = "<a target='_blank' href='${pageContext.request.contextPath}/individualProfileDetails?url=" + eachValue + "'>View Profile</a>";--%>
+      							nonHyperLink += "<tr>";
+      							nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      							nonHyperLink += "<td>" + viewProfileDetailsLink + "</td>";
+      							nonHyperLink += "</tr>";
+      						} else {
+      							nonHyperLink += "<tr>";
+      							nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      							nonHyperLink += "<td><a href='#' onclick='window.open(\"" + eachValue + "\");'>" + eachValue + "</a></td>";
+      							// nonHyperLink += "<td><a target='_blank' href='" + eachValue + "'>" + eachValue + "</a></td>";
+      							nonHyperLink += "</tr>";
+      						}
+      					} else {
+      						nonHyperLink += "<tr>";
+      						nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      						nonHyperLink += "<td>" + eachValue + "</td>";
+      						nonHyperLink += "</tr>";
+      					}
+      				}
+      				bodyData += (hyperLink + nonHyperLink);
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			error: function (xhr) {
+      				var bodyData = "<tr>";
+      				bodyData += "<td colspan='2345'><h2>No Data Found!</h2></td>";
+      				bodyData += "</tr>";
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function getBlacklistData(resultantElementId, complianceId, customerHashId, serviceId, referenceNumber) {
+      		var url = $("#blacklistServiceDetailUrl").val() + complianceId + "/" + serviceId + "/" + referenceNumber + "/blacklistServiceDetails";
+      		var loadingIcon = "<tr><td colspan=100 style='text-align:center;'><img style='max-width:50px;'src='assets/img/loading.gif'></img></td></tr>";
+      		$("#" + resultantElementId).html(loadingIcon);
+      		$.ajax({
+      			url: url,
+      			type: "GET",
+      			async: true,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var bodyObject = result.body;
+
+      				var keysArray = Object.keys(bodyObject);
+
+      				var bodyData = "";
+      				var topPositionData = "";
+      				var hyperLink = "";
+      				var nonHyperLink = "";
+
+      				for (var i = 0; i < keysArray.length; i++) {
+      					var eachKey = keysArray[i];
+      					var splittedKey = eachKey.split("\.");
+      					var keyToDisplay = splittedKey[splittedKey.length - 1];
+
+      					var eachValue = bodyObject[eachKey];
+      					eachValue = eachValue.toString();
+
+      					if (eachValue == null || eachValue === "null" || eachValue === undefined || eachValue === "" || eachValue === {} || eachValue === "{}" || eachValue === [] || eachValue === "[]" || eachValue === "[object Object]") {
+      						eachValue = "-";
+      					}
+
+      					if (keyToDisplay.toLowerCase() === "score") {
+      						nonHyperLink += "<tr>";
+      						nonHyperLink += "<td><hr style = 'border-top: 1px solid #00000045;' /></td>";
+      						nonHyperLink += "<td><hr style = 'border-top: 1px solid #00000045;' /></td>";
+      						nonHyperLink += "</tr>";
+      					}
+
+      					if (keyToDisplay.toLowerCase().includes("totalhits") || keyToDisplay.toLowerCase().includes("maxscore")) {
+      						topPositionData += "<tr>";
+      						topPositionData += "<td><strong>" + keyToDisplay + "</strong></td>";
+      						topPositionData += "<td>" + eachValue + "</td>";
+      						topPositionData += "</tr>";
+      					} else {
+      						if ((keyToDisplay.toLowerCase().includes("href") || keyToDisplay.toLowerCase().includes("uri") || keyToDisplay.toLowerCase().includes("url")) && eachValue !== "-") {
+      							nonHyperLink += "<tr>";
+      							nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      							nonHyperLink += "<td><a href='#' onclick='window.open(\"" + eachValue + "\");'>" + eachValue + "</a></td>";
+      							// nonHyperLink += "<td><a target='_blank' href='" + eachValue + "'>" + eachValue + "</a></td>";
+      							nonHyperLink += "</tr>";
+      						} else {
+      							nonHyperLink += "<tr>";
+      							nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      							nonHyperLink += "<td>" + eachValue + "</td>";
+      							nonHyperLink += "</tr>";
+      						}
+      					}
+      				}
+      				bodyData += (topPositionData + hyperLink + nonHyperLink);
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			error: function (xhr) {
+      				var bodyData = "<tr>";
+      				bodyData += "<td colspan='2345'><h2>No Data Found!</h2></td>";
+      				bodyData += "</tr>";
+      				$("#" + resultantElementId).html(bodyData);
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function getIndividualServiceDetails(complianceId, eachObject) {
+      		var output = "";
+      		if (complianceId == null || complianceId === "null" || complianceId === "-" || complianceId === undefined) {
+      			output += "<td>-</td><td><p style='white-space: nowrap;'><strong>-</strong></td></tr>";
+      			return output;
+      		}
+      		var individualServiceStatus = "";
+      		var accordianData = "";
+      		var raiseRfi = false;
+
+      		var url = $("#individualServiceDetailsUrl").val() + complianceId + "/individualServiceDetails";
+      		$.ajax({
+      			async: false,
+      			url: url,
+      			type: "GET",
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var bodyObject = result.body;
+      				output += "<td>" + eachObject.complianceStatus + "</td>";
+      				for (var i = 0; i < (bodyObject.complianceResults).length; i++) {
+      					var temp = (++innerLoopSerialNo);
+      					var eachComplianceResult = (bodyObject.complianceResults)[i];
+
+      					individualServiceStatus += "<p style='white-space: nowrap;'><strong>" + eachComplianceResult.serviceName + "</strong> | <strong>" + eachComplianceResult.status + "</strong></p>";
+
+      					if (((eachComplianceResult.serviceName).toLowerCase()).includes("worldcheck")) {
+      						raiseRfi = true;
+      						accordianData += generateWorldCheckAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      					} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("trulioo")) {
+      						raiseRfi = true;
+      						accordianData += generateTruliooAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      					} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("manual")) {
+      						raiseRfi = true;
+      						accordianData += generateManualAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      					} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("rfi")) {
+      						raiseRfi = true;
+      						accordianData += generateRfiAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      					} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("myinfo")) {
+      						raiseRfi = true;
+      						accordianData += generateMyInfoAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      					} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("onfido")) {
+      						raiseRfi = true;
+      						accordianData += generateOnfidoAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      					} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("greenid")) {
+      						raiseRfi = true;
+      						accordianData += generateGreenIdAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      					} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("regulatory blacklisting")) {
+      						raiseRfi = true;
+      						accordianData += generateBlacklistAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      					} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("risk")) {
+      						raiseRfi = true;
+      						accordianData += generateRiskServiceAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+      					}
+      				}
+      				output += "<td>" + individualServiceStatus + "</td>";
+
+      				output += "<tr id='collapse_header' class='collapse_header'>";
+      				output += "<td colspan='933'>";
+      				output += '<div class="row">';
+      				output += '<div class="col-md-6">';
+      				output += '<div class="custDtlsComp_wrapper">';
+      				const url = '${pageContext.request.contextPath}/customer/customerDetails?customerHashId=' + eachObject.customerHashId;
+      				var link = "<a href='#' onclick='window.open(\"" + url + "\");'>" + eachObject.customerHashId + "</a>";
+      				<%--var link = "<a target='_blank' href='${pageContext.request.contextPath}/customer/customerDetails?customerHashId=" + eachObject.customerHashId + "'>" + eachObject.customerHashId + "</a>";--%>
+      				output += '<h5 style="font-weight: 600">Customer Hash</h5><h5>' + link + '</h5>';
+      				output += '<h5 style="font-weight: 600">Preferred Name</h5><h5>' + eachObject.preferredName + '</h5>';
+      				output += '<h5 style="font-weight: 600">DOB</h5><h5>' + eachObject.dateOfBirth + '</h5>';
+      				output += '<h5 style="font-weight: 600">Compliance Profile</h5><h5>' + eachObject.complianceProfile + '</h5>';
+      				output += '<h5 style="font-weight: 600">Unique Customer ID</h5><h5>' + eachObject.uniqueCustomerId + '</h5>';
+      				if (eachObject.residentStatus == null || eachObject.residentStatus === "" || eachObject.residentStatus === undefined) {
+      					output += '<h5 style="font-weight: 600">Resident Status</h5><h5>-</h5>'
+      				} else {
+      					output += '<h5 style="font-weight: 600">Resident Status</h5><h5>' + eachObject.residentStatus + '&nbsp | <a href="#" onclick="updateResidentStatusModal(\'' + eachObject.customerHashId + '\');">update</a></h5>'
+      				}
+      				output += '</div>';
+      				output += '</div>';
+
+      				output += '<div class="col-md-6">';
+      				output += '<div class="custDtlsComp_wrapper">';
+      				output += '<h5 style="font-weight: 600">Mobile Number</h5><h5>' + eachObject.mobileNumber + '</h5>';
+      				output += '<h5 style="font-weight: 600">Customer Status</h5><h5>' + eachObject.customerStatus + '</h5>';
+      				output += '<h5 style="font-weight: 600">Nationality</h5><h5>' + eachObject.nationality + '</h5>';
+      				output += '<h5 style="font-weight: 600">Compliance ID</h5><h5>' + eachObject.complianceId + '</h5>';
+      				output += '</div>';
+      				output += '</div>';
+      				output += '</div>';
+
+      				output += '<div class="row">';
+      				output += '<div class="col-md-12">';
+      				output += '<div class="accordian-container">';
+
+      				output += accordianData;
+
+      				if (raiseRfi && !(((bodyObject.status).toLowerCase()).includes("rfi_requested"))
+      					/* && !(((eachObject.complianceStatus).toLowerCase()).includes("completed")) */) {
+      					output += '<button id="fetchRfiTemplateListBtn" class="btn btn-primary px-5 ripple" type="button" onclick=" fetchRfiTemplateList(\'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\')";>Raise RFI</button>';
+      				}
+      				if (((bodyObject.status).toLowerCase()).includes("rfi_requested")) {
+      					output += '<button id="raisedRfiDetailsBtn" class="btn btn-primary px-5 ripple" type="button" onclick="fetchRfiDetails(\'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\')";>RFI Details</button>';
+      				}
+      			},
+      			error: function (xhr) {
+      				if (xhr.status === 500) {
+      					var responseMessage = JSON.parse(xhr.responseText);
+      					var message = responseMessage.message;
+      				} else if (xhr.status === 400) {
+      				}
+      				output += "<td>-</td><td><p style='white-space: nowrap;'><strong>-</strong></td>";
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      		return output;
+      	}
+
+      	function paginationForCustomerList(totalPages) {
+      		$('#paginations').twbsPagination({
+      			totalPages: totalPages,
+      			visiblePages: 10,
+      			initiateStartPageClick: false,
+      			onPageClick: function (event, page) {
+      				getFilteredCustomerList(page - 1);
+      			}
+      		});
+      	}
+
+      	function toggleAccordian(element) {
+      		$(element).text(function (_, value) {
+      			return value === '-' ? '+' : '-'
+      		});
+      		$(element).closest("tr.header").next("#collapse_header").slideToggle(100).css('display', 'table-row');
+      	}
+
+      	function toggleWorldCheck_Trulioo(resultantElementId, element, complianceId, serviceId, referenceNumber) {
+      		$(element).nextAll(".content:first").slideToggle("fast");
+      		$(element).find(".accordian-arrow").toggleClass("less");
+
+      		if ($(element).find(".accordian-arrow").hasClass("less") && $(element).hasClass("worldCheck")) {
+      			getWorldCheckData(resultantElementId, complianceId, serviceId, referenceNumber);
+
+      		} else if ($(element).find(".accordian-arrow").hasClass("less") && $(element).hasClass("trulioo")) {
+      			getTruliooData(resultantElementId, complianceId, serviceId, referenceNumber);
+
+      		} else if ($(element).find(".accordian-arrow").hasClass("less") && $(element).hasClass("myInfo")) {
+      			getMyInfoData(resultantElementId, complianceId, serviceId, referenceNumber);
+      		}
+      	}
+
+      	function toggleManual(resultantElementId, element, clientHashId, customerHashId, referenceNumber) {
+      		$(element).nextAll(".content:first").slideToggle("fast");
+      		$(element).find(".accordian-arrow").toggleClass("less");
+
+      		if ($(element).find(".accordian-arrow").hasClass("less") && $(element).hasClass("manual")) {
+      			getManualData(resultantElementId, clientHashId, customerHashId, referenceNumber);
+      		}
+      	}
+
+      	function toggleOnfido(resultantElementId, element, clientHashId, customerHashId, referenceNumber) {
+      		$(element).nextAll(".content:first").slideToggle("fast");
+      		$(element).find(".accordian-arrow").toggleClass("less");
+
+      		if ($(element).find(".accordian-arrow").hasClass("less") && $(element).hasClass("onfido")) {
+      			getOnfidoData(resultantElementId, clientHashId, customerHashId, referenceNumber);
+      		}
+      	}
+
+      	function toggleRisk(resultantElementId, element, complianceId, customerHashId, serviceId, referenceNumber) {
+      		$(element).nextAll(".content:first").slideToggle("fast");
+      		$(element).find(".accordian-arrow").toggleClass("less");
+
+      		if ($(element).find(".accordian-arrow").hasClass("less") && $(element).hasClass("risk")) {
+      			getRiskData(resultantElementId, complianceId, customerHashId, serviceId, referenceNumber);
+      		}
+      	}
+
+      	function toggleRfi(resultantElementId, element, clientHashId, customerHashId, serviceId, referenceNumber) {
+      		$(element).nextAll(".content:first").slideToggle("fast");
+      		$(element).find(".accordian-arrow").toggleClass("less");
+
+      		if ($(element).find(".accordian-arrow").hasClass("less") && $(element).hasClass("rfi")) {
+      			getRfiData(resultantElementId, clientHashId, customerHashId, serviceId, referenceNumber);
+      		}
+      	}
+
+      	function toggleGreenId(resultantElementId, element, complianceId, customerHashId, serviceId, referenceNumber) {
+      		$(element).nextAll(".content:first").slideToggle("fast");
+      		$(element).find(".accordian-arrow").toggleClass("less");
+
+      		if ($(element).find(".accordian-arrow").hasClass("less") && $(element).hasClass("greenId")) {
+      			getGreenIdData(resultantElementId, complianceId, customerHashId, serviceId, referenceNumber);
+      		}
+      	}
+
+      	function toggleBlacklist(resultantElementId, element, complianceId, customerHashId, serviceId, referenceNumber) {
+      		$(element).nextAll(".content:first").slideToggle("fast");
+      		$(element).find(".accordian-arrow").toggleClass("less");
+
+      		if ($(element).find(".accordian-arrow").hasClass("less") && $(element).hasClass("blacklist")) {
+      			getBlacklistData(resultantElementId, complianceId, customerHashId, serviceId, referenceNumber);
+      		}
+      	}
+
+      	function openStatusUpdateModal(complianceId, serviceId, referenceNumber, serviceName) {
+      		$("#StatusUpdateComplianceId").val(complianceId);
+      		$("#ServiceId").val(serviceId);
+      		$("#referenceNumber").val(referenceNumber);
+      		$("#complianceAction").val("");
+      		$("#remarks").val("");
+      		$("#updateStatusSubmitBtn").attr("disabled", false);
+
+      		if (serviceName === "worldCheck") {
+      			$("#complianceStatus").html(generateWorldCheckComplianceStatusDropDown());
+      		}
+      		if (serviceName === "trulioo") {
+      			$("#complianceStatus").html(generateTruliooComplianceStatusDropDown());
+      		}
+      		if (serviceName === "blacklist") {
+      			$("#complianceStatus").html(generateTruliooComplianceStatusDropDown());
+      		}
+      		if (serviceName === "manual") {
+      			$("#complianceStatus").html(generateManualComplianceStatusDropDown());
+      		}
+      		if (serviceName === "greenId") {
+      			$("#complianceStatus").html(generateManualComplianceStatusDropDown());
+      		}
+      		if (serviceName === "onfido") {
+      			$("#complianceStatus").html(generateManualComplianceStatusDropDown());
+      		}
+      		if (serviceName === "rfi_requested") {
+      			$("#complianceStatus").html(generateRfiRequestedComplianceStatusDropDown());
+      		}
+      		if (serviceName === "rfi_responded") {
+      			$("#complianceStatus").html(generateRfiRespondedComplianceStatusDropDown());
+      		}
+      		if (serviceName === "myInfo") {
+      			$("#complianceStatus").html(generateMyInfoComplianceStatusDropDown());
+      		}
+      		if (serviceName === "risk") {
+      			$("#complianceStatus").html(generateTruliooComplianceStatusDropDown());
+      		}
+
+      		$("#individualComplianceServiceStatusUpdateModal").modal({
+      			backdrop: false,
+      			keyboard: false,
+      			show: true
+      		});
+      	}
+
+      	function generateComplianceStatusDropDown() {
+      		var url = $("#fetchAllComplianceStatusUrl").val();
+      		$.ajax({
+      			async: false,
+      			url: url,
+      			type: "GET",
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				allComplianceStatus = result;
+      			},
+      			error: function (xhr) {
+      				allComplianceStatus = "";
+      				if (xhr.status === 500) {
+      					var responseMessage = JSON.parse(xhr.responseText);
+      					var message = responseMessage.message;
+      				} else {
+      					var message = xhr.message;
+      				}
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      	}
+
+      	function generateComplianceStatusDropDownForFilter() {
+      		var output = "";
+      		output += "<option value = ''>Select a status</option>";
+
+      		for (var i = 0; i < (allComplianceStatus.body).length; i++) {
+      			var eachStatusValue = (allComplianceStatus.body)[i];
+      			var valueToDisplay = (eachStatusValue.split("_")).join(" ");
+      			output += "<option value = \"" + sanitize(unSanitize(eachStatusValue)) + "\">" + sanitize(unSanitize(valueToDisplay)) + "</option>";
+      		}
+      		$("#complianceStatusFilter").html(output);
+      	}
+
+      	function generateWorldCheckComplianceStatusDropDown() {
+      		var output = "";
+      		output += "<option value = ''>Select a status</option>";
+
+      		for (var i = 0; i < (allComplianceStatus.body).length; i++) {
+      			var eachStatusValue = (allComplianceStatus.body)[i];
+      			var valueToDisplay = (eachStatusValue.split("_")).join(" ");
+      			if ("reject" === eachStatusValue.trim().toLowerCase() || "completed" === eachStatusValue.trim().toLowerCase()) {
+      				output += "<option value = \"" + sanitize(unSanitize(eachStatusValue)) + "\">" + sanitize(unSanitize(valueToDisplay));
+      				+"</option>";
+      			}
+      		}
+      		return output;
+      	}
+
+      	function generateTruliooComplianceStatusDropDown() {
+      		var output = "";
+      		output += "<option value = ''>Select a status</option>";
+
+      		for (var i = 0; i < (allComplianceStatus.body).length; i++) {
+      			var eachStatusValue = (allComplianceStatus.body)[i];
+      			var valueToDisplay = (eachStatusValue.split("_")).join(" ");
+      			if ("reject" === eachStatusValue.trim().toLowerCase() || "completed" === eachStatusValue.trim().toLowerCase()) {
+      				output += "<option value = \"" + sanitize(unSanitize(eachStatusValue)) + "\">" + sanitize(unSanitize(valueToDisplay)) + "</option>";
+      			}
+      		}
+      		return output;
+      	}
+
+      	function generateManualComplianceStatusDropDown() {
+      		var output = "";
+      		output += "<option value = ''>Select a status</option>";
+
+      		for (var i = 0; i < (allComplianceStatus.body).length; i++) {
+      			var eachStatusValue = (allComplianceStatus.body)[i];
+      			var valueToDisplay = (eachStatusValue.split("_")).join(" ");
+      			if ("reject" === eachStatusValue.trim().toLowerCase() || "completed" === eachStatusValue.trim().toLowerCase()) {
+      				output += "<option value = \"" + sanitize(unSanitize(eachStatusValue)) + "\">" + sanitize(unSanitize(valueToDisplay)) + "</option>";
+      			}
+      		}
+      		return output;
+      	}
+
+      	function generateMyInfoComplianceStatusDropDown() {
+      		var output = "";
+      		output += "<option value = ''>Select a status</option>";
+
+      		for (var i = 0; i < (allComplianceStatus.body).length; i++) {
+      			var eachStatusValue = (allComplianceStatus.body)[i];
+      			var valueToDisplay = (eachStatusValue.split("_")).join(" ");
+      			if ("reject" === eachStatusValue.trim().toLowerCase() || "completed" === eachStatusValue.trim().toLowerCase()) {
+      				output += "<option value = \"" + sanitize(unSanitize(eachStatusValue)) + "\">" + sanitize(unSanitize(valueToDisplay)) + "</option>";
+      			}
+      		}
+      		return output;
+      	}
+
+      	function generateRfiRespondedComplianceStatusDropDown() {
+      		var output = "";
+      		output += "<option value = ''>Select a status</option>";
+
+      		for (var i = 0; i < (allComplianceStatus.body).length; i++) {
+      			var eachStatusValue = (allComplianceStatus.body)[i];
+      			var valueToDisplay = (eachStatusValue.split("_")).join(" ");
+      			if ("reject" === eachStatusValue.trim().toLowerCase() || "completed" === eachStatusValue.trim().toLowerCase()) {
+      				output += "<option value = \"" + sanitize(unSanitize(eachStatusValue)) + "\">" + sanitize(unSanitize(valueToDisplay)) + "</option>";
+      			}
+      		}
+      		return output;
+      	}
+
+      	function generateRfiRequestedComplianceStatusDropDown() {
+      		var output = "<option value = ''>Select a status</option>";
+      		output += "<option value = \"" + sanitize(unSanitize("CLOSED")) + "\">" + sanitize(unSanitize("CLOSED")) + "</option>";
+      		return output;
+      	}
+
+      	function validateAndUpdateIndividualServiceStatus() {
+      		$("#updateStatusSubmitBtn").attr("disabled", true);
+
+      		if (validateUpdateIndividualServiceStatusRequest()) {
+      			var complianceId = $("#StatusUpdateComplianceId").val();
+      			var ServiceId = $("#ServiceId").val();
+      			var referenceNumber = $("#referenceNumber").val();
+
+      			var data = {};
+      			data.changeStatus = $("#complianceStatus").val();
+      			data.complianceAction = $("#complianceAction").val();
+      			data.actionBy = $("#actionBy").val();
+      			data.remarks = $("#remarks").val();
+      			$.ajax({
+      				url: $("#updateComplianceStatusUrl").val() + complianceId + "/" + ServiceId + "/" + referenceNumber + "/updateStatus",
+      				type: 'POST',
+      				contentType: "application/json",
+      				data: JSON.stringify(unSanitize(data)),
+      				async: true,
+      				beforeSend: function (xhr) {
+      					setAuthTokenInReqHeader(xhr);
+      					setCsrfTokenInRequestHeader(xhr);
+      				},
+      				success: function (result, status, xhr) {
+      					var contextPath = "${pageContext.request.contextPath}";
+      					setAndReturnNewAuthToken(xhr, contextPath);
+      					setAndReturnNewCsrfToken(xhr, contextPath);
+      					sanitize(unSanitize(result));
+
+      					$("individualComplianceServiceStatusUpdateModal").modal('hide');
+      					$("#success_refundNotification").modal('show');
+      					$(".refunded_body").html("Status updated Successfully");
+      				},
+      				error: function (jqXHR) {
+      					if (jqXHR.readyState === 0) {
+      						$("#error_refundNotification").modal('show');
+      						$(".refunded_body").html("service is temporarily down,please try again later.");
+      					}
+      					if (jqXHR.status === 500) {
+      						var responseMessage = JSON.parse(jqXHR.responseText);
+      						var message = responseMessage.message;
+      						$("#error_refundNotification").modal('show');
+      						$(".refunded_body").html(message);
+      					} else if (jqXHR.status === 400) {
+      						$("#error_refundNotification").modal('show');
+      						$(".refunded_body").html(jqXHR.responseText);
+      					} else {
+      						$("#error_refundNotification").modal('show');
+      						$(".refunded_body").html(jqXHR.responseText);
+      					}
+      					$("#updateStatusSubmitBtn").attr("disabled", false);
+      				},
+      				complete: function (xhr, status) {
+      					var contextPath = "${pageContext.request.contextPath}";
+      					setAndReturnNewAuthToken(xhr, contextPath);
+      					setAndReturnNewCsrfToken(xhr, contextPath);
+      				}
+      			});
+      		}
+      	}
+
+      	function validateUpdateIndividualServiceStatusRequest() {
+      		var result = true;
+      		if ($("#StatusUpdateComplianceId").val() == null || $("#StatusUpdateComplianceId").val() === 'null' || $("#StatusUpdateComplianceId").val() === '' || $("#StatusUpdateComplianceId").val() === undefined) {
+      			result = false;
+      			$("#complianceIdErr").html("Compliance id is mandatory!");
+      		}
+
+      		if ($("#ServiceId").val() == null || $("#ServiceId").val() === 'null' || $("#ServiceId").val() === '' || $("#ServiceId").val() === undefined) {
+      			result = false;
+      			$("#ServiceIdErr").html("Service id is mandatory!");
+      		}
+
+      		if ($("#referenceNumber").val() == null || $("#referenceNumber").val() === 'null' || $("#referenceNumber").val() === '' || $("#referenceNumber").val() === undefined) {
+      			result = false;
+      			$("#referenceNumberError").html("Reference number is mandatory!");
+      		}
+
+      		if ($("#complianceStatus").val() == null || $("#complianceStatus").val() === 'null' || $("#complianceStatus").val() === '' || $("#complianceStatus").val() === undefined) {
+      			result = false;
+      			$("#complianceStatusErr").html("Status is mandatory!");
+      		}
+
+      		if ($("#actionBy").val() == null || $("#actionBy").val() === 'null' || $("#actionBy").val() === '' || $("#actionBy").val() === undefined) {
+      			result = false;
+      			$("#actionByErr").html("Update by is mandatory!");
+      		}
+
+      		if ($("#remarks").val() == null || $("#remarks").val() === 'null' || $("#remarks").val() === '' || $("#remarks").val() === undefined) {
+      			result = false;
+      			$("#remarksErr").html("Remarks is mandatory!");
+      		}
+
+      		if (!result) {
+      			$(".error").each(function (index, element) {
+      				$(element).css({
+      					"color": "red"
+      				});
+      			});
+
+      			setTimeout(function () {
+      				$(".error").each(function (index, element) {
+      					$(element).html("");
+      				});
+      				$("#updateStatusSubmitBtn").attr("disabled", false);
+      			}, 3000);
+      		}
+
+      		return result;
+      	}
+
+      	function closeModal() {
+      		window.location.reload(true);
+      	}
+
+      	function fetchDocumentData(documentUrl) {
+      		var encodedUrl = window.btoa(documentUrl);
+      		var finalResult = {};
+      		$.ajax({
+      			url: $("#fetchComplianceDocumentsUrl").val() + encodedUrl,
+      			type: 'GET',
+      			async: false,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+
+      				var body = result.body;
+      				var fileName = body.fileName;
+      				var mediaType = body.fileType;
+      				var content = body.document;
+      				finalResult.result = "<a onclick='downloadContent(this, \"" + mediaType + "\");' href=\"data:" + mediaType + ";charset=utf-8;base64," + content + "\">Click to view uploaded document</a>";
+      				// finalResult.result = "<a onclick='showContent(this, \"" + mediaType + "\");' href=\"data:" + mediaType + ";charset=utf-8;base64," + content + "\">Click to view uploaded document</a>";
+      			},
+      			error: function (jqXhr) {
+      				if (jqXhr.readyState === 0) {
+      					finalResult.result = "service is temporarily down,please try again later.";
+      				}
+      				if (jqXhr.status === 500) {
+      					var responseMessage = JSON.parse(jqXhr.responseText);
+      					var message = responseMessage.message;
+      					finalResult.result = message;
+      				} else {
+      					finalResult.result = jqXhr.responseText;
+      				}
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      		return finalResult;
+      	}
+
+      	function showContent(currentElement, mediaType) {
+      		var splittedMediaType = mediaType.split("/");
+      		var fileExtension = splittedMediaType[(splittedMediaType.length - 1)];
+      		var currentTime = new Date().getTime();
+
+      		var dataUrl = currentElement.href;
+
+      		var documentObject = (window.open()).document;
+      		documentObject.title = "Content";
+
+      		var anchorTag = documentObject.createElement('a');
+      		anchorTag.innerHTML = 'Click to download';
+      		anchorTag.download = currentTime + "." + fileExtension;
+      		anchorTag.href = dataUrl;
+      		documentObject.body.appendChild(anchorTag);
+
+      		var breakTag = documentObject.createElement('br');
+      		documentObject.body.appendChild(breakTag);
+
+      		var iframeTag = documentObject.createElement('iframe');
+      		iframeTag.src = dataUrl;
+      		iframeTag.height = '600px';
+      		iframeTag.width = '1300px';
+      		documentObject.body.appendChild(iframeTag);
+      	}
+
+      	function downloadContent(currentElement, mediaType) {
+      		var splittedMediaType = mediaType.split("/");
+      		var fileExtension = splittedMediaType[(splittedMediaType.length - 1)];
+      		var currentTime = new Date().getTime();
+      		var documentObject = window.document;
+      		var anchorTag = documentObject.createElement('a');
+      		anchorTag.href = (currentElement.href);
+      		anchorTag.download = currentTime + "." + fileExtension;
+      		documentObject.body.appendChild(anchorTag);
+      		anchorTag.click();
+      	}
+
+      	function getClientList() {
+      		generateClientDropdown($("#fetchAllClientUrl").val(), false, "clientCode", null);
+      	}
+
+      	function fetchRfiTemplateList(clientCode, customerHashId) {
+      		$("#fetchRfiTemplateListBtn").attr("disabled", true);
+      		$("#fetchRfiTemplateListBtn").html("Please Wait...");
+      		$("#initiateRfiClientHashId").val(clientCode);
+      		$("#initiateRfiCustomerHashId").val(customerHashId);
+      		var tableBody = "";
+      		$.ajax({
+      			url: $("#fetchRfiTemplateDetails").val() + clientCode + "/customer/" + customerHashId + "/fetchRfiTemplateDetails",
+      			type: "GET",
+      			async: false,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				if (result == null || result === "" || result === undefined) {
+      					return;
+      				}
+
+      				var rfiTemplatesArr = result.rfiTemplates;
+      				if (rfiTemplatesArr == null || rfiTemplatesArr === "" || rfiTemplatesArr === undefined) {
+      					return;
+      				}
+      				for (var i = 0; i < rfiTemplatesArr.length; i++) {
+      					var eachRfiTemplateObj = rfiTemplatesArr[i];
+      					var eachTemplateObj = eachRfiTemplateObj.template;
+
+      					if (eachRfiTemplateObj == null || eachRfiTemplateObj === "" || eachRfiTemplateObj === undefined || eachTemplateObj === null || eachTemplateObj === "" || eachTemplateObj === undefined) {
+      						continue;
+      					}
+
+      					tableBody += "<tr class = 'rfiTemplateDetailsTableBodyTr'>";
+      					tableBody += "<td>" + eachRfiTemplateObj.templateId + "</td>";
+      					tableBody += "<td>" + eachTemplateObj.name + "</td>";
+      					tableBody += "<td>" + eachTemplateObj.mandatory + "</td>";
+      					tableBody += "<td>" + eachTemplateObj.type + "</td>";
+
+      					if ((eachTemplateObj.type).toLowerCase() === "data") {
+      						tableBody += "<td>" + "NA" + "</td>";
+      					} else if ((eachTemplateObj.type).toLowerCase() === "document") {
+      						tableBody += "<td>" + eachTemplateObj.documentType + "</td>";
+      					}
+
+      					tableBody += "<td><textarea class = 'form-control' style='margin: 0px; width: 188px; height: 66px;'></textarea></td>";
+      					tableBody += "<td><input type='text' class='form-control' value=\"" + $('#loggedInUser').val() + "\" readonly style='width:fit-content;' /></td>";
+      					tableBody += "<td><input type = 'checkbox' /></td>";
+      					tableBody += "</tr>";
+      				}
+      				$("#rfiTemplateDetailsTableBody").html(tableBody);
+      				$("#rfiTemplateDetailsModal").modal("show");
+      			},
+      			error: function (xhr) {
+      				$("#errorModalId").html("There was a problem fetching the RFI template list!");
+      				$("#error_refundNotification").modal("show");
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+
+      				$("#fetchRfiTemplateListBtn").attr("disabled", false);
+      				$("#fetchRfiTemplateListBtn").html("Raise Rfi");
+      			}
+      		});
+      	}
+
+      	//RFI Respond
+      	function fetchRfiDetails(clientHashId, customerHashId) {
+      		$("#raisedRfiDetailsBtn").attr("disabled", true);
+      		$("#raisedRfiDetailsBtn").html("Please Wait...");
+      		var tableBody = "";
+      		$.ajax({
+      			url: $("#fetchInitiatedRfiDetails").val() + customerHashId + "/fetchInitiatedRfiDetails",
+      			type: "GET",
+      			async: false,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				var tableData = "";
+      				//Rfi Respond
+      				tableData += '<input type="hidden" id="rfiClientHashId" value=\"' + clientHashId + '\"/>';
+      				tableData += '<input type="hidden" id="rfiCustomerHashId" value=\"' + customerHashId + '\"/>';
+
+
+      				for (var i = 0; i < result.length; i++) {
+      					var eachRfiInitiatedDetailObj = result[i];
+      					tableData += "<tr>";
+      					tableData += "<td>" + eachRfiInitiatedDetailObj.rfiId + "</td>";
+      					tableData += "<td>" + eachRfiInitiatedDetailObj.rfiTemplateId + "</td>";
+      					tableData += "<td>" + eachRfiInitiatedDetailObj.rfiHashId + "</td>";
+      					tableData += "<td>" + eachRfiInitiatedDetailObj.description + "</td>";
+      					tableData += "<td>" + eachRfiInitiatedDetailObj.mandatory + "</td>";
+      					tableData += "<td>" + eachRfiInitiatedDetailObj.type + "</td>";
+      					tableData += "<td>" + eachRfiInitiatedDetailObj.documentType + "</td>";
+      					tableData += "<td>" + eachRfiInitiatedDetailObj.remarks + "</td>";
+      					tableData += "<td>" + eachRfiInitiatedDetailObj.raisedBy + "</td>";
+      					tableData += "<td>" + eachRfiInitiatedDetailObj.rfiStatus + "</td>";
+
+      					//RFI Respond
+      					tableData += "<td>";
+      					if ((eachRfiInitiatedDetailObj.type).toLowerCase() === "data" && eachRfiInitiatedDetailObj.description === "address") {
+      						let fieldId = eachRfiInitiatedDetailObj.description + "Id";
+      						let errorId = eachRfiInitiatedDetailObj.description + "Error";
+      						let fieldDataId = eachRfiInitiatedDetailObj.description + "DataId";
+      						tableData += '<input id=\"' + fieldId + '\" type="hidden" class = "form-control" style="margin: 0px; width: 188px; height: 50px;"/>';
+      						tableData += '<button id="addressDetailsBtn" class="btn btn-success" onclick="getRfiAddressDetails();">Address Details</button>';
+      						tableData += "<div><span id='" + errorId + "' class='error' style='position: left;'></span></div>";
+      					} else if ((eachRfiInitiatedDetailObj.type).toLowerCase() === "data") {
+      						let fieldId = eachRfiInitiatedDetailObj.description + "Id";
+      						let errorId = eachRfiInitiatedDetailObj.description + "Error";
+      						let fieldDataId = eachRfiInitiatedDetailObj.description + "DataId";
+      						tableData += '<textarea id=\"' + fieldId + '\" class = "form-control" style="margin: 0px; width: 188px; height: 50px;"></textarea>';
+      						tableData += "<span id='" + errorId + "' class='error' style='position: left;'></span>";
+      					} else if ((eachRfiInitiatedDetailObj.type).toLowerCase() === "document") {
+      						let fieldId = eachRfiInitiatedDetailObj.description + "Id";
+      						let errorId = eachRfiInitiatedDetailObj.description + "Error";
+      						let fieldDocId = eachRfiInitiatedDetailObj.description + "DocId";
+      						tableData += '<input type="file" id=\"' + fieldId + '\" class="form-control" style="margin: 0px; width: 188px; height: 50px;" accept="image/jpeg, image/png, image/jpg, application/pdf, .jpg , .jpeg, .png, .pdf" onchange="validateFileTypeAndSave( this,\'' + eachRfiInitiatedDetailObj.description + '\',\'' + errorId + '\',\'' + fieldDocId + '\')" required    />';
+      						tableData += '<input type="hidden" id=\"' + fieldDocId + '\" />';
+      						tableData += "<span id='" + errorId + "' class='error' style='position: left;'></span>";
+      					}
+      					tableData += "</td>";
+      					tableData += "</tr>";
+      				}
+      				$("#rfiDetailsTableBody").html(tableData);
+      			},
+      			error: function (xhr) {
+      				$("#rfiDetailsTableBody").html("<tr><td colspan = 1000>No data found!</td></tr>");
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+
+      				$("#raisedRfiDetailsBtn").attr("disabled", false);
+      				$("#raisedRfiDetailsBtn").html("RFI Details");
+      				$("#rfiDetailsModal").modal("show");
+      			}
+      		});
+      	}
+
+      	function initiateRfi() {
+      		$("#initiateRfiSubmitBtn").attr("disabled", true);
+      		$("#initiateRfiSubmitBtn").html("Please Wait...");
+
+      		var requestBody = JSON.stringify(unSanitize({
+      			"templateAndInitiateRfiRequestDetails": getRfiRequestBody()
+      		}));
+      		if (requestBody == null || requestBody === "" || requestBody === undefined) {
+      			return;
+      		}
+
+      		$.ajax({
+      			url: $("#initiateRfiUrl").val() + $("#initiateRfiClientHashId").val() + "/customer/" + $("#initiateRfiCustomerHashId").val() + "/initiateRfi",
+      			type: "POST",
+      			contentType: "application/json;charset=UTF-8",
+      			data: requestBody,
+      			async: false,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				$("#successModalId").html("Rfi Initiated Successfully!");
+      				$("#success_refundNotification").modal("show");
+      			},
+      			error: function (xhr, status, error) {
+      				if (xhr.readyState === 0) {
+      					$("#errorModalId").html("service is temporarily down,please try again later!");
+      				} else {
+      					var responseJson = xhr.responseJSON;
+      					var errorMsg = responseJson.message;
+      					if (errorMsg == null || errorMsg === undefined || errorMsg === "") {
+      						errorMsg = "Unable to initiate compliance";
+      					}
+      					$("#errorModalId").html(errorMsg);
+      				}
+      				$("#error_refundNotification").modal('show');
+      			},
+      			complete: function (xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+
+      				$("#initiateRfiSubmitBtn").attr("disabled", false);
+      				$("#initiateRfiSubmitBtn").html("Submit");
+      			}
+      		});
+      	}
+
+      	function getRfiRequestBody() {
+      		var resultantArray = [];
+
+      		$(".rfiTemplateDetailsTableBodyTr").each(function (index, element) {
+      			var tdArray = $(element).contents();
+      			var isChecked = ((tdArray[7]).firstChild).checked;
+
+      			if (isChecked) {
+      				var resultantArrayElement = {};
+
+      				resultantArrayElement.rfiTemplateId = ((tdArray[0]).innerHTML);
+      				resultantArrayElement.name = ((tdArray[1]).innerHTML);
+      				resultantArrayElement.mandatory = ((tdArray[2]).innerHTML);
+      				resultantArrayElement.type = ((tdArray[3]).innerHTML);
+      				resultantArrayElement.documentType = ((tdArray[4]).innerHTML);
+      				resultantArrayElement.remarks = (((tdArray[5]).firstChild).value);
+      				resultantArrayElement.raisedBy = (((tdArray[6]).firstChild).value);
+
+      				resultantArray.push(resultantArrayElement);
+      			}
+      		});
+      		return resultantArray;
+      	}
+
+      	function generateWorldCheckAccordianData(slNo, eachObject, worldCheckServiceId, worldCheckStatus, worldCheckReferenceNumber) {
+      		var worldCheckAccordianData = "";
+
+      		worldCheckAccordianData += '<h3 class="accordian worldCheck" onclick="toggleWorldCheck_Trulioo(\'worldCheckData_' + slNo + '\', this, \'' + eachObject.complianceId + '\', \'' + worldCheckServiceId + '\',\'' + worldCheckReferenceNumber + '\')">';
+      		worldCheckAccordianData += '<span>World-check<i class="fas fa-chevron-circle-up accordian-arrow"></i></span>';
+      		worldCheckAccordianData += '</h3><br />';
+      		worldCheckAccordianData += '<div class="content" style="display:none">';
+      		worldCheckAccordianData += '<div style="display: flex; position: relative;">';
+      		worldCheckAccordianData += '<h1 style="font-weight: 700;color: #0bb2d2;">Records</h1>';
+
+      		if (worldCheckStatus != null && worldCheckStatus !== "" && worldCheckStatus !== undefined && (worldCheckStatus.toLowerCase()) === "action_required") {
+      			worldCheckAccordianData += '<button class="btn btn-danger btn-sm px-5 ripple" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%);" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + worldCheckServiceId + '\',\'' + worldCheckReferenceNumber + '\', \'worldCheck\');">Update Status</button>';
+      		}
+
+      		var reInitiateScreeningBtn = "";
+
+      		if (worldCheckStatus != null && worldCheckStatus !== "" && worldCheckStatus !== undefined && (worldCheckStatus.toLowerCase()) !== "closed") {
+      			reInitiateScreeningBtn += '<button id = "reinitiateScreeningBtn" class="btn btn-success btn-sm px-5 ripple" style="position: absolute; right: 168px; top: 50%; transform: translateY(-50%);"';
+      			reInitiateScreeningBtn += ' onclick = "reInitiateScreening(\'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + eachObject.complianceId + '\', \'' + worldCheckServiceId + '\', \'' + worldCheckReferenceNumber + '\', \'reinitiateScreeningBtn\', \'Reinitiate Worldcheck\', \'Worldcheck reinitiated successfully!\');" >';
+      			reInitiateScreeningBtn += 'Reinitiate Worldcheck';
+      			reInitiateScreeningBtn += '</button>';
+      		}
+
+      		worldCheckAccordianData += reInitiateScreeningBtn;
+
+      		var viewHistoryBtn = '<button id = "viewWorldCheckHistoryBtn" class="btn btn-success btn-sm px-5 ripple"';
+      		viewHistoryBtn += ' onclick = "openViewHistoryModal(event, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + worldCheckServiceId + '\',\'World check History\');" >';
+      		viewHistoryBtn += 'View History';
+      		viewHistoryBtn += '</button>';
+
+      		worldCheckAccordianData += '<th>' + viewHistoryBtn + '</th>';
+
+      		worldCheckAccordianData += '</div>';
+      		worldCheckAccordianData += '<div class="world_check_wrapper">';
+      		worldCheckAccordianData += '<div id=\'worldCheckData_' + slNo + '\'></div>';
+      		worldCheckAccordianData += '</div></div>';
+
+      		return worldCheckAccordianData;
+      	}
+
+      	function generateRiskServiceAccordianData(slNo, eachObject, riskServiceId, riskStatus, riskRefNo) {
+      		let riskAccordianData = "";
+
+      		riskAccordianData += '<h3 class="accordian risk" onclick="toggleRisk(\'riskTbody_' + slNo + '\', this, \'' + eachObject.complianceId + '\', \'' + eachObject.customerHashId + '\', \'' + riskServiceId + '\', \'' + riskRefNo + '\')">';
+      		riskAccordianData += '<span>Risk Service<i class="fas fa-chevron-circle-up accordian-arrow"></i></span>';
+      		riskAccordianData += '</h3><br />';
+      		riskAccordianData += '<div class="content" style="display:none">';
+      		riskAccordianData += '<div class="trulio_wrapper">';
+      		riskAccordianData += '<table class="table compl">';
+      		riskAccordianData += '<thead>';
+      		riskAccordianData += '<tr>';
+      		riskAccordianData += '<th><h4>Field</h4></th>';
+      		riskAccordianData += '<th><h4>Value</h4></th>';
+
+      		if (riskStatus != null && riskStatus !== "" && riskStatus !== undefined && (riskStatus.toLowerCase()) === "action_required") {
+      			riskAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + riskServiceId + '\',\'' + riskRefNo + '\', \'risk\');">Update Status</button></th>';
+      		}
+
+      		let reInitiateScreeningBtn = "";
+
+      		if (riskStatus != null && riskStatus !== "" && riskStatus !== undefined && (riskStatus.toLowerCase()) !== "closed") {
+      			reInitiateScreeningBtn += '<button id = "reinitiateRiskBtn" class="btn btn-success btn-sm px-5 ripple"';
+      			reInitiateScreeningBtn += ' onclick = "reInitiateScreening(\'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + eachObject.complianceId + '\', \'' + riskServiceId + '\', \'' + riskRefNo + '\', \'reinitiateRiskBtn\', \'Reinitiate Risk\', \'Risk reinitiated successfully!\');" >';
+      			reInitiateScreeningBtn += 'Reinitiate Risk';
+      			reInitiateScreeningBtn += '</button>';
+      		}
+
+      		riskAccordianData += '<th>' + reInitiateScreeningBtn + '</th>';
+
+      		let viewHistoryBtn = '<button id = "viewRiskHistoryBtn" class="btn btn-success btn-sm px-5 ripple"';
+      		viewHistoryBtn += ' onclick = "openViewHistoryModal(event, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + riskServiceId + '\',\'Risk History\');" >';
+      		viewHistoryBtn += 'View History';
+      		viewHistoryBtn += '</button>';
+
+      		riskAccordianData += '<th>' + viewHistoryBtn + '</th>';
+
+      		riskAccordianData += '</tr>';
+      		riskAccordianData += '</thead>';
+      		riskAccordianData += '<tbody id=\'riskTbody_' + slNo + '\'></tbody></div>';
+      		riskAccordianData += '</table></div></div>';
+
+      		return riskAccordianData;
+      	}
+
+      	function reInitiateScreening(clientHashId, customerHashId, complianceId, serviceId, referenceNumber, buttonId, buttonName, successMsg) {
+      		$("#" + buttonId).html("Please Wait...");
+      		$("#" + buttonId).attr("disabled", true);
+      		/* var customerData = (getCustomerDetailsByCustomerHashId(customerHashId))[0]; */
+
+      		var InitiateComplianceAddressDTO = {};
+      		InitiateComplianceAddressDTO.clientReferenceId = customerHashId;
+      		var dataInJSONFormat = JSON.stringify(unSanitize(InitiateComplianceAddressDTO));
+
+      		var url = $("#reInitiateScreening").val() + clientHashId + "/" + customerHashId + "/" + serviceId + "/" + complianceId + "/" + referenceNumber + "/initiate";
+
+      		$.ajax({
+      			url: url,
+      			type: 'POST',
+      			async: false,
+      			contentType: "application/json",
+      			data: dataInJSONFormat,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				$(".refunded_body").html(successMsg);
+      				$("#success_refundNotification").modal('show');
+      			},
+      			error: function (jqXhr) {
+      				if (jqXhr.readyState === 0) {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html("service is temporarily down,please try again later.");
+      				}
+      				if (jqXhr.status === 500) {
+      					var responseMessage = JSON.parse(jqXhr.responseText);
+      					var message = responseMessage.message;
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html(message);
+      				} else if (jqXHR.status === 400) {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html(jqXhr.responseText);
+      				} else {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html(jqXhr.responseText);
+      				}
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+
+      				$("#" + buttonId).html(buttonName);
+      				$("#" + buttonId).attr("disabled", false);
+      			}
+      		});
+      	}
+
+      	function getCustomerDetailsByCustomerHashId(customerHashId) {
+      		var dataInObjectFormat = {};
+      		dataInObjectFormat.customerHashId = customerHashId;
+      		var dataInJSONFormat = JSON.stringify(unSanitize(dataInObjectFormat));
+      		var finalResult;
+
+      		$.ajax({
+      			url: $("#customerListUrl").val(),
+      			type: 'POST',
+      			async: false,
+      			contentType: "application/json",
+      			data: dataInJSONFormat,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				finalResult = result;
+      			},
+      			error: function (xhr) {
+      				finalResult = "";
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      			}
+      		});
+      		return finalResult;
+      	}
+
+      	function generateTruliooAccordianData(slNo, eachObject, truliooServiceId, truliooStatus, truliooReferenceNumber) {
+      		var truliooAccordianData = "";
+
+      		truliooAccordianData += '<h3 class="accordian trulioo" onclick="toggleWorldCheck_Trulioo(\'truliooTbody_' + slNo + '\', this, \'' + eachObject.complianceId + '\', \'' + truliooServiceId + '\',\'' + truliooReferenceNumber + '\')">';
+      		truliooAccordianData += '<span>Trulioo<i class="fas fa-chevron-circle-up accordian-arrow"></i></span>';
+      		truliooAccordianData += '</h3><br />';
+      		truliooAccordianData += '<div class="content" style="display:none">';
+      		truliooAccordianData += '<div class="trulio_wrapper">';
+      		truliooAccordianData += '<table class="table compl">';
+      		truliooAccordianData += '<thead>';
+      		truliooAccordianData += '<tr>';
+      		truliooAccordianData += '<th><h4>Field</h4></th>';
+      		truliooAccordianData += '<th><h4>Value</h4></th>';
+
+      		if (truliooStatus != null && truliooStatus !== "" && truliooStatus !== undefined && (truliooStatus.toLowerCase()) === "action_required") {
+      			truliooAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + truliooServiceId + '\',\'' + truliooReferenceNumber + '\', \'trulioo\');">Update Status</button></th>';
+      		}
+
+      		var reInitiateScreeningBtn = "";
+
+      		if (truliooStatus != null && truliooStatus !== "" && truliooStatus !== undefined && (truliooStatus.toLowerCase()) !== "closed") {
+      			reInitiateScreeningBtn += '<button id = "reinitiateTruliooBtn" class="btn btn-success btn-sm px-5 ripple"';
+      			reInitiateScreeningBtn += ' onclick = "reInitiateScreening(\'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + eachObject.complianceId + '\', \'' + truliooServiceId + '\', \'' + truliooReferenceNumber + '\', \'reinitiateTruliooBtn\', \'Reinitiate Trulioo\', \'Trulioo reinitiated successfully!\');" >';
+      			reInitiateScreeningBtn += 'Reinitiate Trulioo';
+      			reInitiateScreeningBtn += '</button>';
+      		}
+
+      		truliooAccordianData += '<th>' + reInitiateScreeningBtn + '</th>';
+
+      		var viewHistoryBtn = '<button id = "viewTruliooHistoryBtn" class="btn btn-success btn-sm px-5 ripple"';
+      		viewHistoryBtn += ' onclick = "openViewHistoryModal(event, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + truliooServiceId + '\',\'Trulioo History\');" >';
+      		viewHistoryBtn += 'View History';
+      		viewHistoryBtn += '</button>';
+
+      		truliooAccordianData += '<th>' + viewHistoryBtn + '</th>';
+
+      		truliooAccordianData += '</tr>';
+      		truliooAccordianData += '</thead>';
+      		truliooAccordianData += '<tbody id=\'truliooTbody_' + slNo + '\'></tbody></div>';
+      		truliooAccordianData += '</table></div></div>';
+
+      		return truliooAccordianData;
+      	}
+
+      	function generateGreenIdAccordianData(slNo, eachObject, greenIdServiceId, greenIdStatus, greenIdReferenceNumber) {
+      		var greenIdAccordianData = "";
+
+      		greenIdAccordianData += '<h3 class="accordian greenId" onclick="toggleGreenId(\'greenIdTbody_' + slNo + '\', this, \'' + eachObject.complianceId + '\', \'' + eachObject.customerHashId + '\', \'' + greenIdServiceId + '\', \'' + greenIdReferenceNumber + '\')">';
+      		greenIdAccordianData += '<span>Green Id<i class="fas fa-chevron-circle-up accordian-arrow"></i></span>';
+      		greenIdAccordianData += '</h3><br />';
+      		greenIdAccordianData += '<div class="content" style="display:none">';
+      		greenIdAccordianData += '<div class="trulio_wrapper">';
+      		greenIdAccordianData += '<table class="table compl">';
+      		greenIdAccordianData += '<thead>';
+      		greenIdAccordianData += '<tr>';
+      		greenIdAccordianData += '<th><h4>Field</h4></th>';
+      		greenIdAccordianData += '<th><h4>Value</h4></th>';
+
+      		if (greenIdStatus != null && greenIdStatus !== "" && greenIdStatus !== undefined && ((greenIdStatus.toLowerCase()) === "action_required")) {
+      			greenIdAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + greenIdServiceId + '\',\'' + greenIdReferenceNumber + '\', \'greenId\');">Update Status</button></th>';
+      		}
+
+      		var viewHistoryBtn = '<button id = "viewGreenIdHistoryBtn" class="btn btn-success btn-sm px-5 ripple"';
+      		viewHistoryBtn += ' onclick = "openViewHistoryModal(event, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + greenIdServiceId + '\',\'Green ID History\');" >';
+      		viewHistoryBtn += 'View History';
+      		viewHistoryBtn += '</button>';
+
+      		greenIdAccordianData += '<th>' + viewHistoryBtn + '</th>';
+
+      		greenIdAccordianData += '</tr>';
+      		greenIdAccordianData += '</thead>';
+      		greenIdAccordianData += '<tbody id=\'greenIdTbody_' + slNo + '\'></div>';
+      		greenIdAccordianData += '</table></div></div>';
+
+      		return greenIdAccordianData;
+      	}
+
+      	function generateBlacklistAccordianData(slNo, eachObject, blacklistServiceId, blacklistStatus, blacklistReferenceNumber) {
+      		var blacklistAccordianData = "";
+
+      		blacklistAccordianData += '<h3 class="accordian blacklist" onclick="toggleBlacklist(\'blacklistTbody_' + slNo + '\', this, \'' + eachObject.complianceId + '\', \'' + eachObject.customerHashId + '\', \'' + blacklistServiceId + '\', \'' + blacklistReferenceNumber + '\')">';
+      		blacklistAccordianData += '<span>Regulatory Blacklist<i class="fas fa-chevron-circle-up accordian-arrow"></i></span>';
+      		blacklistAccordianData += '</h3><br />';
+      		blacklistAccordianData += '<div class="content" style="display:none">';
+      		blacklistAccordianData += '<div class="trulio_wrapper">';
+      		blacklistAccordianData += '<table class="table compl">';
+      		blacklistAccordianData += '<thead>';
+      		blacklistAccordianData += '<tr>';
+      		blacklistAccordianData += '<th><h4>Field</h4></th>';
+      		blacklistAccordianData += '<th><h4>Value</h4></th>';
+
+      		if (blacklistStatus != null && blacklistStatus !== "" && blacklistStatus !== undefined && ((blacklistStatus.toLowerCase()) === "action_required")) {
+      			blacklistAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + blacklistServiceId + '\',\'' + blacklistReferenceNumber + '\', \'blacklist\');">Update Status</button></th>';
+      		}
+
+      		var reInitiateScreeningBtn = "";
+
+      		if (blacklistStatus != null && blacklistStatus !== "" && blacklistStatus !== undefined && (blacklistStatus.toLowerCase()) !== "closed") {
+
+      			reInitiateScreeningBtn += '<button id = "reinitiateBlacklistBtn" class="btn btn-success btn-sm px-5 ripple"';
+      			reInitiateScreeningBtn += ' onclick = "reInitiateScreening(\'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + eachObject.complianceId + '\', \'' + blacklistServiceId + '\', \'' + blacklistReferenceNumber + '\', \'reinitiateBlacklistBtn\', \'Reinitiate BlackList\', \'Blacklist reinitiated successfully!\');" >';
+      			reInitiateScreeningBtn += 'Reinitiate Blacklist';
+      			reInitiateScreeningBtn += '</button>';
+      		}
+
+      		blacklistAccordianData += '<th>' + reInitiateScreeningBtn + '</th>';
+
+      		var viewHistoryBtn = '<button id = "viewBlackListHistoryBtn" class="btn btn-success btn-sm px-5 ripple"';
+      		viewHistoryBtn += ' onclick = "openViewHistoryModal(event, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + blacklistServiceId + '\',\'Blacklist History\');" >';
+      		viewHistoryBtn += 'View History';
+      		viewHistoryBtn += '</button>';
+
+      		blacklistAccordianData += '<th>' + viewHistoryBtn + '</th>';
+
+      		blacklistAccordianData += '</tr>';
+      		blacklistAccordianData += '</thead>';
+      		blacklistAccordianData += '<tbody id=\'blacklistTbody_' + slNo + '\'></tbody></div>';
+      		blacklistAccordianData += '</table></div></div>';
+
+      		return blacklistAccordianData;
+      	}
+
+      	function generateManualAccordianData(slNo, eachObject, manualServiceId, manualStatus, manualReferenceNumber) {
+      		var manualAccordianData = "";
+
+      		manualAccordianData += '<h3 class="accordian manual" onclick="toggleManual(\'manualTbody_' + slNo + '\', this, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + manualReferenceNumber + '\')">';
+      		manualAccordianData += '<span>Manual<i class="fas fa-chevron-circle-up accordian-arrow"></i></span>';
+      		manualAccordianData += '</h3><br />';
+      		manualAccordianData += '<div class="content" style="display:none">';
+      		manualAccordianData += '<div class="trulio_wrapper">';
+      		manualAccordianData += '<table class="table compl">';
+      		manualAccordianData += '<thead>';
+      		manualAccordianData += '<tr>';
+      		manualAccordianData += '<th><h4>Field</h4></th>';
+      		manualAccordianData += '<th><h4>Value</h4></th>';
+
+      		if (manualStatus != null && manualStatus !== "" && manualStatus !== undefined && (manualStatus.toLowerCase()) === "action_required") {
+      			manualAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + manualServiceId + '\',\'' + manualReferenceNumber + '\', \'manual\');">Update Status</button></th>';
+      		}
+
+      		var viewHistoryBtn = '<button id = "viewManualHistoryBtn" class="btn btn-success btn-sm px-5 ripple"';
+      		viewHistoryBtn += ' onclick = "openViewHistoryModal(event, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + manualServiceId + '\',\'Manual History\');" >';
+      		viewHistoryBtn += 'View History';
+      		viewHistoryBtn += '</button>';
+
+      		manualAccordianData += '<th>' + viewHistoryBtn + '</th>';
+
+      		manualAccordianData += '</tr>';
+      		manualAccordianData += '</thead>';
+      		manualAccordianData += '<tbody id=\'manualTbody_' + slNo + '\'></div>';
+      		manualAccordianData += '</table></div></div>';
+
+      		return manualAccordianData;
+      	}
+
+      	function generateOnfidoAccordianData(slNo, eachObject, onfidoServiceId, onfidoStatus, onfidoReferenceNumber) {
+      		var onfidoAccordianData = "";
+
+      		onfidoAccordianData += '<h3 class="accordian onfido" onclick="toggleOnfido(\'onfidoTbody_' + slNo + '\', this, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + onfidoReferenceNumber + '\')">';
+      		onfidoAccordianData += '<span>Onfido<i class="fas fa-chevron-circle-up accordian-arrow"></i></span>';
+      		onfidoAccordianData += '</h3><br />';
+      		onfidoAccordianData += '<div class="content" style="display:none">';
+      		onfidoAccordianData += '<div class="trulio_wrapper">';
+      		onfidoAccordianData += '<table class="table compl">';
+      		onfidoAccordianData += '<thead>';
+      		onfidoAccordianData += '<tr>';
+      		onfidoAccordianData += '<th><h4>Field</h4></th>';
+      		onfidoAccordianData += '<th><h4>Value</h4></th>';
+
+      		if (onfidoStatus != null && onfidoStatus !== "" && onfidoStatus !== undefined && (onfidoStatus.toLowerCase()) === "action_required") {
+      			onfidoAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + onfidoServiceId + '\',\'' + onfidoReferenceNumber + '\', \'onfido\');">Update Status</button></th>';
+      		}
+
+      		var viewHistoryBtn = '<button id = "viewOnfidoHistoryBtn" class="btn btn-success btn-sm px-5 ripple"';
+      		viewHistoryBtn += ' onclick = "openViewHistoryModal(event, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + onfidoServiceId + '\',\'Onfido History\');" >';
+      		viewHistoryBtn += 'View History';
+      		viewHistoryBtn += '</button>';
+
+      		onfidoAccordianData += '<th>' + viewHistoryBtn + '</th>';
+
+      		onfidoAccordianData += '</tr>';
+      		onfidoAccordianData += '</thead>';
+      		onfidoAccordianData += '<tbody id=\'onfidoTbody_' + slNo + '\'></div>';
+      		onfidoAccordianData += '</table></div></div>';
+
+      		return onfidoAccordianData;
+      	}
+
+      	function generateRfiAccordianData(slNo, eachObject, rfiServiceId, rfiStatus, rfiReferenceNumber) {
+      		var rfiAccordianData = "";
+
+      		rfiAccordianData += '<h3 class="accordian rfi" onclick="toggleRfi(\'rfiTbody_' + slNo + '\', this, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + rfiServiceId + '\', \'' + rfiReferenceNumber + '\')">';
+      		rfiAccordianData += '<span>RFI<i class="fas fa-chevron-circle-up accordian-arrow"></i></span>';
+      		rfiAccordianData += '</h3><br />';
+      		rfiAccordianData += '<div class="content" style="display:none">';
+      		rfiAccordianData += '<div class="trulio_wrapper">';
+      		rfiAccordianData += '<table class="table compl">';
+      		rfiAccordianData += '<thead>';
+      		rfiAccordianData += '<tr>';
+      		rfiAccordianData += '<th><h4>Field</h4></th>';
+      		rfiAccordianData += '<th><h4>Value</h4></th>';
+
+      		if (rfiStatus != null && rfiStatus !== "" && rfiStatus !== undefined) {
+      			if (rfiStatus.toLowerCase() === "rfi_responded") {
+      				rfiAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + rfiServiceId + '\',\'' + rfiReferenceNumber + '\', \'rfi_responded\');">Update Status</button></th>';
+      			} else if (rfiStatus.toLowerCase() === "rfi_requested") {
+      				rfiAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + rfiServiceId + '\',\'' + rfiReferenceNumber + '\', \'rfi_requested\');">Update Status</button></th>';
+      			}
+      		}
+
+      		var viewHistoryBtn = '<button id = "viewRfiHistoryBtn" class="btn btn-success btn-sm px-5 ripple"';
+      		viewHistoryBtn += ' onclick = "openViewHistoryModal(event, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + rfiServiceId + '\',\'RFI History\');" >';
+      		viewHistoryBtn += 'View History';
+      		viewHistoryBtn += '</button>';
+
+      		rfiAccordianData += '<th>' + viewHistoryBtn + '</th>';
+
+      		rfiAccordianData += '</tr>';
+      		rfiAccordianData += '</thead>';
+      		rfiAccordianData += '<tbody id=\'rfiTbody_' + slNo + '\'></div>';
+      		rfiAccordianData += '</table></div></div>';
+
+      		return rfiAccordianData;
+      	}
+
+      	function generateMyInfoAccordianData(slNo, eachObject, myInfoServiceId, myInfoStatus, myInfoReferenceNumber) {
+      		var myInfoAccordianData = "";
+
+      		myInfoAccordianData += '<h3 class="accordian myInfo" onclick="toggleWorldCheck_Trulioo(\'myInfoTbody_' + slNo + '\', this, \'' + eachObject.complianceId + '\', \'' + myInfoServiceId + '\',\'' + myInfoReferenceNumber + '\')">';
+      		myInfoAccordianData += '<span>My Info<i class="fas fa-chevron-circle-up accordian-arrow"></i></span>';
+      		myInfoAccordianData += '</h3><br />';
+      		myInfoAccordianData += '<div class="content" style="display:none">';
+      		myInfoAccordianData += '<div class="trulio_wrapper">';
+      		myInfoAccordianData += '<table class="table compl">';
+      		myInfoAccordianData += '<thead>';
+      		myInfoAccordianData += '<tr>';
+      		myInfoAccordianData += '<th><h4>Field</h4></th>';
+      		myInfoAccordianData += '<th><h4>Value</h4></th>';
+
+      		if (myInfoStatus != null && myInfoStatus !== "" && myInfoStatus !== undefined && (myInfoStatus.toLowerCase()) === "action_required") {
+      			myInfoAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + myInfoServiceId + '\',\'' + myInfoReferenceNumber + '\', \'myInfo\');">Update Status</button></th>';
+      		}
+
+      		var viewHistoryBtn = '<button id = "viewMyInfoHistoryBtn" class="btn btn-success btn-sm px-5 ripple"';
+      		viewHistoryBtn += ' onclick = "openViewHistoryModal(event, \'' + eachObject.clientCode + '\', \'' + eachObject.customerHashId + '\', \'' + myInfoServiceId + '\',\'Myinfo History\');" >';
+      		viewHistoryBtn += 'View History';
+      		viewHistoryBtn += '</button>';
+
+      		myInfoAccordianData += '<th>' + viewHistoryBtn + '</th>';
+
+      		myInfoAccordianData += '</tr>';
+      		myInfoAccordianData += '</thead>';
+      		myInfoAccordianData += '<tbody id=\'myInfoTbody_' + slNo + '\'></div>';
+      		myInfoAccordianData += '</table></div></div>';
+
+      		return myInfoAccordianData;
+      	}
+
+      	function closeAllModals() {
+      		/* $("#individualComplianceServiceStatusUpdateModal").modal('hide');
+      			$("#rfiTemplateDetailsModal").modal('hide');
+      			$("#rfiDetailsModal").modal('hide');
+      			$("#success_refundNotification").modal('hide');
+      			$("#error_refundNotification").modal('hide'); */
+
+      		$(".modal").each(function (index, element) {
+      			var id = element.id;
+      			$("#" + id).modal('hide');
+      		});
+      		getFilteredCustomerList(0);
+      	}
+
+      	function resetFields() {
+      		$(".clear").each(function (index, element) {
+      			$(element).val("");
+      		});
+      		$(".select2").val(null).trigger('change');
+      		$("#countryCode").trigger('change');
+
+      		var clientDetails = $("#clientDetails").val();
+
+      		var decodedClientDetails = window.atob(clientDetails);
+      		if (decodedClientDetails === undefined || decodedClientDetails == null || decodedClientDetails === "" || decodedClientDetails === [] || decodedClientDetails.length === 0) {
+      			$("#clientCode").val("");
+      			$("#clientCode").trigger('change');
+      		}
+      	}
+
+      	function isValidNonEmptyArray(input) {
+      		if (isEmptyInput(input)) {
+      			return false;
+      		}
+      		if (Array.isArray(input) && input.length > 0) {
+      			return true;
+      		}
+      		return false;
+      	}
+
+      	function isValidNonEmptyObject(input) {
+      		if (isEmptyInput(input)) {
+      			return false;
+      		}
+      		if (Array.isArray(input)) {
+      			return false;
+      		}
+      		if ((typeof input).toLowerCase() === "object") {
+      			var keysArray = Object.keys(input);
+      			if (keysArray.length > 0) {
+      				return true;
+      			}
+      		}
+      		return false;
+      	}
+
+      	function getBrSeperatedAnchorTagsAndReplacedStringArray(input) {
+      		var resultArray = [];
+
+      		if (isBlankInput(input)) {
+      			resultArray.push("");
+      			resultArray.push("");
+      			return resultArray;
+      		}
+
+      		var linksArray = linkify.find(input);
+
+      		if (!isValidNonEmptyArray(linksArray)) {
+      			resultArray.push("");
+      			resultArray.push("");
+      			return resultArray;
+      		}
+
+      		var result = "";
+
+      		for (var i = 0; i < linksArray.length; i++) {
+      			var eachLinkObject = linksArray[i];
+      			if (!isValidNonEmptyObject(eachLinkObject)) {
+      				continue;
+      			}
+      			var eachLinkObjectKeys = String(Object.keys(eachLinkObject));
+      			if (isBlankInput(eachLinkObjectKeys) || !eachLinkObjectKeys.includes("href")) {
+      				continue;
+      			}
+      			input = (input.split(eachLinkObject.href)).join("");
+      			const url = sanitize(unSanitize(eachLinkObject.href))
+      			result += "<a href='#' onclick='window.open(\"" + url + "\");'>" + url + "</a> <br />";
+      			// result += "<a href = '" + sanitize(unSanitize(eachLinkObject.href)) + "' target = '_blank'>" + sanitize(unSanitize(eachLinkObject.href)) + "</a> <br />";
+      		}
+
+      		resultArray.push(result);
+      		resultArray.push(input);
+      		return resultArray;
+      	}
+
+      	function isBlankInput(input) {
+      		if (input === undefined || input == null || ((String(input)).trim()) === "") {
+      			return true;
+      		}
+      		return false;
+      	}
+
+      	function isEmptyInput(input) {
+      		if (input === undefined || input == null || input === "") {
+      			return true;
+      		}
+      		return false;
+      	}
+
+      	//Rfi Respond Start
+      	function validateFileTypeAndSave(element, description, errorId, fieldDataId) {
+      		var value = $("#" + element.id).val() + "";
+      		var errorId = "#" + errorId;
+      		var validExtensions = [
+      			"jpg",
+      			"jpeg",
+      			"png",
+      			"pdf"
+      		];
+
+      		if (description === 'fin' || description === 'employeeLetter' || description === 'selfieWithId' || description === 'nric' || description === 'passport' || description === 'governmentLetter' || description === 'bankStatement' || description === 'utilityBill' || description === 'manualScreening') {
+      			isValid = isValidFileFormat(element, validExtensions);
+      			showErrorMessage(isValid, errorId, "Valid Extenctions are : " + validExtensions.toString());
+      			if (isValid) {
+      				setContentInHiddenField(element.id, fieldDataId);
+      			}
+      		}
+      	}
+
+      	function isValidFileFormat(element, validExtensions) {
+      		var value = $("#" + element.id).val() + "";
+      		if (value != null && value !== '' && value !== undefined) {
+      			var extensionArray = value.split("\.");
+      			var extension = extensionArray[extensionArray.length - 1];
+      			return validExtensions.includes(extension)
+      		}
+      		return false;
+      	}
+
+
+      	function setContentInHiddenField(fileId, hiddenFieldId) {
+      		let fileReader = new FileReader();
+      		let file = document.getElementById(fileId).files[0];
+      		fileReader.readAsBinaryString(file);
+      		fileReader.onload = function (event) {
+      			let result = fileReader.result;
+      			$("#" + hiddenFieldId).val(window.btoa(result));
+      		}
+      	}
+
+      	function showErrorMessage(isValid, errorId, message) {
+      		if (isValid) {
+      			$(errorId).val("");
+      			$(errorId).html("");
+      		} else {
+      			$(errorId).val(message);
+      			$(errorId).html(message);
+      		}
+      	}
+
+
+      	function getRfiAddressDetails() {
+      		$("#rfiAddressDetailsModal").modal('show');
+      	}
+
+      	function saveRfiAddressDetails() {
+      		var billingAddress1 = $("#billingAddress1").val();
+      		var billingAddress2 = $("#billingAddress2").val();
+      		var billingCity = $("#billingCity").val();
+      		var billingState = $("#billingState").val();
+      		var billingZipCode = $("#billingZipCode").val();
+      		$("#addressId").val(billingAddress1 + "|" + billingAddress2 + "|" + billingCity + "|" + billingState + "|" + billingZipCode);
+      		$("#rfiAddressDetailsModal").modal('toggle');
+      	}
+
+
+      	function validateRfiRespondFields(table) {
+      		var isValid = true;
+
+      		for (var i = 0; i < table.rows.length; i++) {
+      			let currRow = table.rows[i];
+      			let description = currRow.cells[3].innerText;
+      			let id = "#" + description + "Id";
+      			let errorId = "#" + description + "Error";
+      			let value = $(id).val();
+
+      			if (description === 'fin' || description === 'employeeLetter' || description === 'selfieWithId' || description === 'nric' || description === 'passport' || description === 'governmentLetter' || description === 'bankStatement' || description === 'utilityBill') {
+
+      				if (isBlankInput(value)) {
+      					showErrorMessage(false, errorId, "No file uploaded");
+      					isValid = false;
+      				} else if (!isBlankInput($(errorId).val())) {
+      					isValid = false;
+      				}
+      			}
+
+      			if (description === 'firstName' || description === 'lastName' || description === 'fullName') {
+      				let regValidation = new RegExp("^[a-zA-Z]+(([',. -])?[a-zA-Z]*)*$").exec(value) && value.length > 0 && value.length < 21;
+      				showErrorMessage(regValidation, errorId, "Field shouldn't contain special characters/numbers . Max length 20");
+      				if (!regValidation) {
+      					isValid = false;
+      				}
+      			}
+
+      			if (description === 'middleName') {
+      				if (value.length === 0) {
+      					showErrorMessage(true, errorId, "");
+      					isValid = true;
+      				} else {
+      					let regValidation = new RegExp("(^[a-zA-Z]+(([',. -])?[a-zA-Z]*)*$)").exec(value) && value.length > 0 && value.length < 21;
+      					showErrorMessage(regValidation, errorId, "Field shouldn't contain special characters/numbers . Max length 20");
+      					if (!regValidation) {
+      						isValid = false;
+      					}
+      				}
+      			}
+
+      			if (description === 'address') {
+      				showErrorMessage(true, errorId, "");
+      				var fields = value.split("|")
+      				if (value.replaceAll("|", "").length < 1) {
+      					isValid = false;
+      					showErrorMessage(isValid, errorId, "Fill at least 1 address detail");
+      				}
+      			}
+      		}
+      		return isValid;
+      	}
+
+      	function respondRfi(event) {
+
+      		var table = document.getElementById("rfiDetailsTableBody");
+
+      		var isValid = validateRfiRespondFields(table);
+
+      		if (isValid) {
+      			var list = {};
+      			list.rfiResponseRequest = []
+      			var table = document.getElementById("rfiDetailsTableBody");
+      			for (var i = 0; i < table.rows.length; i++) {
+      				var currRow = table.rows[i];
+      				let id = "#" + currRow.cells[3].innerText + "Id";
+      				if (currRow.cells[5].innerText === 'document') {
+
+      					let fileName = $(id).val().substring($(id).val().lastIndexOf('\\') + 1);
+      					let fileType = fileName.substring(fileName.lastIndexOf('.') + 1);
+      					let fileData = $("#" + currRow.cells[3].innerText + "DocId").val();
+
+      					let obj = {};
+      					obj.rfiHashId = (currRow.cells[2].innerText);
+      					obj.identificationDoc = {};
+      					obj.identificationDoc.identificationType = currRow.cells[3].innerText;
+      					obj.identificationDoc.identificationDocument = [];
+
+      					let inObj = {};
+      					inObj.fileName = fileName;
+      					inObj.fileType = fileType;
+      					inObj.document = fileData;
+
+      					obj.identificationDoc.identificationDocument.push(inObj);
+
+      					list.rfiResponseRequest.push(obj);
+      				} else {
+      					let obj = {};
+      					obj.rfiHashId = (currRow.cells[2].innerText);
+      					if (currRow.cells[3].innerText === "address") {
+      						var fields = $("#addressId").val().split("|");
+      						if (!isBlankInput(fields[0])) {
+      							obj["billingAddress1"] = fields[0];
+      						}
+      						if (!isBlankInput(fields[1])) {
+      							obj["billingAddress2"] = fields[1];
+      						}
+      						if (!isBlankInput(fields[2])) {
+      							obj["billingCity"] = fields[2];
+      						}
+      						if (!isBlankInput(fields[3])) {
+      							obj["billingState"] = fields[3];
+      						}
+      						if (!isBlankInput(fields[4])) {
+      							obj["billingZipCode"] = fields[4];
+      						}
+      						list.rfiResponseRequest.push(obj);
+      					} else {
+      						let id = "#" + currRow.cells[3].innerText + "Id";
+      						obj[currRow.cells[3].innerText] = ($(id).val());
+      						list.rfiResponseRequest.push(obj);
+      					}
+      				}
+      			}
+      			sendRfiResponse(list, event);
+      		}
+      	}
+
+      	function sendRfiResponse(rfiResponseRequest, event) {
+      		event.preventDefault();
+      		var respond_rfi_url = $('#respondRfiUrl').val() + $('#rfiClientHashId').val() + "/customer/" + $('#rfiCustomerHashId').val() + "/uploadRfiDocument";
+      		$(".address").val("");
+      		$("#respondRfiSubmitBtn").attr("disabled", true);
+      		$("#respondRfiSubmitBtn").html(spinnerUrl);
+      		$.ajax({
+      			type: "POST",
+      			url: respond_rfi_url,
+      			contentType: "application/json",
+      			dataType: 'json',
+      			data: JSON.stringify(rfiResponseRequest),
+      			async: true,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				result = sanitize(unSanitize(result));
+
+      				$("#rfiDetailsModal").modal('hide');
+      				$("#success_refundNotification").modal('show');
+      				$(".refunded_body").html("Rfi has been successfully responded");
+
+      			},
+      			error: function (xhr) {
+      				var message = JSON.parse(xhr.responseText).message;
+      				$("#rfiDetailsModal").modal('hide');
+      				$(".refunded_body").html(message);
+      				$("#error_refundNotification").modal('show');
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+
+      				$("#respondRfiSubmitBtn").attr("disabled", false);
+      				$("#respondRfiSubmitBtn").html("Submit");
+      			}
+      		});
+      	}
+
+      	$('.staticEnableSelect2').select2({
+      		placeholder: 'Select Identity Type',
+      		allowClear: true,
+      		dropdownAutoWidth: false,
+      		width: '100%',
+      		dropdownCss: {'width': 'inherit'}
+      	})
+
+      	function isNumber(evt) {
+      		evt = (evt) ? evt : window.event;
+      		var charCode = (evt.which) ? evt.which : evt.keyCode;
+      		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      			return false;
+      		}
+      		return true;
+      	}
+
+
+      	//Rfi Respond Ends
+    </script> -->
+</body>
+
+</html>

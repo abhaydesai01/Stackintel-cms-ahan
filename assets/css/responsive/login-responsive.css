@@ -1,0 +1,54 @@
+@media (min-width: 576px) {
+	.modal-dialog {
+	    max-width: 500px;
+	    margin: 1.75rem auto;
+	}
+}
+
+@media (min-width: 576px) {
+	.modal-dialog-centered {
+	    min-height: calc(100% - 3.5rem);
+	}
+}
+
+
+@media only screen and (max-width: 768px) {
+	.login-container .intro_box .heading h3 {
+		font-size: 1.6rem;
+		margin-top: 2rem;
+	}
+	
+	.login-container .login-box {
+		padding: 0 50px;
+	}
+	
+	.logo_Artboard h1 {
+		font-size: 6rem;
+	}
+	.logo_Artboard h4 {
+		font-size: 1rem;
+		letter-spacing: 2px;
+	}
+	
+	.logo_Artboard {
+		margin-top: 2rem;
+	}
+	.login-container .login-box .login-body {
+		width: 73%;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.login-container {
+		grid-template-columns: 100%;
+	}
+	.login-container .intro_box {
+		display: none;
+	}
+	.login-container .login-box:before {
+		content: none;
+	}
+	.login-container .login-box .login-body {
+		width: 75%;
+	}
+}

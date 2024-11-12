@@ -1,0 +1,155 @@
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+	<jsp:include page="sidebar.jsp"></jsp:include>
+	<!-- END PAGE SIDEBAR -->
+	<!-- PAGE CONTENT -->
+	<div class="page-content">
+		<!-- START X-NAVIGATION VERTICAL -->
+		<jsp:include page="navbar.jsp"></jsp:include>
+		<!-- END X-NAVIGATION VERTICAL -->
+		<!-- PAGE CONTENT WRAPPER -->
+		<div class="page-content-wrap">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="page-title-box">
+							<h4 class="page-title">Prefund List(SuperAdmin)</h4>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="" style="min-height: 73vh;">
+							<div class="panel-body p-0">
+								<h5 id="errorMessage"></h5>
+								<input type="hidden" id="client_code" value="${clientCode}">
+								<div class="table-responsive" style="max-height: 70vh; overflow: auto;">
+									<table id="All-Transaction-List" class="table table-bordered table-striped">
+										<thead>
+											<tr>
+												<th>Sl.No</th>
+												<th>Date Of Transfer</th>
+												<th>Date Of Creation</th>
+												<th>Amount</th>
+												<th>Client Name</th>
+												<th>Client Code</th>
+												<th>Bank Reference Number</th>
+												<th>Client Account Number</th>
+												<th>ahan account Number</th>
+												<th>Comments</th>
+												<th>Currency Code</th>
+												<th>Pre-fund Transaction Id</th>
+												<th>Payer Id</th>
+												<th>Payment Id</th>
+												<th>Status</th>
+												<th colspan="2">Approve/Reject</th>
+											</tr>
+										</thead>
+										<tbody id="datatable-buttons"></tbody>
+									</table>
+								</div>
+								<div class="paginationWrapper">
+									<p id="paging_info" class="pull-left"></p>
+									<div class="pull-right">
+										<ul class="pagination-sm" id="paginationn"></ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE CONTENT -->
+	</div>
+	<!-- END PAGE CONTAINER -->
+</div>
+<!-- MESSAGE BOX-->
+<jsp:include page="messageBox.jsp"></jsp:include>
+
+<div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog modal-dialog-centered">
+		<!-- Modal content-->
+		<div class="modal-content">
+
+			<div class="modal-body">
+				<div class="text-center">
+					<img src="${pageContext.request.contextPath}/static/img/source.gif"
+						style="width: 140px; margin-top: -91px; margin-bottom: 10px; position: relative">
+					<div>
+						<h4 class="refunded_body mb-4"></h4>
+						<div class="text-center">
+							<button id="changeStatus" type="button" class="btn btn-success px-5 ripple"
+								data-dismiss="modal" onclick="closeModal();">OK</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog modal-dialog-centered">
+		<!-- Modal content-->
+		<div class="modal-content">
+
+			<div class="modal-body">
+				<div style="text-align: center">
+					<img src="${pageContext.request.contextPath}/static/img/x.gif"
+						style="width: 140px; margin-top: -91px; margin-bottom: 10px; position: relative">
+					<div>
+						<h4 class="refunded_body mb-4"></h4>
+						<div class="text-center">
+							<button id="changeStatus1" type="button" class="btn btn-danger px-4 ripple"
+								data-dismiss="modal" onclick="closeModal();">OK</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="hiddenFields"></div>
+</div>
+<!-- END MESSAGE BOX-->
+
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="${pageContext.request.contextPath}/static/audio/alert.mp3" preload="auto"></audio>
+<audio id="audio-fail" src="${pageContext.request.contextPath}/static/audio/fail.mp3" preload="auto"></audio>
+<!-- END PRELOADS -->
+
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/static/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/static/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/static/js/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- END PLUGINS -->
+
+<!-- START THIS PAGE PLUGINS-->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/static/js/plugins/moment.min.js?version=2.29.0"></script>
+<!-- END THIS PAGE PLUGINS-->
+
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/settings.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/actions.js"></script>
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/static/js/prefundLists.js?version=1.0.1"></script>
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/static/js/list/jquery.twbsPagination.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/static/js/list/jquery.twbsPagination.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/loader.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/floatingscroll.js"></script>
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->
+<script>
+	$('.table-responsive').floatingScrollbar();
+</script>

@@ -1,0 +1,758 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+		<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+			<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+				<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+					<%@page isELIgnored="false" %>
+
+						<script type="text/javascript"
+							src="${pageContext.request.contextPath}/static/js/plugins/jquery/jquery.min.js"></script>
+						<script type="text/javascript"
+							src="${pageContext.request.contextPath}/static/js/plugins/jquery/jquery-ui.min.js"></script>
+
+						<div id="hiddenFields">
+							<input type="hidden" id="authorizationHeader" name="authorizationHeader"
+								value="${Authorization}" />
+							<input type="hidden" id="loggedInUser" name="uploadedBy" value="${loginUsername}" />
+							<div id="csrfDiv">
+								<input type="hidden" id="csrf_token" name="csrf_token" value="${csrf_token}" />
+							</div>
+							<input type="hidden" id="clientDetails" name="clientDetails" value="${clientDetails}" />
+							<input type="hidden" id="clientDropDownUrl" name="clientDropDownUrl"
+								value="${clientDropDownUrl}" />
+							<input type="hidden" id="publicKey" name="publicKey" value="${publicKey}" />
+							<input type="hidden" value="${roles}" />
+						</div>
+
+						<script type="text/javascript">
+							const csrf_token = $("#csrf_token").val();
+							console.log("From sidebar(session), the current value of csrf_token -> " + csrf_token);
+							if (csrf_token != null && csrf_token !== "") {
+								window.localStorage.setItem('csrf_token', csrf_token);
+		<% request.getSession(false).setAttribute("csrf_token", "");%>
+									$("#csrf_token").val("");
+							}
+
+							const authorization = $("#authorizationHeader").val();
+							console.log("From sidebar(session), the current value of Authorization -> " + authorization);
+							if (authorization != null && authorization !== "") {
+								window.localStorage.setItem('authorization', authorization);
+		<% request.getSession(false).setAttribute("Authorization", "");%>
+									$("#authorizationHeader").val("");
+							}
+						</script>
+
+						<div class="page-sidebar">
+							<!-- START X-NAVIGATION -->
+							<ul class="x-navigation side_custom_scroll" id="sidebarnav">
+								<li class="xn-logo">
+									<a href="${pageContext.request.contextPath}/index">ahan</a>
+									<a href="#" class="x-navigation-control"></a>
+								</li>
+								<li class="dashboard">
+									<a href="${pageContext.request.contextPath}/index">
+										<span class="fas fa-tachometer-alt"></span>
+										<span class="xn-text">Dashboard</span>
+									</a>
+								</li>
+
+								<c:if
+									test="${fn:containsIgnoreCase(roles,'ROLE_ADD_EMBOSSER_LOGO') || fn:containsIgnoreCase(roles,'ROLE_LIST_EMBOSSER_LOGO')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-box-open"></span>
+											<span class="xn-text">FD Products</span>
+										</a>
+										<ul>
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ADD_EMBOSSER_LOGO')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/addEmboserLogo">
+														<span class="xn-text">Define Logo</span>
+													</a>
+												</li>
+											</c:if>
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_LIST_EMBOSSER_LOGO')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/emboserLogoList">
+														<span class="xn-text">Embosser Logo List</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if
+									test="${fn:containsIgnoreCase(roles,'ROLE_ADD_PROGRAM') || fn:containsIgnoreCase(roles,'ROLE_LIST_PROGRAM')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-tasks"></span>
+											<span class="xn-text">Program</span>
+										</a>
+										<ul>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ADD_PROGRAM')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/addprogram">
+														<span class="xn-text">Create Program</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_LIST_PROGRAM')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/programList">
+														<span class="xn-text">Program List</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ADD_CLIENT')
+                || fn:containsIgnoreCase(roles,'ROLE_LIST_CLIENT')
+                || fn:containsIgnoreCase(roles,'ROLE_ATTACH_PLASTIC_ID')
+                || fn:containsIgnoreCase(roles,'ROLE_ADD_COMPLIANCE_CONFIGURATION')
+                || fn:containsIgnoreCase(roles,'ROLE_FETCH_COMPLIANCE_CONFIGURATION')
+                || fn:containsIgnoreCase(roles,'ROLE_LIST_PLASTIC_ID')
+                || fn:containsIgnoreCase(roles,'ROLE_ADD_TERMS_AND_CONDITIONS')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-user-tie"></span>
+											<span class="xn-text">Client</span>
+										</a>
+										<ul>
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_ADD_TERMS_AND_CONDITIONS')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/addTermsAndConditions">
+														<span class="xn-text">Add Terms And Conditions</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ADD_CLIENT')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/addClient">
+														<span class="xn-text">Add Client</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_LIST_CLIENT')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/clientList">
+														<span class="xn-text">Client List</span>
+													</a>
+												</li>
+											</c:if>
+
+											<li class="xn-openable">
+												<a href="#" class="has-arrow">
+													<span class="xn-text">Setup Limits</span>
+												</a>
+												<ul>
+													<c:if
+														test="${fn:containsIgnoreCase(roles,'ROLE_SETUP_AUTH_LIMITS')}">
+														<li>
+															<a
+																href="${pageContext.request.contextPath}/setupAuthLimits">
+																<span class="xn-text">Setup Auth Limits</span>
+															</a>
+														</li>
+													</c:if>
+
+													<c:if
+														test="${fn:containsIgnoreCase(roles,'ROLE_SET_WALLET_LIMIT')}">
+														<li>
+															<a
+																href="${pageContext.request.contextPath}/setupRegulatoryLimits">
+																<span class="xn-text">Setup Regulatory Limits</span>
+															</a>
+														</li>
+													</c:if>
+
+												</ul>
+											</li>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ADD_CURRENCY')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/addCurrency">
+														<span class="xn-text">Add Currency</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_SETUP_PAYMENT_ID')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/setupPaymentId">
+														<span class="xn-text">Setup Payment Id</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_ADD_COMPLIANCE_CONFIGURATION')}">
+												<li>
+													<a
+														href="${pageContext.request.contextPath}/addComplianceConfiguration">
+														<span class="xn-text">Add Customer Compliance Config</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_FETCH_COMPLIANCE_CONFIGURATION')}">
+												<li>
+													<a
+														href="${pageContext.request.contextPath}/complianceConfigurationList">
+														<span class="xn-text">Customer Compliance Config View</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ATTACH_PLASTIC_ID')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/addPlasticId">
+														<span class="xn-text">Add Plastic Id</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ADD_POCKET')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/addPocket">
+														<span class="xn-text">Add Pocket</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_LIST_POCKET')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/pocketList">
+														<span class="xn-text">Pocket List</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_LIST_PLASTIC_ID')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/plasticIdList">
+														<span class="xn-text">Plastic Id List</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_GET_NOTIFICATION_TEMPLATES')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/notificationTemplate">
+														<span class="xn-text">Notification Templates</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_SETUP_REMIT_ACCOUNTS')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/setupRemitAccounts">
+														<span class="xn-text">Setup Remit Accounts</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_PERSIST_CLIENT_RELATIONSHIP') ||
+                fn:containsIgnoreCase(roles,'ROLE_UPDATE_CLIENT_RELATIONSHIP') ||
+                fn:containsIgnoreCase(roles,'ROLE_PERSIST_CLIENT_RELATIONSHIP_MAPPING') ||
+                fn:containsIgnoreCase(roles,'ROLE_UPDATE_CLIENT_RELATIONSHIP_MAPPING') ||
+                fn:containsIgnoreCase(roles,'ROLE_FETCH_CLIENT_RELATIONSHIP_MAPPING') ||
+                fn:containsIgnoreCase(roles,'ROLE_FETCH_CLIENT_RELATIONSHIPS')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-handshake"></span>
+											<span class="xn-text">Client Relationship</span>
+										</a>
+										<ul>
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_PERSIST_CLIENT_RELATIONSHIP')}">
+												<li>
+													<a
+														href="${pageContext.request.contextPath}/persistClientRelationship">
+														<span class="xn-text">Add Client Relationship</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+
+										<ul>
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_PERSIST_CLIENT_RELATIONSHIP_MAPPING')}">
+												<li>
+													<a
+														href="${pageContext.request.contextPath}/persistClientRelationshipMapping">
+														<span class="xn-text">Add Client Relationship Mapping</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+
+										<ul>
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_FETCH_CLIENT_RELATIONSHIPS')}">
+												<li>
+													<a
+														href="${pageContext.request.contextPath}/fetchClientRelationships">
+														<span class="xn-text">Client Relationship List</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ADD_CUSTOMER') || fn:containsIgnoreCase(roles,'ROLE_LIST_CUSTOMER')
+		|| fn:containsIgnoreCase(roles,'ROLE_ACTIVE_CUSTOMER') || fn:containsIgnoreCase(roles,'ROLE_KYC_REQUEST')
+		|| fn:containsIgnoreCase(roles,'ROLE_REJECTED_KYC_REPORT') || fn:containsIgnoreCase(roles,'ROLE_BLOCKED_CUSTOMER')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-users"></span>
+											<span class="xn-text">Customer</span>
+										</a>
+										<ul>
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ADD_CUSTOMER')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/addCustomer">
+														<span class="xn-text">Add Customer</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_LIST_CUSTOMER')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/customerList">
+														<span class="xn-text">Customer List</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_INDIVIDUAL_SERVICE_DETAILS')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-user-check"></span>
+											<span class="xn-text">Customer Compliance</span>
+										</a>
+										<ul>
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_INDIVIDUAL_SERVICE_DETAILS')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/complianceReport">
+														<span class="xn-text">Customer Compliance Report</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_LIST_CARD') || fn:containsIgnoreCase(roles,'ROLE_ACTIVE_CARD_LIST')
+		|| fn:containsIgnoreCase(roles,'ROLE_ASSIGN_PHYSICAL_CARD') || fn:containsIgnoreCase(roles,'ROLE_BLOCK_UNBLOCK_CARD')
+		|| fn:containsIgnoreCase(roles,'ROLE_AZNAC_FILE_UPLOAD') || fn:containsIgnoreCase(roles,'ROLE_BULK_ISSUANCE_INDENT_LIST')
+		|| fn:containsIgnoreCase(roles,'ROLE_AZNAC_FILE_LIST') || fn:containsIgnoreCase(roles,'ROLE_AZNAC_RESPONSEFILE_UPLOAD')
+		|| fn:containsIgnoreCase(roles,'ROLE_EMBOSSING_RECORD_STATUS')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="far fa-credit-card"></span>
+											<span class="xn-text">Cards</span>
+										</a>
+										<ul>
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_LIST_CARD')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/cardList">Card List</a>
+												</li>
+											</c:if>
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ASSIGN_PHYSICAL_CARD')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/assignPhysicalCard">Assign
+														Physical Card</a>
+												</li>
+											</c:if>
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_AZNAC_FILE_UPLOAD')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/bulkCardIssuance"> Bulk
+														Card Issuance</a>
+												</li>
+											</c:if>
+
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_BULK_ISSUANCE_INDENT_LIST')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/bulkCardIssuanceIndent">
+														Bulk Card Issuance Indent</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_AZNAC_FILE_LIST')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/bulkCardIssuanceList">
+														Bulk Card Issuance List</a>
+												</li>
+											</c:if>
+
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_AZNAC_RESPONSE_FILE_UPLOAD')}">
+												<li>
+													<a
+														href="${pageContext.request.contextPath}/bulkCardIssuanceResponse">
+														Bulk Card Issuance Response</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_EMBOSSING_RECORD_STATUS')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/embossingRecordStatus">
+														Embossing Record Status</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if
+									test="${fn:containsIgnoreCase(roles,'ROLE_ADD_TRANSACTION_COMPLIANCE_PROFILE')|| fn:containsIgnoreCase(roles,'ROLE_ADD_TRANSACTION_COMPLIANCE_PROFILE_MAPPING') || fn:containsIgnoreCase(roles,'ROLE_TRANSACTIONS_COMPLIANCE_DETAILS')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-search-dollar"></span>
+											<span class="xn-text">Transaction Compliance</span>
+										</a>
+										<ul>
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_ADD_TRANSACTION_COMPLIANCE_PROFILE')}">
+												<li>
+													<a
+														href="${pageContext.request.contextPath}/transactionComplianceProfile">
+														<span class="xn-text">Transaction Compliance Profile</span>
+													</a>
+												</li>
+											</c:if>
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_ADD_TRANSACTION_COMPLIANCE_PROFILE_MAPPING')}">
+												<li>
+													<a
+														href="${pageContext.request.contextPath}/transactionComplianceProfileMapping">
+														<span class="xn-text">Transaction Compliance Profile
+															Mapping</span>
+													</a>
+												</li>
+											</c:if>
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_TRANSACTIONS_COMPLIANCE_DETAILS')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/transactionsCompliance">
+														<span class="xn-text">Transaction Compliance Report</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_TRANSACTION_REPORTS')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-copy"></span>
+											<span class="xn-text">Reports</span>
+										</a>
+										<ul>
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_TRANSACTION_REPORTS')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/transactionReport">
+														<span class="xn-text">Transaction Reports</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_SETTLEMENT_REPORTS')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/settlementReport">
+														<span class="xn-text">Settlement Reports</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_CANNED_REPORTS')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/cannedReport">
+														<span class="xn-text">Canned Reports</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ATTACH_PLASTIC_ID') || fn:containsIgnoreCase(roles,'ROLE_PREFUND_REQUEST')
+			|| fn:containsIgnoreCase(roles,'ROLE_PREFUND_APPROVAL')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-hand-holding-usd"></span>
+											<span class="xn-text">Client Funds</span>
+										</a>
+										<ul>
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_PREFUND_REQUEST')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/addPrefundRequest">
+														<span class="xn-text">Client Prefund Request</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_PREFUND_APPROVAL')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/prefundList">
+														<span class="xn-text">Client Prefund Approval</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_REFUND_REQUEST')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/addRefundRequest">
+														<span class="xn-text">Client Refund Request</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_REFUND_LIST')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/refundList">
+														<span class="xn-text">Client Refund Approval</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_WALLET_FUND_REQUEST')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-wallet"></span>
+											<span class="xn-text">Wallet Fund Request</span>
+										</a>
+										<ul>
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_WALLET_FUND_REQUEST')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/walletFundRequest">
+														<span class="xn-text">Wallet Fund Request</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ICC_TRANSACTIONS') && fn:containsIgnoreCase(roles,'ROLE_SEARCH_WALLET_FUND') && fn:containsIgnoreCase(roles,'ROLE_UPDATE_INWARD_TRANSACTIONS')
+		&& fn:containsIgnoreCase(roles,'ROLE_NOT_APPLICABLE_INWARD_TRANSACTIONS')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-unlock-alt"></span>
+											<span class="xn-text">ICC Transactions</span>
+										</a>
+										<ul>
+											<li>
+												<a href="${pageContext.request.contextPath}/matchingEngine">
+													<span class="xn-text">ICC Transactions</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_BULK_CUSTOMER_REGISTRATION')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-users-cog"></span>
+											<span class="xn-text">Bulk Customer Registration</span>
+										</a>
+										<ul>
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_BULK_CUSTOMER_REGISTRATION')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/customerDocumentUpload">
+														<span class="xn-text">Bulk Customer Registration</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_BULK_CUSTOMER_REGISTRATION_LIST')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/customerDocumentsList">
+														<span class="xn-text">Bulk Customer List</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_BULK_UPLOAD_TOPUP')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-money-check-alt"></span>
+											<span class="xn-text">Bulk Wallet Topup</span>
+										</a>
+										<ul>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_BULK_UPLOAD_TOPUP')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/bulkWalletTopup">
+														<span class="xn-text">Bulk Wallet TopUp</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_BULK_TOPUP_LIST')}">
+												<li>
+													<a
+														href="${pageContext.request.contextPath}/bulkwallettopupdocument">
+														<span class="xn-text">Bulk Wallet TopUp List</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_BULK_FEE_FILE_UPLOAD')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/bulkFeeFileUpload">
+														<span class="xn-text">Fee File Upload</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_BULK_FEE_FILE_LIST')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/bulkFeeFileUploadList">
+														<span class="xn-text">Fee File Upload List</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_CASHBACK_CREDIT_DOCUMENT_UPLOAD')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-money-check-alt"></span>
+											<span class="xn-text">Cashback Credit</span>
+										</a>
+										<ul>
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_CASHBACK_CREDIT_DOCUMENT_UPLOAD')}">
+												<li>
+													<a
+														href="${pageContext.request.contextPath}/cashbackCreditFileUpload">
+														<span class="xn-text">Cashback Credit File Upload</span>
+													</a>
+												</li>
+											</c:if>
+
+											<c:if
+												test="${fn:containsIgnoreCase(roles,'ROLE_CASHBACK_CREDIT_DOCUMENT_LIST')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/cashbackCreditList">
+														<span class="xn-text">Cashback Credit List</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+
+								<c:if test="${fn:containsIgnoreCase(roles,'ROLE_AD_HOC_NOTIFICATON_FILE')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-bell"></span>
+											<span class="xn-text">Bulk Ad-Hoc Notification</span>
+										</a>
+										<ul>
+
+											<c:if test="${fn:containsIgnoreCase(roles,'ROLE_AD_HOC_NOTIFICATON_FILE')}">
+												<li>
+													<a href="${pageContext.request.contextPath}/bulkNotification">
+														<span class="xn-text">Bulk Ad-Hoc Notification</span>
+													</a>
+												</li>
+											</c:if>
+										</ul>
+									</li>
+								</c:if>
+
+								<c:if
+									test="${fn:containsIgnoreCase(roles,'ROLE_ADD_ROLE') || fn:containsIgnoreCase(roles,'ROLE_ADD_USER')
+			   ||  fn:containsIgnoreCase(roles,'ROLE_ADD_PRIVILEGES') ||  fn:containsIgnoreCase(roles,'ROLE_USER_LIST')
+               ||  fn:containsIgnoreCase(roles,'ROLE_FETCH_GROUP_LIST') ||  fn:containsIgnoreCase(roles,'ROLE_FETCH_ROLES')
+               ||  fn:containsIgnoreCase(roles,'ROLE_FETCH_ROLES') ||  fn:containsIgnoreCase(roles,'ROLE_FETCH_ROLE')}">
+									<li class="xn-openable">
+										<a href="#" class="has-arrow">
+											<span class="fas fa-user-cog"></span>
+											<span class="xn-text">Admin Services</span>
+										</a>
+										<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ADD_ROLE')}">
+											<ul>
+												<li>
+													<a href="${pageContext.request.contextPath}/addRole">
+														<span class="xn-text">Add Role</span>
+													</a>
+												</li>
+											</ul>
+										</c:if>
+										<c:if
+											test="${fn:containsIgnoreCase(roles,'ROLE_FETCH_ROLES') && fn:containsIgnoreCase(roles,'ROLE_FETCH_ROLE')}">
+											<ul>
+												<li>
+													<a href="${pageContext.request.contextPath}/roleList">
+														<span class="xn-text">Role List</span>
+													</a>
+												</li>
+											</ul>
+										</c:if>
+										<c:if test="${fn:containsIgnoreCase(roles,'ROLE_ADD_USER')}">
+											<ul>
+												<li>
+													<a href="${pageContext.request.contextPath}/addUser">
+														<span class="xn-text">Add Users</span>
+													</a>
+												</li>
+											</ul>
+										</c:if>
+										<c:if test="${fn:containsIgnoreCase(roles,'ROLE_FETCH_GROUP_LIST')}">
+											<ul>
+												<li>
+													<a href="${pageContext.request.contextPath}/fetchGroupList">
+														<span class="xn-text">User Group List</span>
+													</a>
+												</li>
+											</ul>
+										</c:if>
+										<c:if test="${fn:containsIgnoreCase(roles,'ROLE_USER_LIST')}">
+											<ul>
+												<li>
+													<a href="${pageContext.request.contextPath}/userList">
+														<span class="xn-text">User List</span>
+													</a>
+												</li>
+											</ul>
+										</c:if>
+									</li>
+								</c:if>
+							</ul>
+							<!-- END X-NAVIGATION -->
+						</div>

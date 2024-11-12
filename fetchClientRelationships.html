@@ -1,0 +1,2088 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+  <!-- META SECTION -->
+  <title>ahan | Client Relationship List</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+  <!-- END META SECTION -->
+
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+
+  <!-- EOF CSS INCLUDE -->
+</head>
+
+<body>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+
+      <div class="page-content-wrap">
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <div class="pull-right">
+                  <a href="javascript:void(0)" class="btn btn-xs btn-primary ripple" onclick="toggleSmartSearch();"><i
+                      class="fa fa-search" aria-hidden="true"></i> Search</a>
+                </div>
+                <h4 class="page-title">Client Relationship List</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="" style="min-height: 73vh">
+                <div id="hiddenFields">
+                  <input type="hidden" id="fetchRelationshipFieldsUrl" name="fetchRelationshipFieldsUrl"
+                    value="${fetchRelationshipFieldsUrl}" />
+                  <input type="hidden" id="fetchClientRelationshipsUrl" name="fetchClientRelationshipsUrl"
+                    value="${fetchClientRelationshipsUrl}" />
+                  <input type="hidden" id="fetchclientrelationships" name="fetchclientrelationships"
+                    value="${fetchclientrelationships}" />
+                  <input type="hidden" id="fetchclientrelationshipMappings" name="fetchclientrelationshipMappings"
+                    value="${fetchclientrelationshipMappings}" />
+                  <input type="hidden" id="updateClientRelationship" name="updateClientRelationship"
+                    value="${updateClientRelationship}" />
+                  <input type="hidden" id="fetchAllClientUrl" name="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+                  <input type="hidden" id="updateRelationshipMappingUrl" name="updateRelationshipMappingUrl"
+                    value="${updateRelationshipMappingUrl}" />
+                </div>
+
+                <div class="panel-body p-0" style="position: relative">
+                  <form id="smartSearchFieldsDiv" class="row clientRelFil" style="display: none">
+                    <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label for="clientRelationship" class="control-label">Client Relationship:</label>
+											<select id="clientRelationship" name="clientRelationship" class="form-control"></select>
+										</div>
+									</div> -->
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="type" class="control-label">Type:</label>
+                        <select id="type" name="type" class="form-control">
+                          <option value="">Select a Type</option>
+                          <option value="">BLOCK</option>
+                          <option value="">LIMIT</option>
+                          <option value="">FEES</option>
+                          <option value="">FUNDS</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="level" class="control-label">Level:</label>
+                        <select id="level" name="level" class="form-control">
+                          <option value="">Select a Level</option>
+                          <option value="">TRANSACTION</option>
+                          <option value="">CARD</option>
+                          <option value="">WALLET</option>
+                          <option value="">CUSTOMER</option>
+                          <option value="">CLIENT</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="frequency" class="control-label">Frequency:</label>
+                        <select id="frequency" name="frequency" class="form-control">
+                          <option value="">Select a Frequency</option>
+                          <option value="">EACH TIME</option>
+                          <option value="">ONE TIME</option>
+                          <option value="">DAILY</option>
+                          <option value="">MONTHLY</option>
+                          <option value="">YEARLY</option>
+                          <option value="">LIFETIME</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="applicableOn" class="control-label">Applicable On:</label>
+                        <select id="applicableOn" name="applicableOn" class="form-control">
+                          <option value="">Select Applicable On</option>
+                          <option value="">TRANSACTION</option>
+                          <option value="">CARD</option>
+                          <option value="">WALLET</option>
+                          <option value="">CUSTOMER</option>
+                          <option value="">CLIENT</option>
+                          <option value="">AMAZE TRANSACTION</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="fieldName" class="control-label">Field Name:</label>
+                        <select id="fieldName" name="fieldName" class="form-control">
+                          <option value="">Select a Field Name</option>
+                          <option value="">AMOUNT</option>
+                          <option value="">COUNT</option>
+                          <option value="">CURRENCY CODE</option>
+                          <option value="">TRANSACTION AMOUNT</option>
+                          <option value="">TRANSACTION CURRENCY CODE</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="fieldOperator" class="control-label">Field Operator:</label>
+                        <select id="fieldOperator" name="fieldOperator" class="form-control">
+                          <option value="">Select a Field Operator</option>
+                          <option value="">EQUALS</option>
+                          <option value="">EQUALS IGNORE CASE</option>
+                          <option value="">NOT EQUALS IGNORE CASE</option>
+                          <option value="">STARTS WITH</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="fieldValue" class="control-label">Field Value:</label>
+                        <input type="text" id="fieldValue" name="fieldValue" class="form-control" />
+                      </div>
+                    </div>
+
+                    <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label for="fees" class="control-label">Fees:</label>
+											<input type="text" id="fees" name="fees" onkeyup="isNumber(this);" class="form-control" />
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label for="feesType" class="control-label">Fees Type:</label>
+											<select id="feesType" name="feesType" class="form-control"></select>
+										</div>
+									</div> -->
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="statusDD" class="control-label">Status:</label>
+                        <select id="statusDD" name="status" class="form-control">
+                          <option value="">Select Status</option>
+                          <option value="">Active</option>
+                          <option value="">Inactive</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                      <div class="form-group mt-4 divided_two">
+                        <button type="button" id="relationshipSmartSearch" class="btn btn-primary btn-block ripple">
+                          Filter
+                        </button>
+                        <button type="reset" class="btn btn-default btn-block ripple">
+                          Clear
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                  <div id="table_scroll" class="table-responsive" style="
+                        max-height: 63vh;
+                        overflow: auto;
+                        margin-bottom: 10px;
+                      ">
+                    <table id="clientRelationshipListTable" class="table table-bordered table-striped">
+                      <thead id="tableHeader">
+                        <tr>
+                          <th>Sl.No.</th>
+                          <th>Created At</th>
+                          <th>Relationship Hash</th>
+                          <th>Type</th>
+                          <th>Level</th>
+                          <th>Frequency</th>
+                          <th>Applicable On</th>
+                          <th>Field Name</th>
+                          <th>Field Operator</th>
+                          <th>Field Value</th>
+                          <th>Fees</th>
+                          <th>Fees Type</th>
+                          <th>Description</th>
+                          <th colspan="2" style="text-align: center">
+                            Action
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="tableBody">
+                        <tr>
+                          <td>1</td>
+                          <td>2021/05/07</td>
+                          <td>123Eeeee567ttttt</td>
+                          <td>Limit</td>
+                          <td>Card</td>
+                          <td>Daily</td>
+                          <td>Card</td>
+                          <td>Currency Code</td>
+                          <td>Equals</td>
+                          <td>Value</td>
+                          <td>0.00</td>
+                          <td>Type</td>
+                          <td>Description</td>
+                          <td>
+                            <button class="btn btn-primary btn-sm">
+                              Action
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="paginationWrapper">
+                    <div class="pull-right">
+                      <ul class="pagination-sm" id="paginationn"></ul>
+                    </div>
+                    <p id="paging_info" class="pull-left"></p>
+                    <input type="hidden" id="totalPagesId" value="1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="clientRelationshipMappingModel" role="dialog">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
+                <h5 class="modal-title" id="title">
+                  Relationship Mapping List
+                </h5>
+              </div>
+              <div class="modal-body">
+                <div id="table_scroll" class="table-responsive" style="max-height: 50vh; overflow: auto">
+                  <table id="clientRelationshipMappingListTable" class="table table-bordered table-condensed">
+                    <thead id="mappingTableHeader">
+                      <tr>
+                        <th>Sl.No.</th>
+                        <th>Created At</th>
+                        <th>Client Hash</th>
+                        <th>Relationship Hash</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="mappingTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--update relationship modal start-->
+        <div class="modal fade" id="updateRelationshipModel" role="dialog">
+          <div class="modal-dialog modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
+                <h5 class="modal-title">
+                  <b id="updateRelationshipModelTitle"></b>
+                </h5>
+              </div>
+              <div class="modal-body">
+                <div id="updateClientRelationshipDiv">
+                  <div id="updateRelationshipModalHiddenFields">
+                    <input type="hidden" id="relationshipHashID" name="relationshipHashID" />
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="typeDD" class="control-label">Type<sup>*</sup></label>
+                        <select id="typeDD" name="typeDD" class="form-control"></select>
+                        <span id="typeError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="levelDD" class="control-label">Level<sup>*</sup></label>
+                        <select id="levelDD" name="levelDD" class="form-control"></select>
+                        <span id="levelError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="fieldNameDD" class="control-label">Field Name<sup>*</sup></label>
+                        <select id="fieldNameDD" name="fieldNameDD" class="form-control"></select>
+                        <span id="fieldNameError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="fieldOperatorDD" class="control-label">Field Operator<sup>*</sup></label>
+                        <select id="fieldOperatorDD" name="fieldOperatorDD" class="form-control"></select>
+                        <span id="fieldOperatorError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="fieldValueDD" class="control-label">Field Value
+                        </label>
+                        <input type="text" id="fieldValueDD" name="fieldValueDD" class="form-control" />
+                        <span id="fieldValueError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="frequencyDD" class="control-label">Frequency<sup>*</sup>
+                        </label>
+                        <select id="frequencyDD" name="frequencyDD" class="form-control"></select>
+                        <span id="frequencyError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="applicableOnDD" class="control-label">Applicable On<sup>*</sup></label>
+                        <select id="applicableOnDD" name="applicableOnDD" class="form-control"></select>
+                        <span id="applicableOnError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label for="statusDrpDwn" class="control-label">Status<sup>*</sup>
+											</label>
+											<select id="statusDrpDwn" name="statusDrpDwn" class="form-control"></select>
+											<span id="statusDDError" class="errorClass error field_err"></span>
+										</div>
+									</div> -->
+
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label for="feesTypeDD" class="control-label">Fees Type</label>
+											<select id="feesTypeDD" name="feesTypeDD" class="form-control"></select>
+											<span id="feesTypeError" class="errorClass error field_err"></span>
+										</div>
+									</div> -->
+
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label for="feesDD" class="control-label">Fees</label>
+											<input type="text" id="feesDD" name="feesDD" onkeyup="isNumber(this);" class="form-control" />
+											<span id="feesError" class="errorClass error field_err"></span>
+										</div>
+									</div> -->
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <label for="DescriptionDD" class="control-label">Description<sup>*</sup>
+                        </label>
+                        <textarea rows="2" id="DescriptionDD" class="form-control" name="DescriptionDD"></textarea>
+                        <span id="descriptionError" class="errorClass error field_err"></span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 col-xs-12">
+                      <div class="form-group text-center mt-4">
+                        <button type="button" class="btn btn-primary btn-block ripple" id="submitBtn"
+                          onclick="validateUpdateClientRelationship(event);">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--update relationship modal end-->
+
+        <!--update relationship mapping modal start-->
+        <div class="modal fade" id="updateRelationshipMappingModel" role="dialog">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-sm">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
+                <h5 class="modal-title">
+                  <b id="updateRelationshipMappingModelTitle"></b>
+                </h5>
+              </div>
+              <div class="modal-body">
+                <div class="p-2">
+                  <form>
+                    <div id="updateClientRelationshipMappingDiv">
+                      <div id="updateRelationshipMappingModalHiddenFields">
+                        <input type="hidden" id="existingClientHash" name="existingClientHash" />
+                        <input type="hidden" id="existingRelationshipHash" name="existingRelationshipHash" />
+                      </div>
+                      <div class="form-group">
+                        <label for="client" class="control-label">Client:<sup>*</sup></label>
+                        <select id="client" name="client" class="form-control"></select>
+                        <span id="clientError" class="errorClass error field_err"></span>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="mClientRelationship" class="control-label">Client Relationship<sup>*</sup></label>
+                        <select id="mClientRelationship" name="mClientRelationship" class="form-control"></select>
+                        <span id="clientRelationshipError" class="errorClass error field_err"></span>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="customerHash" class="control-label">Customer Hash<sup>*</sup>
+                        </label>
+                        <input type="text" id="customerHash" name="customerHash" class="form-control" />
+                        <span id="customerHashError" class="errorClass error field_err"></span>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="cardHash" class="control-label">Card Hash<sup>*</sup></label>
+                        <input type="text" id="cardHash" name="cardHash" class="form-control" />
+                        <span id="cardHashError" class="errorClass error field_err"></span>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="walletHash" class="control-label">Wallet Hash<sup>*</sup></label>
+                        <input type="text" id="walletHash" name="walletHash" class="form-control" />
+                        <span id="walletHashError" class="errorClass error field_err"></span>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="mStatus" class="control-label">Status<sup>*</sup></label>
+                        <select id="mStatus" name="mStatus" class="form-control"></select>
+                        <span id="mStatusError" class="errorClass error field_err"></span>
+                      </div>
+
+                      <div class="form-group text-center">
+                        <button type="button" class="btn btn-primary btn-block ripple" id="mMubmitBtn"
+                          onclick="updateRelationshipMapping(event);">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--update relationship mapping modal end-->
+        <!-- END PAGE CONTENT -->
+      </div>
+      <!-- END PAGE CONTAINER -->
+    </div>
+  </div>
+
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" id="successModal" class="btn btn-success ripple px-5" data-dismiss="modal"
+                  onclick="closeModal();">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Failure Modal -->
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger ripple px-5" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
+
+  <script type="text/javascript" src="assets/js/plugins/moment.min.js?version=2.29.0"></script>
+  <script type="text/javascript" src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- END THIS PAGE PLUGINS-->
+
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/settings.min.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+
+  <script type="text/javascript" src="assets/js/generateTableWithNonClickableRows.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+  <script type="text/javascript" src="assets/js/floatingscroll.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- END SCRIPTS -->
+
+  <script type="text/javascript">
+    /* Universal Spinner with text for Button */
+    var spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+    var relationshipFields;
+    var clientRelationshipDdData;
+
+    $(document).ready(function () {
+      $(".se-pre-con").hide();
+      fetchClientRelationshipDD();
+      fetchRelationshipFieldsUrl();
+      fetchClientRelationshipList(0, false);
+    });
+
+    $(function () {
+      $(".table-responsive").floatingScrollbar();
+    });
+
+    function fetchClientRelationshipDD() {
+      $.ajax({
+        url: $("#fetchClientRelationshipsUrl").val() + "all?size=99999",
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(result));
+
+          clientRelationshipDdData = result;
+          /* optionTag = "<option value = ''>Select a Relationship</option>";
+      for (var i = 0; i < ((result.content).length); i++) {
+        optionTag += "<option value = '" + ((result.content)[i]).relationshipHashId + "'>" + ((result.content)[i]).description + "</option>";
+      }
+      $("#clientRelationship").html(optionTag); */
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function fetchRelationshipFieldsUrl() {
+      $.ajax({
+        url: $("#fetchRelationshipFieldsUrl").val(),
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(result));
+
+          relationshipFields = result;
+          var optionTag = "<option value = ''>Select a type</option>";
+          var fieldNameArray = result.fieldName;
+          for (var i = 0; i < fieldNameArray.length; i++) {
+            var replacedString = (fieldNameArray[i] + "")
+              .split("_")
+              .join(" ");
+            optionTag +=
+              "<option value = '" +
+              fieldNameArray[i] +
+              "'>" +
+              replacedString +
+              "</option>";
+          }
+          $("#fieldName").html(optionTag);
+
+          /* optionTag = "<option value = ''>Select a Fees Type</option>";
+      var feesTypeArray = result.feesType;
+      for (var i = 0; i < feesTypeArray.length; i++) {
+        var replacedString = ((feesTypeArray[i] + "").split("_")).join(" ");
+        optionTag += "<option value = '" + feesTypeArray[i] + "'>" + replacedString + "</option>";
+      }
+      $("#feesType").html(optionTag); */
+
+          optionTag = "<option value = ''>Select a Fees Type</option>";
+          var levelArray = result.level;
+          for (var i = 0; i < levelArray.length; i++) {
+            var replacedString = (levelArray[i] + "").split("_").join(" ");
+            optionTag +=
+              "<option value = '" +
+              levelArray[i] +
+              "'>" +
+              replacedString +
+              "</option>";
+          }
+          $("#level").html(optionTag);
+
+          optionTag = "<option value = ''>Select a Field Operator</option>";
+          var fieldOperatorArray = result.fieldOperator;
+          for (var i = 0; i < fieldOperatorArray.length; i++) {
+            var replacedString = (fieldOperatorArray[i] + "")
+              .split("_")
+              .join(" ");
+            optionTag +=
+              "<option value = '" +
+              fieldOperatorArray[i] +
+              "'>" +
+              replacedString +
+              "</option>";
+          }
+          $("#fieldOperator").html(optionTag);
+
+          optionTag = "<option value = ''>Select a Type</option>";
+          var typeArray = result.type;
+          for (var i = 0; i < typeArray.length; i++) {
+            var replacedString = (typeArray[i] + "").split("_").join(" ");
+            optionTag +=
+              "<option value = '" +
+              typeArray[i] +
+              "'>" +
+              replacedString +
+              "</option>";
+          }
+          $("#type").html(optionTag);
+
+          optionTag = "<option value = ''>Select Applicable On</option>";
+          var applicableOnArray = result.applicableOn;
+          for (var i = 0; i < applicableOnArray.length; i++) {
+            var replacedString = (applicableOnArray[i] + "")
+              .split("_")
+              .join(" ");
+            optionTag +=
+              "<option value = '" +
+              applicableOnArray[i] +
+              "'>" +
+              replacedString +
+              "</option>";
+          }
+          $("#applicableOn").html(optionTag);
+
+          optionTag = "<option value = ''>Select a Frequency</option>";
+          var frequencyArray = result.frequency;
+          for (var i = 0; i < frequencyArray.length; i++) {
+            var replacedString = (frequencyArray[i] + "")
+              .split("_")
+              .join(" ");
+            optionTag +=
+              "<option value = '" +
+              frequencyArray[i] +
+              "'>" +
+              replacedString +
+              "</option>";
+          }
+          $("#frequency").html(optionTag);
+
+          optionTag = "<option value = ''>Select a Status</option>";
+          var statusArray = result.status;
+          for (var i = 0; i < statusArray.length; i++) {
+            if (
+              statusArray[i].toLowerCase() == "active" ||
+              statusArray[i].toLowerCase() == "inactive"
+            ) {
+              var replacedString = (statusArray[i] + "").split("_").join(" ");
+              optionTag +=
+                "<option value = '" +
+                statusArray[i] +
+                "'>" +
+                replacedString +
+                "</option>";
+            }
+          }
+          $("#statusDD").html(optionTag);
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function validateFields(id) {
+      var value = $("#" + id).val();
+      if (value == null || value == "null" || value == "undefined") {
+        return "";
+      }
+      return value;
+    }
+
+    function generateUrl() {
+      var baseUrl = $("#fetchclientrelationships").val() + "all";
+
+      /* var relationshipHash = validateFields("clientRelationship"); */
+      var type = validateFields("type");
+      var level = validateFields("level");
+      var frequency = validateFields("frequency");
+      var applicableOn = validateFields("applicableOn");
+      var fieldName = validateFields("fieldName");
+      var fieldOperator = validateFields("fieldOperator");
+      var fieldValue = validateFields("fieldValue");
+      /* var fees = validateFields("fees"); */
+      /* var feesType = validateFields("feesType"); */
+      var statusDD = validateFields("statusDD");
+
+      /* if (relationshipHash != "") {
+    baseUrl += relationshipHash;
+  } else {
+    baseUrl += "all";
+  } */
+
+      baseUrl += "?1=1";
+      if (type != "") {
+        baseUrl += "&type=" + type;
+      }
+      if (level != "") {
+        baseUrl += "&level=" + level;
+      }
+      if (frequency != "") {
+        baseUrl += "&frequency=" + frequency;
+      }
+      if (applicableOn != "") {
+        baseUrl += "&applicableOn=" + applicableOn;
+      }
+      if (fieldName != "") {
+        baseUrl += "&fieldName=" + fieldName;
+      }
+      if (fieldOperator != "") {
+        baseUrl += "&fieldOperator=" + fieldOperator;
+      }
+      if (fieldValue != "") {
+        baseUrl += "&fieldValue=" + fieldValue;
+      }
+      /* if (fees != "") {
+    baseUrl += "&fees=" + fees;
+  } */
+      /* if (feesType != "") {
+    baseUrl += "&feesType=" + feesType;
+  } */
+      if (statusDD != "") {
+        baseUrl += "&status=" + statusDD;
+      }
+
+      return baseUrl;
+    }
+
+    function fetchClientRelationshipList(value, isPaging) {
+      var loadingIcon =
+        "<tr><td colspan=1000 style='text-align:center'><img style='max-width:50px;' src = 'assets/img/loading.gif'></img></td></tr>";
+      $("#tableBody").html(loadingIcon);
+
+      var url = generateUrl();
+      url +=
+        "&page=" + value + "&size=" + 20 + "&order=DESC&property=createdAt";
+      $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: url,
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (data, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(data));
+
+          $("#smartSearchFieldsDiv").slideUp();
+          var slno = value * 10;
+          var startno = value * 10 + 1;
+          var contentArr = data.content;
+          var count = 0;
+          var tbody = "";
+          for (var i = 0; i < contentArr.length; i++) {
+            ++count;
+            ++slno;
+            var eachRelationshipObj = contentArr[i];
+            tbody += "<tr>";
+            tbody += "<td>" + count + "</td>";
+            tbody += "<td>" + eachRelationshipObj.createdAt + "</td>";
+            tbody +=
+              "<td><span style='white-space: nowrap'>" +
+              eachRelationshipObj.relationshipHashId +
+              "</span></td>";
+            tbody += "<td>" + eachRelationshipObj.type + "</td>";
+            tbody += "<td>" + eachRelationshipObj.level + "</td>";
+            tbody += "<td>" + eachRelationshipObj.frequency + "</td>";
+            tbody += "<td>" + eachRelationshipObj.applicableOn + "</td>";
+            tbody += "<td>" + eachRelationshipObj.fieldName + "</td>";
+            tbody += "<td>" + eachRelationshipObj.fieldOperator + "</td>";
+            tbody += "<td>" + eachRelationshipObj.fieldValue + "</td>";
+            tbody += "<td>" + eachRelationshipObj.fees + "</td>";
+            tbody +=
+              "<td>" +
+              (eachRelationshipObj.feesType == null
+                ? "NA"
+                : eachRelationshipObj.feesType) +
+              "</td>";
+            tbody += "<td>" + eachRelationshipObj.description + "</td>";
+            //             	tbody += "<td>"+eachRelationshipObj.status+"</td>";
+            var updateBtn =
+              "<button class='btn btn-success btn-xs ripple btn-block' onclick='openRelationshipUpdateModal(\"" +
+              eachRelationshipObj.relationshipHashId +
+              "\");'>Update Relationship</button>";
+            var viewMappingsBtn =
+              "<button class='btn btn-primary btn-xs ripple btn-block' onclick='getMappingsList(\"" +
+              eachRelationshipObj.relationshipHashId +
+              "\");'>View Mappings</button>";
+            tbody += "<td>" + updateBtn + "</td>";
+            tbody += "<td>" + viewMappingsBtn + "</td>";
+            tbody += "</tr>";
+          }
+          $("#tableBody").html(tbody);
+          if (value == 0 && isPaging == true) {
+            value = 1;
+          }
+          setPagination(data.totalPages, value);
+          $("#paging_info").html(
+            "Showing " +
+            startno +
+            " to " +
+            slno +
+            " of " +
+            data.totalElements +
+            " entries"
+          );
+        },
+        error: function (xhr) {
+          var tbody = "";
+          if (xhr.readyState == 0) {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(
+              "service is temporarily down,please try again later!"
+            );
+          } else if (xhr.status == 500) {
+            var responseMessage = JSON.parse(xhr.responseText);
+            var message = responseMessage.message;
+            $("#paginationn").twbsPagination("destroy");
+            $("#tableBody").html("");
+            tbody +=
+              '<tr><td class="dataTables_empty" colspan="45" valign="top">' +
+              message +
+              "</td></tr>";
+            $("#tableBody").html(tbody);
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function getMappingsList(relationshipHash) {
+      var loadingIcon =
+        "<tr><td colspan=1000 style='text-align:center'><img style='max-width:50px;' src = 'assets/img/loading.gif'></img></td></tr>";
+      $("#mappingTableBody").html(loadingIcon);
+
+      var url =
+        $("#fetchclientrelationshipMappings").val() + relationshipHash;
+      $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: url,
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (data, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(data));
+
+          var count = 0;
+          var tbody = "";
+          for (var i = 0; i < data.length; i++) {
+            var eachObj = data[i];
+            tbody += "<tr>";
+            tbody += "<td>" + ++count + "</td>";
+            tbody += "<td>" + eachObj.createdAt + "</td>";
+            tbody += "<td>" + eachObj.clientHash + "</td>";
+            tbody += "<td>" + eachObj.relationshipHash + "</td>";
+            tbody += "<td>" + eachObj.status + "</td>";
+            var updateBtn =
+              "<button class = 'btn btn-success btn-xs btn-block' onclick='openUpdateMappingModal(\"" +
+              eachObj.clientHash +
+              '", "' +
+              eachObj.relationshipHash +
+              '", "' +
+              eachObj.customerHashId +
+              '", "' +
+              eachObj.cardHashId +
+              '", "' +
+              eachObj.status +
+              "\");'>Update Mapping</button>";
+            tbody += "<td>" + updateBtn + "</td>";
+            tbody += "</tr>";
+          }
+          $("#mappingTableBody").html(tbody);
+        },
+        error: function (xhr) {
+          var tbody = "";
+          if (xhr.readyState == 0) {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(
+              "service is temporarily down,please try again later!"
+            );
+          } else if (xhr.status == 500) {
+            var responseMessage = JSON.parse(xhr.responseText);
+            var message = responseMessage.message;
+            $("#mappingTableBody").html("");
+            tbody +=
+              '<tr><td class="dataTables_empty" colspan="4500" valign="top">' +
+              message +
+              "</td></tr>";
+            $("#mappingTableBody").html(tbody);
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+
+          $("#clientRelationshipMappingModel").modal("show");
+        },
+      });
+    }
+
+    function openUpdateMappingModal(
+      clientHash,
+      relationshipHash,
+      customerHashId,
+      cardHashId,
+      status
+    ) {
+      $("#existingClientHash").val(clientHash);
+      $("#existingRelationshipHash").val(relationshipHash);
+      $("#customerHash").val(customerHashId);
+      $("#cardHash").val(cardHashId);
+      var optionTag = "<option value = ''>Select a Status</option>";
+      var statusArray = relationshipFields.status;
+      for (var i = 0; i < statusArray.length; i++) {
+        if (status == statusArray[i]) {
+          selected = "selected";
+        } else {
+          selected = "";
+        }
+        if (
+          statusArray[i].toLowerCase() == "active" ||
+          statusArray[i].toLowerCase() == "inactive"
+        ) {
+          var replacedString = (statusArray[i] + "").split("_").join(" ");
+          optionTag +=
+            "<option value = '" +
+            sanitize(unSanitize(statusArray[i])) +
+            "'" +
+            selected +
+            ">" +
+            sanitize(unSanitize(replacedString)) +
+            "</option>";
+        }
+      }
+      $("#mStatus").html(optionTag);
+      selected = "";
+
+      optionTag = "<option value = ''>Select a Relationship</option>";
+      var relationshipDDArray = clientRelationshipDdData.content;
+      for (var i = 0; i < relationshipDDArray.length; i++) {
+        if (relationshipDDArray[i].relationshipHashId == relationshipHash) {
+          selected = "selected";
+        } else {
+          selected = "";
+        }
+        optionTag +=
+          "<option value = '" +
+          sanitize(unSanitize(relationshipDDArray[i]).relationshipHashId) +
+          "'" +
+          selected +
+          ">" +
+          sanitize(unSanitize(relationshipDDArray[i]).description) +
+          "</option>";
+      }
+      $("#mClientRelationship").html(optionTag);
+      selected = "";
+
+      populateClientList(clientHash);
+    }
+
+    function populateClientList(clientHash) {
+      generateClientDropdown(
+        $("#fetchAllClientUrl").val(),
+        false,
+        "client",
+        window.btoa(clientHash)
+      );
+
+      $("#updateRelationshipMappingModelTitle").html(
+        "Update Relationship Mapping"
+      );
+      $("#updateRelationshipMappingModel").modal("show");
+    }
+
+    function populateDD(existingObj) {
+      var selected = "";
+      var optionTag = "<option value = ''>Select a field name</option>";
+      var fieldNameArray = relationshipFields.fieldName;
+      for (var i = 0; i < fieldNameArray.length; i++) {
+        if (existingObj.fieldName == fieldNameArray[i]) {
+          selected = "selected";
+        } else {
+          selected = "";
+        }
+        var replacedString = (fieldNameArray[i] + "").split("_").join(" ");
+        optionTag +=
+          "<option value = '" +
+          sanitize(unSanitize(fieldNameArray[i])) +
+          "'" +
+          selected +
+          ">" +
+          sanitize(unSanitize(replacedString)) +
+          "</option>";
+      }
+      $("#fieldNameDD").html(optionTag);
+      selected = "";
+
+      /* optionTag = "<option value = ''>Select a Fees Type</option>";
+  var feesTypeArray = relationshipFields.feesType;
+  for (var i = 0; i < feesTypeArray.length; i++) {
+    if (existingObj.feesType == feesTypeArray[i]) {
+      selected = "selected";
+    } else {
+      selected = "";
+    }
+    var replacedString = ((feesTypeArray[i] + "").split("_")).join(" ");
+    optionTag += "<option value = '" + sanitize(unSanitize(feesTypeArray[i])) + "'" + selected + ">" + sanitize(unSanitize(replacedString)) + "</option>";
+  }
+  $("#feesTypeDD").html(optionTag);
+  selected = ""; */
+
+      optionTag = "<option value = ''>Select a Level</option>";
+      var levelArray = relationshipFields.level;
+      for (var i = 0; i < levelArray.length; i++) {
+        if (existingObj.level == levelArray[i]) {
+          selected = "selected";
+        } else {
+          selected = "";
+        }
+        var replacedString = (levelArray[i] + "").split("_").join(" ");
+        optionTag +=
+          "<option value = '" +
+          sanitize(unSanitize(levelArray[i])) +
+          "'" +
+          selected +
+          ">" +
+          sanitize(unSanitize(replacedString)) +
+          "</option>";
+      }
+      $("#levelDD").html(optionTag);
+      selected = "";
+
+      optionTag = "<option value = ''>Select a Field Operator</option>";
+      var fieldOperatorArray = relationshipFields.fieldOperator;
+      for (var i = 0; i < fieldOperatorArray.length; i++) {
+        if (existingObj.fieldOperator == fieldOperatorArray[i]) {
+          selected = "selected";
+        } else {
+          selected = "";
+        }
+        var replacedString = (fieldOperatorArray[i] + "")
+          .split("_")
+          .join(" ");
+        optionTag +=
+          "<option value = '" +
+          sanitize(unSanitize(fieldOperatorArray[i])) +
+          "'" +
+          selected +
+          ">" +
+          sanitize(unSanitize(replacedString)) +
+          "</option>";
+      }
+      $("#fieldOperatorDD").html(optionTag);
+      selected = "";
+
+      optionTag = "<option value = ''>Select a Type</option>";
+      var typeArray = relationshipFields.type;
+      for (var i = 0; i < typeArray.length; i++) {
+        if (existingObj.type == typeArray[i]) {
+          selected = "selected";
+        } else {
+          selected = "";
+        }
+        var replacedString = (typeArray[i] + "").split("_").join(" ");
+        optionTag +=
+          "<option value = '" +
+          sanitize(unSanitize(typeArray[i])) +
+          "'" +
+          selected +
+          ">" +
+          sanitize(unSanitize(replacedString)) +
+          "</option>";
+      }
+      $("#typeDD").html(optionTag);
+      selected = "";
+
+      optionTag = "<option value = ''>Select Applicable On</option>";
+      var applicableOnArray = relationshipFields.applicableOn;
+      for (var i = 0; i < applicableOnArray.length; i++) {
+        if (existingObj.applicableOn == applicableOnArray[i]) {
+          selected = "selected";
+        } else {
+          selected = "";
+        }
+        var replacedString = (applicableOnArray[i] + "").split("_").join(" ");
+        optionTag +=
+          "<option value = '" +
+          sanitize(unSanitize(applicableOnArray[i])) +
+          "'" +
+          selected +
+          ">" +
+          sanitize(unSanitize(replacedString)) +
+          "</option>";
+      }
+      $("#applicableOnDD").html(optionTag);
+      selected = "";
+
+      optionTag = "<option value = ''>Select a Frequency</option>";
+      var frequencyArray = relationshipFields.frequency;
+      for (var i = 0; i < frequencyArray.length; i++) {
+        if (existingObj.frequency == frequencyArray[i]) {
+          selected = "selected";
+        } else {
+          selected = "";
+        }
+        var replacedString = (frequencyArray[i] + "").split("_").join(" ");
+        optionTag +=
+          "<option value = '" +
+          sanitize(unSanitize(frequencyArray[i])) +
+          "'" +
+          selected +
+          ">" +
+          sanitize(unSanitize(replacedString)) +
+          "</option>";
+      }
+      $("#frequencyDD").html(optionTag);
+      selected = "";
+
+      /* optionTag = "<option value = ''>Select a Status</option>";
+  var statusArray = relationshipFields.status;
+  for (var i = 0; i < statusArray.length; i++) {
+    if (existingObj.status == statusArray[i]) {
+      selected = "selected";
+    } else {
+      selected = "";
+    }
+    if (statusArray[i].toLowerCase() == "active" || statusArray[i].toLowerCase() == "inactive") {
+      var replacedString = ((statusArray[i] + "").split("_")).join(" ");
+      optionTag += "<option value = '" + sanitize(unSanitize(statusArray[i])) + "'" + selected + ">" + sanitize(unSanitize(replacedString)) + "</option>";
+    }
+  }
+  $("#statusDrpDwn").html(optionTag);
+  selected = ""; */
+
+      /* $("#feesDD").val(existingObj.fees); */
+      $("#fieldValueDD").val(existingObj.fieldValue);
+      $("#DescriptionDD").html(sanitize(unSanitize(existingObj.description)));
+    }
+
+    function openRelationshipUpdateModal(relationshipHash) {
+      $("#relationshipHashID").val(relationshipHash);
+      if (
+        relationshipHash == null ||
+        relationshipHash == "null" ||
+        relationshipHash == ""
+      ) {
+        return "";
+      }
+      if (relationshipFields == null) {
+        return "";
+      }
+      var url = $("#fetchclientrelationships").val() + relationshipHash + "";
+      $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: url,
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (data, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(data));
+
+          var existingObj = data.content[0];
+          if (existingObj == null) {
+            return "";
+          }
+          populateDD(existingObj);
+        },
+        error: function (xhr) {
+          return "";
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+
+          $("#updateRelationshipModelTitle").html(
+            "Update Relationship(" + relationshipHash + ")"
+          );
+          $("#updateRelationshipModel").modal("show");
+        },
+      });
+    }
+
+    function validateUpdateClientRelationship(event) {
+      $("#submitBtn").prop("disabled", true);
+      event.preventDefault();
+      var result = true;
+      var elementId = event.target.id;
+      $("#" + elementId).html(spinnerUrl);
+
+      if ($("#typeDD").val() == "") {
+        result = false;
+        $("#typeError").html("Type is mandatory!");
+      }
+      if ($("#levelDD").val() == "") {
+        result = false;
+        $("#levelError").html("Level is mandatory!");
+      }
+      if ($("#fieldNameDD").val() == "") {
+        result = false;
+        $("#fieldNameError").html("Field Name is mandatory!");
+      }
+      if ($("#frequencyDD").val() == "") {
+        result = false;
+        $("#frequencyError").html("Frequency is mandatory!");
+      }
+      if ($("#applicableOnDD").val() == "") {
+        result = false;
+        $("#applicableOnError").html("Applicable On is mandatory!");
+      }
+      if ($("#fieldOperatorDD").val() == "") {
+        result = false;
+        $("#fieldOperatorError").html("Field Operator is mandatory!");
+      }
+      /* if ($("#statusDrpDwn").val() == "") {
+    result = false;
+    $("#statusDDError").html("Status is mandatory!");
+  } */
+      if ($("#fieldValueDD").val() == "") {
+        result = false;
+        $("#fieldValueError").html("Field Value is mandatory!");
+      }
+      if ($("#DescriptionDD").val() == "") {
+        result = false;
+        $("#descriptionError").html("Description is mandatory!");
+      }
+      /* if ($("#feesTypeDD").val() == "" && $("#feesDD").val() != "") {
+    result = false;
+    $("#feesTypeError").html("Fees type is mandatory when fees is greater than 0!");
+  } */
+      /* if ($("#feesDD").val() == "" && $("#feesTypeDD").val() != "") {
+    result = false;
+    $("#feesError").html("Fees is mandatory when fees type is selected!");
+  } */
+      setTimeout(function () {
+        $(".errorClass").each(function (index, element) {
+          element.innerHTML = "";
+        });
+      }, 3000);
+
+      if (result) {
+        updateClientRelationship();
+      } else {
+        $("#submitBtn").html("Submit");
+        $("#submitBtn").prop("disabled", false);
+      }
+    }
+
+    function updateClientRelationship() {
+      var data = new Object();
+      data.relationshipHash = $("#relationshipHashID").val();
+      data.type = $("#typeDD").val();
+      data.level = $("#levelDD").val();
+      data.frequency = $("#frequencyDD").val();
+      data.applicableOn = $("#applicableOnDD").val();
+      data.fieldName = $("#fieldNameDD").val();
+      data.fieldOperator = $("#fieldOperatorDD").val();
+      /* data.status = $("#statusDrpDwn").val(); */
+      data.fieldValue = $("#fieldValueDD").val();
+      data.description = $("#DescriptionDD").val();
+      /* data.feesType = $("#feesTypeDD").val(); */
+      /* data.fees = $("#feesDD").val(); */
+      $.ajax({
+        url: $("#updateClientRelationship").val() + "/update",
+        type: "PUT",
+        data: JSON.stringify(unSanitize(data)),
+        contentType: "application/json",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(result));
+
+          $("#success_refundNotification").modal("show");
+          $(".refunded_body").html(
+            "Client Relationship updated successfully!"
+          );
+        },
+        error: function (xhr) {
+          if (xhr.readyState === 0) {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(
+              "service is temporarily down,please try again later."
+            );
+          } else {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(xhr.responseJSON.message);
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+
+          $("#submitBtn").html("Submit");
+          $("#submitBtn").prop("disabled", false);
+        },
+      });
+    }
+
+    function toggleSmartSearch() {
+      $("#smartSearchFieldsDiv").slideToggle();
+    }
+
+    function setPagination(totalPages, val) {
+      if (val == "0") {
+        $("#paginationn").twbsPagination("destroy");
+      }
+      if (totalPages === 0) {
+        totalPages = 1;
+      }
+
+      $("#paginationn").twbsPagination({
+        totalPages: totalPages,
+        visiblePages: 10,
+        startPage: 1,
+        hideOnlyOnePage: false,
+        initiateStartPageClick: false,
+        first: "First",
+        prev: "Previous",
+        next: "Next",
+        last: "Last",
+        onPageClick: function (event, page) {
+          if ($("#totalPagesId").val() != 1) {
+            fetchClientRelationshipList(page - 1, true);
+          } else {
+            $("#totalPagesId").val(2);
+          }
+        },
+      });
+    }
+
+    $("#successModal").on("click", function () {
+      window.location.reload();
+    });
+
+    function updateRelationshipMapping(event) {
+      $("#mMubmitBtn").prop("disabled", true);
+      event.preventDefault();
+      var result = true;
+      var elementId = event.target.id;
+      $("#" + elementId).html(spinnerUrl);
+
+      if ($("#client").val() == "") {
+        result = false;
+        $("#clientError").html("Client is mandatory!");
+      }
+      if ($("#mClientRelationship").val() == "") {
+        result = false;
+        $("#clientRelationshipError").html(
+          "Client Relationship is mandatory!"
+        );
+      }
+      if ($("#mStatus").val() == "") {
+        result = false;
+        $("#mStatusError").html("Status is mandatory!");
+      }
+      if ($("#walletHash").val() == "") {
+        result = false;
+        $("#walletHashError").html("Wallet Hash is mandatory!");
+      }
+
+      if ($("#customerHash").val() == "") {
+        $("#customerHash").val("ALL");
+      } else if ($("#customerHash").val() == "all") {
+        $("#customerHash").val("ALL");
+      }
+
+      if ($("#cardHash").val() == "") {
+        $("#cardHash").val("ALL");
+      } else if ($("#cardHash").val() == "all") {
+        $("#cardHash").val("ALL");
+      }
+
+      setTimeout(function () {
+        $(".errorClass").each(function (index, element) {
+          element.innerHTML = "";
+        });
+      }, 3000);
+
+      if (result) {
+        updateClientRelationshipMapping();
+      } else {
+        $("#mMubmitBtn").html("Submit");
+        $("#mMubmitBtn").prop("disabled", false);
+      }
+    }
+
+    function updateClientRelationshipMapping() {
+      var data = new Object();
+      data.clientHash = $("#client").val();
+      data.relationshipHash = $("#mClientRelationship").val();
+      data.existingClientHash = $("#existingClientHash").val();
+      data.existingRelationshipHash = $("#existingRelationshipHash").val();
+      data.status = $("#mStatus").val();
+      data.customerHashId = $("#customerHash").val();
+      data.cardHashId = $("#cardHash").val();
+      data.walletHashId = $("#walletHash").val();
+
+      $.ajax({
+        url: $("#updateRelationshipMappingUrl").val(),
+        type: "PUT",
+        data: JSON.stringify(unSanitize(data)),
+        contentType: "application/json",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          sanitize(unSanitize(result));
+
+          $("#success_refundNotification").modal("show");
+          $(".refunded_body").html(
+            "Client Relationship Mapping updated successfully!"
+          );
+        },
+        error: function (xhr) {
+          if (xhr.readyState === 0) {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(
+              "service is temporarily down,please try again later."
+            );
+          } else {
+            $("#error_refundNotification").modal("show");
+            $(".refunded_body").html(xhr.responseJSON.message);
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+
+          $("#mMubmitBtn").html("Submit");
+          $("#mMubmitBtn").prop("disabled", false);
+        },
+      });
+    }
+  </script>
+</body>
+
+</html>

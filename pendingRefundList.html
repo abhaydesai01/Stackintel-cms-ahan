@@ -1,0 +1,101 @@
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+	
+	<jsp:include page="sidebar.jsp"></jsp:include>
+	<!-- END PAGE SIDEBAR -->
+	
+	<!-- PAGE CONTENT -->
+	<div class="page-content">
+		
+		<!-- START X-NAVIGATION VERTICAL -->
+		<jsp:include page="navbar.jsp"></jsp:include>
+		<!-- END X-NAVIGATION VERTICAL -->
+		
+		<!-- PAGE CONTENT WRAPPER -->
+		<div class="page-content-wrap">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="page-title-box">
+							<h4 class="page-title">Pending Refund List</h4>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel">
+							<div class="panel-body">
+								<h5 id="errorMessage"></h5>
+								<input type="hidden" id="client_details" value="${clientDetails}">
+								<div class="table-responsive">
+									<table id="All-Transaction-List" class="table table-bordered display responsive nowrap">
+										<thead>
+										<tr>
+											<th>Sl.No</th>
+											<th>Date</th>
+											<th>Currency Code</th>
+											<th>Amount</th>
+											<th>Client Hash Id</th>
+											<th>Client Account Number</th>
+											<th>Client Account Name</th>
+											<th>Client Bank Name</th>
+											<th>Status</th>
+											<th>Requester Id </th>
+											<th>Approver Id</th>
+											<th>Comments</th>
+										</tr>
+										</thead>
+										<tbody id="datatable-buttons"></tbody>
+									</table>
+								</div>
+								<div class="paginationWrapper">
+									<p id="paging_info" class="pull-left"></p>
+									<div class="pull-right">
+										<ul class="pagination-sm" id="paginationn"></ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE CONTENT -->
+	</div>
+	<!-- END PAGE CONTAINER -->
+</div>
+<!-- MESSAGE BOX-->
+<jsp:include page="messageBox.jsp"></jsp:include>
+<!-- END MESSAGE BOX-->
+
+<!-- START PRELOADS -->
+<audio id="audio-alert" src="${pageContext.request.contextPath}/static/audio/alert.mp3" preload="auto"></audio>
+<audio id="audio-fail" src="${pageContext.request.contextPath}/static/audio/fail.mp3" preload="auto"></audio>
+<!-- END PRELOADS -->
+
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- END PLUGINS -->
+
+<!-- START THIS PAGE PLUGINS-->
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/plugins/moment.min.js?version=2.29.0"></script>
+<!-- END THIS PAGE PLUGINS-->
+
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/settings.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/actions.js"></script>
+
+<script src="${pageContext.request.contextPath}/static/js/refundList.js?version=1.0.1"></script>
+<script src="${pageContext.request.contextPath}/static/js/list/jquery.twbsPagination.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/list/jquery.twbsPagination.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/loader.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/floatingscroll.js"></script>
+<!-- END TEMPLATE -->
+<script>
+	$('.table-responsive').floatingScrollbar();
+</script>
+<!-- END SCRIPTS -->

@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- META SECTION -->
+  <title>ahan | Transaction Compliance Profile</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" id="theme1" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+  <!-- EOF CSS INCLUDE -->
+  <style>
+    .compliance_profile {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .add_new_profile {
+      padding-right: 117px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+
+      <div class="page-content-wrap">
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="container-fluid">
+          <div id="hiddenFields">
+            <input type="hidden" id="addProfileUrl" name="addProfileUrl" value="${addProfileUrl}" />
+            <input type="hidden" id="addProfileDetailUrl" name="addProfileDetailUrl" value="${addProfileDetailUrl}" />
+            <input type="hidden" id="getProfileDetailListUrl" name="getProfileDetailListUrl"
+              value="${getProfileDetailListUrl}" />
+            <input type="hidden" id="getProfileUrl" name="addCardUrl" value="${getProfileUrl}" />
+            <input type="hidden" id="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+            <input type="hidden" id="transactionTypesListUrl" name="transactionTypesListUrl"
+              value="${transactionTypesListUrl}" />
+            <input type="hidden" id="updateProfileDetailUrl" name="updateProfileDetailUrl"
+              value="${updateProfileDetailUrl}" />
+            <input type="hidden" id="profileValueHold" name="profileValueHold" />
+            <input type="hidden" id="profileId" name="profileId" />
+            <input type="hidden" id="profile_hash_id" name="profile_hash_id" />
+            <input type="hidden" id="profile_detail_hash_id" name="profile_detail_hash_id" />
+            <input type="hidden" id="transaction_type_valueHold" name="transaction_type_valueHold" />
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <h4 class="page-title">Transaction Compliance Profile</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel">
+                <div class="panel-body">
+                  <div class="comp_client_id">
+                    <input type="hidden" id="successMsg" name="successMsg" value="${successMessage}" />
+                    <input type="hidden" id="errorMsg" name="errorMsg" value="${errorMessage}" />
+                    <div class="compliance_profile">
+                      <div class="profile_name">
+                        <label for="profile_id" class="control-label">Select Profile<sup>*</sup>:</label>
+                        <select id="profile_id" name="profile" class="form-control enableSelect2">
+                          <option value="">Select Profile</option>
+                        </select>
+                      </div>
+                      <div class="add_new_profile">
+                        <div class="form-group text-center">
+                          <button data-toggle="modal" data-target="#addProfileModal"
+                            class="btn btn-primary btn-sm ripple px-5 mt-4" onclick="" type="button">
+                            Add New Profile
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row" id="table_data" style="display: block">
+            <div class="col-sm-12">
+              <div class="addTxnWrap text-right mb-2">
+                <button class="btn btn-primary btn-ripple btn-sm" type="button" data-toggle="modal"
+                  data-target="#addTxnTypeModal">
+                  Add Transaction Type
+                </button>
+              </div>
+              <div class="txnComplianceList">
+                <div class="table-responsive" style="overflow: auto; max-height: 52vh; min-height: 50vh">
+                  <table id="profileDetailTable" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>SN</th>
+                        <th>Date</th>
+                        <th>Transaction Type</th>
+                        <th>Template Id</th>
+                        <th>Profile Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="text-center">
+                        <td colspan="7">
+                          No profile details available in table
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+      </div>
+    </div>
+    <!-- END PAGE CONTAINER -->
+  </div>
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+
+  <!-- Add New Profile Modal -->
+  <div class="modal fade" id="addProfileModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-xs modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title">Add New Profile</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label>Profile Name<sup>*</sup>:</label>
+              <input type="text" class="form-control" id="profileName" name="ProfileName" />
+              <p id="profileNameError" class="error"></p>
+            </div>
+            <div class="form-group">
+              <button type="button" id="add_profile_button" class="btn btn-primary btn-block btn-sm ripple px-5"
+                onclick="addProfile()">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Transaction Type Modal -->
+  <div class="modal fade" id="addTxnTypeModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-sm modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title">Add Transaction Type</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="profile_details">
+              <div class="form-group">
+                <label for="txnType" class="control-label">Transaction Type<sup>*</sup>:</label>
+                <select id="txnType" name="transactionType" class="form-control enableSelect2 profile_details_txnType">
+                  <option value="">Select Transaction Type</option>
+                  <option value="Wallet">Wallet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>CAAS Template<sup>*</sup>:</label>
+                <input type="text" class="form-control profile_details_templateId empty" name="CaasTemplate"
+                  id="templateId" />
+                <p id="templateIdError" class="error"></p>
+              </div>
+              <div class="form-group">
+                <label>Status<sup>*</sup>:</label>
+                <select class="form-control profile_details_status empty" id="profile_detail_status" name="status">
+                  <option value="">Select a status</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block btn-sm ripple px-5" onclick="addProfileDetails()">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="updateTransactionTypeModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-sm modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title">Update Transaction Type</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="edit_txn_Type" class="control-label">Select Transaction Type</label><sup>*</sup>:
+              <select id="edit_txn_Type" name="transactionType" class="form-control enableSelect2"></select>
+            </div>
+            <div class="form-group">
+              <label>CAAS Template</label><sup>*</sup>:
+              <input type="text" class="form-control" name="CaasTemplate" id="edit_templateId" />
+              <p id="complianceTemplateIdError" class="error"></p>
+            </div>
+            <div class="form-group">
+              <label>Status</label><sup>*</sup>:
+              <select class="form-control" id="edit_profile_detail_status" name="region">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block btn-sm ripple px-5"
+                onclick="updateProfileDetails()">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button id="confirmButton" type="button" class="btn btn-success ripple px-5" data-dismiss="modal"
+                  onClick="refreshPage()">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="errorModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div style="text-align: center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger ripple px-5" data-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- Validation SCRIPTS -->
+  <script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <!-- END SCRIPTS -->
+  <script>
+    let spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+
+    function addProfile() {
+      const name = $("#profileName").val();
+      const url = $("#addProfileUrl").val();
+      let valid = true;
+      if (name == null || name === "") {
+        valid = false;
+        $("#profileNameError").html("Enter profile name");
+      }
+      let data = JSON.stringify(
+        unSanitize({
+          name: name,
+        })
+      );
+      if (valid === true) {
+        $("#add_profile_button").html(spinnerUrl);
+        $.ajax({
+          type: "POST",
+          contentType: "application/json",
+          url: url,
+          dataType: "json",
+          timeout: 600000,
+          data: data,
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(data));
+            $("profileId").val(data.profileId);
+            $("#addProfileModal").modal("hide");
+            $("#successModal").modal("show");
+            $("#add_profile_button").html("Submit");
+            $(".refunded_body").html("Profile added successfully");
+            $("#profileName").val("");
+          },
+          error: function (data) {
+            let sanitizeData = sanitize(unSanitize(data));
+            $("#add_profile_button").html("Submit");
+            const responseMessage = sanitizeData.responseJSON;
+            const message = responseMessage.message;
+            $("#addProfileModal").modal("hide");
+            $("#errorModal").modal("show");
+            $(".refunded_body").html(message);
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      } else {
+        setTimeout(function () {
+          $("#profileNameError").html("");
+        }, 3000);
+      }
+    }
+
+    function addProfileDetails() {
+      let requestDto = [];
+      let valid = true;
+      $(".profile_details").each(function (index, element) {
+        let txnType = $(element).find(".profile_details_txnType").val();
+        let templateId = $(element).find(".profile_details_templateId").val();
+        let status = $(element).find(".profile_details_status").val();
+        if (templateId == null || templateId === "") {
+          valid = false;
+          $("#templateIdError").html("Enter compliance template id");
+        }
+        let details = {};
+        details.transactionType = txnType;
+        details.complianceTemplateId = templateId;
+        details.status = status;
+        details.profileId = $("#profile_id").val();
+        requestDto.push(details);
+      });
+
+      const url = $("#addProfileDetailUrl").val();
+      let data = JSON.stringify(requestDto);
+      if (valid === true) {
+        $.ajax({
+          type: "POST",
+          contentType: "application/json",
+          url: url,
+          dataType: "json",
+          timeout: 600000,
+          data: data,
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(data));
+
+            $("#addTxnTypeModal").modal("hide");
+            $("#successModal").modal("show");
+            $(".refunded_body").html("Profile details added successfully");
+          },
+          error: function (data) {
+            let sanitizeData = sanitize(unSanitize(data));
+            $("#add_profile_button").html("Submit");
+            const responseMessage = sanitizeData.responseJSON;
+            const message = responseMessage.message;
+            $("#addTxnTypeModal").modal("hide");
+            $("#errorModal").modal("show");
+            $(".refunded_body").html(message);
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      } else {
+        setTimeout(function () {
+          $("#templateIdError").html("");
+        }, 3000);
+      }
+    }
+
+    $("#addTxnTypeModal").on("hide.bs.modal", function () {
+      $(".empty").each(function (index, element) {
+        $(element).val("");
+      });
+    });
+
+    function getProfiles() {
+      let data = JSON.stringify(
+        unSanitize({
+          page: 0,
+          size: 100,
+        })
+      );
+      $.ajax({
+        type: "POST",
+        data: data,
+        async: false,
+        contentType: "application/json",
+        url: $("#getProfileUrl").val(),
+        dataType: "json",
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          let contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+          let itemVal = result.contents;
+          let optionTag = "<option value = ''></option>";
+          if (
+            itemVal != null &&
+            itemVal !== "" &&
+            itemVal !== "[]" &&
+            itemVal.length > 0
+          ) {
+            $(itemVal).each(function (i, item) {
+              let eachOption = itemVal[i];
+              optionTag +=
+                "<option value = " +
+                eachOption.profileHashId +
+                ">" +
+                eachOption.name +
+                "</option>";
+              $("#profile_id").html(optionTag);
+              $("#profile_id").select2({
+                placeholder: "Select a profile",
+                width: "100%",
+                allowClear: false,
+                dropdownAutoWidth: false,
+              });
+              if (
+                $("#profileValueHold").val() != null &&
+                $("#profileValueHold").val() !== ""
+              ) {
+                $("#profile_id").val($("#profileValueHold").val());
+                $("#profile_id").trigger("change");
+              }
+            });
+          } else {
+            $("#profile_id").html(optionTag);
+            $("#profile_id").select2({
+              placeholder: "Select a Profile",
+              allowClear: false,
+              dropdownAutoWidth: false,
+              width: "100%",
+              dropdownCss: {
+                width: "inherit",
+              },
+            });
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    $("#profile_id").on("change", profileDetailData);
+
+    function profileDetailData() {
+      let optionTag = "<option value = ''></option>";
+      let profile_id = $("#profile_id").val();
+      var tableLoading = $("#loading");
+      if (profile_id != null && profile_id.includes("#")) {
+        var valid = false;
+        optionTag = "<option value='#'>Select a profile</option>";
+        $("#profile_id").html(sanitize(unSanitize(optionTag)));
+      } else {
+        $.ajax({
+          type: "POST",
+          contentType: "application/json",
+          url: $("#getProfileDetailListUrl").val(),
+          dataType: "json",
+          data: JSON.stringify({
+            profileHashId: profile_id,
+          }),
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            data = sanitize(unSanitize(data));
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            let count = 0;
+            let table = "<thead>";
+            table += "<tr>";
+            table += "<th>SN</th>";
+            table += "<th>Date</th>";
+            table += "<th>Transaction Type</th>";
+            table += "<th>Template Id</th>";
+            table += "<th>Profile Name</th>";
+            table += "<th>Status</th>";
+            table += "<th>Action</th>";
+            table += "</tr>";
+            table += "</thead>";
+            table += "<tbody>";
+
+            let itemVal = data.contents;
+            if (
+              itemVal != null &&
+              itemVal !== "" &&
+              itemVal !== "[]" &&
+              itemVal.length > 0
+            ) {
+              $(itemVal).each(function (i, item) {
+                var createdAtDate = new Date(itemVal[i].createdAt);
+                var date = createdAtDate.getDate();
+                var month = createdAtDate.getMonth() + 1;
+                var year = createdAtDate.getFullYear();
+                var hour = createdAtDate.getHours();
+                var minute = createdAtDate.getMinutes();
+                var seconds = createdAtDate.getSeconds();
+                var createdAt =
+                  year +
+                  "/" +
+                  month +
+                  "/" +
+                  date +
+                  " " +
+                  hour +
+                  ":" +
+                  minute +
+                  ":" +
+                  seconds;
+                table +=
+                  '<tr class="testingg"><td style="white-space: nowrap">' +
+                  ++count +
+                  "</td>";
+                table +=
+                  '<td style="white-space: nowrap">' +
+                  (createdAt == null || createdAt === "" ? "" : createdAt) +
+                  "</td>";
+                table +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].transactionType == null
+                    ? ""
+                    : itemVal[i].transactionType) +
+                  "</td>";
+                table +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].complianceTemplateId == null
+                    ? ""
+                    : itemVal[i].complianceTemplateId) +
+                  "</td>";
+                table +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].profileName == null
+                    ? ""
+                    : itemVal[i].profileName) +
+                  "</td>";
+                table +=
+                  '<td style="white-space: nowrap">' +
+                  (itemVal[i].status == null ? "" : itemVal[i].status) +
+                  "</td>";
+                let editButton =
+                  "<button class='btn btn-primary btn-xs ripple btn-block'" +
+                  "onclick=\"editProfileDetailsTable('" +
+                  itemVal[i].profileDetailHashId +
+                  "','" +
+                  itemVal[i].transactionType +
+                  "','" +
+                  itemVal[i].status +
+                  "','" +
+                  itemVal[i].complianceTemplateId +
+                  "','" +
+                  itemVal[i].profileHashId +
+                  "');\">Edit</button>";
+                table +=
+                  '<td style="white-space: nowrap">' + editButton + "</td>";
+                table += "</tr>";
+              });
+              table += "</tbody>";
+              tableLoading.css("display", "none");
+            } else {
+              $("#profileDetailTable").empty();
+              table +=
+                '<tr class="odd testingg"><td class="dataTables_empty" colspan="55" valign="top">No profile details available in table</td></tr>';
+            }
+            $("#profileDetailTable").html(table);
+            $("#table_data").css("display", "");
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      }
+    }
+
+    function refreshPage() {
+      getProfiles();
+      $("#table_data").css("display", "none");
+    }
+
+    function getTransactionTypes() {
+      $.ajax({
+        url: $("#transactionTypesListUrl").val(),
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+
+          var optionTag = "<option value = ''></option>";
+          if (result != null && result !== "" && result.length > 0) {
+            for (var i = 0; i < result.length; i++) {
+              var eachOption = result[i];
+              optionTag +=
+                "<option value = " +
+                eachOption +
+                ">" +
+                eachOption +
+                "</option>";
+            }
+            $("#txnType").html(optionTag);
+            $("#txnType").select2({
+              placeholder: "Select Transaction Type",
+              width: "100%",
+              allowClear: false,
+              dropdownAutoWidth: false,
+            });
+            if (
+              $("#transaction_type_valueHold").val() != null &&
+              $("#transaction_type_valueHold").val() !== ""
+            ) {
+              $("#txnType").val($("#transaction_type_valueHold").val());
+              $("#txnType").trigger("change");
+            }
+          } else {
+            $("#txnType").html(optionTag);
+            $("#txnType").select2({
+              placeholder: "Select a Transaction Type",
+              allowClear: false,
+              dropdownAutoWidth: false,
+              width: "100%",
+              dropdownCss: {
+                width: "inherit",
+              },
+            });
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function getTransactionTypesList() {
+      $.ajax({
+        url: $("#transactionTypesListUrl").val(),
+        type: "GET",
+        async: false,
+        beforeSend: function (xhr) {
+          setAuthTokenInReqHeader(xhr);
+          setCsrfTokenInRequestHeader(xhr);
+        },
+        success: function (result, status, xhr) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+          result = sanitize(unSanitize(result));
+
+          var optionTag = "<option value = ''></option>";
+          if (result != null && result !== "" && result.length > 0) {
+            for (var i = 0; i < result.length; i++) {
+              var eachOption = result[i];
+              optionTag +=
+                "<option value = " +
+                eachOption +
+                ">" +
+                eachOption +
+                "</option>";
+            }
+            $("#edit_txn_Type").html(optionTag);
+            $("#edit_txn_Type").select2({
+              placeholder: "Select Transaction Type",
+              width: "100%",
+              allowClear: false,
+              dropdownAutoWidth: false,
+            });
+            if (
+              $("#transaction_type_valueHold").val() != null &&
+              $("#transaction_type_valueHold").val() !== ""
+            ) {
+              $("#edit_txn_Type").val($("#transaction_type_valueHold").val());
+              $("#edit_txn_Type").trigger("change");
+            }
+          } else {
+            $("#edit_txn_Type").html(optionTag);
+            $("#edit_txn_Type").select2({
+              placeholder: "Select a Transaction Type",
+              allowClear: false,
+              dropdownAutoWidth: false,
+              width: "100%",
+              dropdownCss: {
+                width: "inherit",
+              },
+            });
+          }
+        },
+        complete: function (xhr, status) {
+          var contextPath = "${pageContext.request.contextPath}";
+          setAndReturnNewAuthToken(xhr, contextPath);
+          setAndReturnNewCsrfToken(xhr, contextPath);
+        },
+      });
+    }
+
+    function editProfileDetailsTable(
+      profileDetailHashId,
+      transactionType,
+      status,
+      templateId,
+      profileHashId
+    ) {
+      getTransactionTypesList();
+      $("#profile_hash_id").val(profileHashId);
+      $("#profile_detail_hash_id").val(profileDetailHashId);
+      $("#edit_templateId").val(templateId);
+      $("#edit_profile_detail_status").val(status);
+      $("#transaction_type_valueHold").val(transactionType);
+      $("#edit_txn_Type").val($("#transaction_type_valueHold").val());
+      $("#edit_txn_Type").trigger("change");
+      $("#updateTransactionTypeModal").modal("show");
+    }
+
+    function updateProfileDetails() {
+      let profileId = $("#profile_hash_id").val();
+      let profileDetailId = $("#profile_detail_hash_id").val();
+      let status = $("#edit_profile_detail_status").val();
+      let transactionType = $("#edit_txn_Type").val();
+      let complianceTemplateId = $("#edit_templateId").val();
+
+      let valid = true;
+      if (complianceTemplateId == null || complianceTemplateId === "") {
+        valid = false;
+        $("#complianceTemplateIdError").html("Enter compliance template id");
+      }
+      if (valid === true) {
+        let url = $("#updateProfileDetailUrl").val() + profileDetailId;
+        let data = JSON.stringify(
+          unSanitize({
+            profileId: profileId,
+            status: status,
+            transactionType: transactionType,
+            complianceTemplateId: complianceTemplateId,
+          })
+        );
+        $.ajax({
+          type: "PUT",
+          contentType: "application/json",
+          url: url,
+          dataType: "json",
+          timeout: 600000,
+          data: data,
+          async: false,
+          beforeSend: function (xhr) {
+            setAuthTokenInReqHeader(xhr);
+            setCsrfTokenInRequestHeader(xhr);
+          },
+          success: function (data, status, xhr) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+            sanitize(unSanitize(data));
+            $("#updateTransactionTypeModal").modal("hide");
+            $("#successModal").modal("show");
+            $("#add_profile_button").html("Submit");
+            $(".refunded_body").html("Profile detail updated successfully");
+          },
+          error: function (data) {
+            let sanitizeData = sanitize(unSanitize(data));
+            $("#add_profile_button").html("Submit");
+            const responseMessage = sanitizeData.responseJSON;
+            const message = responseMessage.message;
+            $("#addProfileModal").modal("hide");
+            $("#errorModal").modal("show");
+            $(".refunded_body").html(message);
+          },
+          complete: function (xhr, status) {
+            var contextPath = "${pageContext.request.contextPath}";
+            setAndReturnNewAuthToken(xhr, contextPath);
+            setAndReturnNewCsrfToken(xhr, contextPath);
+          },
+        });
+      } else {
+        setTimeout(function () {
+          $("#complianceTemplateIdError").html("");
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+
+</html>

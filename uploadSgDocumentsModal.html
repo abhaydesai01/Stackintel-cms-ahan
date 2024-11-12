@@ -1,0 +1,639 @@
+<!-- Upload SG Documents Modal start -->
+<div id="uploadSgDocuments" role="dialog" class="modal fade">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Upload SG Documents</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="permanentResidentSg">Permanent Resident<sup>*</sup></label>
+							<select class="form-control selectpicker" name="permanentResidentSg" id="permanentResidentSg" onchange="displayTrueOrFalseDiv();">
+								<option value="">Choose One</option>
+								<option value="true">Yes</option>
+								<option value="false">No</option>
+							</select>
+							<span class="error field_err" id="permanentResidentSgError"></span>
+						</div>
+					</div>
+				</div>
+				
+				<div id="permanentResidentSgTrue" style="display: none;">
+					<form enctype="multipart/form-data" id="permanentResidentSgTrueForm" class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="nricNumberSg">NRIC Number<sup>*</sup></label>
+								<input type="text" id="nricNumberSg" name="nricNumberSg" class="form-control" />
+								<span id="nricNumberSgError" class="error field_err"></span>
+							</div>
+						</div>
+						
+						<div class="col-sm-6 col-xs-12">
+							<div class="form-group">
+								<label for="nricFrontSg">Nric Front<sup>*</sup></label>
+								<input type="file" accept="image/*" class="form-control" id="nricFrontSg" name="nricFrontSg" onchange="isValidPdfOrImage(this, 'nricFrontSgError', 'uploadSgDocSubmitBtn');" />
+								<span id="nricFrontSgError" class="error field_err"></span>
+							</div>
+						</div>
+						
+						<div class="col-sm-6 col-xs-12">
+							<div class="form-group">
+								<label for="nricBackSg">Nric Back<sup>*</sup></label>
+								<input type="file" accept="image/*" class="form-control" id="nricBackSg" name="nricBackSg" onchange="isValidPdfOrImage(this, 'nricBackSgError', 'uploadSgDocSubmitBtn');" />
+								<span id="nricBackSgError" class="error field_err"></span>
+							</div>
+						</div>
+						
+						<div class="col-xs-12">
+							<div class="form-group">
+								<label for="selfieWithIdPermanent">Selfie with id<sup>*</sup></label>
+								<input type="file" accept="image/*" class="form-control" id="selfieWithIdPermanent" name="selfieWithIdPermanent" onchange="isValidPdfOrImage(this, 'selfieWithIdPermanentError', 'uploadSgDocSubmitBtn');" />
+								<span id="selfieWithIdPermanentError" class="error field_err"></span>
+							</div>
+						</div>
+					</form>
+				</div>
+				
+				<div id="permanentResidentSgFalse" style="display: none;">
+					<form enctype="multipart/form-data" id="permanentResidentSgFalseForm" class="row">
+						
+						<div id="identificationAndAddressDD_Div" style="margin-bottom: 100px;">
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="identificationDocDD">Identification Document<sup>*</sup></label>
+									<select id="identificationDocDD" class="form-control" name="identificationDocDD" onchange="validateIdentificationDocDD();">
+										<option value="">Select One</option>
+										<option value="fin">Fin</option>
+										<option value="passport">Passport</option>
+									</select>
+									<span class="error field_err" id="identificationDocDDError"></span>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="addressDocumentDD">Address Document<sup>*</sup></label>
+									<select id="addressDocumentDD" class="form-control" name="addressDocumentDD" onchange="validateAddressDocDD();">
+										<option value="">Select One</option>
+										<option value="governmentLetter">Government Letter</option>
+										<option value="bankStatement">Bank Statement</option>
+										<option value="utilityBill">Utility Bill</option>
+									</select>
+									<span class="error field_err" id="addressDocumentDDError"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div id="contentDiv">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="selfieWithIdNonPermanent">Selfie with id<sup>*</sup></label>
+									<input type="file" accept="image/*" class="form-control" id="selfieWithIdNonPermanent" name="selfieWithIdNonPermanent" onchange="isValidPdfOrImage(this, 'selfieWithIdNonPermanentError', 'uploadSgDocSubmitBtn');" />
+									<span id="selfieWithIdNonPermanentError" class="error field_err"></span>
+								</div>
+							</div>
+							
+							<div id="finDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="finNumberSg">Fin Number<sup>*</sup></label>
+										<input type="text" id="finNumberSg" name="finNumberSg" class="form-control" />
+										<span class="error field_err" id="finNumberSgError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="expiryDateSg">Date Of Expiry<sup>*</sup></label>
+										<input type="text" id="expiryDateSg" name="expiryDateSg" class="form-control" readonly />
+										<span class="error field_err" id="expiryDateSgError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="finFrontSg">Fin Front<sup>*</sup></label>
+										<input type="file" accept="image/*" class="form-control" id="finFrontSg" name="finFrontSg" onchange="isValidPdfOrImage(this, 'finFrontSgError', 'uploadSgDocSubmitBtn');" />
+										<span id="finFrontSgError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="finBackSg">Fin Back<sup>*</sup></label>
+										<input type="file" accept="image/*" class="form-control" id="finBackSg" name="finBackSg" onchange="isValidPdfOrImage(this, 'finBackSgError', 'uploadSgDocSubmitBtn');" />
+										<span id="finBackSgError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div id="passportDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="passportNumber">Passport Number<sup>*</sup></label>
+										<input type="text" id="passportNumber" name="passportNumber" class="form-control" />
+										<span class="error field_err" id="passportNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="passportExpiry">Date of expiry<sup>*</sup></label>
+										<input type="text" id="passportExpiry" name="passportExpiry" class="form-control" readonly />
+										<span class="error field_err" id="passportExpiryError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="passportFront">Passport Front<sup>*</sup></label>
+										<input type="file" accept="image/*" class="form-control" id="passportFront" name="passportFront" onchange="isValidPdfOrImage(this, 'passportFrontError', 'uploadSgDocSubmitBtn');" />
+										<span id="passportFrontError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="passportBack">Passport Back<sup>*</sup></label>
+										<input type="file" accept="image/*" class="form-control" id="passportBack" name="passportBack" onchange="isValidPdfOrImage(this, 'passportBackError', 'uploadSgDocSubmitBtn');" />
+										<span id="passportBackError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div id="governmentLetterDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="govtLetterDocName">Govt. Letter Document
+										                               Name<sup>*</sup>
+										</label>
+										<input type="text" id="govtLetterDocName" name="govtLetterDocName" class="form-control" />
+										<span class="error field_err" id="govtLetterDocNameError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="govtLetterIssuanceDate">Govt. Letter
+										                                    Issuance Date<sup>*</sup>
+										</label>
+										<input type="text" id="govtLetterIssuanceDate" name="govtLetterIssuanceDate" class="form-control" readonly />
+										<span class="error field_err" id="govtLetterIssuanceDateError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="govtLetterDocument">Govt. Letter Document<sup>*</sup></label>
+										<input type="file" accept="image/*" class="form-control" id="govtLetterDocument" name="govtLetterDocument" onchange="isValidPdfOrImage(this, 'govtLetterDocumentError', 'uploadSgDocSubmitBtn');" />
+										<span id="govtLetterDocumentError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div id="bankStatementDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="bankAccountNo">Bank Account Number<sup>*</sup></label>
+										<input type="text" id="bankAccountNo" name="bankAccountNo" class="form-control" />
+										<span class="error field_err" id="bankAccountNoError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="bankName">Bank Name<sup>*</sup></label>
+										<input type="text" id="bankName" name="bankName" class="form-control" />
+										<span class="error field_err" id="bankNameError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="bankStmntGenerationDate">Bank Statement
+										                                     Generated On<sup>*</sup>
+										</label>
+										<input type="text" id="bankStmntGenerationDate" name="bankStmntGenerationDate" class="form-control" readonly />
+										<span class="error field_err" id="bankStmntGenerationDateError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="bankStmntDocument">Bank Statement Document<sup>*</sup></label>
+										<input type="file" accept="image/*" class="form-control" id="bankStmntDocument" name="bankStmntDocument" onchange="isValidPdfOrImage(this, 'bankStmntDocumentError', 'uploadSgDocSubmitBtn');" />
+										<span id="bankStmntDocumentError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div id="utilityBillDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="utilityBillNumber">Utility Bill Number<sup>*</sup></label>
+										<input type="text" id="utilityBillNumber" name="utilityBillNumber" class="form-control" />
+										<span class="error field_err" id="utilityBillNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="utilityCompanyName">Utility Company Name<sup>*</sup></label>
+										<input type="text" id="utilityCompanyName" name="utilityCompanyName" class="form-control" />
+										<span class="error field_err" id="utilityCompanyNameError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="utilityBillGeneratedDate">Utility Bill
+										                                      Generated Date<sup>*</sup>
+										</label>
+										<input type="text" id="utilityBillGeneratedDate" name="utilityBillGeneratedDate" class="form-control" readonly />
+										<span class="error field_err" id="utilityBillGeneratedDateError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="utilityDocument">Utility Document<sup>*</sup></label>
+										<input type="file" accept="image/*" class="form-control" id="utilityDocument" name="utilityDocument" onchange="isValidPdfOrImage(this, 'utilityDocumentError', 'uploadSgDocSubmitBtn');" />
+										<span id="utilityDocumentError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				
+				<br />
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="form-group text-center">
+							<button id="uploadSgDocSubmitBtn" type="button" onclick="validateAndSubmitSgDoc(event);" class="btn btn-success px-5 ripple">Submit
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Upload SG Documents Modal end -->
+
+<script>
+	function openSgDocUploadModal() {
+		$("#permanentResidentSg").val("");
+		$("#permanentResidentSg").trigger("change");
+		$("#uploadSgDocSubmitBtn").hide();
+		$("#uploadSgDocuments").modal("show");
+	}
+	
+	function displayTrueOrFalseDiv() {
+		var permanentResidentSgVal = $("#permanentResidentSg").val();
+		if (permanentResidentSgVal == "") {
+			$("#permanentResidentSgTrue").fadeOut();
+			$("#permanentResidentSgFalse").fadeOut("slow", "linear");
+			$("#permanentResidentSgError").html("Select at least one value from the drop-down!");
+			$("#uploadSgDocSubmitBtn").hide();
+		}
+		if (permanentResidentSgVal == "true") {
+			$("#permanentResidentSgTrue").fadeIn();
+			$("#permanentResidentSgFalse").fadeOut();
+			$("#uploadSgDocSubmitBtn").show();
+		} else if (permanentResidentSgVal == "false") {
+			$("#permanentResidentSgFalse").fadeIn();
+			$("#permanentResidentSgTrue").fadeOut();
+			$("#uploadSgDocSubmitBtn").show();
+		}
+		setTimeout(function () {
+			$("#permanentResidentSgError").html("");
+		}, 3000);
+	}
+	
+	function validateAndSubmitSgDoc(event) {
+		event.preventDefault();
+		var clientHashId = $("#clientCode").val();
+		var customerHashId = $("#customerHashId").val();
+		if (clientHashId == null || clientHashId == "null" || clientHashId == "" || clientHashId == undefined) {
+			$("#inPageErrorMessage").html("Client hash id is mandatory!");
+			return;
+		}
+		if (customerHashId == null || customerHashId == "null" || customerHashId == "" || customerHashId == undefined) {
+			$("#inPageErrorMessage").html("Customer hash id is mandatory!");
+			return;
+		}
+		
+		var isPermanentResident = $("#permanentResidentSg").val();
+		if (isPermanentResident == "true") {
+			if (validatePermanentResidentFields()) {
+				submitForm(clientHashId, customerHashId);
+			} else {
+				$("#uploadSgDocSubmitBtn").attr("disabled", false);
+				$("#uploadSgDocSubmitBtn").html("Submit");
+			}
+		} else if (isPermanentResident == "false") {
+			if (validateNonPermanentResidentFields()) {
+				submitForm(clientHashId, customerHashId);
+			} else {
+				$("#uploadSgDocSubmitBtn").attr("disabled", false);
+				$("#uploadSgDocSubmitBtn").html("Submit");
+			}
+		}
+	}
+	
+	function validateNonPermanentResidentFields() {
+		$("#uploadSgDocSubmitBtn").attr("disabled", true);
+		$("#uploadSgDocSubmitBtn").html("Please Wait...");
+		var valid = true;
+		
+		var identificationDocDD = $("#identificationDocDD").val();
+		var addressDocumentDD = $("#addressDocumentDD").val();
+		
+		var selfieWithIdNonPermanent = $("#selfieWithIdNonPermanent").val();
+		
+		var finNumberSg = $("#finNumberSg").val();
+		var finFrontSg = $("#finFrontSg").val();
+		var finBackSg = $("#finBackSg").val();
+		var expiryDateSg = $("#expiryDateSg").val();
+		
+		var passportNumber = $("#passportNumber").val();
+		var passportExpiry = $("#passportExpiry").val();
+		var passportFront = $("#passportFront").val();
+		var passportBack = $("#passportBack").val();
+		
+		var govtLetterDocName = $("#govtLetterDocName").val();
+		var govtLetterIssuanceDate = $("#govtLetterIssuanceDate").val();
+		var govtLetterDocument = $("#govtLetterDocument").val();
+		
+		var bankAccountNo = $("#bankAccountNo").val();
+		var bankName = $("#bankName").val();
+		var bankStmntGenerationDate = $("#bankStmntGenerationDate").val();
+		var bankStmntDocument = $("#bankStmntDocument").val();
+		
+		var utilityBillNumber = $("#utilityBillNumber").val();
+		var utilityCompanyName = $("#utilityCompanyName").val();
+		var utilityBillGeneratedDate = $("#utilityBillGeneratedDate").val();
+		var utilityDocument = $("#utilityDocument").val();
+		
+		
+		if (isBlank(identificationDocDD)) {
+			valid = false;
+			$("#identificationDocDDError").html("Identification Document is mandatory!");
+		}
+		if (isBlank(addressDocumentDD)) {
+			valid = false;
+			$("#addressDocumentDDError").html("Address Document is mandatory!");
+		}
+		
+		if (isBlank(selfieWithIdNonPermanent)) {
+			valid = false;
+			$("#selfieWithIdNonPermanentError").html("Selfie with id is mandatory!");
+		}
+		
+		if (identificationDocDD == "fin") {
+			if (isBlank(finNumberSg)) {
+				valid = false;
+				$("#finNumberSgError").html("Fin number is mandatory!");
+			} else if (finNumberSg.length != 9) {
+				valid = false;
+				$("#finNumberSgError").html("Length of fin number must be 9!");
+			}
+			if (isBlank(finFrontSg)) {
+				valid = false;
+				$("#finFrontSgError").html("Fin Front is mandatory!");
+			}
+			if (isBlank(finBackSg)) {
+				valid = false;
+				$("#finBackSgError").html("Fin Back is mandatory!");
+			}
+			if (isBlank(expiryDateSg)) {
+				valid = false;
+				$("#expiryDateSgError").html("Expiry date is mandatory!");
+			}
+		} else if (identificationDocDD == "passport") {
+			if (isBlank(passportNumber)) {
+				valid = false;
+				$("#passportNumberError").html("Passport number is mandatory!");
+			}
+			if (isBlank(passportExpiry)) {
+				valid = false;
+				$("#passportExpiryError").html("Passport expiry date is mandatory!");
+			}
+			if (isBlank(passportFront)) {
+				valid = false;
+				$("#passportFrontError").html("Passport front is mandatory!");
+			}
+			if (isBlank(passportBack)) {
+				valid = false;
+				$("#passportBackError").html("Passport back is mandatory!");
+			}
+		}
+		
+		
+		if (addressDocumentDD == "governmentLetter") {
+			if (isBlank(govtLetterDocName)) {
+				valid = false;
+				$("#govtLetterDocNameError").html("Govt. letter doc name is mandatory!");
+			}
+			if (isBlank(govtLetterIssuanceDate)) {
+				valid = false;
+				$("#govtLetterIssuanceDateError").html("Govt. letter issuance date is mandatory!");
+			}
+			if (isBlank(govtLetterDocument)) {
+				valid = false;
+				$("#govtLetterDocumentError").html("Govt. letter doc. is mandatory!");
+			}
+		} else if (addressDocumentDD == "bankStatement") {
+			if (isBlank(bankAccountNo)) {
+				valid = false;
+				$("#bankAccountNoError").html("Bank account number is mandatory!");
+			}
+			if (isBlank(bankName)) {
+				valid = false;
+				$("#bankNameError").html("Bank name is mandatory!");
+			}
+			if (isBlank(bankStmntGenerationDate)) {
+				valid = false;
+				$("#bankStmntGenerationDateError").html("Bank statement generation date is mandatory!");
+			}
+			if (isBlank(bankStmntDocument)) {
+				valid = false;
+				$("#bankStmntDocumentError").html("Bank statement document is mandatory!");
+			}
+		} else if (addressDocumentDD == "utilityBill") {
+			if (isBlank(utilityBillNumber)) {
+				valid = false;
+				$("#utilityBillNumberError").html("Utility bill number is mandatory!");
+			}
+			if (isBlank(utilityCompanyName)) {
+				valid = false;
+				$("#utilityCompanyNameError").html("Utility company is mandatory!");
+			}
+			if (isBlank(utilityBillGeneratedDate)) {
+				valid = false;
+				$("#utilityBillGeneratedDateError").html("Utility bill generation date is mandatory!");
+			}
+			if (isBlank(utilityDocument)) {
+				valid = false;
+				$("#utilityDocumentError").html("Utility document is mandatory!");
+			}
+		}
+		
+		
+		setTimeout(function () {
+			$(".error").each(function (index, element) {
+				$(element).html("");
+			});
+		}, 3000);
+		return valid;
+	}
+	
+	function validatePermanentResidentFields() {
+		$("#uploadSgDocSubmitBtn").attr("disabled", true);
+		$("#uploadSgDocSubmitBtn").html("Please Wait...");
+		var valid = true;
+		var nricNumberSg = $("#nricNumberSg").val();
+		var nricFrontSg = $("#nricFrontSg").val();
+		var nricBackSg = $("#nricBackSg").val();
+		var selfieWithIdPermanent = $("#selfieWithIdPermanent").val();
+		
+		if (nricNumberSg == null || nricNumberSg == "null" || nricNumberSg == "" || nricNumberSg == undefined) {
+			valid = false;
+			$("#nricNumberSgError").html("NRIC number is mandatory!");
+		}
+		if (nricFrontSg == null || nricFrontSg == "null" || nricFrontSg == "" || nricFrontSg == undefined) {
+			valid = false;
+			$("#nricFrontSgError").html("NRIC Front is mandatory!");
+		}
+		if (nricBackSg == null || nricBackSg == "null" || nricBackSg == "" || nricBackSg == undefined) {
+			valid = false;
+			$("#nricBackSgError").html("NRIC Back is mandatory!");
+		}
+		if (selfieWithIdPermanent == null || selfieWithIdPermanent == "null" || selfieWithIdPermanent == "" || selfieWithIdPermanent == undefined) {
+			valid = false;
+			$("#selfieWithIdPermanentError").html("Selfie with id is mandatory!");
+		}
+		
+		
+		setTimeout(function () {
+			$(".error").each(function (index, element) {
+				$(element).html("");
+			});
+		}, 3000);
+		return valid;
+	}
+	
+	function submitForm(clientHashId, customerHashId) {
+		const url = "${pageContext.request.contextPath}" + $("#uploadSgDocumentsUrl").val() + unSanitize(clientHashId) + "/customer/" + unSanitize(customerHashId) + "/sg/documentUpload";
+		var form;
+		var isPermanentResident = $("#permanentResidentSg").val();
+		if (isPermanentResident == "true") {
+			form = $("#permanentResidentSgTrueForm")[0];
+		} else if (isPermanentResident == "false") {
+			form = $("#permanentResidentSgFalseForm")[0];
+		}
+		var data = new FormData(form);
+		data.append("permanentResidentSg", isPermanentResident);
+		$.ajax({
+			url: url,
+			data: data,
+			processData: false,
+			contentType: false,
+			cache: false,
+			type: 'POST',
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (result, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				sanitize(unSanitize(result));
+				
+				$("#uploadSgDocuments").modal("hide");
+				$("#success_refundNotification").modal('show');
+				$(".refunded_body").html("Documents uploaded successfully!");
+			},
+			error: function (xhr) {
+				$("#uploadSgDocuments").modal("hide");
+				$("#error_refundNotification").modal('show');
+				if (xhr.readyState === 0) {
+					$(".refunded_body")
+						.html("service is temporarily down,please try again later.");
+				} else if (xhr.readyState == 4) {
+					var responseJSON = xhr.responseJSON;
+					var message = responseJSON.message;
+					$(".refunded_body").html(message);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function validateIdentificationDocDD() {
+		var identificationDocDD = $("#identificationDocDD").val();
+		if (identificationDocDD == null || identificationDocDD == "" || identificationDocDD == undefined) {
+			$("#identificationDocDDError").html("Select one Identification Document!");
+			$("#finDiv").fadeOut();
+			$("#passportDiv").fadeOut();
+		} else if (identificationDocDD == "fin") {
+			$("#finDiv").fadeIn();
+			$("#passportDiv").fadeOut();
+		} else if (identificationDocDD == "passport") {
+			$("#passportDiv").fadeIn();
+			$("#finDiv").fadeOut();
+		}
+		
+		setTimeout(function () {
+			$(".error").each(function (index, element) {
+				$(element).html("");
+			});
+		}, 3000);
+	}
+	
+	function validateAddressDocDD() {
+		var addressDocumentDD = $("#addressDocumentDD").val();
+		if (addressDocumentDD == null || addressDocumentDD == "" || addressDocumentDD == undefined) {
+			$("#addressDocumentDDError").html("Select one Address Document!");
+			$("#utilityBillDiv").fadeOut();
+			$("#bankStatementDiv").fadeOut();
+			$("#governmentLetterDiv").fadeOut();
+		} else if (addressDocumentDD == "governmentLetter") {
+			$("#governmentLetterDiv").fadeIn();
+			$("#bankStatementDiv").fadeOut();
+			$("#utilityBillDiv").fadeOut();
+		} else if (addressDocumentDD == "bankStatement") {
+			$("#bankStatementDiv").fadeIn();
+			$("#governmentLetterDiv").fadeOut();
+			$("#utilityBillDiv").fadeOut();
+		} else if (addressDocumentDD == "utilityBill") {
+			$("#utilityBillDiv").fadeIn();
+			$("#bankStatementDiv").fadeOut();
+			$("#governmentLetterDiv").fadeOut();
+		}
+		
+		setTimeout(function () {
+			$(".error").each(function (index, element) {
+				$(element).html("");
+			});
+		}, 3000);
+	}
+	
+	function isBlank(input) {
+		if (typeof input == "string") {
+			input = input.trim();
+		}
+		if (input == null || input == "null" || input == "" || input == undefined) {
+			return true;
+		}
+		return false;
+	}
+</script>

@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- META SECTION -->
+  <title>ahan | Transactions Compliance Report</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" href="assets/css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/mystyle.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/select2/select2.min.css" />
+  <!-- EOF CSS INCLUDE -->
+  <script type="text/javascript" src="assets/js/transactionCompliance/regulatoryBlacklist.js?version=0.0.1"></script>
+  <script type="text/javascript" src="assets/js/transactionCompliance/risk.js?version=0.0.2"></script>
+  <script type="text/javascript" src="assets/js/transactionCompliance/trulioo.js?version=0.0.1"></script>
+  <script type="text/javascript" src="assets/js/transactionCompliance/unit21.js?version=0.0.1"></script>
+  <script type="text/javascript" src="assets/js/transactionCompliance/worldCheck.js?version=0.0.1"></script>
+  <script type="text/javascript" src="assets/js/transactionCompliance/beam.js?version=0.0.1"></script>
+
+  <style type="text/css">
+    tr.collapse_header {
+      display: none;
+    }
+
+    tr.tab_head,
+    tr.header {
+      display: table-row;
+    }
+
+    tr.tab_head th {
+      z-index: 99;
+    }
+
+    .comReprt {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .comReprt .comReprt_item {
+      width: 23%;
+    }
+
+    .comReprt .comReprt_item:last-child {
+      width: 35%;
+    }
+  </style>
+</head>
+
+<body onload="getTransactionTypes();">
+  <div id="hiddenFields">
+    <input type="hidden" id="customerListUrl" value="${customerListUrl}" />
+    <input type="hidden" id="transactionComplianceworldCheckUrl" name="transactionComplianceworldCheckUrl"
+      value="${transactionComplianceworldCheckUrl}" />
+    <input type="hidden" id="trulioUrl" name="trulioUrl" value="${trulioUrl}" />
+    <input type="hidden" id="individualServiceDetailsUrl" name="individualServiceDetailsUrl"
+      value="${individualServiceDetailsUrl}" />
+    <input type="hidden" id="fetchAllComplianceStatusUrl" name="fetchAllComplianceStatusUrl"
+      value="${fetchAllComplianceStatusUrl}" />
+    <input type="hidden" id="updateTxnCompStatusUrl" name="updateTxnCompStatusUrl" value="${updateTxnCompStatusUrl}" />
+    <input type="hidden" id="fetchComplianceDocumentMetadataUrl" name="fetchComplianceDocumentMetadataUrl"
+      value="${fetchComplianceDocumentMetadataUrl}" />
+    <input type="hidden" id="fetchOnfidoDocumentsMetadata" name="fetchOnfidoDocumentsMetadata"
+      value="${fetchOnfidoDocumentsMetadata}" />
+    <input type="hidden" id="fetchCaasRfidetails" name="fetchCaasRfidetails" value="${fetchCaasRfidetails}" />
+    <input type="hidden" id="fetchTxnComplianceDocumentsUrl" name="fetchTxnComplianceDocumentsUrl"
+      value="${fetchTxnComplianceDocumentsUrl}" />
+    <input type="hidden" id="fetchAllClientUrl" name="fetchAllClientUrl" value="${fetchAllClientUrl}" />
+    <input type="hidden" id="myInfoServiceDetailUrl" name="myInfoServiceDetailUrl" value="${myInfoServiceDetailUrl}" />
+    <input type="hidden" id="fetchTxnRfiTemplateDetails" name="fetchTxnRfiTemplateDetails"
+      value="${fetchTxnRfiTemplateDetails}" />
+    <input type="hidden" id="txnInitiateRfiUrl" name="txnInitiateRfiUrl" value="${txnInitiateRfiUrl}" />
+    <input type="hidden" id="fetchTxnInitiatedRfiDetails" name="fetchTxnInitiatedRfiDetails"
+      value="${fetchTxnInitiatedRfiDetails}" />
+    <input type="hidden" id="greenIdServiceDetailUrl" name="greenIdServiceDetailUrl"
+      value="${greenIdServiceDetailUrl}" />
+    <input type="hidden" id="transactionsComplianceblacklistServiceDetailUrl"
+      name="transactionsComplianceblacklistServiceDetailUrl"
+      value="${transactionsComplianceblacklistServiceDetailUrl}" />
+    <input type="hidden" id="unit21ResultsUrl" name="unit21ResultsUrl" value="${unit21ResultsUrl}" />
+    <input type="hidden" id="beamResultsUrl" name="beamResultsUrl" value="${beamResultsUrl}" />
+    <input type="hidden" id="transactionComplianceRiskServiceDetailUrl" name="transactionComplianceRiskServiceDetailUrl"
+      value="${transactionComplianceRiskServiceDetailUrl}" />
+    <input type="hidden" id="reInitiateScreening" name="reInitiateScreening" value="${reInitiateScreening}" />
+    <input type="hidden" id="auditTrailUrl" name="auditTrailUrl" value="${auditTrailUrl}" />
+    <input type="hidden" id="complianceResidentUrl" name="complianceResidentUrl" value="${complianceResidentUrl}" />
+    <input type="hidden" id="transactionsComplianceUrl" name="transactionsComplianceUrl"
+      value="${transactionsComplianceUrl}" />
+    <input type="hidden" id="individualTransactionsComplianceUrl" name="individualTransactionsComplianceUrl"
+      value="${individualTransactionsComplianceUrl}" />
+    <input type="hidden" id="transactionTypesUrl" value="${transactionTypesUrl}" />
+    <input type="hidden" id="respondRfiUrl" value="${respondRfiUrl}" />
+    <input type="hidden" id="contextPath" name="contextPath" value="${pageContext.request.contextPath}" />
+  </div>
+  <!-- preloader Start -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- preloader Ends -->
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
+    <div class="page-sidebar">
+      <!-- START X-NAVIGATION -->
+      <ul class="x-navigation side_custom_scroll" id="sidebarnav">
+        <li class="xn-logo">
+          <a href="index.html">ahan</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="dashboard">
+          <a href="index.html">
+            <span class="fas fa-tachometer-alt"></span>
+            <span class="xn-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-box-open"></span>
+            <span class="xn-text">FD Products</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addEmboserLogo.html">
+                <span class="xn-text">Define Logo</span>
+              </a>
+            </li>
+            <li>
+              <a href="emboserLogoList.html">
+                <span class="xn-text">Embosser Logo List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-tasks"></span>
+            <span class="xn-text">Program</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addprogram.html">
+                <span class="xn-text">Create Program</span>
+              </a>
+            </li>
+            <li>
+              <a href="programList.html">
+                <span class="xn-text">Program List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-tie"></span>
+            <span class="xn-text">Client</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addTermsAndConditions.html">
+                <span class="xn-text">Add Terms And Conditions</span>
+              </a>
+            </li>
+            <li>
+              <a href="addClient.html">
+                <span class="xn-text">Add Client</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientList.html">
+                <span class="xn-text">Client List</span>
+              </a>
+            </li>
+
+            <li class="xn-openable">
+              <a href="#" class="has-arrow">
+                <span class="xn-text">Setup Limits</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="setupAuthLimits.html">
+                    <span class="xn-text">Setup Auth Limits</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="setupRegulatoryLimits.html">
+                    <span class="xn-text">Setup Regulatory Limits</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="addCurrency.html">
+                <span class="xn-text">Add Currency</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupPaymentId.html">
+                <span class="xn-text">Setup Payment Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addComplianceConfiguration.html">
+                <span class="xn-text">Add Customer Compliance Config</span>
+              </a>
+            </li>
+            <li>
+              <a href="complianceConfigurationList.html">
+                <span class="xn-text">Customer Compliance Config View</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPlasticId.html">
+                <span class="xn-text">Add Plastic Id</span>
+              </a>
+            </li>
+            <li>
+              <a href="addPocket.html">
+                <span class="xn-text">Add Pocket</span>
+              </a>
+            </li>
+            <li>
+              <a href="pocketList.html">
+                <span class="xn-text">Pocket List</span>
+              </a>
+            </li>
+            <li>
+              <a href="plasticIdList.html">
+                <span class="xn-text">Plastic Id List</span>
+              </a>
+            </li>
+            <li>
+              <a href="notificationTemplate.html">
+                <span class="xn-text">Notification Templates</span>
+              </a>
+            </li>
+            <li>
+              <a href="setupRemitAccounts.html">
+                <span class="xn-text">Setup Remit Accounts</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-handshake"></span>
+            <span class="xn-text">Client Relationship</span>
+          </a>
+          <ul>
+            <li>
+              <a href="persistClientRelationship.html">
+                <span class="xn-text">Add Client Relationship</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="persistClientRelationshipMapping.html">
+                <span class="xn-text">Add Client Relationship Mapping</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="fetchClientRelationships.html">
+                <span class="xn-text">Client Relationship List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users"></span>
+            <span class="xn-text">Customer</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addCustomer.html">
+                <span class="xn-text">Add Customer</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerList.html">
+                <span class="xn-text">Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-check"></span>
+            <span class="xn-text">Customer Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="complianceReport.html">
+                <span class="xn-text">Customer Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="far fa-credit-card"></span>
+            <span class="xn-text">Cards</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cardList.html">Card List</a>
+            </li>
+            <li>
+              <a href="assignPhysicalCard.html">Assign Physical Card</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuance.html"> Bulk Card Issuance</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceIndent.html">
+                Bulk Card Issuance Indent</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceList.html"> Bulk Card Issuance List</a>
+            </li>
+            <li>
+              <a href="bulkCardIssuanceResponse.html">
+                Bulk Card Issuance Response</a>
+            </li>
+            <li>
+              <a href="embossingRecordStatus.html">
+                Embossing Record Status</a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-search-dollar"></span>
+            <span class="xn-text">Transaction Compliance</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionComplianceProfile.html">
+                <span class="xn-text">Transaction Compliance Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionComplianceProfileMapping.html">
+                <span class="xn-text">Transaction Compliance Profile Mapping</span>
+              </a>
+            </li>
+            <li>
+              <a href="transactionsCompliance.html">
+                <span class="xn-text">Transaction Compliance Report</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-copy"></span>
+            <span class="xn-text">Reports</span>
+          </a>
+          <ul>
+            <li>
+              <a href="transactionReport.html">
+                <span class="xn-text">Transaction Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="settlementReport.html">
+                <span class="xn-text">Settlement Reports</span>
+              </a>
+            </li>
+            <li>
+              <a href="cannedReport.html">
+                <span class="xn-text">Canned Reports</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-hand-holding-usd"></span>
+            <span class="xn-text">Client Funds</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addPrefundRequest.html">
+                <span class="xn-text">Client Prefund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="prefundList.html">
+                <span class="xn-text">Client Prefund Approval</span>
+              </a>
+            </li>
+            <li>
+              <a href="addRefundRequest.html">
+                <span class="xn-text">Client Refund Request</span>
+              </a>
+            </li>
+            <li>
+              <a href="refundList.html">
+                <span class="xn-text">Client Refund Approval</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-wallet"></span>
+            <span class="xn-text">Wallet Fund Request</span>
+          </a>
+          <ul>
+            <li>
+              <a href="walletFundRequest.html">
+                <span class="xn-text">Wallet Fund Request</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-unlock-alt"></span>
+            <span class="xn-text">ICC Transactions</span>
+          </a>
+          <ul>
+            <li>
+              <a href="matchingEngine.html">
+                <span class="xn-text">ICC Transactions</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-users-cog"></span>
+            <span class="xn-text">Bulk Customer Registration</span>
+          </a>
+          <ul>
+            <li>
+              <a href="customerDocumentUpload.html">
+                <span class="xn-text">Bulk Customer Registration</span>
+              </a>
+            </li>
+            <li>
+              <a href="customerDocumentsList.html">
+                <span class="xn-text">Bulk Customer List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Bulk Wallet Topup</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkWalletTopup.html">
+                <span class="xn-text">Bulk Wallet TopUp</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkwallettopupdocument.html">
+                <span class="xn-text">Bulk Wallet TopUp List</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUpload.html">
+                <span class="xn-text">Fee File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="bulkFeeFileUploadList.html">
+                <span class="xn-text">Fee File Upload List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-money-check-alt"></span>
+            <span class="xn-text">Cashback Credit</span>
+          </a>
+          <ul>
+            <li>
+              <a href="cashbackCreditFileUpload.html">
+                <span class="xn-text">Cashback Credit File Upload</span>
+              </a>
+            </li>
+            <li>
+              <a href="cashbackCreditList.html">
+                <span class="xn-text">Cashback Credit List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-bell"></span>
+            <span class="xn-text">Bulk Ad-Hoc Notification</span>
+          </a>
+          <ul>
+            <li>
+              <a href="bulkNotification.html">
+                <span class="xn-text">Bulk Ad-Hoc Notification</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="xn-openable">
+          <a href="#" class="has-arrow">
+            <span class="fas fa-user-cog"></span>
+            <span class="xn-text">Admin Services</span>
+          </a>
+          <ul>
+            <li>
+              <a href="addRole.html">
+                <span class="xn-text">Add Role</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="roleList.html">
+                <span class="xn-text">Role List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="addUser.html">
+                <span class="xn-text">Add Users</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="fetchGroupList.html">
+                <span class="xn-text">User Group List</span>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="userList.html">
+                <span class="xn-text">User List</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <button class="x-navigation-minimize btn-menu-mobile">
+            <span class="fas fa-indent"></span>
+          </button>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SEARCH -->
+        <!-- <li class="xn-search">
+				  <form role="form">
+					  <input type="text" name="search" placeholder="Search..." />
+				  </form>
+			  </li> -->
+        <!-- END SEARCH -->
+        <!-- POWER OFF -->
+        <li class="xn-icon-button pull-right last">
+          <button class="mb-control btn-menu-mobile" data-box="#mb-signout">
+            <span class="fa fa-power-off"></span>
+          </button>
+          <!-- <ul class="xn-drop-left animated zoomIn">
+					  <li><a href="${pageContext.request.contextPath}/changePassword"><span
+							  class="fas fa-unlock-alt"></span> Change Password</a></li>
+					  <li><a href="#" class="mb-control" data-box="#mb-signout"><span
+							  class="fas fa-sign-out-alt"></span> Sign Out</a></li>
+				  </ul>  -->
+        </li>
+        <!-- END POWER OFF -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+      <!-- PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrap">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <div class="pull-right">
+                  <a id="smartSearch" href="javascript:void(0)" class="btn btn-xs btn-primary ripple"
+                    onclick="toggleSmartSearch();">
+                    <i class="fa fa-search" aria-hidden="true"></i> Search
+                  </a>
+                </div>
+                <h4 class="page-title">Transactions Compliance Report</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="" style="min-height: 73vh">
+            <div class="panel-body p-0" style="position: relative">
+              <form class="row comReprt" id="smartSearchFieldsDiv" style="display: none">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="dateRange">Select Date</label>
+                    <input type="text" name="dateRange" class="form-control clear" id="dateRange"
+                      placeholder="Select a date" readonly />
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Compliance Status</label>
+                    <select id="transactionstatus" class="form-control selectpicker">
+                      <option value="All">All</option>
+                      <option value="NONE">NONE</option>
+                      <option value="IN_PROGRESS">IN_PROGRESS</option>
+                      <option value="COMPLETED">COMPLETED</option>
+                      <option value="ACTION_REQUIRED">ACTION_REQUIRED</option>
+                      <option value="ERROR">ERROR</option>
+                      <option value="REJECT">REJECT</option>
+                      <option value="EXPIRED">EXPIRED</option>
+                      <option value="RFI_REQUESTED">RFI_REQUESTED</option>
+                      <option value="RFI_RESPONDED">RFI_RESPONDED</option>
+                      <option value="UNKNOWN">UNKNOWN</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="clientCode">Client</label>
+                    <input type="hidden" id="clientCodeValueHold" value="${clientCode}" />
+                    <select id="clientCode" name="clientCode" class="form-control">
+                      <option value="">Select a Client</option>
+                      <option value="Card_Client_TEST_4">
+                        Card_Client_TEST_4
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label class="control-label">Transaction Type</label>
+                    <input type="hidden" id="transactionTypeValuehold" name="transactionTypeValuehold" value="" />
+                    <select id="transactionType" name="transactionType" class="form-control enableSelect2">
+                      <option value="">Select Transaction Type</option>
+                      <option value="Card">Card</option>
+                    </select>
+                    <p class="error field_err" id="error_region"></p>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="customerHashId">Customer Hash Id</label>
+                    <input type="text" id="customerHashId" name="customerHashId" class="form-control clear"
+                      placeholder="Enter Customer Hash Id" />
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Auth Code</label>
+                    <input type="text" class="form-control clearForm" name="authCode" id="authCode"
+                      placeholder="Enter Auth Code" onkeyup="IsAlphanumericWithoutSpace(this);" />
+                    <span id="authCodeError" class="error"></span>
+                  </div>
+                </div>
+
+                <div class="col-md-6 pt-4">
+                  <div class="form-group text-center">
+                    <button id="smartSearchSubmitBtn" name="smartSearchSubmitBtn" type="button"
+                      class="btn btn-primary btn-sm px-5 ripple"
+                      onclick="destroyPagination(); getFilteredtransactionsComplianceList('0');">
+                      Filter
+                    </button>
+                    <button class="btn btn-default btn-sm px-5 ripple" type="reset" onclick="resetFields();">
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <div id="tableDiv" class="table-responsive" style="max-height: 70vh; overflow: auto">
+                <table id="cardListTable" class="table table-bordered table-striped">
+                  <thead>
+                    <tr class="tab_head">
+                      <th>Sl.No.</th>
+                      <th>Date and Time</th>
+                      <th>Auth Code</th>
+                      <th>Transaction Type</th>
+                      <th>Transaction Status</th>
+                      <th>Settlement Status</th>
+                      <th>Compliance Id</th>
+                      <th>Remark</th>
+                      <th>compliance Remarks</th>
+                      <th>Compliance Status</th>
+                      <th>Compliance Services</th>
+                    </tr>
+                  </thead>
+                  <tbody id="transactionsComplianceDetailsTbody">
+                    <tr class="text-center">
+                      <td colspan="11">No data available in table</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="paginationDiv" class="paginationWrapper">
+                <input type="hidden" id="totalPages_Id" value="1" />
+                <div class="pull-right">
+                  <ul class="pagination-sm" id="paginations"></ul>
+                </div>
+                <p id="paging_infos" class="pull-left"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+  </div>
+  <!-- END PAGE CONTAINER -->
+  <!-- MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-icon">
+          <div>
+            <img alt="ahan" src="assets/img/logo-big.png" />
+          </div>
+        </div>
+        <div class="mb-title">
+          <span class="fa fa-sign-out"></span>
+          Log out of ahan?
+        </div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>
+            Press No if you want to continue work. Press Yes to logout current
+            user.
+          </p>
+        </div>
+        <div class="mb-footer">
+          <button class="btn btn-default mb-control-close btn-block">
+            No
+          </button>
+          <a href="login.html" class="btn btn-block btn-primary">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MESSAGE BOX-->
+
+  <!-- Rfi Detail List Modal -->
+  <div class="modal fade" id="rfiDetailsModal" role="dialog">
+    <div class="modal-dialog modal-dialog-xl modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content" style="max-height: 100%">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h5 class="modal-title" id="rfiDetailsTitle">Rfi Details</h5>
+        </div>
+        <div class="modal-body">
+          <div id="rfiDetailsTableDiv" class="table-responsive">
+            <table id="rfiDetailsTable" class="table table-striped table-bordered" style="overflow: scroll">
+              <thead id="rfiDetailsThead">
+                <tr>
+                  <td>RFI ID</td>
+                  <td>RFI Template ID</td>
+                  <td>Entity Type</td>
+                  <td>RFI Hash ID</td>
+                  <td>Description</td>
+                  <td>Mandatory</td>
+                  <td>Type</td>
+                  <td>Document Type</td>
+                  <td>Remarks</td>
+                  <td>Raised By</td>
+                  <td>RFI Status</td>
+                  <td>Action</td>
+                </tr>
+              </thead>
+              <tbody id="rfiDetailsTableBody"></tbody>
+            </table>
+          </div>
+          <div style="text-align: center">
+            <button id="respondRfiSubmitBtn" class="btn btn-success" onclick="respondRfi(event);" disabled>
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="success_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/source.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 id="successModalId" class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" id="successModal" class="btn btn-success px-5 ripple" data-dismiss="modal"
+                  onclick="closeAllModals(); getFilteredtransactionsComplianceList(0);">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="error_refundNotification" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="assets/img/x.gif" style="
+                  width: 140px;
+                  margin-top: -91px;
+                  margin-bottom: 10px;
+                  position: relative;
+                " />
+            <div>
+              <h4 id="errorModalId" class="refunded_body mb-4"></h4>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger px-5 ripple" data-dismiss="modal"
+                  onclick="closeAllModals(); getFilteredtransactionsComplianceList(0);">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status update Modal -->
+  <div class="modal fade" id="statusUpdateModal" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h5 class="modal-title" id="statusUpdateTitle">Update Status</h5>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="StatusUpdateComplianceId" name="StatusUpdateComplianceId" />
+          <input type="hidden" id="ServiceId" name="ServiceId" />
+          <input type="hidden" id="referenceNumber" name="referenceNumber" />
+          <span id="complianceIdErr" class="error"></span>
+          <span id="ServiceIdErr" class="error"></span>
+          <span id="referenceNumberError" class="error"></span>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+              <div class="form-group">
+                <label for="complianceStatus">Status<sup>*</sup></label>
+                <select id="complianceStatus" class="form-control"></select>
+                <span id="complianceStatusErr" class="error field_err"></span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+              <div class="form-group">
+                <label for="complianceAction">Compliance Action</label>
+                <input type="text" id="complianceAction" name="complianceAction" class="form-control" />
+                <span id="complianceActionErr" class="error field_err"></span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+              <div class="form-group">
+                <label for="actionBy">Update By<sup>*</sup> </label>
+                <input type="text" id="actionBy" name="actionBy" class="form-control" value="${loginUsername}"
+                  readonly="readonly" />
+                <span id="actionByErr" class="error field_err"></span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+              <div class="form-group">
+                <label for="remarks">Remarks<sup>*</sup> </label>
+                <textarea rows="2" id="remarks" name="remarks" class="form-control"></textarea>
+                <span id="remarksErr" class="error field_err"></span>
+              </div>
+            </div>
+            <div class="col-sm-12 text-center">
+              <div class="form-group">
+                <button class="btn btn-primary px-5 ripple" id="updateStatusSubmitBtn"
+                  onclick="validateAndUpdateStatus();">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rfi Template Details Modal -->
+  <div class="modal fade" id="rfiTemplateDetailsModal" role="dialog">
+    <div class="modal-dialog modal-dialog-xl modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h5 class="modal-title" id="rfiTemplateDetailsTitle">
+            <b>RFI Template Details</b>
+          </h5>
+        </div>
+        <div class="modal-body">
+          <div id="rfiTemplateDetailsTableDiv">
+            <input type="hidden" id="initiateRfiClientHashId" />
+            <input type="hidden" id="initiateRfiComplianceId" />
+            <div id="rfiTemplateDetailsTab">
+              <div id="rfiTemplateDetailsTabHeader" style="margin-top: 3%">
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a data-toggle="tab" href="#rfiCreditorDiv">Creditor</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#rfiDebtorDiv">Debtor</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div id="rfiTemplateDetailsTabDetails">
+                <div class="tab-content">
+                  <div id="rfiCreditorDiv" class="tab-pane fade in active">
+                    <div class="table-responsive" style="
+                          max-height: 520px;
+                          overflow: hidden;
+                          overflow-x: auto;
+                          overflow-y: auto;
+                        ">
+                      <table id="rfiCreditorTemplateDetailsTable" class="table table-striped table-bordered">
+                        <thead id="rfiCreditorTemplateDetailsTableHead">
+                          <tr>
+                            <th>RFI Template ID</th>
+                            <th>Entity Type</th>
+                            <th>Name</th>
+                            <th>Mandatory</th>
+                            <th>Type</th>
+                            <th>Document Type</th>
+                            <th>Remarks</th>
+                            <th>Raised By</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody id="rfiCreditorTemplateDetailsTableBody"></tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div id="rfiDebtorDiv" class="tab-pane fade in">
+                    <div class="table-responsive" style="
+                          max-height: 520px;
+                          overflow: hidden;
+                          overflow-x: auto;
+                          overflow-y: auto;
+                        ">
+                      <table id="rfiDebtorTemplateDetailsTable" class="table table-striped table-bordered">
+                        <thead id="rfiDebtorTemplateDetailsTableHead">
+                          <tr>
+                            <th>RFI Template ID</th>
+                            <th>Entity Type</th>
+                            <th>Name</th>
+                            <th>Mandatory</th>
+                            <th>Type</th>
+                            <th>Document Type</th>
+                            <th>Remarks</th>
+                            <th>Raised By</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody id="rfiDebtorTemplateDetailsTableBody"></tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: center">
+              <button id="initiateRfiSubmitBtn" class="btn btn-success" onclick="initiateRfi();">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START PRELOADS -->
+  <audio id="audio-alert" src="assets/audio/alert.mp3" preload="auto"></audio>
+  <audio id="audio-fail" src="assets/audio/fail.mp3" preload="auto"></audio>
+  <!-- END PRELOADS -->
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery.min.js?version=3.5.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquery/jquery-ui.min.js?version=1.12.1"></script>
+  <script type="text/javascript" src="assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="assets/js/settings.min.js"></script>
+  <script type="text/javascript" src="assets/js/actions.js"></script>
+  <script type="text/javascript" src="assets/js/generateTableWithNonClickableRows.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/select2/select2.full.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/twbsPagination/jquery.twbsPagination.min.js"></script>
+  <script type="text/javascript" src="assets/js/loader.js"></script>
+  <script type="text/javascript" src="assets/js/floatingscroll.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/moment.min.js?version=2.29.0"></script>
+  <script type="text/javascript" src="assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+  <script type="text/javascript" src="assets/js/dateRange.js"></script>
+  <script type="text/javascript" src="assets/js/UUID/uuidv4.min.js"></script>
+  <script type="text/javascript" src="assets/js/linkify.min.js"></script>
+  <script type="text/javascript" src="assets/js/linkify-jquery.min.js"></script>
+  <!-- END TEMPLATE -->
+  <!-- END SCRIPTS -->
+
+  <script>
+    function toggleSmartSearch() {
+      $("#smartSearchFieldsDiv").slideToggle();
+    }
+  </script>
+  <!-- <script>
+      /* Universal Spinner with text for Button */
+      const spinnerUrl = "<i class='fas fa-spinner fa-spin'></i> Please Wait...";
+      var innerLoopSerialNo = 0;
+      var allComplianceStatus;
+
+      $(function () {
+      	$('.table-responsive').floatingScrollbar();
+      });
+
+      function toggleSmartSearch() {
+      	$("#smartSearchFieldsDiv").slideToggle();
+      }
+
+      function isBlank(input) {
+      	if (input == null || input === "null" || input === undefined) {
+      		return "";
+      	}
+      	return input;
+      }
+
+      $(document).ready(function () {
+      	getClientList();
+      	generateComplianceStatusDropDown();
+      });
+
+      function generateComplianceStatusDropDown() {
+      	$.ajax({
+      		async: false,
+      		url: $("#fetchAllComplianceStatusUrl").val(),
+      		type: "GET",
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			sanitize(unSanitize(result));
+
+      			allComplianceStatus = result;
+      		},
+      		error: function (xhr) {
+      			allComplianceStatus = "";
+      			if (xhr.status === 500) {
+      				var responseMessage = JSON.parse(data.responseText);
+      				var message = responseMessage.message;
+      			} else {
+      				var message = data.message;
+      			}
+      		},
+      		complete: function (xhr, status) {
+      			const contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      		}
+      	});
+      }
+
+      function destroyPagination() {
+      	$('#paginations').twbsPagination("destroy");
+      }
+
+      function getFilteredtransactionsComplianceList(page) {
+          var dateRange = returnEmptyIfBlank($("#dateRange").val());
+
+             var dateArray = dateRange.split('-');
+             var d = new Date(dateArray[0]);
+             var d1 = new Date(dateArray[1]);
+
+             var startDate = $.datepicker.formatDate('yy-mm-dd', d);
+             var endDate = $.datepicker.formatDate('yy-mm-dd', d1);
+
+             if (startDate === 'NaN-NaN-NaN' || endDate === 'NaN-NaN-NaN' || (startDate.toString()).includes("NaN") || (endDate.toString()).includes("NaN")) {
+             	startDate = "";
+                 endDate = "";
+             }
+
+      	var authCode = isBlank($("#authCode").val());
+      	var transactionType = isBlank($("#transactionType").val());
+      	var transactionstatus = isBlank($("#transactionstatus").val());
+      	var clientCode = isBlank($("#clientCode").val());
+      	var customerHashId = isBlank($("#customerHashId").val());
+
+      	if (jQuery.isEmptyObject(transactionType)) {
+      		transactionType = null;
+      	}
+      	gettransactionsComplianceList(page, startDate, endDate, authCode, transactionType, transactionstatus, clientCode, customerHashId);
+      }
+
+      function returnEmptyIfBlank(input) {
+             if (input === undefined || input == null || input === "null") {
+             	return "";
+             }
+             	return input;
+             }
+
+      function gettransactionsComplianceList(page, startDate, endDate, authCode, transactionType, transactionstatus, clientCode, customerHashId) {
+      	var loadingIcon = "<tr><td colspan=130 style='text-align:center'><img style='max-width:50px;' src = 'assets/img/loading.gif'></img></td></tr>"
+      	$("#transactionsComplianceDetailsTbody").html(loadingIcon);
+      	$("#smartSearchFieldsDiv").slideUp();
+      	$("#smartSearchSubmitBtn").html(spinnerUrl);
+
+      	page = ((page != null && page !== 'null' && page !== 'undefined' && page !== '') ? page : 0);
+      	clientCode = ((clientCode != null && clientCode !== 'null' && clientCode !== 'undefined') ? clientCode : 'all');
+
+      	var dataInObjectFormat = {};
+
+      	dataInObjectFormat.page = page;
+      	dataInObjectFormat.startDate = startDate;
+      	dataInObjectFormat.endDate = endDate;
+      	dataInObjectFormat.authCode = authCode;
+      	dataInObjectFormat.transactionType = transactionType;
+      	dataInObjectFormat.status = transactionstatus;
+      	dataInObjectFormat.clientCode = clientCode;
+      	dataInObjectFormat.customerHashId = customerHashId;
+
+      	var dataInJSONFormat = JSON.stringify(unSanitize(dataInObjectFormat));
+
+      	var totalPages = "";
+      	$.ajax({
+      		url: $("#transactionsComplianceUrl").val(),
+      		type: 'POST',
+      		async: true,
+      		contentType: "application/json",
+      		data: dataInJSONFormat,
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			sanitize(unSanitize(result));
+
+      			$("#smartSearchSubmitBtn").html("Filter");
+      			var tableData = "";
+      			var slNo = (page * 20);
+      			var startNo = (page * 20) + 1;
+      			if (Object.keys(result).length === 0) {
+      				tableData += "<tr>";
+      				tableData += "<td colspan=130 style='text-align:center;'>No Records found</td>";
+      				tableData += "</tr>";
+      				$("#paging_infos").html("");
+      			} else {
+      				totalPages = result.pagination.totalPages;
+      				tableData += generatetransactionsComplianceTableData(result, slNo, startNo);
+      			}
+      			$("#transactionsComplianceDetailsTbody").html(tableData);
+      			paginationForTransactionsComplianceList(totalPages);
+      		},
+      		error: function (xhr) {
+      			var tableData = "";
+      			tableData += "<tr>";
+      			tableData += "<td colspan=130 style='text-align:center;'>No Records found</td>";
+      			tableData += "</tr>";
+      			$("#transactionsComplianceDetailsTbody").html(tableData);
+      			$("#paging_infos").html("No entries found!");
+      			$("#smartSearchSubmitBtn").html("Filter");
+      		},
+      		complete: function (xhr, status) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      		}
+      	});
+      }
+
+      function generatetransactionsComplianceTableData(result, slNo, startNo) {
+      	var tableData = "";
+      	var totalElements = "";
+      	var itemVal = result.transactionList;
+      	if (itemVal != null && itemVal !== '' && itemVal !== "[]" && itemVal.length > 0) {
+      		$(itemVal).each(function (i, item) {
+      			slNo = slNo + 1;
+      			var createdAtDate = new Date(itemVal[i].createdAt);
+      			var date = createdAtDate.getDate();
+      			var month = createdAtDate.getMonth() + 1;
+      			var year = createdAtDate.getFullYear();
+      			var hour = createdAtDate.getHours();
+      			var minute = createdAtDate.getMinutes();
+      			var seconds = createdAtDate.getSeconds();
+      			var createdAt = year + "/" + month + "/" + date + " " + hour + ":" + minute + ":" + seconds;
+      			var eachObject = itemVal[i];
+      			totalElements = result.pagination.totalElements;
+      			tableData += "<tr class='header'>";
+      			tableData += '<td class="collapse_btn"><span onclick="toggleAccordian(this);" class="plus" title="Click here to expand the row">+</span> ' + slNo + '</td>';
+      			tableData += '<td style=\"white-space: nowrap\">' + ((createdAt == null) ? "NA" : createdAt) + '</td>';
+      			tableData += "<td>" + eachObject.systemReferenceNumber + "</td>";
+      			tableData += "<td>" + eachObject.transactionType + "</td>";
+      			tableData += "<td>" + eachObject.transactionStatus + "</td>";
+      			tableData += "<td>" + eachObject.settlementStatus + "</td>";
+      			tableData += "<td>" + eachObject.complianceId + "</td>";
+      			tableData += "<td>" + eachObject.remark + "</td>";
+      			tableData += "<td>" + generateComplianceRemarks(eachObject.complianceRemarks) + "</td>";
+
+      			var individualServiceDetails = getIndividualServiceDetails(eachObject.complianceId, eachObject);
+
+      			tableData += individualServiceDetails;
+
+      			tableData += '</div></div></div></td></tr>';
+      		});
+      	}
+      	$("#paging_infos").html("Showing " + startNo + " to " + slNo + " of " + totalElements + " entries");
+      	return tableData;
+      }
+
+      function generateComplianceRemarks(remarks) {
+      	if (remarks === undefined || remarks == null || remarks === "") {
+      		return "-";
+      	}
+      	if (remarks.length <= 50) {
+      		return remarks;
+      	}
+      	const remarksInitialPart = remarks.substring(0, 21);
+      	const remarksLastPart = remarks.substring(21, remarks.length);
+
+      	const uuid = generateRandomUuid();
+      	const eleId = "compRemarksCollapse_" + uuid;
+      	const spanId = "compRemarksSpan_" + uuid;
+
+      	let spanEle1 = "<span id='" + eleId + "' style='display: none'>";
+      	spanEle1 += "<span>" + remarksLastPart + "</span>";
+      	spanEle1 += "</span>";
+
+      	let spanEle2 = "<span id='" + spanId + "' onclick='toggleCompRemarks(\"" + spanId + "\", \"" + eleId + "\");'><i class='fa fa-angle-down fa-lg' aria-hidden='true'></i></span>";
+
+      	return "<p>" + remarksInitialPart + spanEle1 + spanEle2 + "</p>";
+      }
+
+      function toggleCompRemarks(triggerEleId, id) {
+      	if ($("#" + id).css("display") === "none") {
+      		$("#" + triggerEleId).html("<i class='fa fa-angle-up fa-lg' aria-hidden='true'></i>");
+      	} else {
+      		$("#" + triggerEleId).html("<i class='fa fa-angle-down fa-lg' aria-hidden='true'></i>");
+      	}
+      	$("#" + id).toggle("slow", "linear");
+      }
+
+      function getIndividualServiceDetails(complianceId, eachObject) {
+      	let output = "";
+      	if (complianceId == null || complianceId === "-" || complianceId === "") {
+      		output += getTxnCompAdditionalDetails(eachObject);
+      		return output;
+      	}
+      	let individualServiceStatus = "";
+      	let accordianData = "";
+      	let raiseRfi = false;
+
+      	var url = $("#individualTransactionsComplianceUrl").val() + complianceId + "/individualServiceDetails";
+      	$.ajax({
+      		async: false,
+      		url: url,
+      		type: "GET",
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			sanitize(unSanitize(result));
+
+      			var bodyObject = result.body;
+      			output += "<td>" + eachObject.complianceStatus + "</td>";
+      			for (var i = 0; i < (bodyObject.complianceResults).length; i++) {
+      				var temp = (++innerLoopSerialNo);
+      				var eachComplianceResult = (bodyObject.complianceResults)[i];
+
+      				individualServiceStatus += "<p style='white-space: nowrap;'><strong>" + eachComplianceResult.serviceName + "</strong> | <strong>" + eachComplianceResult.status + "</strong></p>";
+
+      				if (((eachComplianceResult.serviceName).toLowerCase()).includes("worldcheck")) {
+      					raiseRfi = true;
+      					accordianData += generateWorldCheckAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      				} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("trulioo")) {
+      					raiseRfi = true;
+      					accordianData += generateTrulioAccordionData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      				} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("unit21")) {
+      					raiseRfi = true;
+      					accordianData += generateUnit21AccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      				} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("regulatory blacklisting")) {
+      					raiseRfi = true;
+      					accordianData += generateBlacklistAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+
+      				} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("risk")) {
+      					raiseRfi = true;
+      					accordianData += generateRiskServiceAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+      				} else if (((eachComplianceResult.serviceName).toLowerCase()).includes("rfi")) {
+      					raiseRfi = true;
+      					accordianData += generateRfiAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+      				}else if (((eachComplianceResult.serviceName).toLowerCase()).includes("beam") = true ) {
+                             raiseRfi = true;
+                             accordianData += generateBeamAccordianData((temp), eachObject, eachComplianceResult.serviceId, eachComplianceResult.status, eachComplianceResult.referenceNumber);
+                         }
+      			}
+      			output += "<td>" + individualServiceStatus + "</td>";
+
+      			output += "<tr id='collapse_header' class='collapse_header'>";
+      			output += "<td colspan='933'>";
+      			output += '<div class="row">';
+      			output += '<div class="col-md-4">';
+      			output += '<div class="txnsComp_wrapper">';
+      			const url = '${pageContext.request.contextPath}/customer/customerDetails?customerHashId=' + eachObject.customerHashId;
+      			const link = "<a href='#' onclick='window.open(\"" + url + "\");'>" + eachObject.customerHashId + "</a>";
+      			<%--const link = "<a target='_blank' href='${pageContext.request.contextPath}/customer/customerDetails?customerHashId=" + eachObject.customerHashId + "'>" + eachObject.customerHashId + "</a>";--%>
+      			output += '<h5 style="font-weight: 600">Customer Hash</h5><h5>' + link + '</h5>';
+      			output += '<h5 style="font-weight: 600">Transaction Currency</h5><h5>' + eachObject.transactionCurrency + '</h5>';
+      			output += '<h5 style="font-weight: 600">Transaction Amount</h5><h5>' + eachObject.transactionAmount + '</h5>';
+      			output += '<h5 style="font-weight: 600">Billing Currency</h5><h5>' + eachObject.billingCurrency + '</h5>';
+      			output += '<h5 style="font-weight: 600">Billing Amount</h5><h5>' + eachObject.billingAmount + '</h5>';
+
+      			output += '</div>';
+      			output += '</div>';
+
+      			output += '<div class="col-md-4">';
+      			output += '<div class="txnsComp_wrapper">';
+      			output += '<h5 style="font-weight: 600">Wallet Hash Id</h5><h5>' + eachObject.walletHashId + '</h5>';
+      			output += '<h5 style="font-weight: 600">Auth Currency</h5><h5>' + eachObject.authCurrency + '</h5>';
+      			output += '<h5 style="font-weight: 600">Auth Amount</h5><h5>' + eachObject.authAmount + '</h5>';
+      			output += '<h5 style="font-weight: 600">Compliance Amount (USD)</h5><h5>' + eachObject.complianceAmount + '</h5>';
+
+      			output += '</div>';
+      			output += '</div>';
+      			output += '</div>';
+
+      			output += '<div class="row">';
+      			output += '<div class="col-md-12">';
+      			output += '<div class="accordian-container">';
+
+      			output += accordianData;
+
+      			if (raiseRfi && ((bodyObject.status).toLowerCase()).includes("action_required")) {
+      				output += '<button id="fetchRfiTemplateListBtn" class="btn btn-primary px-5 ripple" type="button" onclick=" fetchRfiTemplateList(\'' + eachObject.clientHashId + '\', \'' + eachObject.complianceId + '\')";>Raise RFI</button>';
+      			}
+      			if (((bodyObject.status).toLowerCase()).includes("rfi_requested")) {
+      				output += '<button id="raisedRfiDetailsBtn" class="btn btn-primary px-5 ripple" type="button" onclick="fetchRfiDetails(\'' + eachObject.clientHashId + '\', \'' + eachObject.complianceId + '\')";>RFI Details</button>';
+      			}
+      		},
+      		error: function (xhr) {
+      			if (xhr.status === 500) {
+      				var responseMessage = JSON.parse(xhr.responseText);
+      				var message = responseMessage.message;
+      			} else if (xhr.status === 400) {
+      			}
+      			output += "<td>-</td><td><p style='white-space: nowrap;'><strong>-</strong></td>";
+      		},
+      		complete: function (xhr, status) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      		}
+      	});
+      	return output;
+      }
+
+      function toggleRfi(resultantElementId, element, clientHashId, complianceId, serviceId, referenceNumber) {
+      	$(element).nextAll(".content:first").slideToggle("fast");
+      	$(element).find(".accordian-arrow").toggleClass("less");
+      	if ($(element).find(".accordian-arrow").hasClass("less") && $(element).hasClass("rfi")) {
+      		getRfiData(resultantElementId, clientHashId, complianceId, serviceId, referenceNumber);
+      	}
+      }
+
+      function getRfiData(resultantElementId, clientHashId, complianceId, serviceId, referenceNumber) {
+      	var url = $("#fetchCaasRfidetails").val() + clientHashId + "/transaction/compliance/" + complianceId + "/" + serviceId + "/" + referenceNumber + "/rfi";
+      	var loadingIcon = "<tr><td colspan=100 style='text-align:center;'><img style='max-width:50px;'src='assets/img/loading.gif'></img></td></tr>";
+      	$("#" + resultantElementId).html(loadingIcon);
+      	$.ajax({
+      		url: url,
+      		async: true,
+      		type: "GET",
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			const contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			sanitize(unSanitize(result));
+      			const keysArray = Object.keys(result);
+      			let bodyData = "";
+      			let hyperLink = "";
+      			let nonHyperLink = "";
+      			for (let i = 0; i < keysArray.length; i++) {
+      				const eachKey = keysArray[i];
+      				if ((eachKey.toLowerCase()).includes("complianceid") || (eachKey.toLowerCase()).includes("status")) {
+      					continue;
+      				}
+      				const splittedKey = eachKey.split("\.");
+      				const keyToDisplay = splittedKey[splittedKey.length - 1];
+      				let eachValue = result[eachKey];
+      				if (eachValue == null || eachValue === "null" || eachValue === undefined || eachValue === "") {
+      					eachValue = "-";
+      				}
+      				if ((keyToDisplay.toLowerCase().includes("href") || keyToDisplay.toLowerCase().includes("uri") || keyToDisplay.toLowerCase().includes("url")) && eachValue !== "-") {
+      					nonHyperLink += "<tr>";
+      					nonHyperLink += "<td><strong>Content</strong></td>";
+      					const docData = fetchDocumentData(eachValue);
+      					nonHyperLink += "<td>" + (docData.result) + "</td>";
+      					nonHyperLink += "</tr>";
+      				} else if (eachValue !== "-") {
+      					nonHyperLink += "<tr>";
+      					nonHyperLink += "<td><strong>" + keyToDisplay + "</strong></td>";
+      					nonHyperLink += "<td>" + eachValue + "</td>";
+      					nonHyperLink += "</tr>";
+      				}
+      			}
+      			bodyData += (hyperLink + nonHyperLink)
+      			$("#" + resultantElementId).html(bodyData);
+      		},
+      		error: function (xhr) {
+      			let bodyData = "<tr>";
+      			bodyData += "<td colspan='2345'><h2>No Data Found!</h2></td>";
+      			bodyData += "</tr>";
+      			$("#" + resultantElementId).html(bodyData);
+      		},
+      		complete: function (xhr, status) {
+      			const contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      		}
+      	});
+      }
+
+      function downloadContent(currentElement, mediaType) {
+      	const splittedMediaType = mediaType.split("/");
+      	const fileExtension = splittedMediaType[(splittedMediaType.length - 1)];
+      	const currentTime = new Date().getTime();
+      	const documentObject = window.document;
+      	const anchorTag = documentObject.createElement('a');
+      	anchorTag.href = (currentElement.href);
+      	anchorTag.download = currentTime + "." + fileExtension;
+      	documentObject.body.appendChild(anchorTag);
+      	anchorTag.click();
+      }
+
+      function fetchDocumentData(documentUrl) {
+      	var encodedUrl = window.btoa(documentUrl);
+      	var finalResult = {};
+      	$.ajax({
+      		url: $("#fetchTxnComplianceDocumentsUrl").val() + encodedUrl,
+      		type: 'GET',
+      		async: false,
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			const contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+
+      			const fileName = result.fileName;
+      			const mediaType = result.fileType;
+      			const content = result.document;
+      			finalResult.result = "<a onclick='downloadContent(this, \"" + mediaType + "\");' href=\"data:" + mediaType + ";charset=utf-8;base64," + content + "\">Click to view uploaded document</a>";
+      		},
+      		error: function (jqXhr) {
+      			if (jqXhr.readyState === 0) {
+      				finalResult.result = "service is temporarily down,please try again later.";
+      			}
+      			if (jqXhr.status === 500) {
+      				const responseMessage = JSON.parse(jqXhr.responseText);
+      				const message = responseMessage.message;
+      				finalResult.result = message;
+      			} else {
+      				finalResult.result = jqXhr.responseText;
+      			}
+      		},
+      		complete: function (xhr, status) {
+      			const contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      		}
+      	});
+      	return finalResult;
+      }
+
+      function generateRfiAccordianData(slNo, eachObject, rfiServiceId, rfiStatus, rfiReferenceNumber) {
+      	let rfiAccordianData = "";
+      	rfiAccordianData += '<h3 class="accordian rfi" onclick="toggleRfi(\'rfiTbody_' + slNo + '\', this, \'' + eachObject.clientHashId + '\', \'' + eachObject.complianceId + '\', \'' + rfiServiceId + '\', \'' + rfiReferenceNumber + '\')">';
+      	rfiAccordianData += '<span>RFI<i class="fas fa-chevron-circle-up accordian-arrow"></i></span>';
+      	rfiAccordianData += '</h3><br />';
+      	rfiAccordianData += '<div class="content" style="display:none">';
+      	rfiAccordianData += '<div class="trulio_wrapper">';
+      	rfiAccordianData += '<table class="table compl">';
+      	rfiAccordianData += '<thead>';
+      	rfiAccordianData += '<tr>';
+      	rfiAccordianData += '<th><h4>Field</h4></th>';
+      	rfiAccordianData += '<th><h4>Value</h4></th>';
+      	if (rfiStatus !== undefined && rfiStatus != null && rfiStatus !== "") {
+      		if (rfiStatus.toLowerCase() === "rfi_responded") {
+      			rfiAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + rfiServiceId + '\',\'' + rfiReferenceNumber + '\', \'rfi_responded\');">Update Status</button></th>';
+      		} else if (rfiStatus.toLowerCase() === "rfi_requested") {
+      			rfiAccordianData += '<th><button class="btn btn-danger btn-sm px-5" onclick="openStatusUpdateModal(\'' + eachObject.complianceId + '\', \'' + rfiServiceId + '\',\'' + rfiReferenceNumber + '\', \'rfi_requested\');">Update Status</button></th>';
+      		}
+      	}
+      	// var viewHistoryBtn = '<button id = "viewRfiHistoryBtn" class="btn btn-success btn-sm px-5 ripple"';
+      	// viewHistoryBtn += ' onclick = "openViewHistoryModal(event, \'' + eachObject.clientHashId + '\', \'' + eachObject.complianceId + '\', \'' + rfiServiceId + '\',\'RFI History\');" >';
+      	// viewHistoryBtn += 'View History';
+      	// viewHistoryBtn += '</button>';
+      	// rfiAccordianData += '<th>' + viewHistoryBtn + '</th>';
+      	rfiAccordianData += '</tr>';
+      	rfiAccordianData += '</thead>';
+      	rfiAccordianData += '<tbody id=\'rfiTbody_' + slNo + '\'></div>';
+      	rfiAccordianData += '</table></div></div>';
+      	return rfiAccordianData;
+      }
+
+      function fetchRfiDetails(clientHashId, complianceId) {
+      	$("#raisedRfiDetailsBtn").attr("disabled", true);
+      	$("#raisedRfiDetailsBtn").html("Please Wait...");
+      	var tableBody = "";
+      	$.ajax({
+      		url: $("#fetchTxnInitiatedRfiDetails").val() + clientHashId + "/transaction/compliance/"+complianceId+"/rfi",
+      		type: "GET",
+      		async: false,
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			sanitize(unSanitize(result));
+
+      			var tableData = "";
+      			//Rfi Respond
+      			tableData += '<input type="hidden" id="rfiClientHashId" value=\"' + clientHashId + '\"/>';
+      			tableData += '<input type="hidden" id="rfiComplianceId" value=\"' + complianceId + '\"/>';
+
+      			for (var i = 0; i < result.length; i++) {
+      				var eachRfiInitiatedDetailObj = result[i];
+      				tableData += "<tr>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.rfiId + "</td>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.rfiTemplateId + "</td>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.transactionEntityType + "</td>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.rfiHashId + "</td>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.description + "</td>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.mandatory + "</td>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.type + "</td>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.documentType + "</td>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.remarks + "</td>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.raisedBy + "</td>";
+      				tableData += "<td>" + eachRfiInitiatedDetailObj.rfiStatus + "</td>";
+      				tableData += "<td>";
+      				if ((eachRfiInitiatedDetailObj.type).toLowerCase() === "data") {
+      					let fieldId = eachRfiInitiatedDetailObj.description + "Id";
+      					let errorId = eachRfiInitiatedDetailObj.description + "Error";
+      					let fieldDataId = eachRfiInitiatedDetailObj.description + "DataId";
+      					tableData += '<textarea id=\"' + fieldId + '\" class = "form-control" style="margin: 0px; width: 188px; height: 50px;" disabled></textarea>';
+      					tableData += "<span id='" + errorId + "' class='error' style='position: left;'></span>";
+      				} else if ((eachRfiInitiatedDetailObj.type).toLowerCase() === "document") {
+      					let fieldId = eachRfiInitiatedDetailObj.description + "Id";
+      					let errorId = eachRfiInitiatedDetailObj.description + "Error";
+      					let fieldDocId = eachRfiInitiatedDetailObj.description + "DocId";
+      					tableData += '<input type="file" id=\"' + fieldId + '\" class="form-control" style="margin: 0px; width: 188px; height: 50px;" accept="image/jpeg, image/png, image/jpg, application/pdf, .jpg , .jpeg, .png, .pdf" onchange="validateFileTypeAndSave( this,\'' + eachRfiInitiatedDetailObj.description + '\',\'' + errorId + '\',\'' + fieldDocId + '\')" required disabled/>';
+      					tableData += '<input type="hidden" id=\"' + fieldDocId + '\" />';
+      					tableData += "<span id='" + errorId + "' class='error' style='position: left;'></span>";
+      				}
+      				tableData += "</td>";
+      				tableData += "</tr>";
+      			}
+      			$("#rfiDetailsTableBody").html(tableData);
+      		},
+      		error: function (xhr) {
+      			$("#rfiDetailsTableBody").html("<tr><td colspan = 1000>No data found!</td></tr>");
+      		},
+      		complete: function (xhr, status) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+
+      			$("#raisedRfiDetailsBtn").attr("disabled", false);
+      			$("#raisedRfiDetailsBtn").html("RFI Details");
+      			$("#rfiDetailsModal").modal("show");
+      		}
+      	});
+      }
+
+      function fetchRfiTemplateList(clientHashId, complianceId) {
+      	$("#fetchRfiTemplateListBtn").attr("disabled", true);
+      	$("#fetchRfiTemplateListBtn").html("Please Wait...");
+      	$("#initiateRfiClientHashId").val(clientHashId);
+      	$("#initiateRfiComplianceId").val(complianceId);
+      	let creditorTbody = "";
+      	let debtorTbody = "";
+      	$.ajax({
+      		url: $("#fetchTxnRfiTemplateDetails").val() + clientHashId + "/compliance/" + complianceId + "/fetchRfiTemplateDetails",
+      		type: "GET",
+      		async: false,
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			sanitize(unSanitize(result));
+      			if (result == null || result === "" || result === undefined) {
+      				return;
+      			}
+      			const creditorTemplateDetail = result.creditorTemplateDetail;
+      			if (creditorTemplateDetail === undefined || creditorTemplateDetail == null) {
+      				creditorTbody = "<tr class = 'rfiCreditorTemplateDetailsTableBodyTr'>";
+      				creditorTbody += "<td colspan=1000 style='text-align:center;'>No Records found</td>";
+      				creditorTbody += "</tr>";
+      				return;
+      			}
+      			const creditorRfiTemplates = creditorTemplateDetail.rfiTemplates;
+      			if (!isValidNonEmptyJsArray(creditorRfiTemplates)) {
+      				creditorTbody = "<tr class = 'rfiCreditorTemplateDetailsTableBodyTr'>";
+      				creditorTbody += "<td colspan=1000 style='text-align:center;'>No Records found</td>";
+      				creditorTbody += "</tr>";
+      				return;
+      			}
+      			creditorTbody = getRfiCreditorTBody(creditorRfiTemplates);
+      			const debtorTemplateDetail = result.debtorTemplateDetail;
+      			if (debtorTemplateDetail === undefined || debtorTemplateDetail == null) {
+      				debtorTbody = "<tr class = 'rfiDebtorTemplateDetailsTableBodyTr'>";
+      				debtorTbody += "<td colspan=1000 style='text-align:center;'>No Records found</td>";
+      				debtorTbody += "</tr>";
+      				return;
+      			}
+      			const debtorRfiTemplates = debtorTemplateDetail.rfiTemplates;
+      			if (!isValidNonEmptyJsArray(debtorRfiTemplates)) {
+      				debtorTbody = "<tr class = 'rfiDebtorTemplateDetailsTableBodyTr'>";
+      				debtorTbody += "<td colspan=1000 style='text-align:center;'>No Records found</td>";
+      				debtorTbody += "</tr>";
+      				return;
+      			}
+      			debtorTbody = getRfiDebtorTBody(debtorRfiTemplates);
+      		},
+      		error: function (xhr) {
+      			creditorTbody = "<tr class = 'rfiCreditorTemplateDetailsTableBodyTr'>";
+      			creditorTbody += "<td colspan=1000 style='text-align:center;'>No Records found</td>";
+      			creditorTbody += "</tr>";
+      			debtorTbody = "<tr class = 'rfiDebtorTemplateDetailsTableBodyTr'>";
+      			debtorTbody += "<td colspan=1000 style='text-align:center;'>No Records found</td>";
+      			debtorTbody += "</tr>";
+      		},
+      		complete: function (xhr, status) {
+      			const contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+
+      			$("#rfiCreditorTemplateDetailsTableBody").html(creditorTbody);
+      			$("#rfiDebtorTemplateDetailsTableBody").html(debtorTbody);
+      			$("#rfiTemplateDetailsModal").modal("show");
+
+      			$("#fetchRfiTemplateListBtn").attr("disabled", false);
+      			$("#fetchRfiTemplateListBtn").html("Raise Rfi");
+      		}
+      	});
+      }
+
+      function getRfiRequestBody() {
+      	const resultantArray = [];
+      	$(".rfiCreditorTemplateDetailsTableBodyTr").each(function (index, element) {
+      		const tdArray = $(element).contents();
+      		const isChecked = ((tdArray[8]).firstChild).checked;
+      		if (isChecked) {
+      			const resultantArrayElement = {};
+      			resultantArrayElement.rfiTemplateId = ((tdArray[0]).innerHTML);
+      			resultantArrayElement.entityType = ((tdArray[1]).innerHTML);
+      			resultantArrayElement.name = ((tdArray[2]).innerHTML);
+      			resultantArrayElement.mandatory = ((tdArray[3]).innerHTML);
+      			resultantArrayElement.type = ((tdArray[4]).innerHTML);
+      			resultantArrayElement.documentType = ((tdArray[5]).innerHTML);
+      			resultantArrayElement.remarks = (((tdArray[6]).firstChild).value);
+      			resultantArrayElement.raisedBy = (((tdArray[7]).firstChild).value);
+      			resultantArray.push(resultantArrayElement);
+      		}
+      	});
+      	$(".rfiDebtorTemplateDetailsTableBodyTr").each(function (index, element) {
+      		const tdArray = $(element).contents();
+      		const isChecked = ((tdArray[8]).firstChild).checked;
+      		if (isChecked) {
+      			const resultantArrayElement = {};
+      			resultantArrayElement.rfiTemplateId = ((tdArray[0]).innerHTML);
+      			resultantArrayElement.entityType = ((tdArray[1]).innerHTML);
+      			resultantArrayElement.name = ((tdArray[2]).innerHTML);
+      			resultantArrayElement.mandatory = ((tdArray[3]).innerHTML);
+      			resultantArrayElement.type = ((tdArray[4]).innerHTML);
+      			resultantArrayElement.documentType = ((tdArray[5]).innerHTML);
+      			resultantArrayElement.remarks = (((tdArray[6]).firstChild).value);
+      			resultantArrayElement.raisedBy = (((tdArray[7]).firstChild).value);
+      			resultantArray.push(resultantArrayElement);
+      		}
+      	});
+      	return resultantArray;
+      }
+
+      function initiateRfi() {
+      	$("#initiateRfiSubmitBtn").attr("disabled", true);
+      	$("#initiateRfiSubmitBtn").html("Please Wait...");
+      	const requestBody = JSON.stringify(unSanitize({"requestDetails": getRfiRequestBody()}));
+      	if (requestBody === undefined || requestBody == null || requestBody === "") {
+      		return;
+      	}
+      	$.ajax({
+      		url: $("#txnInitiateRfiUrl").val() + $("#initiateRfiClientHashId").val() + "/compliance/" + $("#initiateRfiComplianceId").val() + "/initiateRfi",
+      		type: "POST",
+      		contentType: "application/json;charset=UTF-8",
+      		data: requestBody,
+      		async: false,
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			sanitize(unSanitize(result));
+      			$("#successModalId").html("RFI Initiated Successfully!");
+      			$("#success_refundNotification").modal("show");
+      		},
+      		error: function (xhr, status, error) {
+      			if (xhr.readyState === 0) {
+      				$("#errorModalId").html("service is temporarily down,please try again later!");
+      			} else {
+      				var responseJson = xhr.responseJSON;
+      				var errorMsg = responseJson.message;
+      				if (errorMsg == null || errorMsg === undefined || errorMsg === "") {
+      					errorMsg = "Unable to initiate compliance";
+      				}
+      				$("#errorModalId").html(errorMsg);
+      			}
+      			$("#error_refundNotification").modal('show');
+      		},
+      		complete: function (xhr) {
+      			const contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			$("#rfiTemplateDetailsModal").modal("hide");
+      			$("#initiateRfiSubmitBtn").attr("disabled", false);
+      			$("#initiateRfiSubmitBtn").html("Submit");
+      		}
+      	});
+      }
+
+      function getRfiCreditorTBody(creditorRfiTemplates) {
+      	let tBody = "";
+      	for (let i = 0; i < creditorRfiTemplates.length; i++) {
+      		const eachTemplate = creditorRfiTemplates[i];
+      		if (!isValidNonEmptyJsObject(eachTemplate)) {
+      			continue;
+      		}
+      		const innerTemplate = eachTemplate.template;
+      		if (!isValidNonEmptyJsObject(innerTemplate)) {
+      			continue;
+      		}
+      		tBody += "<tr class = 'rfiCreditorTemplateDetailsTableBodyTr'>";
+      		tBody += "<td style='white-space: nowrap'>" + eachTemplate.templateId + "</td>";
+      		tBody += "<td>" + eachTemplate.entity + "</td>";
+      		tBody += "<td>" + innerTemplate.name + "</td>";
+      		tBody += "<td>" + innerTemplate.mandatory + "</td>";
+      		tBody += "<td>" + innerTemplate.type + "</td>";
+      		if ((innerTemplate.type).toLowerCase() === "data") {
+      			tBody += "<td>" + "NA" + "</td>";
+      		} else if ((innerTemplate.type).toLowerCase() === "document") {
+      			tBody += "<td>" + innerTemplate.documentType + "</td>";
+      		} else {
+      			tBody += "<td>" + "NA" + "</td>";
+      		}
+      		tBody += "<td><textarea class = 'form-control' style='margin: 0px; width: 188px; height: 66px;'></textarea></td>";
+      		tBody += "<td><input type='text' class='form-control' value=\"" + $('#loggedInUser').val() + "\" readonly style='width:fit-content;' /></td>";
+      		tBody += "<td><input type = 'checkbox' /></td>";
+      		tBody += "</tr>";
+      	}
+      	if (tBody.length === 0) {
+      		tBody = "<tr class = 'rfiCreditorTemplateDetailsTableBodyTr'>";
+      		tBody += "<td colspan=1000 style='text-align:center;'>No Records found</td>";
+      		tBody += "</tr>";
+      	}
+      	return tBody;
+      }
+
+      function getRfiDebtorTBody(debtorRfiTemplates) {
+      	let tBody = "";
+      	for (let i = 0; i < debtorRfiTemplates.length; i++) {
+      		const eachTemplate = debtorRfiTemplates[i];
+      		if (!isValidNonEmptyJsObject(eachTemplate)) {
+      			continue;
+      		}
+      		const innerTemplate = eachTemplate.template;
+      		if (!isValidNonEmptyJsObject(innerTemplate)) {
+      			continue;
+      		}
+      		tBody += "<tr class = 'rfiDebtorTemplateDetailsTableBodyTr'>";
+      		tBody += "<td style='white-space: nowrap'>" + eachTemplate.templateId + "</td>";
+      		tBody += "<td>" + eachTemplate.entity + "</td>";
+      		tBody += "<td>" + innerTemplate.name + "</td>";
+      		tBody += "<td>" + innerTemplate.mandatory + "</td>";
+      		tBody += "<td>" + innerTemplate.type + "</td>";
+      		if ((innerTemplate.type).toLowerCase() === "data") {
+      			tBody += "<td>" + "NA" + "</td>";
+      		} else if ((innerTemplate.type).toLowerCase() === "document") {
+      			tBody += "<td>" + innerTemplate.documentType + "</td>";
+      		} else {
+      			tBody += "<td>" + "NA" + "</td>";
+      		}
+      		tBody += "<td><textarea class = 'form-control' style='margin: 0px; width: 188px; height: 66px;'></textarea></td>";
+      		tBody += "<td><input type='text' class='form-control' value=\"" + $('#loggedInUser').val() + "\" readonly style='width:fit-content;' /></td>";
+      		tBody += "<td><input type = 'checkbox' /></td>";
+      		tBody += "</tr>";
+      	}
+      	if (tBody.length === 0) {
+      		tBody = "<tr class = 'rfiDebtorTemplateDetailsTableBodyTr'>";
+      		tBody += "<td colspan=1000 style='text-align:center;'>No Records found</td>";
+      		tBody += "</tr>";
+      	}
+      	return tBody;
+      }
+
+      function getTxnCompAdditionalDetails(eachObject) {
+      	let output = "";
+
+      	output += "<td>" + eachObject.complianceStatus + "</td>";
+      	output += "<td>" + "-" + "</td>";
+
+      	output += "<tr id='collapse_header' class='collapse_header'>";
+      	output += "<td colspan='933'>";
+      	output += '<div class="row">';
+      	output += '<div class="col-md-4">';
+      	output += '<div class="txnsComp_wrapper">';
+      	const url = '${pageContext.request.contextPath}/customer/customerDetails?customerHashId=' + eachObject.customerHashId;
+      	var link = "<a href='#' onclick='window.open(\"" + url + "\");'>" + eachObject.customerHashId + "</a>";
+      	<%--var link = "<a target='_blank' href='${pageContext.request.contextPath}/customer/customerDetails?customerHashId=" + eachObject.customerHashId + "'>" + eachObject.customerHashId + "</a>";--%>
+      	output += '<h5 style="font-weight: 600">Customer Hash</h5><h5>' + link + '</h5>';
+      	output += '<h5 style="font-weight: 600">Transaction Currency</h5><h5>' + eachObject.transactionCurrency + '</h5>';
+      	output += '<h5 style="font-weight: 600">Transaction Amount</h5><h5>' + eachObject.transactionAmount + '</h5>';
+      	output += '<h5 style="font-weight: 600">Billing Currency</h5><h5>' + eachObject.billingCurrency + '</h5>';
+      	output += '<h5 style="font-weight: 600">Billing Amount</h5><h5>' + eachObject.billingAmount + '</h5>';
+
+      	output += '</div>';
+      	output += '</div>';
+
+      	output += '<div class="col-md-4">';
+      	output += '<div class="txnsComp_wrapper">';
+      	output += '<h5 style="font-weight: 600">Wallet Hash Id</h5><h5>' + eachObject.walletHashId + '</h5>';
+      	output += '<h5 style="font-weight: 600">Auth Currency</h5><h5>' + eachObject.authCurrency + '</h5>';
+      	output += '<h5 style="font-weight: 600">Auth Amount</h5><h5>' + eachObject.authAmount + '</h5>';
+      	output += '<h5 style="font-weight: 600">Compliance Amount (USD)</h5><h5>' + eachObject.complianceAmount + '</h5>';
+
+      	output += '</div>';
+      	output += '</div>';
+      	output += '</div>';
+
+      	output += '<div class="row">';
+      	output += '<div class="col-md-12">';
+      	output += '<div class="accordian-container">';
+
+      	return output;
+      }
+
+      function paginationForTransactionsComplianceList(totalPages) {
+      	$('#paginations').twbsPagination({
+      		totalPages: totalPages,
+      		visiblePages: 10,
+      		initiateStartPageClick: false,
+      		onPageClick: function (event, page) {
+      			getFilteredtransactionsComplianceList(page - 1);
+      		}
+      	});
+      }
+
+      function toggleAccordian(element) {
+      	$(element).text(function (_, value) {
+      		return value === '-' ? '+' : '-'
+      	});
+      	$(element).closest("tr.header").next("#collapse_header").slideToggle(100).css('display', 'table-row');
+      }
+
+      function getClientList() {
+      	generateClientDropdown($("#fetchAllClientUrl").val(), false, "clientCode", null);
+      }
+
+      function closeAllModals() {
+      	$(".modal").each(function (index, element) {
+      		var id = element.id;
+      		$("#" + id).modal('hide');
+      	});
+      	getFilteredtransactionsComplianceList(0);
+      }
+
+      function resetFields() {
+      	$(".clear").each(function (index, element) {
+      		$(element).val("");
+      	});
+      	$("#transactionType").val(null).trigger('change');
+
+      	var clientDetails = $("#clientDetails").val();
+
+      	var decodedClientDetails = window.atob(clientDetails);
+      	if (decodedClientDetails === undefined || decodedClientDetails == null || decodedClientDetails === "" || decodedClientDetails === [] || decodedClientDetails.length === 0) {
+      		$("#clientCode").val("");
+      		$("#clientCode").trigger('change');
+      	}
+      }
+
+      $('.staticEnableSelect2').select2({
+      	placeholder: 'Select Identity Type',
+      	allowClear: true,
+      	dropdownAutoWidth: false,
+      	width: '100%',
+      	dropdownCss: {'width': 'inherit'}
+      })
+
+      function getTransactionTypes() {
+      	$.ajax({
+      		url: $("#transactionTypesUrl").val(),
+      		type: "GET",
+      		async: false,
+      		beforeSend: function (xhr) {
+      			setAuthTokenInReqHeader(xhr);
+      			setCsrfTokenInRequestHeader(xhr);
+      		},
+      		success: function (result, status, xhr) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      			result = sanitize(unSanitize(result));
+
+      			var optionTag = "";
+      			if (result != null && result != '' && result.length > 0) {
+      				for (var i = 0; i < result.length; i++) {
+      					var eachOption = result[i];
+      					optionTag += "<option value = " + eachOption + ">" + eachOption + "</option>";
+      				}
+      				$("#transactionType").html(optionTag);
+      				$("#transactionType").select2({
+      					placeholder: 'Select Transaction Type',
+      					width: '100%',
+      					allowClear: true,
+      					dropdownAutoWidth: true,
+      					multiple: true,
+      				});
+
+      				if ($("#transactionTypeValuehold").val() != null && $("#region_listValuehold").val() != "null" && $("#region_listValuehold").val() != '') {
+      					$('#transactionType').val($("#transactionTypeValuehold").val());
+      					$('#transactionType').trigger('change');
+      				}
+      			} else {
+      				$("#transactionType").html(optionTag);
+      				$("#transactionType").select2({
+      					placeholder: 'Select a Transaction Type',
+      					allowClear: false,
+      					dropdownAutoWidth: false,
+      					width: '100%',
+      					dropdownCss: {
+      						'width': 'inherit'
+      					}
+      				});
+      			}
+      		},
+      		complete: function (xhr, status) {
+      			var contextPath = "${pageContext.request.contextPath}";
+      			setAndReturnNewAuthToken(xhr, contextPath);
+      			setAndReturnNewCsrfToken(xhr, contextPath);
+      		}
+      	});
+      }
+
+      function openStatusUpdateModal(complianceId, serviceId, referenceNumber, serviceName) {
+      	$("#StatusUpdateComplianceId").val(complianceId);
+      	$("#ServiceId").val(serviceId);
+      	$("#referenceNumber").val(referenceNumber);
+      	$("#complianceAction").val("");
+      	$("#remarks").val("");
+      	$("#updateStatusSubmitBtn").attr("disabled", false);
+
+      	if (serviceName === "worldCheck") {
+      		$("#complianceStatus").html(generateWorldCheckComplianceStatusDropDown());
+      	}
+      	if (serviceName === "trulioo") {
+      		$("#complianceStatus").html(generateTrulioComplianceStatusDropDown());
+      	}
+      	if (serviceName === "blacklist") {
+      		$("#complianceStatus").html(generateBlacklistDropDown());
+      	}
+      	if (serviceName === "risk") {
+      		$("#complianceStatus").html(generateRiskStatusDropDown());
+      	}
+      	if (serviceName === "unit21") {
+      		$("#complianceStatus").html(generateUnit21StatusDropDown());
+      	}
+      	if (serviceName === "rfi_requested") {
+      		$("#complianceStatus").html(generateRfiRequestedComplianceStatusDropDown());
+      	}
+      	if (serviceName === "rfi_responded") {
+      		$("#complianceStatus").html(generateRfiRespondedComplianceStatusDropDown());
+      	}
+      	if (serviceName === "beam") {
+                 $("#complianceStatus").html(generateBeamStatusDropDown());
+             }
+      	$("#statusUpdateModal").modal({
+      		backdrop: false,
+      		keyboard: false,
+      		show: true
+      	});
+      }
+
+      function generateRfiRequestedComplianceStatusDropDown() {
+      	let output = "<option value = ''>Select a status</option>";
+      	output += "<option value = \"" + sanitize(unSanitize("CLOSED")) + "\">" + sanitize(unSanitize("CLOSED")) + "</option>";
+      	return output;
+      }
+
+      function generateRfiRespondedComplianceStatusDropDown() {
+      	let output = "<option value = ''>Select a status</option>";
+      	for (let i = 0; i < (allComplianceStatus.body).length; i++) {
+      		const eachStatusValue = (allComplianceStatus.body)[i];
+      		const valueToDisplay = (eachStatusValue.split("_")).join(" ");
+      		if ("reject" === eachStatusValue.trim().toLowerCase() || "completed" === eachStatusValue.trim().toLowerCase() || "closed" === eachStatusValue.trim().toLowerCase()) {
+      			output += "<option value = \"" + sanitize(unSanitize(eachStatusValue)) + "\">" + sanitize(unSanitize(valueToDisplay)) + "</option>";
+      		}
+      	}
+      	return output;
+      }
+
+      function validateAndUpdateStatus() {
+      	$("#updateStatusSubmitBtn").attr("disabled", true);
+      	if (validateUpdateStatusRequest()) {
+      		const complianceId = $("#StatusUpdateComplianceId").val();
+      		const ServiceId = $("#ServiceId").val();
+      		const referenceNumber = $("#referenceNumber").val();
+
+      		const data = {};
+      		data.changeStatus = $("#complianceStatus").val();
+      		data.complianceAction = $("#complianceAction").val();
+      		data.actionBy = $("#actionBy").val();
+      		data.remarks = $("#remarks").val();
+      		$.ajax({
+      			url: $("#updateTxnCompStatusUrl").val() + complianceId + "/" + ServiceId + "/" + referenceNumber + "/updateStatus",
+      			type: 'POST',
+      			contentType: "application/json",
+      			data: JSON.stringify(unSanitize(data)),
+      			async: true,
+      			beforeSend: function (xhr) {
+      				setAuthTokenInReqHeader(xhr);
+      				setCsrfTokenInRequestHeader(xhr);
+      			},
+      			success: function (result, status, xhr) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				sanitize(unSanitize(result));
+
+      				$("statusUpdateModal").modal('hide');
+      				$("#success_refundNotification").modal('show');
+      				$(".refunded_body").html("Status updated Successfully");
+      			},
+      			error: function (jqXhr) {
+      				if (jqXhr.readyState === 0) {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html("service is temporarily down,please try again later.");
+      				}
+      				if (jqXhr.status === 500) {
+      					var responseMessage = JSON.parse(jqXhr.responseText);
+      					var message = responseMessage.message;
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html(message);
+      				} else if (jqXhr.status === 400) {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html(jqXhr.responseText);
+      				} else {
+      					$("#error_refundNotification").modal('show');
+      					$(".refunded_body").html(jqXhr.responseText);
+      				}
+      				$("#updateStatusSubmitBtn").attr("disabled", false);
+      			},
+      			complete: function (xhr, status) {
+      				var contextPath = "${pageContext.request.contextPath}";
+      				setAndReturnNewAuthToken(xhr, contextPath);
+      				setAndReturnNewCsrfToken(xhr, contextPath);
+      				$("#statusUpdateModal").modal('hide');
+      			}
+      		});
+      	}
+      }
+
+      function closeAllModals() {
+      	$(".modal").each(function (index, element) {
+      		let id = element.id;
+      		$("#" + id).modal('hide');
+      	});
+      }
+
+      function validateUpdateStatusRequest() {
+      	let result = true;
+      	if ($("#StatusUpdateComplianceId").val() == null || $("#StatusUpdateComplianceId").val() === 'null' || $("#StatusUpdateComplianceId").val() === '' || $("#StatusUpdateComplianceId").val() === undefined) {
+      		result = false;
+      		$("#complianceIdErr").html("Compliance id is mandatory!");
+      	}
+      	if ($("#ServiceId").val() == null || $("#ServiceId").val() === 'null' || $("#ServiceId").val() === '' || $("#ServiceId").val() === undefined) {
+      		result = false;
+      		$("#ServiceIdErr").html("Service id is mandatory!");
+      	}
+      	if ($("#referenceNumber").val() == null || $("#referenceNumber").val() === 'null' || $("#referenceNumber").val() === '' || $("#referenceNumber").val() === undefined) {
+      		result = false;
+      		$("#referenceNumberError").html("Reference number is mandatory!");
+      	}
+      	if ($("#complianceStatus").val() == null || $("#complianceStatus").val() === 'null' || $("#complianceStatus").val() === '' || $("#complianceStatus").val() === undefined) {
+      		result = false;
+      		$("#complianceStatusErr").html("Status is mandatory!");
+      	}
+      	if ($("#actionBy").val() == null || $("#actionBy").val() === 'null' || $("#actionBy").val() === '' || $("#actionBy").val() === undefined) {
+      		result = false;
+      		$("#actionByErr").html("Update by is mandatory!");
+      	}
+      	if ($("#remarks").val() == null || $("#remarks").val() === 'null' || $("#remarks").val() === '' || $("#remarks").val() === undefined) {
+      		result = false;
+      		$("#remarksErr").html("Remarks is mandatory!");
+      	}
+      	if (!result) {
+      		$(".error").each(function (index, element) {
+      			$(element).css({
+      				"color": "red"
+      			});
+      		});
+      		setTimeout(function () {
+      			$(".error").each(function (index, element) {
+      				$(element).html("");
+      			});
+      			$("#updateStatusSubmitBtn").attr("disabled", false);
+      		}, 3000);
+      	}
+      	return result;
+      }
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+<!-- Upload SG Shipping Documents Modal start -->
+<div id="uploadSgShippingDocuments" role="dialog" class="modal fade">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Upload SG Shipping Documents</h4>
+			</div>
+			
+			<div class="modal-body">
+				<form enctype="multipart/form-data" id="sgShippingDocForm" class="row">
+					<div id="employmentLetterDiv">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<label for="empLetterDoc">Employment Letter<sup>*</sup></label>
+									<input type="file" class="form-control" id="empLetterDoc" name="empLetterDoc" onchange="isValidPdfOrImage(this, 'empLetterDocError', 'uploadSgShippingDocSubmitBtn');" />
+									<span id="empLetterDocError" class="error field_err"></span>
+								</div>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<label for="documentType">Document Type<sup>*</sup></label>
+									<select class="form-control selectpicker" name="documentType" id="documentType" onchange="toggleDiv();">
+										<option value="passport">Passport</option>
+										<option value="nric">NRIC</option>
+									</select>
+									<span class="error field_err" id="documentTypeError"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="passportDiv">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="passportNumber">Passport Number<sup>*</sup></label>
+									<input type="text" id="passportNumber" name="passportNumber" class="form-control" />
+									<span class="error field_err" id="passportNumberError"></span>
+								</div>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="passportExpiry">Passport expiry<sup>*</sup></label>
+									<input type="text" id="passportExpiry" name="passportExpiry" class="form-control" readonly />
+									<span class="error field_err" id="passportExpiryError"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="passportFront">Passport<sup>*</sup></label>
+									<input type="file" class="form-control" id="passportFront" name="passportFront" onchange="isValidPdfOrImage(this, 'passportFrontError', 'uploadSgShippingDocSubmitBtn');" />
+									<span id="passportFrontError" class="error field_err"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="nricDiv" style="display: none">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="nricNumber">NRIC Number<sup>*</sup></label>
+									<input type="text" id="nricNumber" name="nricNumber" class="form-control" />
+									<span class="error field_err" id="nricNumberError"></span>
+								</div>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="nricFront">Nric Front<sup>*</sup></label>
+									<input type="file" class="form-control" id="nricFront" name="nricFront" onchange="isValidPdfOrImage(this, 'nricFrontError', 'uploadSgShippingDocSubmitBtn');" />
+									<span class="error field_err" id="nricFrontError"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="nricBack">Nric Back<sup>*</sup></label>
+									<input type="file" class="form-control" id="nricBack" name="nricBack" onchange="isValidPdfOrImage(this, 'nricBackError', 'uploadSgShippingDocSubmitBtn');" />
+									<span class="error field_err" id="nricBackError"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br />
+					
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="form-group text-center">
+								<button id="uploadSgShippingDocSubmitBtn" type="button" onclick="validateAndSubmitSgDoc(event);" class="btn btn-success px-5 ripple">Submit</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Upload SG Shipping Documents Modal end -->
+
+<script>
+	function openSgShippingDocUploadModal() {
+		$(".error").each(function (index, element) {
+			$(element).css({"color": "red"});
+		});
+		var tomorrowDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+		$("#passportExpiry").datepicker({
+			format: 'yyyy-mm-dd',
+			startDate: tomorrowDate,
+			todayHighlight: false
+		});
+		$("#uploadSgShippingDocuments").modal("show");
+	}
+	
+	function toggleDiv() {
+		const docType = $("#documentType").val();
+		if (docType === "passport") {
+			$("#passportDiv").show("slow", "linear");
+			$("#nricDiv").hide("slow", "linear");
+		} else if (docType === "nric") {
+			$("#nricDiv").show("slow", "linear");
+			$("#passportDiv").hide("slow", "linear");
+		}
+	}
+	
+	function validateAndSubmitSgDoc(event) {
+		event.preventDefault();
+		var clientHashId = $("#clientCode").val();
+		var customerHashId = $("#customerHashId").val();
+		if (clientHashId == null || clientHashId === "" || clientHashId == undefined) {
+			$("#inPageErrorMessage").html("Client hash id is mandatory!");
+			return;
+		}
+		if (customerHashId == null || customerHashId === "" || customerHashId == undefined) {
+			$("#inPageErrorMessage").html("Customer hash id is mandatory!");
+			return;
+		}
+		
+		if (!validateRequest()) {
+			$("#uploadSgShippingDocSubmitBtn").attr("disabled", false);
+			$("#uploadSgShippingDocSubmitBtn").html("Submit");
+			return;
+		}
+		submitForm(clientHashId, customerHashId);
+	}
+	
+	function isValidNricFields() {
+		let valid = true;
+		
+		const nricNumber = $("#nricNumber").val();
+		const nricFront = document.getElementById("nricFront").files[0];
+		const nricBack = document.getElementById("nricBack").files[0];
+		
+		if (isBlankInput(nricNumber)) {
+			valid = false;
+			$("#nricNumberError").html("NRIC number is mandatory!");
+		}
+		if (nricFront == null || nricFront.size <= 0) {
+			valid = false;
+			$("#nricFrontError").html("NRIC front is mandatory!");
+		}
+		if (nricBack == null || nricBack.size <= 0) {
+			valid = false;
+			$("#nricBackError").html("NRIC back is mandatory!");
+		}
+		return valid;
+	}
+	
+	function isValidPassportFields() {
+		let valid = true;
+		
+		const passportNumber = $("#passportNumber").val();
+		const passportExpiry = $("#passportExpiry").val();
+		const passportFront = document.getElementById("passportFront").files[0];
+		
+		if (isBlankInput(passportNumber)) {
+			valid = false;
+			$("#passportNumberError").html("Passport number is mandatory!");
+		}
+		if (isBlankInput(passportExpiry)) {
+			valid = false;
+			$("#passportExpiryError").html("Passport expiry date is mandatory!");
+		}
+		if (passportFront == null || passportFront.size <= 0) {
+			valid = false;
+			$("#passportFrontError").html("Passport is mandatory!");
+		}
+		return valid;
+	}
+	
+	function validateRequest() {
+		$("#uploadSgShippingDocSubmitBtn").attr("disabled", true);
+		$("#uploadSgShippingDocSubmitBtn").html("Please Wait...");
+		
+		let valid = true;
+		const docType = $("#documentType").val();
+		const empLetterDoc = document.getElementById("empLetterDoc").files[0];
+		
+		if (empLetterDoc == null || empLetterDoc.size <= 0) {
+			valid = false;
+			$("#empLetterDocError").html("Employment letter is mandatory!");
+		}
+		
+		if (docType === "passport" && !isValidPassportFields()) {
+			valid = false;
+		} else if (docType === "nric" && !isValidNricFields()) {
+			valid = false;
+		}
+		
+		setTimeout(function () {
+			$(".error").each(function (index, element) {
+				$(element).html("");
+			});
+		}, 3000);
+		return valid;
+	}
+	
+	function submitForm(clientHashId, customerHashId) {
+		const url = "${pageContext.request.contextPath}" + $("#uploadSgShippingDocumentsUrl").val() + unSanitize(clientHashId) + "/customer/" + unSanitize(customerHashId) + "/sgShipping/documentUpload";
+		var form = $("#sgShippingDocForm")[0];
+		var data = new FormData(form);
+		$.ajax({
+			url: url,
+			data: data,
+			processData: false,
+			contentType: false,
+			cache: false,
+			type: 'POST',
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (result, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				sanitize(unSanitize(result));
+				
+				$("#uploadSgShippingDocuments").modal("hide");
+				$("#success_refundNotification").modal('show');
+				$(".refunded_body").html("Documents uploaded successfully!");
+			},
+			error: function (xhr) {
+				$("#uploadSgShippingDocuments").modal("hide");
+				$("#error_refundNotification").modal('show');
+				if (xhr.readyState === 0) {
+					$(".refunded_body").html("service is temporarily down,please try again later.");
+				} else if (xhr.readyState == 4) {
+					var responseJSON = xhr.responseJSON;
+					var message = responseJSON.message;
+					$(".refunded_body").html(message);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+</script>

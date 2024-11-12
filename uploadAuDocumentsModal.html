@@ -1,0 +1,614 @@
+<!-- Upload Au Documents Modal start -->
+<div id="uploadAuDocuments" role="dialog" class="modal fade">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Upload AU Documents</h4>
+			</div>
+			<div class="modal-body">
+				<form enctype="multipart/form-data" id="auUploadDocForm" class="row">
+					<div id="auIdentificationAndAddressDD_Div" style="margin-bottom: 100px;">
+						<div class="col-sm-6 col-xs-12">
+							<div class="form-group">
+								<label for="auIdentificationDocDD"> Identification Document<sup>*</sup></label>
+								<select id="auIdentificationDocDD" class="form-control" name="auIdentificationDocDD" onchange="validateIdentificationDocDDAndGenerateAddressDocDD();showOrHideSubmitBtn();">
+									<option value="">Select One</option>
+									<option value="passport">Passport</option>
+									<option value="driversLicence">Drivers Licence</option>
+								</select>
+								<span class="error field_err" id="auIdentificationDocDDError"></span>
+							</div>
+						</div>
+						<div id="auAddressDocumentDropDownDiv" class="col-sm-6 col-xs-12" style="display: none;">
+							<div class="form-group">
+								<label for="auAddressDocumentDD"> Address Document <sup>*</sup></label>
+								<select id="auAddressDocumentDD" class="form-control" name="auAddressDocumentDD" onchange="validateAddressDocDD();showOrHideSubmitBtn();"></select>
+								<span class="error field_err" id="auAddressDocumentDDError"></span>
+							</div>
+						</div>
+					</div>
+					
+					<div id="auContentsDiv">
+						<div id="auCommonElementsDiv" style="display: none;">
+							<div id="auDriversLicenceDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auLicenceNumber"> Licence Number <sup>*</sup></label>
+										<input type="text" id="auLicenceNumber" name="auLicenceNumber" class="form-control" />
+										<span class="error field_err" id="auLicenceNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auLicenceIssuingAuthority"> Licence Issuance Authority<sup>*</sup></label>
+										<select id="auLicenceIssuingAuthority" name="auLicenceIssuingAuthority" class="form-control enableSelect2">
+											<option value="">Select an option</option>
+											<option value="Alberta">Alberta</option>
+											<option value="Australian Capital Territory">Australian Capital Territory</option>
+											<option value="British Columbia">British Columbia</option>
+											<option value="New South Wales">New South Wales</option>
+											<option value="Manitoba">Manitoba</option>
+											<option value="Northern Territory">Northern Territory</option>
+											<option value="Queensland">Queensland</option>
+											<option value="New Brunswick">New Brunswick</option>
+											<option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+											<option value="South Australia">South Australia</option>
+											<option value="Northwest Territories">Northwest Territories</option>
+											<option value="Tasmania">Tasmania</option>
+											<option value="Victoria">Victoria</option>
+											<option value="Nova Scotia">Nova Scotia</option>
+											<option value="Western Australia">Western Australia</option>
+											<option value="Nunavut">Nunavut</option>
+											<option value="Ontario">Ontario</option>
+											<option value="Prince Edward Island">Prince Edward Island</option>
+											<option value="Quebec">Quebec</option>
+											<option value="Saskatchewan">Saskatchewan</option>
+											<option value="Yukon">Yukon</option>
+										</select>
+										<p class="error field_err" id="auLicenceIssuingAuthorityError"></p>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auLicenceExpiryDate"> Licence Expiry Date <sup>*</sup></label>
+										<input type="text" id="auLicenceExpiryDate" name="auLicenceExpiryDate" class="form-control" readonly />
+										<span class="error field_err" id="auLicenceExpiryDateError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auDriversLicenceFront"> Licence Front <sup>*</sup></label>
+										<input type="file" id="auDriversLicenceFront" name="auDriversLicenceFront" class="form-control" onchange="isValidPdfOrImage(this, 'auDriversLicenceFrontError', 'uploadAuDocSubmitBtn');" />
+										<span id="auDriversLicenceFrontError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auDriversLicenceBack"> Licence Back <sup>*</sup></label>
+										<input type="file" id="auDriversLicenceBack" name="auDriversLicenceBack" class="form-control" onchange="isValidPdfOrImage(this, 'auDriversLicenceBackError', 'uploadAuDocSubmitBtn');" />
+										<span id="auDriversLicenceBackError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="auIdentificationDocElementsDiv" style="display: none;">
+							<div id="auPassportDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auPassportNumber"> Passport Number <sup>*</sup></label>
+										<input type="text" id="auPassportNumber" name="auPassportNumber" class="form-control" />
+										<span class="error field_err" id="auPassportNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auPassportIssuingCountry"> Passport Issuing Country <sup>*</sup></label>
+										<select id="auPassportIssuingCountry" name="auPassportIssuingCountry" class="form-control enableSelect2"></select>
+										<p class="error field_err" id="auPassportIssuingCountryError"></p>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auPassportExpiryDate"> Passport Expiry Date <sup>*</sup>
+										</label>
+										<input type="text" id="auPassportExpiryDate" name="auPassportExpiryDate" class="form-control" readonly />
+										<span id="auPassportExpiryDateError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auPassportFront"> Passport Front <sup>*</sup></label>
+										<input type="file" id="auPassportFront" name="auPassportFront" class="form-control" onchange="isValidPdfOrImage(this, 'auPassportFrontError', 'uploadAuDocSubmitBtn');" />
+										<span id="auPassportFrontError" class="error field_err"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auPassportBack"> Passport Back <sup>*</sup></label>
+										<input type="file" id="auPassportBack" name="auPassportBack" class="form-control" onchange="isValidPdfOrImage(this, 'auPassportBackError', 'uploadAuDocSubmitBtn');" />
+										<span id="auPassportBackError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="auAddressDocElementsDiv" style="display: none;">
+							<div id="auBankStatementDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auBankAccountNumber"> Bank Account Number <sup>*</sup></label>
+										<input type="text" id="auBankAccountNumber" name="auBankAccountNumber" class="form-control" />
+										<span class="error field_err" id="auBankAccountNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auBankName"> Bank Name <sup>*</sup></label>
+										<input type="text" id="auBankName" name="auBankName" class="form-control" />
+										<span class="error field_err" id="auBankNameError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auStatementGeneratedOn">Statement generation date <sup>*</sup></label>
+										<input type="text" id="auStatementGeneratedOn" name="auStatementGeneratedOn" class="form-control" readonly />
+										<span class="error field_err" id="auStatementGeneratedOnError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auBankStatement"> Bank Statement <sup>*</sup></label>
+										<input type="file" id="auBankStatement" name="auBankStatement" class="form-control" onchange="isValidPdfOrImage(this, 'auBankStatementError', 'uploadAuDocSubmitBtn');" />
+										<span id="auBankStatementError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div id="auUtilityBillDiv" style="display: none;">
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auUtilityBillNumber"> Utility Bill Number <sup>*</sup></label>
+										<input type="text" id="auUtilityBillNumber" name="auUtilityBillNumber" class="form-control" />
+										<span class="error field_err" id="auUtilityBillNumberError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auUtilityCompanyName"> Utility Company Name <sup>*</sup></label>
+										<input type="text" id="auUtilityCompanyName" name="auUtilityCompanyName" class="form-control" />
+										<span class="error field_err" id="auUtilityCompanyNameError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auUtilityBillGeneratedOn"> Utility Bill Generated Date <sup>*</sup></label>
+										<input type="text" id="auUtilityBillGeneratedOn" name="auUtilityBillGeneratedOn" class="form-control" readonly />
+										<span class="error field_err" id="auUtilityBillGeneratedOnError"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-6 col-xs-12">
+									<div class="form-group">
+										<label for="auUtilityBill"> Utility Document <sup>*</sup></label>
+										<input type="file" id="auUtilityBill" name="auUtilityBill" class="form-control" onchange="isValidPdfOrImage(this, 'auUtilityBillError', 'uploadAuDocSubmitBtn');" />
+										<span id="auUtilityBillError" class="error field_err"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+				<br />
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="form-group text-center">
+							<button id="uploadAuDocSubmitBtn" type="button" onclick="validateAndSubmitAuDoc(event);" class="btn btn-success px-5 ripple">Submit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Upload Au Documents Modal end -->
+
+<script>
+	function openAuDocUploadModal() {
+		populateCountryDD();
+		$("#uploadAuDocSubmitBtn").hide();
+		$("#uploadAuDocuments").modal("show");
+	}
+	
+	function populateCountryDD() {
+		countryListObject = sanitize(unSanitize(countryListObject));
+		if (countryListObject == null || countryListObject == "" || countryListObject == undefined) {
+			return;
+		}
+		
+		var optionTag = "<option value = ''>Select a Country</option>";
+		for (var i = 0; i < (countryListObject.length); i++) {
+			var eachOption = countryListObject[i];
+			optionTag += "<option value = " + eachOption.iso2 + ">" + eachOption.name + " (" + eachOption.iso2 + ")</option>";
+		}
+		
+		$("#auPassportIssuingCountry").html(optionTag);
+		$('.enableSelect2').select2({
+			placeholder: 'Select an option',
+			allowClear: true,
+			dropdownAutoWidth: false,
+			width: '100%',
+			dropdownCss: {
+				'width': 'inherit'
+			}
+		});
+	}
+	
+	function validateAndSubmitAuDoc(event) {
+		event.preventDefault();
+		const clientHashId = $("#clientCode").val();
+		const customerHashId = $("#customerHashId").val();
+		
+		if (isBlank(clientHashId)) {
+			$("#inPageErrorMessage").html("Client hash id is mandatory!");
+			return;
+		}
+		if (isBlank(customerHashId)) {
+			$("#inPageErrorMessage").html("Customer hash id is mandatory!");
+			return;
+		}
+		
+		if (validateFields()) {
+			submitRequest(clientHashId, customerHashId);
+		} else {
+			$("#uploadAuDocSubmitBtn").attr("disabled", false);
+			$("#uploadAuDocSubmitBtn").html("Submit");
+		}
+	}
+	
+	function validateFields() {
+		$("#uploadAuDocSubmitBtn").attr("disabled", true);
+		$("#uploadAuDocSubmitBtn").html("Please Wait...");
+		
+		var valid = true;
+		
+		var auIdentificationDocDD = $("#auIdentificationDocDD").val();
+		var auAddressDocumentDD = $("#auAddressDocumentDD").val();
+		
+		var auPassportNumber = $("#auPassportNumber").val();
+		var auPassportIssuingCountry = $("#auPassportIssuingCountry").val();
+		var auPassportExpiryDate = $("#auPassportExpiryDate").val();
+		var auPassportFront = $("#auPassportFront").val();
+		var auPassportBack = $("#auPassportBack").val();
+		
+		var auBankAccountNumber = $("#auBankAccountNumber").val();
+		var auBankName = $("#auBankName").val();
+		var auStatementGeneratedOn = $("#auStatementGeneratedOn").val();
+		var auBankStatement = $("#auBankStatement").val();
+		
+		var auUtilityBillNumber = $("#auUtilityBillNumber").val();
+		var auUtilityCompanyName = $("#auUtilityCompanyName").val();
+		var auUtilityBillGeneratedOn = $("#auUtilityBillGeneratedOn").val();
+		var auUtilityBill = $("#auUtilityBill").val();
+		
+		var auLicenceNumber = $("#auLicenceNumber").val();
+		var auLicenceIssuingAuthority = $("#auLicenceIssuingAuthority").val();
+		var auLicenceExpiryDate = $("#auLicenceExpiryDate").val();
+		var auDriversLicenceFront = $("#auDriversLicenceFront").val();
+		var auDriversLicenceBack = $("#auDriversLicenceBack").val();
+		
+		if (isBlank(auIdentificationDocDD)) {
+			valid = false;
+			$("#auIdentificationDocDDError").html("Identification Document is mandatory!");
+		}
+		if (isBlank(auAddressDocumentDD)) {
+			valid = false;
+			$("#auAddressDocumentDDError").html("Address Document is mandatory!");
+		}
+		
+		if (auIdentificationDocDD == "passport") {
+			if (isBlank(auPassportNumber)) {
+				valid = false;
+				$("#auPassportNumberError").html("Passport Number is mandatory!");
+			}
+			if (isBlank(auPassportIssuingCountry)) {
+				valid = false;
+				$("#auPassportIssuingCountryError").html("Passport issuing country is mandatory!");
+			}
+			if (isBlank(auPassportExpiryDate)) {
+				valid = false;
+				$("#auPassportExpiryDateError").html("Passport expiry date is mandatory!");
+			}
+			if (isBlank(auPassportFront)) {
+				valid = false;
+				$("#auPassportFrontError").html("Passport front is mandatory!");
+			}
+			if (isBlank(auPassportBack)) {
+				valid = false;
+				$("#auPassportBackError").html("Passport back is mandatory!");
+			}
+		} else if (auIdentificationDocDD == "driversLicence") {
+			if (isBlank(auLicenceNumber)) {
+				valid = false;
+				$("#auLicenceNumberError").html("Licence number is mandatory!");
+			}
+			if (isBlank(auLicenceIssuingAuthority)) {
+				valid = false;
+				$("#auLicenceIssuingAuthorityError").html("Licence issuing authority is mandatory!");
+			}
+			if (isBlank(auLicenceExpiryDate)) {
+				valid = false;
+				$("#auLicenceExpiryDateError").html("Licence Expiry date is mandatory!");
+			}
+			if (isBlank(auDriversLicenceFront)) {
+				valid = false;
+				$("#auDriversLicenceFrontError").html("Licence front is mandatory!");
+			}
+			if (isBlank(auDriversLicenceBack)) {
+				valid = false;
+				$("#auDriversLicenceBackError").html("Licence back is mandatory!");
+			}
+		}
+		
+		if (auAddressDocumentDD == "auBankStatement") {
+			if (isBlank(auBankAccountNumber)) {
+				valid = false;
+				$("#auBankAccountNumberError").html("Account number is mandatory!");
+			}
+			if (isBlank(auBankName)) {
+				valid = false;
+				$("#auBankNameError").html("Bank name is mandatory!");
+			}
+			if (isBlank(auStatementGeneratedOn)) {
+				valid = false;
+				$("#auStatementGeneratedOnError").html("Statement generation date is mandatory!");
+			}
+			if (isBlank(auBankStatement)) {
+				valid = false;
+				$("#auBankStatementError").html("Bank statement Document is mandatory!");
+			}
+		} else if (auAddressDocumentDD == "auUtilityBill") {
+			if (isBlank(auUtilityBillNumber)) {
+				valid = false;
+				$("#auUtilityBillNumberError").html("Utility bill number is mandatory!");
+			}
+			if (isBlank(auUtilityCompanyName)) {
+				valid = false;
+				$("#auUtilityCompanyNameError").html("Utility company name is mandatory!");
+			}
+			if (isBlank(auUtilityBillGeneratedOn)) {
+				valid = false;
+				$("#auUtilityBillGeneratedOnError").html("Utility bill generation date is mandatory!");
+			}
+			if (isBlank(auUtilityBill)) {
+				valid = false;
+				$("#auUtilityBillError").html("Utility bill document is mandatory!");
+			}
+		} else if (auAddressDocumentDD == "driversLicence" && auIdentificationDocDD != "driversLicence") {
+			if (isBlank(auLicenceNumber)) {
+				valid = false;
+				$("#auLicenceNumberError").html("Licence number is mandatory!");
+			}
+			if (isBlank(auLicenceIssuingAuthority)) {
+				valid = false;
+				$("#auLicenceIssuingAuthorityError").html("Licence issuing authority is mandatory!");
+			}
+			if (isBlank(auLicenceExpiryDate)) {
+				valid = false;
+				$("#auLicenceExpiryDateError").html("Licence expiry date is mandatory!");
+			}
+			if (isBlank(auDriversLicenceFront)) {
+				valid = false;
+				$("#auDriversLicenceFrontError").html("Driving licence front is mandatory!");
+			}
+			if (isBlank(auDriversLicenceBack)) {
+				valid = false;
+				$("#auDriversLicenceBackError").html("Driving licence back is mandatory!");
+			}
+		}
+		
+		setTimeout(function () {
+			$(".error").each(function (index, element) {
+				$(element).html("");
+			});
+		}, 3000);
+		
+		return valid;
+	}
+	
+	function submitRequest(clientHashId, customerHashId) {
+		const url = "${pageContext.request.contextPath}" + $("#uploadSgDocumentsUrl").val() + unSanitize(clientHashId) + "/customer/" + unSanitize(customerHashId) + "/au/documentUpload";
+		var form = $("#auUploadDocForm")[0];
+		var data = new FormData(form);
+		
+		$.ajax({
+			url: url,
+			data: data,
+			processData: false,
+			contentType: false,
+			cache: false,
+			type: 'POST',
+			beforeSend: function (xhr) {
+				setAuthTokenInReqHeader(xhr);
+				setCsrfTokenInRequestHeader(xhr);
+			},
+			success: function (result, status, xhr) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+				sanitize(unSanitize(result));
+				
+				$("#uploadAuDocuments").modal("hide");
+				$("#success_refundNotification").modal('show');
+				$(".refunded_body").html("Documents uploaded successfully!");
+			},
+			error: function (xhr) {
+				$("#uploadAuDocuments").modal("hide");
+				$("#error_refundNotification").modal('show');
+				if (xhr.readyState === 0) {
+					$(".refunded_body")
+						.html("service is temporarily down,please try again later.");
+				} else if (xhr.readyState == 4) {
+					var responseJSON = xhr.responseJSON;
+					var message = responseJSON.message;
+					$(".refunded_body").html(message);
+				}
+			},
+			complete: function (xhr, status) {
+				var contextPath = "${pageContext.request.contextPath}";
+				setAndReturnNewAuthToken(xhr, contextPath);
+				setAndReturnNewCsrfToken(xhr, contextPath);
+			}
+		});
+	}
+	
+	function validateIdentificationDocDDAndGenerateAddressDocDD() {
+		const auIdentificationDocDD = $("#auIdentificationDocDD").val();
+		
+		if (isBlank(auIdentificationDocDD)) {
+			$("#auIdentificationDocDDError").html("Select one Identification Document!");
+			$("#auAddressDocumentDD")
+				.html("<option value = ''>Select Identification Document</option>");
+			
+			$("#auIdentificationDocElementsDiv").hide("slow", "linear");
+			$("#auPassportDiv").hide("slow", "linear");
+			
+			$("#auCommonElementsDiv").hide("slow", "linear");
+			$("#auDriversLicenceDiv").hide("slow", "linear");
+			
+			$("#auAddressDocumentDropDownDiv").hide("slow", "linear");
+			$("#auAddressDocElementsDiv").hide("slow", "linear");
+			$("#auBankStatementDiv").hide("slow", "linear");
+			$("#auUtilityBillDiv").hide("slow", "linear");
+		} else {
+			if (auIdentificationDocDD === "passport") {
+				$("#auCommonElementsDiv").hide("slow", "linear");
+				$("#auDriversLicenceDiv").hide("slow", "linear");
+				
+				$("#auIdentificationDocElementsDiv").show("slow", "linear");
+				$("#auPassportDiv").show("slow", "linear");
+			} else if (auIdentificationDocDD === "driversLicence") {
+				$("#auCommonElementsDiv").show("slow", "linear");
+				$("#auDriversLicenceDiv").show("slow", "linear");
+				
+				$("#auIdentificationDocElementsDiv").hide("slow", "linear");
+				$("#auPassportDiv").hide("slow", "linear");
+			}
+			
+			$("#auAddressDocElementsDiv").hide("slow", "linear");
+			$("#auBankStatementDiv").hide("slow", "linear");
+			$("#auUtilityBillDiv").hide("slow", "linear");
+			
+			var dropDownData = "<option value = ''>Select one</option>";
+			dropDownData += "<option value = 'auBankStatement'>Bank Statement</option>";
+			dropDownData += "<option value = 'auUtilityBill'>Utility Bill</option>";
+			
+			if (auIdentificationDocDD == "passport") {
+				dropDownData += "<option value = 'driversLicence'>Driving Licence</option>";
+			}
+			$("#auAddressDocumentDD").html(dropDownData);
+			$("#auAddressDocumentDropDownDiv").show("slow", "linear");
+		}
+		
+		setTimeout(function () {
+			$(".error").each(function (index, element) {
+				$(element).html("");
+			});
+		}, 3000);
+	}
+	
+	function validateAddressDocDD() {
+		var auIdentificationDocDD = $("#auIdentificationDocDD").val();
+		var auAddressDocumentDD = $("#auAddressDocumentDD").val();
+		
+		if (isBlank(auAddressDocumentDD)) {
+			if (auIdentificationDocDD == "passport") {
+				$("#auAddressDocumentDDError").html("Select one Address Document!");
+				$("#auCommonElementsDiv").hide("slow", "linear");
+				$("#auDriversLicenceDiv").hide("slow", "linear");
+				$("#auAddressDocElementsDiv").hide("slow", "linear");
+				$("#auBankStatementDiv").hide("slow", "linear");
+				$("#auUtilityBillDiv").hide("slow", "linear");
+			} else if (auIdentificationDocDD == "driversLicence") {
+				$("#auAddressDocumentDDError").html("Select one Address Document!");
+				$("#auAddressDocElementsDiv").hide("slow", "linear");
+				$("#auBankStatementDiv").hide("slow", "linear");
+				$("#auUtilityBillDiv").hide("slow", "linear");
+			}
+		} else {
+			if (auIdentificationDocDD == "passport") {
+				if (auAddressDocumentDD == "auBankStatement") {
+					$("#auAddressDocElementsDiv").show("slow", "linear");
+					$("#auBankStatementDiv").show("slow", "linear");
+					
+					$("#auUtilityBillDiv").hide("slow", "linear");
+					$("#auDriversLicenceDiv").hide("slow", "linear")
+				} else if (auAddressDocumentDD == "auUtilityBill") {
+					$("#auAddressDocElementsDiv").show("slow", "linear");
+					$("#auUtilityBillDiv").show("slow", "linear");
+					
+					$("#auBankStatementDiv").hide("slow", "linear")
+					$("#auDriversLicenceDiv").hide("slow", "linear")
+				} else if (auAddressDocumentDD == "driversLicence") {
+					$("#auAddressDocElementsDiv").show("slow", "linear");
+					$("#auCommonElementsDiv").show("slow", "linear");
+					$("#auDriversLicenceDiv").show("slow", "linear");
+					
+					$("#auBankStatementDiv").hide("slow", "linear")
+					$("#auUtilityBillDiv").hide("slow", "linear")
+				}
+			} else if (auIdentificationDocDD == "driversLicence") {
+				if (auAddressDocumentDD == "auBankStatement") {
+					$("#auAddressDocElementsDiv").show("slow", "linear");
+					$("#auBankStatementDiv").show("slow", "linear");
+					$("#auUtilityBillDiv").hide("slow", "linear");
+				} else if (auAddressDocumentDD == "auUtilityBill") {
+					$("#auAddressDocElementsDiv").show("slow", "linear");
+					$("#auUtilityBillDiv").show("slow", "linear");
+					$("#auBankStatementDiv").hide("slow", "linear")
+				}
+			}
+		}
+		
+		setTimeout(function () {
+			$(".error").each(function (index, element) {
+				$(element).html("");
+			});
+		}, 3000);
+	}
+	
+	function isBlank(input) {
+		if (typeof input == "string") {
+			input = input.trim();
+		}
+		if (input == null || input == "null" || input == "" || input == undefined) {
+			return true;
+		}
+		return false;
+	}
+	
+	function showOrHideSubmitBtn() {
+		var auIdentificationDocDD = $("#auIdentificationDocDD").val();
+		var auAddressDocumentDD = $("#auAddressDocumentDD").val();
+		
+		if (isBlank(auIdentificationDocDD) || isBlank(auAddressDocumentDD)) {
+			$("#uploadAuDocSubmitBtn").hide();
+			return;
+		}
+		$("#uploadAuDocSubmitBtn").show();
+	}
+</script>
